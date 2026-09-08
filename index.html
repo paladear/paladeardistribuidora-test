@@ -1552,6 +1552,7 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
            oninput="compactOnSearch(this.value);_updateSuggestions(this.value)"
            onblur="_hideSuggestionsDelayed();compactSearchBlur()" aria-label="Buscar productos">
     <div class="search-suggestions" id="searchSuggestions"></div>
+    <button type="button" class="may-mobile-search-close" onclick="mayToggleMobileSearch(false)" aria-label="Cerrar búsqueda">×</button>
   </div>
 
   <div class="hd-accesos">
@@ -1567,6 +1568,15 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.4 11.4a2 2 0 0 0 2 1.6h7.5a2 2 0 0 0 2-1.5L21 7H6"/></svg>
       <span class="hd-pedido-n" id="cartCountMay">0</span>
       <span><b>Mi pedido</b></span>
+    </button>
+  </div>
+
+  <div class="may-mobile-header-actions" aria-label="Accesos rápidos">
+    <button type="button" class="may-mobile-header-btn" onclick="mayToggleMobileSearch(true)" aria-label="Buscar productos">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg>
+    </button>
+    <button type="button" class="may-mobile-header-btn" onclick="mayOpenCategories(this)" aria-label="Abrir categorías">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
   </div>
 
@@ -1613,9 +1623,27 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
 </nav>
 </header>
 
+<nav class="may-mobile-bottom-nav" aria-label="Navegación principal">
+  <button type="button" class="may-mobile-nav-link active" data-may-view="home" onclick="mayShowHome()" aria-current="page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg>
+    <span>Home</span>
+  </button>
+  <button type="button" class="may-mobile-nav-link" data-may-view="productos" onclick="mayShowProducts()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg>
+    <span>Productos</span>
+  </button>
+  <button type="button" class="may-mobile-nav-link" data-may-view="ofertas" onclick="mayShowSoon()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13 13 20 4 11V4h7l9 9Z"/><circle cx="8.5" cy="8.5" r="1" fill="currentColor" stroke="none"/></svg>
+    <span>Ofertas</span>
+  </button>
+</nav>
+
 <!-- Home mayorista: primera etapa del rediseño. El resto del home se suma después. -->
 <section class="may-home-hero" id="mayHomeHero" aria-labelledby="mayHeroTitle">
-  <img class="may-home-hero-bg" src="hero-mayorista-test.webp" width="1815" height="867" alt="Depósito mayorista con cajas preparadas para despacho">
+  <picture class="may-home-hero-media">
+    <source media="(max-width:760px)" srcset="hero-mayorista-mobile-v2.webp">
+    <img class="may-home-hero-bg" src="hero-mayorista-test.webp" width="1815" height="867" alt="Depósito mayorista con cajas preparadas para despacho">
+  </picture>
   <div class="may-home-hero-shade" aria-hidden="true"></div>
   <div class="may-home-hero-copy">
     <span class="may-home-eyebrow">Venta mayorista</span>
@@ -2085,7 +2113,7 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
 <button id="chat-fab" onclick="toggleChat()" title="Consultar">💬</button>
 <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver arriba">↑</button>
 <button id="cart-fab" onclick="openCart()" title="Ver carrito"><img class="fab-icon" src="icon-carrito.png" alt=""><span class="cart-count" id="cartCount">0</span></button>
-<button id="cart-fab-may" onclick="openCartMay()" title="Ver pedido mayorista" style="display:none"><img class="fab-icon" src="icon-mayorista.png" alt=""><span class="cart-count" id="cartCountMay">0</span></button>
+<button id="cart-fab-may" onclick="openCartMay()" title="Ver pedido mayorista" style="display:none"><img class="fab-icon" src="icon-carrito.png" alt=""><span class="cart-count" id="cartCountFabMay">0</span></button>
 <div id="chat-box">
   <div id="chat-header">
     <img src="chat-avatar.jpg" loading="lazy" onerror="this.style.display='none'" alt="">
@@ -5555,8 +5583,10 @@ function _reRenderCardMay(pid) {
 
 function updateCartMayCount() {
   const count = cartMay.reduce((a, i) => a + i.c, 0);
-  const el = document.getElementById('cartCountMay');
-  if (el) el.textContent = count;
+  ['cartCountMay','cartCountFabMay'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el)el.textContent=count;
+  });
   const fab = document.getElementById('cart-fab-may');
   if (fab) { fab.style.transform = 'scale(1.15)'; setTimeout(() => { fab.style.transform = ''; }, 250); }
   _saveCartMay();
@@ -5617,6 +5647,7 @@ function openCartMay() {
   _track('abrio_carrito_may');
   document.getElementById('cartOverlayMay').classList.add('open');
   document.getElementById('cartPanelMay').classList.add('open');
+  document.body.classList.add('cart-open');
   document.body.style.overflow = 'hidden';
   renderCartMay();
   history.pushState({ view: 'cartMay' }, '');
@@ -5626,6 +5657,7 @@ window.openCartMay = openCartMay;
 function closeCartMay() {
   document.getElementById('cartOverlayMay').classList.remove('open');
   document.getElementById('cartPanelMay').classList.remove('open');
+  document.body.classList.remove('cart-open');
   document.body.style.overflow = '';
 }
 window.closeCartMay = closeCartMay;
@@ -5898,10 +5930,12 @@ function toggleMayCatsDropdown(trigger){
     panel.style.display='block';
     panel.style.animation=window.innerWidth>=768?'mayMenuIn .2s ease':'slideUp .22s ease';
     panel.setAttribute('aria-hidden','false');
+    document.body.classList.add('may-cats-open');
   } else {
     overlay.classList.remove('open');
     panel.style.display='none';
     panel.setAttribute('aria-hidden','true');
+    document.body.classList.remove('may-cats-open');
   }
 }
 function closeMayCatsDropdown(){
@@ -5910,6 +5944,7 @@ function closeMayCatsDropdown(){
   const panel=document.getElementById('mayCatsDropdownPanel');
   if(overlay)overlay.classList.remove('open');
   if(panel){panel.style.display='none';panel.setAttribute('aria-hidden','true');}
+  document.body.classList.remove('may-cats-open');
 }
 function mayChooseHeaderCat(catId){
   if(typeof mayShowProducts==='function')mayShowProducts({scroll:false});
@@ -7980,6 +8015,9 @@ window.addEventListener('online', function() {
 .may-home-footer-socials a{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.13);color:#fff;text-decoration:none}
 .may-home-footer-socials svg{width:20px;height:20px}
 .may-home-footer-socials a:hover{background:rgba(255,255,255,.22);text-decoration:none}
+.may-home-hero-media{position:absolute;inset:0;display:block}
+.may-home-hero-media .may-home-hero-bg{width:100%;height:100%}
+.may-mobile-header-actions,.may-mobile-bottom-nav,.may-mobile-search-close{display:none}
 
 @media(max-width:900px) and (min-width:761px){
   .may-home-banners-grid{grid-template-columns:1fr;max-width:820px}
@@ -8024,6 +8062,129 @@ window.addEventListener('online', function() {
   .may-feature-bottom{gap:6px}
   .may-feature-price{font-size:14.5px}
   .may-feature-go{padding:8px 7px;font-size:8.2px;white-space:nowrap}
+}
+
+/* Mobile v2: cabecera compacta, hero horizontal y banners integrados. */
+@media(max-width:760px){
+  .may-redesign{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+  .may-redesign .header{--may-head-h:68px;--may-logo-size:84px;height:68px;min-height:68px}
+  .may-redesign .header-inner{
+    height:68px;min-height:68px;padding:7px 12px 7px 112px;gap:6px;justify-content:flex-end
+  }
+  .may-redesign .header .logo-wrap{
+    left:14px;top:26px;width:84px;height:84px;border-width:2px;
+    box-shadow:0 7px 18px rgba(19,43,63,.3)
+  }
+  .may-redesign .hd-nav{display:none!important}
+  .may-redesign .compact-header{display:none!important}
+  .may-redesign .hd-buscador{display:none}
+  .may-redesign.may-mobile-search-open .hd-buscador{
+    position:fixed;left:12px;right:12px;top:76px;z-index:10042;display:block!important;
+    max-width:none;padding:8px 48px 8px 8px;border:1px solid rgba(18,60,97,.12);border-radius:18px;
+    background:rgba(255,255,255,.98);box-shadow:0 14px 34px rgba(17,49,73,.22)
+  }
+  .may-redesign.may-mobile-search-open .hd-buscador .compact-search{
+    display:block;width:100%;height:44px;padding:0 14px 0 42px;border-radius:12px;background:#eef6fb;font-size:14px
+  }
+  .may-redesign.may-mobile-search-open .hd-buscador .hd-lupa{left:22px}
+  .may-redesign.may-mobile-search-open .hd-buscador .search-suggestions{top:calc(100% + 7px);left:0;right:0}
+  .may-mobile-search-close{
+    position:absolute;right:10px;top:12px;display:grid;width:36px;height:36px;place-items:center;padding:0;
+    border:0;border-radius:10px;background:#456b89;color:#fff;font:400 24px/1 Arial,sans-serif
+  }
+  .may-redesign .hd-accesos{display:flex;flex:0 0 auto;gap:0;margin:0}
+  .may-redesign .hd-accesos>.hd-acceso:not(:nth-child(2)){display:none!important}
+  .may-redesign .hd-accesos>.hd-acceso:nth-child(2){display:grid;width:42px;height:42px;place-items:center;padding:0}
+  .may-redesign .hd-accesos>.hd-acceso:nth-child(2) svg{width:25px;height:25px}
+  .may-mobile-header-actions{display:flex;align-items:center;gap:4px}
+  .may-mobile-header-btn{
+    display:grid;width:42px;height:42px;place-items:center;padding:0;border:1px solid rgba(255,255,255,.3);
+    border-radius:13px;background:rgba(255,255,255,.08);color:#fff;transition:background .18s ease,transform .16s ease
+  }
+  .may-mobile-header-btn svg{width:24px;height:24px}
+  .may-mobile-header-btn:active{background:rgba(255,255,255,.2);transform:scale(.94)}
+
+  .may-mobile-bottom-nav{
+    position:fixed;left:0;right:0;bottom:0;z-index:10010;display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));height:calc(68px + env(safe-area-inset-bottom));
+    padding:7px 16px calc(7px + env(safe-area-inset-bottom));border-top:1px solid rgba(34,78,111,.13);
+    background:rgba(255,255,255,.96);box-shadow:0 -8px 26px rgba(25,59,84,.13);
+    -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)
+  }
+  .may-mobile-nav-link{
+    position:relative;display:flex;min-width:0;align-items:center;justify-content:center;flex-direction:column;gap:3px;
+    padding:3px 8px;border:0;border-radius:16px;background:transparent;color:#58758d;
+    font:650 10px/1.1 'Montserrat',sans-serif;transition:color .2s ease,background .2s ease,transform .16s ease
+  }
+  .may-mobile-nav-link svg{width:23px;height:23px}
+  .may-mobile-nav-link.active{background:#e3f0f8;color:#123f63;box-shadow:inset 0 0 0 1px rgba(59,104,137,.1)}
+  .may-mobile-nav-link:active{transform:scale(.95)}
+  body.cart-open .may-mobile-bottom-nav,body.may-cats-open .may-mobile-bottom-nav{display:none}
+
+  .may-redesign .may-home-hero{height:440px;min-height:0;margin:0;background:#c9e1ef}
+  .may-redesign .may-home-hero-media{height:360px;bottom:auto}
+  .may-redesign .may-home-hero-bg{object-fit:cover;object-position:center bottom}
+  .may-redesign .may-home-hero-shade{
+    background:linear-gradient(90deg,rgba(211,234,246,.97) 0%,rgba(211,234,246,.87) 47%,rgba(211,234,246,.25) 72%,rgba(211,234,246,.04) 100%)
+  }
+  .may-redesign .may-home-hero::after{display:none}
+  .may-redesign .may-home-hero-copy{left:20px;right:20px;top:59px;width:auto;text-align:left}
+  .may-redesign .may-home-eyebrow{margin-bottom:8px;font-size:9.5px;letter-spacing:.15em}
+  .may-redesign .may-home-hero h1{font-size:clamp(24px,7.45vw,29.5px);line-height:1.01;white-space:nowrap}
+  .may-redesign .may-home-hero p{max-width:248px;margin-top:13px;font-size:11.5px;line-height:1.46;text-wrap:pretty}
+  .may-redesign .may-home-cta{height:42px;margin-top:18px;padding:0 19px;gap:10px;font-size:11px;box-shadow:0 6px 15px rgba(20,57,84,.15)}
+  .may-redesign .may-home-cta svg{width:17px;height:17px}
+  .may-home-hero-benefits{
+    position:absolute;left:-20px;top:301px;width:100vw;height:80px;max-width:none;margin:0;padding:10px 12px;
+    align-items:center;background:rgba(239,247,252,.94);box-shadow:0 -1px 0 rgba(43,88,121,.08)
+  }
+  .may-home-hero-benefits span{grid-template-columns:21px auto;padding:1px 9px;gap:6px;font-size:7.6px;line-height:1.27}
+  .may-home-hero-benefits svg{width:20px;height:20px}
+  .may-redesign .may-home-bulto{display:none}
+
+  .may-redesign.may-home-view #cart-fab-may,.may-redesign.may-offers-view #cart-fab-may{
+    display:flex!important;right:15px;bottom:calc(80px + env(safe-area-inset-bottom));width:54px;height:54px;
+    background:#456b89;box-shadow:0 8px 23px rgba(30,67,94,.34)
+  }
+  .may-redesign #cart-fab-may .fab-icon{width:38px;height:38px;filter:none}
+  .may-redesign.cart-open #cart-fab-may,.may-redesign.may-cats-open #cart-fab-may{display:none!important}
+  .may-redesign #backToTop{bottom:calc(148px + env(safe-area-inset-bottom));right:18px}
+
+  .may-home-band-banners{padding:28px 0 34px}
+  .may-home-banners-grid{grid-template-columns:1fr;gap:14px}
+  .may-home-info-card,.may-home-list-card{
+    display:grid;height:232px;min-height:232px;grid-template-columns:minmax(0,1.48fr) minmax(118px,.9fr);
+    overflow:hidden;border-radius:20px
+  }
+  .may-home-info-copy,.may-home-list-copy{min-width:0;padding:19px 10px 17px 18px;align-self:stretch}
+  .may-home-info-card .may-home-section-kicker,.may-home-list-card .may-home-section-kicker{margin-bottom:6px;font-size:7.5px;letter-spacing:.12em}
+  .may-home-info-card .distb-top{margin-bottom:8px}
+  .may-home-info-card .distb-name,.may-home-list-copy h2{font-size:19px;line-height:1.03;letter-spacing:-.035em}
+  .may-home-info-card .distb-note{margin-bottom:10px;font-size:9.2px;line-height:1.38}
+  .may-home-info-card .distb-cnt{font-size:15px}
+  .may-home-info-card .distb-goal{font-size:7.2px;white-space:nowrap}
+  .may-home-info-card .distb-track{height:6px}
+  .may-home-info-card .distb-reward{min-height:12px;margin-top:5px;font-size:7.5px;line-height:1.25}
+  .may-home-info-card .distb-pill{padding:1px 4px;font-size:7px}
+  .may-home-info-visual,.may-home-list-visual{height:100%;min-height:0;background:transparent}
+  .may-home-info-visual::after{background:linear-gradient(90deg,#dcebf5 0%,rgba(220,235,245,.22) 26%,transparent 62%)}
+  .may-home-list-visual::after{background:linear-gradient(90deg,#456b89 0%,rgba(69,107,137,.18) 24%,transparent 58%)}
+  .may-home-info-visual img,.may-home-list-visual img{width:100%;height:100%;padding:0;object-fit:cover;object-position:center}
+  .may-home-list-copy p{max-width:190px;margin-top:10px;font-size:9.3px;line-height:1.42}
+  .may-home-list-cta{margin-top:13px;padding:8px 10px;font-size:8.5px;white-space:nowrap}
+}
+
+@media(max-width:350px){
+  .may-redesign .header-inner{padding-left:104px}
+  .may-redesign .header .logo-wrap{left:10px;width:80px;height:80px}
+  .may-mobile-header-btn,.may-redesign .hd-accesos>.hd-acceso:nth-child(2){width:38px;height:38px}
+  .may-redesign .may-home-hero-copy{left:17px;right:17px}
+  .may-redesign .may-home-hero p{max-width:218px;font-size:10.5px}
+  .may-home-hero-benefits{left:-17px}
+  .may-home-info-card,.may-home-list-card{grid-template-columns:minmax(0,1.55fr) minmax(102px,.82fr)}
+  .may-home-info-copy,.may-home-list-copy{padding-left:14px}
+  .may-home-info-card .distb-name,.may-home-list-copy h2{font-size:17px}
+  .may-home-info-card .distb-note{font-size:8.4px}
 }
 </style>
 <div id="tutbOverlay">
@@ -8100,7 +8261,7 @@ window.addEventListener('online', function() {
 /* Navegación exclusiva del tester mayorista. No modifica la lógica del catálogo. */
 (function(){
   function setActive(view){
-    document.querySelectorAll('.hd-nav-link[data-may-view]').forEach(function(btn){
+    document.querySelectorAll('.hd-nav-link[data-may-view],.may-mobile-nav-link[data-may-view]').forEach(function(btn){
       var active=btn.getAttribute('data-may-view')===view;
       btn.classList.toggle('active',active);
       if(active)btn.setAttribute('aria-current','page');
@@ -8108,11 +8269,30 @@ window.addEventListener('online', function() {
     });
   }
 
+  window.mayToggleMobileSearch=function(open){
+    var shouldOpen=open!==false;
+    if(!shouldOpen){
+      var results=document.getElementById('maySearchResults');
+      if(results&&results.classList.contains('active')&&typeof window.cerrarBusquedaMay==='function'){
+        window.cerrarBusquedaMay();
+      }
+    }
+    document.body.classList.toggle('may-mobile-search-open',shouldOpen);
+    if(shouldOpen){
+      if(typeof closeMayCatsDropdown==='function')closeMayCatsDropdown();
+      requestAnimationFrame(function(){
+        var input=document.querySelector('.header .hd-buscador .compact-search');
+        if(input){input.focus();input.select();}
+      });
+    }
+  };
+
   window.mayShowHome=function(options){
     options=options||{};
     document.body.classList.add('may-home-view');
     document.body.classList.remove('may-offers-view');
     document.body.classList.remove('compact-on');
+    window.mayToggleMobileSearch(false);
     setActive('home');
     if(typeof closeAllHdrops==='function')closeAllHdrops();
     if(typeof closeMayCatsDropdown==='function')closeMayCatsDropdown();
@@ -8124,6 +8304,7 @@ window.addEventListener('online', function() {
     options=options||{};
     document.body.classList.remove('may-home-view');
     document.body.classList.remove('may-offers-view');
+    if(!options.keepSearch)window.mayToggleMobileSearch(false);
     setActive('productos');
     if(typeof window.switchTab==='function')window.switchTab('mayorista');
     if(options.scroll!==false){
@@ -8138,6 +8319,7 @@ window.addEventListener('online', function() {
   window.mayShowSoon=function(){
     document.body.classList.remove('may-home-view','compact-on');
     document.body.classList.add('may-offers-view');
+    window.mayToggleMobileSearch(false);
     setActive('ofertas');
     if(typeof closeAllHdrops==='function')closeAllHdrops();
     if(typeof closeMayCatsDropdown==='function')closeMayCatsDropdown();
@@ -8148,11 +8330,21 @@ window.addEventListener('online', function() {
   if(typeof originalSearch==='function'){
     window.compactOnSearch=function(value){
       if(String(value||'').trim()&&(document.body.classList.contains('may-home-view')||document.body.classList.contains('may-offers-view'))){
-        window.mayShowProducts({scroll:false});
+        window.mayShowProducts({scroll:false,keepSearch:true});
       }
       originalSearch(value);
+      if(document.body.classList.contains('may-mobile-search-open')){
+        requestAnimationFrame(function(){
+          var input=document.querySelector('.header .hd-buscador .compact-search');
+          if(input&&document.activeElement!==input){try{input.focus({preventScroll:true});}catch(e){input.focus();}}
+        });
+      }
     };
   }
+
+  document.addEventListener('keydown',function(event){
+    if(event.key==='Escape'&&document.body.classList.contains('may-mobile-search-open'))window.mayToggleMobileSearch(false);
+  });
 
   setActive('home');
 })();
