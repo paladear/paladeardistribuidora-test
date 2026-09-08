@@ -1632,6 +1632,64 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
   </div>
 </section>
 
+<!-- Continuación del Home: condiciones, lista completa y categorías destacadas. -->
+<main class="may-home-content" aria-label="Información mayorista">
+  <div class="may-home-shell">
+    <section class="may-home-info-card" aria-labelledby="distbTitle">
+      <div class="may-home-info-copy">
+        <span class="may-home-section-kicker">Cómo comprar</span>
+        <div class="distb-top">
+          <span class="distb-name">Tu primer pedido, paso a paso</span>
+          <span class="distb-go">Solo bulto cerrado</span>
+        </div>
+        <div class="distb-title" id="distbTitle">Condición especial para tu primer pedido</div>
+        <div class="distb-note" id="distbNote">Realizá tu primer pedido alcanzando el mínimo de compra: <b>$250.000</b>.<br>A partir de tu segundo pedido, comprás <b>SIN MÍNIMO</b>.</div>
+        <div class="distb-mlabel" id="distbLabel"><span class="distb-cnt" id="distbCnt">$0</span><span class="distb-goal" id="distbGoal">Mínimo 1er pedido: $250.000</span></div>
+        <div class="distb-track" id="distbTrack"><div class="distb-fill" id="distbFill"></div></div>
+        <div class="distb-reward" id="distbRw"><span class="distb-pill">✓</span> Alcanzá el mínimo para enviar tu primer pedido</div>
+        <div class="distb-conditions">
+          <span>Venta únicamente por bulto cerrado</span>
+          <span>Precios sin IVA</span>
+        </div>
+      </div>
+      <div class="may-home-info-visual" aria-hidden="true">
+        <img src="home-compra-mayorista.webp" width="1100" height="825" alt="">
+      </div>
+    </section>
+
+    <a class="may-home-list-card" href="catalogo.html" aria-label="Abrir la lista mayorista completa">
+      <div class="may-home-list-copy">
+        <span class="may-home-section-kicker">Catálogo completo</span>
+        <h2>Precios y presentaciones,<br>en una sola lista</h2>
+        <p>Consultá todos los productos con su precio por unidad y por bulto.</p>
+        <span class="may-home-list-cta">Ver la lista completa <span aria-hidden="true">→</span></span>
+      </div>
+      <div class="may-home-list-visual" aria-hidden="true">
+        <img src="home-lista-mayorista.webp" width="1100" height="825" alt="">
+      </div>
+    </a>
+
+    <section class="may-home-categories" aria-labelledby="mayHomeCatsTitle">
+      <div class="may-home-section-head">
+        <div>
+          <span class="may-home-section-kicker">Explorá el catálogo</span>
+          <h2 id="mayHomeCatsTitle">Categorías destacadas</h2>
+        </div>
+        <button type="button" onclick="mayOpenCategories(this)">Ver todas <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="may-home-cats-grid">
+        <button type="button" class="may-home-cat" onclick="mayChooseHeaderCat('frutos')"><img src="cat-home-frutos.webp" width="720" height="720" alt="Frutos secos en un cuenco"><span>Frutos secos</span></button>
+        <button type="button" class="may-home-cat" onclick="mayChooseHeaderCat('deshidratados')"><img src="cat-home-deshidratados.webp" width="720" height="720" alt="Frutas deshidratadas"><span>Deshidratados</span></button>
+        <button type="button" class="may-home-cat" onclick="mayChooseHeaderCat('semillas')"><img src="cat-home-semillas.webp" width="720" height="720" alt="Selección de semillas"><span>Semillas</span></button>
+        <button type="button" class="may-home-cat" onclick="mayChooseHeaderCat('infusiones')"><img src="cat-home-infusiones.webp" width="720" height="720" alt="Infusión de hierbas"><span>Infusiones</span></button>
+        <button type="button" class="may-home-cat" onclick="mayChooseHeaderCat('cereales')"><img src="cat-home-cereales.webp" width="720" height="720" alt="Cereales en un cuenco"><span>Cereales</span></button>
+        <button type="button" class="may-home-cat" onclick="mayChooseHeaderCat('harinas')"><img src="cat-home-harinas.webp" width="720" height="720" alt="Selección de harinas"><span>Harinas</span></button>
+        <button type="button" class="may-home-cat may-home-cat-more" onclick="mayOpenCategories(this)"><img src="cat-home-mas.webp" width="720" height="720" alt="Variedad de productos mayoristas"><span>Más categorías</span></button>
+      </div>
+    </section>
+  </div>
+</main>
+
 <section class="may-offers-soon" id="mayOffersSoon" aria-labelledby="mayOffersTitle">
   <div class="may-offers-soon-card">
     <span>Ofertas mayoristas</span>
@@ -1801,80 +1859,10 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
 </div>
 
 <div style="max-width:1100px;margin:0 auto;padding:0 20px 30px" id="mayoristaSection" class="mayorista-section">
-  <!-- Condiciones de compra — jerarquía minorista con paleta de Ofertas -->
-  <style>
-    .distb-wrap{margin:18px auto 30px;max-width:680px}
-    .distb-banner{position:relative;overflow:hidden;background:radial-gradient(circle at 6% 16%,rgba(212,84,60,.08) 0 46px,transparent 47px),radial-gradient(circle at 95% 88%,rgba(212,84,60,.08) 0 72px,transparent 73px),linear-gradient(135deg,#fdefd8 0%,#fbe2bd 100%);border:2px solid #d4543c;border-radius:20px;padding:26px 28px;font-family:'Montserrat',sans-serif;box-shadow:0 5px 18px rgba(158,66,37,.13)}
-    .distb-top{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;row-gap:7px}
-    .distb-ic{width:28px;height:28px;object-fit:contain;flex-shrink:0}
-    .distb-name{font-size:18px;font-weight:800;color:#b04020}
-    .distb-go{font-size:12.5px;font-weight:700;color:#b04020;margin-left:auto;background:rgba(255,255,255,.72);border:1px solid rgba(212,84,60,.28);padding:4px 13px;border-radius:20px;white-space:nowrap}
-    .distb-title{font-size:13px;font-weight:800;color:#b04020;letter-spacing:.6px;text-transform:uppercase;margin-bottom:8px;line-height:1.3}
-    .distb-note{font-size:14px;color:#745b4f;font-weight:600;margin-bottom:18px;line-height:1.6}
-    .distb-note b{color:#b04020}
-    .distb-bulto{margin-top:14px;background:rgba(255,255,255,.72);border:1px solid rgba(212,84,60,.28);border-radius:12px;padding:10px 13px;font-size:13.5px;font-weight:700;color:#b04020;text-align:center;line-height:1.45}
-    .distb-iva{display:inline-block;margin-top:7px}
-    .distb-mlabel{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
-    .distb-cnt{font-size:20px;font-weight:800;color:#1a3050;font-variant-numeric:tabular-nums}
-    .distb-goal{font-size:12px;font-weight:600;color:#8a6a5d}
-    .distb-track{height:14px;background:#efd7cb;border-radius:8px;overflow:hidden}
-    .distb-fill{height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,#d4543c,#e58a72);transition:width .5s ease}
-    .distb-reward{margin-top:14px;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:800;color:#b04020;opacity:0;transform:translateY(5px);transition:all .4s;min-height:20px}
-    .distb-reward.on{opacity:1;transform:none}
-    .distb-pill{font-size:11px;padding:3px 9px;border-radius:20px;color:#fff;background:#d4543c;white-space:nowrap}
-    @media(max-width:600px){.distb-banner{padding:20px 18px}.distb-go{margin-left:0}.distb-note{margin-bottom:15px}}
-  </style>
-  <div class="distb-wrap">
-    <div class="distb-banner" id="distBanner">
-      <div class="distb-top">
-        <img class="distb-ic" src="icon-mayorista.png" alt="">
-        <span class="distb-name">Venta Mayorista</span>
-        <span class="distb-go">Solo bulto cerrado</span>
-      </div>
-      <div class="distb-title" id="distbTitle">Condición especial para tu primer pedido</div>
-      <div class="distb-note" id="distbNote">🛒 Realizá tu primer pedido alcanzando el mínimo de compra: <b>$250.000</b>.<br>✨ A partir de tu segundo pedido, comprás <b>SIN MÍNIMO</b>.</div>
-      <div class="distb-mlabel" id="distbLabel"><span class="distb-cnt" id="distbCnt">$0</span><span class="distb-goal" id="distbGoal">Mínimo 1er pedido: $250.000</span></div>
-      <div class="distb-track" id="distbTrack"><div class="distb-fill" id="distbFill"></div></div>
-      <div class="distb-reward" id="distbRw"><span class="distb-pill">✓</span> Alcanzá el mínimo para enviar tu primer pedido</div>
-      <div class="distb-bulto">📦 La venta es <b>únicamente por bulto cerrado</b>.<br><span class="distb-iva">🧾 Los precios expresados en este catálogo<br><b>NO INCLUYEN IVA</b>.</span></div>
-    </div>
-  </div>
-  <style>
-    /* ── Acceso a la lista sábana, con el mismo aire que el banner de arriba ── */
-    .listamay-wrap{margin:-14px auto 30px;max-width:680px}
-    .listamay{display:flex;align-items:center;gap:18px;background:linear-gradient(135deg,#4a6b85 0%,#6f96b5 100%);border-radius:18px;padding:20px 22px;box-shadow:0 4px 18px rgba(60,95,125,.28);text-decoration:none;transition:transform .2s,box-shadow .2s}
-    .listamay:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(60,95,125,.42)}
-    .lista-banner-ic{flex-shrink:0;width:56px;height:68px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.2))}
-    .listamay-txt{flex:1;min-width:0}
-    .listamay-txt h3{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;color:#fff;margin:0 0 3px}
-    .listamay-txt p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.45;margin:0}
-    .listamay-btn{background:#fff;color:#3d5a72;border:none;border-radius:10px;padding:11px 18px;font-size:14px;font-weight:800;white-space:nowrap;cursor:pointer;font-family:inherit;flex-shrink:0}
-    @media(max-width:600px){
-      .listamay{flex-direction:column;text-align:center;gap:12px;padding:20px 18px}
-      .lista-banner-ic{width:48px;height:58px}
-      .listamay-btn{width:100%}
-    }
-  </style>
-  <div class="listamay-wrap">
-    <a class="listamay" href="catalogo.html">
-      <svg class="lista-banner-ic" viewBox="0 0 64 78" fill="none" aria-hidden="true"><rect x="8" y="4" width="48" height="70" rx="6" fill="#fff" fill-opacity=".96"/><rect x="16" y="15" width="15" height="4" rx="2" fill="#b04020"/><rect x="36" y="15" width="12" height="4" rx="2" fill="#e0a08c"/><rect x="16" y="27" width="15" height="4" rx="2" fill="#b04020"/><rect x="36" y="27" width="12" height="4" rx="2" fill="#e0a08c"/><rect x="16" y="39" width="15" height="4" rx="2" fill="#b04020"/><rect x="36" y="39" width="12" height="4" rx="2" fill="#e0a08c"/><rect x="16" y="51" width="15" height="4" rx="2" fill="#b04020"/><rect x="36" y="51" width="12" height="4" rx="2" fill="#e0a08c"/><rect x="16" y="63" width="32" height="4" rx="2" fill="#f0cec2"/></svg>
-      <div class="listamay-txt">
-        <h3>Lista mayorista</h3>
-        <p>Todos los productos con su precio por unidad y por bulto, en una sola hoja</p>
-      </div>
-      <span class="listamay-btn">Ver la lista →</span>
-    </a>
-  </div>
-
-  <!-- La barra ya no anima sola: refleja el carrito real (ver _pintarDistBanner) -->
-  <h2 class="dist-cat-title">Explorá por categoría</h2>
   <!-- Búsqueda y categorías ahora viven en el compact-header (al scrollear) -->
   <input type="hidden" id="searchInputMay">
   <div id="maySearchResults" class="hidden"></div>
   <div class="main-layout">
-    <div class="cats-sidebar">
-      <div id="mayCatsSidebarList"></div>
-    </div>
     <div id="mayDesktopProdsArea"></div>
   </div>
   <div class="mobile-prods-area hidden" id="mayMobileProdsArea"></div>
@@ -4992,12 +4980,12 @@ function renderMayCarrusel() {
       .sort((a, b) => a.n.localeCompare(b.n, 'es'));
 
     function buildAllMay(suffix) {
-      let h = `<div class="catalog-intro">
+      let h = `<div class="may-catalog-heading">
         <div>
-          <h1>Todos los productos</h1>
-          <p>Explorá el catálogo completo o elegí un rubro para filtrar.</p>
+          <span>Venta por bulto cerrado</span>
+          <h1>Catálogo mayorista</h1>
         </div>
-        <button class="catalog-filter-btn" onclick="toggleMayCatsDropdown()"><span aria-hidden="true">☰</span> Rubros</button>
+        <button class="catalog-filter-btn" onclick="toggleMayCatsDropdown()"><span aria-hidden="true">☰</span> Categorías</button>
       </div>`;
       catsSorted.forEach(cat => {
         const prods = PRODS_MAY.filter(p => p[1] === cat.id).sort((a, b) => a[2].localeCompare(b[2], 'es', { sensitivity: 'base' }));
@@ -7344,6 +7332,92 @@ window.addEventListener('online', function() {
 .may-cat-menu-arrow{color:#7e9aae;font-size:17px;transition:transform .16s ease}
 .may-cat-menu-btn:hover .may-cat-menu-arrow{transform:translateX(2px)}
 
+/* Home editorial mayorista: la información operativa sale del catálogo. */
+.may-home-content{display:none;background:#edf5f9;padding:76px 0 90px;color:#173e60}
+.may-redesign.may-home-view .may-home-content{display:block}
+.may-home-shell{width:min(1376px,calc(100% - 64px));margin:0 auto}
+.may-home-section-kicker{display:block;margin-bottom:12px;color:#a95138;font-size:12px;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+.may-home-info-card{
+  position:relative;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(380px,.92fr);min-height:410px;
+  overflow:hidden;border:1px solid rgba(168,78,52,.18);border-radius:32px;background:#f2c9ad;
+  box-shadow:0 20px 54px rgba(81,69,55,.13)
+}
+.may-home-info-copy{position:relative;z-index:2;padding:clamp(34px,4.2vw,62px);align-self:center}
+.may-home-info-card .distb-top{display:flex;align-items:center;gap:14px;margin:0 0 18px;flex-wrap:wrap}
+.may-home-info-card .distb-name{color:#173e60;font-size:clamp(25px,2.35vw,36px);font-weight:850;letter-spacing:-.035em;line-height:1.08}
+.may-home-info-card .distb-go{padding:7px 12px;border:1px solid rgba(169,81,56,.24);border-radius:999px;background:rgba(255,249,242,.66);color:#93462f;font-size:11px;font-weight:800;white-space:nowrap}
+.may-home-info-card .distb-title{margin-bottom:7px;color:#a24d34;font-size:12px;font-weight:850;letter-spacing:.09em;text-transform:uppercase}
+.may-home-info-card .distb-note{max-width:620px;margin-bottom:24px;color:#614f46;font-size:14px;font-weight:560;line-height:1.65}
+.may-home-info-card .distb-note b{color:#80412f;font-weight:850}
+.may-home-info-card .distb-mlabel{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:9px}
+.may-home-info-card .distb-cnt{color:#173e60;font-size:22px;font-weight:850;font-variant-numeric:tabular-nums}
+.may-home-info-card .distb-goal{color:#765f53;font-size:11.5px;font-weight:700;text-align:right}
+.may-home-info-card .distb-track{height:12px;overflow:hidden;border-radius:999px;background:rgba(255,250,245,.72);box-shadow:inset 0 1px 2px rgba(102,58,43,.12)}
+.may-home-info-card .distb-fill{height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,#b75f43,#d98968);transition:width .5s ease}
+.may-home-info-card .distb-reward{display:flex;align-items:center;gap:7px;min-height:18px;margin-top:10px;color:#8c442f;font-size:12px;font-weight:800;opacity:0;transform:translateY(4px);transition:opacity .3s ease,transform .3s ease}
+.may-home-info-card .distb-reward.on{opacity:1;transform:none}
+.may-home-info-card .distb-pill{padding:2px 7px;border-radius:999px;background:#a85037;color:#fff;font-size:9px}
+.distb-conditions{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+.distb-conditions span{padding:8px 11px;border:1px solid rgba(83,61,48,.12);border-radius:10px;background:rgba(255,250,245,.57);color:#634f44;font-size:11px;font-weight:750}
+.may-home-info-visual{position:relative;min-height:100%}
+.may-home-info-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#f2c9ad 0%,rgba(242,201,173,.42) 18%,transparent 49%);pointer-events:none}
+.may-home-info-visual img{width:100%;height:100%;display:block;object-fit:cover;object-position:59% center}
+
+.may-home-list-card{
+  display:grid;grid-template-columns:minmax(0,1.04fr) minmax(360px,.96fr);height:330px;min-height:330px;margin-top:28px;
+  overflow:hidden;border:1px solid rgba(74,99,64,.14);border-radius:30px;background:#dce3d4;color:#173e60;
+  text-decoration:none;box-shadow:0 16px 45px rgba(53,77,59,.11);transition:transform .22s ease,box-shadow .22s ease
+}
+.may-home-list-card:hover{transform:translateY(-3px);box-shadow:0 22px 52px rgba(53,77,59,.16)}
+.may-home-list-card:focus-visible{outline:3px solid #4d7593;outline-offset:4px}
+.may-home-list-copy{position:relative;z-index:2;padding:clamp(34px,4vw,58px);align-self:center}
+.may-home-list-copy .may-home-section-kicker{color:#5d7654}
+.may-home-list-copy h2{margin:0;color:#173e60;font-size:clamp(28px,2.7vw,42px);font-weight:850;letter-spacing:-.04em;line-height:1.08}
+.may-home-list-copy p{max-width:590px;margin:15px 0 0;color:#536657;font-size:14px;line-height:1.55}
+.may-home-list-cta{display:inline-flex;align-items:center;gap:10px;margin-top:24px;padding:12px 18px;border-radius:999px;background:#173e60;color:#fff;font-size:12.5px;font-weight:800}
+.may-home-list-cta span{font-size:18px;line-height:0;transition:transform .18s ease}
+.may-home-list-card:hover .may-home-list-cta span{transform:translateX(3px)}
+.may-home-list-visual{position:relative;height:100%;min-height:0;overflow:hidden}
+.may-home-list-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#dce3d4 0%,rgba(220,227,212,.35) 22%,transparent 52%)}
+.may-home-list-visual img{width:100%;height:100%;display:block;object-fit:cover;object-position:51% center}
+
+.may-home-categories{padding-top:76px}
+.may-home-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:24px}
+.may-home-section-head .may-home-section-kicker{margin-bottom:8px;color:#5e7c91}
+.may-home-section-head h2{margin:0;color:#173e60;font-size:clamp(29px,3vw,43px);font-weight:850;letter-spacing:-.04em;line-height:1.08}
+.may-home-section-head button{display:inline-flex;align-items:center;gap:8px;padding:10px 0;border:0;background:transparent;color:#315d7e;font-family:inherit;font-size:13px;font-weight:800;white-space:nowrap}
+.may-home-section-head button:hover{color:#173e60}
+.may-home-section-head button:focus-visible,.may-home-cat:focus-visible{outline:3px solid #6e94ae;outline-offset:4px}
+.may-home-cats-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:14px}
+.may-home-cat{position:relative;min-width:0;aspect-ratio:.78;overflow:hidden;border:0;border-radius:22px;background:#dccfbb;box-shadow:0 10px 28px rgba(42,60,45,.12);isolation:isolate;transition:transform .22s ease,box-shadow .22s ease}
+.may-home-cat::after{content:"";position:absolute;inset:38% 0 0;z-index:1;background:linear-gradient(180deg,transparent,rgba(20,42,35,.76))}
+.may-home-cat img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .35s ease}
+.may-home-cat span{position:absolute;left:16px;right:12px;bottom:17px;z-index:2;color:#fff;font-size:13px;font-weight:800;line-height:1.15;text-align:left;text-shadow:0 1px 7px rgba(0,0,0,.36)}
+.may-home-cat:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(42,60,45,.17)}
+.may-home-cat:hover img{transform:scale(1.045)}
+
+/* Catálogo mayorista sin columna lateral. */
+.may-redesign .mayorista-section{max-width:1380px!important;padding:86px clamp(18px,3vw,42px) 42px!important}
+.may-redesign .mayorista-section>.main-layout{display:block!important}
+.may-redesign .mayorista-section .cats-sidebar{display:none!important}
+.may-redesign .mayorista-section .dist-cat-title{display:none}
+.may-redesign .mayorista-section .catalog-intro{margin-top:0}
+.may-catalog-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin:0 0 30px;padding:0 2px 20px;border-bottom:1px solid rgba(61,93,116,.17)}
+.may-catalog-heading>div>span{display:block;margin-bottom:7px;color:#6f8798;font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.may-catalog-heading h1{margin:0;color:#173e60;font-size:clamp(28px,3vw,40px);font-weight:850;letter-spacing:-.04em;line-height:1}
+.may-catalog-heading .catalog-filter-btn{flex:0 0 auto;border-radius:999px;background:#456b89;color:#fff;box-shadow:0 7px 18px rgba(45,78,103,.16)}
+.may-catalog-heading .catalog-filter-btn:hover{background:#345c7b;transform:translateY(-1px)}
+@media(min-width:768px){
+  .may-redesign .mayorista-section .prod-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+}
+@media(min-width:1080px){
+  .may-redesign .mayorista-section .prod-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+}
+@media(min-width:1540px){
+  .may-redesign .mayorista-section{max-width:1500px!important}
+  .may-redesign .mayorista-section .prod-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+}
+
 @media(max-width:1120px){
   .may-redesign .header{--may-logo-size:116px}
   .may-redesign .header-inner{padding-left:150px;padding-right:24px;gap:20px}
@@ -7356,6 +7430,9 @@ window.addEventListener('online', function() {
   .may-redesign .hd-nav-link{min-width:86px;padding-inline:13px}
   .may-redesign .may-cats-panel{left:150px}
   .may-redesign .may-cats-panel .cats-dropdown-list{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .may-home-shell{width:min(100% - 36px,1040px)}
+  .may-home-cats-grid{display:flex;gap:13px;overflow-x:auto;padding:2px 2px 18px;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:rgba(65,94,80,.26) transparent}
+  .may-home-cat{flex:0 0 170px;scroll-snap-align:start}
 }
 @media(max-width:760px){
   .may-redesign .header{--may-head-h:68px;--may-logo-size:64px}
@@ -7401,6 +7478,59 @@ window.addEventListener('online', function() {
   .may-cat-thumb{width:42px;height:42px;border-radius:10px}
   .may-cat-menu-arrow{display:none}
   .may-cat-menu-name{font-size:11.5px}
+  .may-home-content{padding:34px 0 58px}
+  .may-home-shell{width:calc(100% - 28px)}
+  .may-home-info-card{display:flex;min-height:0;flex-direction:column;border-radius:24px}
+  .may-home-info-copy{padding:27px 22px 22px}
+  .may-home-info-card .distb-top{display:block;margin-bottom:15px}
+  .may-home-info-card .distb-name{display:block;font-size:27px}
+  .may-home-info-card .distb-go{display:inline-block;margin-top:11px}
+  .may-home-info-card .distb-note{font-size:13px;line-height:1.55}
+  .may-home-info-card .distb-mlabel{align-items:flex-start}
+  .may-home-info-card .distb-cnt{font-size:20px}
+  .may-home-info-card .distb-goal{max-width:145px;font-size:10.5px}
+  .distb-conditions{margin-top:16px}
+  .distb-conditions span{font-size:10px}
+  .may-home-info-visual{height:190px;min-height:190px;order:2}
+  .may-home-info-visual::after{background:linear-gradient(180deg,#f2c9ad 0%,rgba(242,201,173,.22) 27%,transparent 58%)}
+  .may-home-info-visual img{object-position:center 58%}
+  .may-home-list-card{display:flex;height:auto;min-height:0;flex-direction:column;margin-top:18px;border-radius:24px}
+  .may-home-list-copy{padding:27px 22px 24px}
+  .may-home-list-copy h2{font-size:27px}
+  .may-home-list-copy p{font-size:13px}
+  .may-home-list-cta{margin-top:19px}
+  .may-home-list-visual{height:188px;min-height:188px}
+  .may-home-list-visual::after{background:linear-gradient(180deg,#dce3d4 0%,rgba(220,227,212,.24) 27%,transparent 60%)}
+  .may-home-categories{padding-top:48px}
+  .may-home-section-head{align-items:center;margin-bottom:19px}
+  .may-home-section-head h2{font-size:29px}
+  .may-home-section-head button{font-size:12px}
+  .may-home-cat{flex-basis:152px;border-radius:19px}
+  .may-home-cat span{left:14px;bottom:15px;font-size:12px}
+  .may-redesign .mayorista-section{padding-top:70px!important}
+  .may-catalog-heading{align-items:center;margin-bottom:22px;padding-bottom:16px}
+  .may-catalog-heading h1{font-size:27px}
+  .may-catalog-heading>div>span{font-size:9px;letter-spacing:.1em}
+  .may-catalog-heading .catalog-filter-btn{min-height:42px;padding-inline:14px;font-size:11px}
+  .may-redesign .mayorista-section .prod-grid{gap:10px}
+  .may-redesign .mayorista-section .pcard{border-radius:12px}
+  .may-redesign .mayorista-section .pcard-img{height:150px;font-size:38px}
+  .may-redesign .mayorista-section .pcard-img img{padding:7px}
+  .may-redesign .mayorista-section .pcard-body{padding:10px}
+  .may-redesign .mayorista-section .pcard-name{font-size:13px;line-height:1.3}
+  .may-redesign .mayorista-section .pcard-brand{display:none}
+  .may-redesign .mayorista-section .info-btn{width:24px;height:24px;font-size:12px}
+  .may-redesign .mayorista-section .bulto-badge{padding:2px 6px;font-size:10px}
+  .may-redesign .mayorista-section .prices{margin:7px 0 8px}
+  .may-redesign .mayorista-section .price-label{font-size:9px;letter-spacing:.35px}
+  .may-redesign .mayorista-section .price-min{font-size:15px}
+  .may-redesign .mayorista-section .price-unit{font-size:10.5px}
+  .may-redesign .mayorista-section .qty-row{gap:6px;margin-bottom:8px}
+  .may-redesign .mayorista-section .qty-btn{width:32px;height:32px;font-size:18px}
+  .may-redesign .mayorista-section .qty-val{min-width:22px;font-size:15px}
+  .may-redesign .mayorista-section .add-btn{min-height:42px;padding:9px 5px;gap:5px;font-size:11.5px;white-space:nowrap}
+  .may-redesign .mayorista-section .allcat-sec{margin-bottom:30px}
+  .may-redesign .mayorista-section .allcat-name{font-size:16px}
 }
 </style>
 <div id="tutbOverlay">
@@ -7439,7 +7569,6 @@ window.addEventListener('online', function() {
 <script>
 (function(){
   var FLAG='pld_may_tutorial_last';
-  var INTERVALO_MIN=30;
   function animMeter(cntId,fillId,rwId,target,dur){
     var cnt=document.getElementById(cntId),fill=document.getElementById(fillId),rw=document.getElementById(rwId),start=null,crossed=false;
     function step(ts){if(!start)start=ts;var t=Math.min((ts-start)/dur,1),e=1-Math.pow(1-t,3);
@@ -7449,7 +7578,7 @@ window.addEventListener('online', function() {
   }
   window.cerrarTutorial=function(){
     document.getElementById('tutbOverlay').classList.remove('tutb-show');
-    try{localStorage.setItem(FLAG,String(Date.now()));}catch(e){}
+    try{localStorage.setItem(FLAG,'visto');}catch(e){}
   };
   window.tutorialIr=function(tab){
     try{
@@ -7460,16 +7589,15 @@ window.addEventListener('online', function() {
   };
   function mostrar(){
     try{
-      var last=parseInt(localStorage.getItem(FLAG)||'0',10);
-      if(last&&(Date.now()-last)<INTERVALO_MIN*60*1000)return;
+      if(localStorage.getItem(FLAG))return;
     }catch(e){}
     var ov=document.getElementById('tutbOverlay');
     if(!ov)return;
-    try{localStorage.setItem(FLAG,String(Date.now()));}catch(e){}
+    try{localStorage.setItem(FLAG,'visto');}catch(e){}
     ov.classList.add('tutb-show');
     setTimeout(function(){animMeter('tutbCntMay','tutbFillMay','tutbRwMay',250000,1700);},350);
   }
-  // Mostrar al entrar; una recarga inmediata respeta el enfriamiento de 30 minutos.
+  // Mostrar una sola vez por dispositivo/navegador.
   if(document.readyState==='complete') setTimeout(mostrar,500);
   else window.addEventListener('load',function(){setTimeout(mostrar,500);});
 })();
