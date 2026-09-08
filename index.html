@@ -1632,9 +1632,41 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
   </div>
 </section>
 
-<!-- Continuación del Home: condiciones, lista completa y categorías destacadas. -->
-<main class="may-home-content" aria-label="Información mayorista">
-  <div class="may-home-shell">
+<!-- Continuación del Home: categorías, destacados e información comercial. -->
+<main class="may-home-content" aria-label="Inicio mayorista">
+  <section class="may-home-band may-home-band-categories" aria-labelledby="mayHomeCatsTitle">
+    <div class="may-home-shell may-home-categories">
+      <div class="may-home-section-head">
+        <div>
+          <span class="may-home-section-kicker">Explorá el catálogo</span>
+          <h2 id="mayHomeCatsTitle">Comprá por categoría</h2>
+        </div>
+        <div class="may-home-carousel-controls" aria-label="Controles del carrusel">
+          <button type="button" onclick="scrollMayHomeCats(-1)" aria-label="Categorías anteriores">←</button>
+          <button type="button" onclick="scrollMayHomeCats(1)" aria-label="Categorías siguientes">→</button>
+        </div>
+      </div>
+      <div class="may-home-cats-carousel">
+        <div class="may-home-cats-grid" id="mayHomeCatsTrack" aria-label="Todas las categorías"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="may-home-band may-home-band-featured" aria-labelledby="mayHomeFeaturedTitle">
+    <div class="may-home-shell may-home-featured">
+      <div class="may-home-section-head">
+        <div>
+          <span class="may-home-section-kicker">Selección natural</span>
+          <h2 id="mayHomeFeaturedTitle">Productos destacados</h2>
+        </div>
+        <button type="button" class="may-home-text-link" onclick="mayShowProducts()">Ver catálogo <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="may-home-featured-grid" id="mayHomeFeaturedGrid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="may-home-band may-home-band-info" aria-label="Condiciones de compra mayorista">
+   <div class="may-home-shell">
     <section class="may-home-info-card" aria-labelledby="distbTitle">
       <div class="may-home-info-copy">
         <span class="may-home-section-kicker">Cómo comprar</span>
@@ -1656,7 +1688,11 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
         <img src="home-compra-mayorista.webp" width="1100" height="825" alt="">
       </div>
     </section>
+   </div>
+  </section>
 
+  <section class="may-home-band may-home-band-list" aria-label="Lista mayorista completa">
+   <div class="may-home-shell">
     <a class="may-home-list-card" href="catalogo.html" aria-label="Abrir la lista mayorista completa">
       <div class="may-home-list-copy">
         <span class="may-home-section-kicker">Catálogo completo</span>
@@ -1668,27 +1704,40 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
         <img src="home-lista-mayorista.webp" width="1100" height="825" alt="">
       </div>
     </a>
-
-    <section class="may-home-categories" aria-labelledby="mayHomeCatsTitle">
-      <div class="may-home-section-head">
-        <div>
-          <span class="may-home-section-kicker">Explorá el catálogo</span>
-          <h2 id="mayHomeCatsTitle">Categorías destacadas</h2>
-        </div>
-        <button type="button" onclick="mayOpenCategories(this)">Ver todas <span aria-hidden="true">→</span></button>
-      </div>
-      <div class="may-home-cats-grid">
-        <button type="button" class="may-home-cat" onclick="mayChooseHeaderCat('frutos')"><img src="cat-home-frutos.webp" width="720" height="720" alt="Frutos secos en un cuenco"><span>Frutos secos</span></button>
-        <button type="button" class="may-home-cat" onclick="mayChooseHeaderCat('deshidratados')"><img src="cat-home-deshidratados.webp" width="720" height="720" alt="Frutas deshidratadas"><span>Deshidratados</span></button>
-        <button type="button" class="may-home-cat" onclick="mayChooseHeaderCat('semillas')"><img src="cat-home-semillas.webp" width="720" height="720" alt="Selección de semillas"><span>Semillas</span></button>
-        <button type="button" class="may-home-cat" onclick="mayChooseHeaderCat('infusiones')"><img src="cat-home-infusiones.webp" width="720" height="720" alt="Infusión de hierbas"><span>Infusiones</span></button>
-        <button type="button" class="may-home-cat" onclick="mayChooseHeaderCat('cereales')"><img src="cat-home-cereales.webp" width="720" height="720" alt="Cereales en un cuenco"><span>Cereales</span></button>
-        <button type="button" class="may-home-cat" onclick="mayChooseHeaderCat('harinas')"><img src="cat-home-harinas.webp" width="720" height="720" alt="Selección de harinas"><span>Harinas</span></button>
-        <button type="button" class="may-home-cat may-home-cat-more" onclick="mayOpenCategories(this)"><img src="cat-home-mas.webp" width="720" height="720" alt="Variedad de productos mayoristas"><span>Más categorías</span></button>
-      </div>
-    </section>
-  </div>
+   </div>
+  </section>
 </main>
+
+<footer class="may-home-footer" aria-label="Información de Paladear Distribuidora">
+  <div class="may-home-shell may-home-footer-grid">
+    <div class="may-home-footer-brand">
+      <img src="logo-mayorista-hd.webp" width="640" height="640" alt="Paladear Distribuidora">
+      <div><strong>Paladear Distribuidora</strong><span>Más sabores, más oportunidades.</span></div>
+    </div>
+    <div class="may-home-footer-col">
+      <strong>Depósito mayorista</strong>
+      <a href="https://maps.app.goo.gl/MXySPy9mbBFm8oVaA" target="_blank" rel="noopener noreferrer">Ruta Provincial 50 Nº 13080, KM 8<br>Guaymallén, Mendoza</a>
+    </div>
+    <div class="may-home-footer-col">
+      <strong>Horarios</strong>
+      <span>Lunes a Viernes · 08:00 a 16:00</span>
+      <span>Sábados · 08:00 a 13:00</span>
+    </div>
+    <div class="may-home-footer-col">
+      <strong>Contacto</strong>
+      <a href="https://wa.me/5492615652251" target="_blank" rel="noopener noreferrer">WhatsApp · +54 9 261 565 2251</a>
+      <a href="https://www.instagram.com/paladear.distribuidora" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+  </div>
+  <div class="may-home-shell may-home-footer-bottom">
+    <span>© Paladear Distribuidora</span>
+    <nav aria-label="Enlaces del pie">
+      <button type="button" onclick="mayShowHome()">Inicio</button>
+      <button type="button" onclick="mayShowProducts()">Productos</button>
+      <a href="catalogo.html">Lista completa</a>
+    </nav>
+  </div>
+</footer>
 
 <section class="may-offers-soon" id="mayOffersSoon" aria-labelledby="mayOffersTitle">
   <div class="may-offers-soon-card">
@@ -2039,6 +2088,17 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
 <script>
 (function(){
 const RUBRO_MAP={'FRUTOS SECOS':{id:'frutos',n:'Frutos Secos',ic:'🥜'},'DESHIDRATADOS':{id:'deshidratados',n:'Deshidratados',ic:'🍇'},'SEMILLAS':{id:'semillas',n:'Semillas',ic:'🌻'},'ESPECIAS':{id:'especias',n:'Especias',ic:'🌿'},'INFUSIONES Y HIERBAS':{id:'infusiones',n:'Infusiones y Hierbas',ic:'🍵'},'CEREALES':{id:'cereales',n:'Cereales',ic:'🥣'},'GRANOS Y LEGUMBRES':{id:'granos',n:'Granos y Legumbres',ic:'🫘'},'HARINAS':{id:'harinas',n:'Harinas',ic:'🌾'},'PRODUCTOS SIN TACC':{id:'sintacc',n:'Sin TACC',ic:'🌱'},'DULCES, MIEL Y CHOCOLATES':{id:'dulces',n:'Dulces, Miel y Chocolates',ic:'🍯'},'AZUCAR, CACAO Y REPOSTERIA':{id:'reposteria',n:'Azúcar, Cacao y Repostería',ic:'🍫'},'MANTECAS Y PASTAS':{id:'mantecas',n:'Mantecas y Pastas',ic:'🧈'},'ACEITES Y VINAGRES':{id:'aceites',n:'Aceites y Vinagres',ic:'🫙'},'ACEITUNAS':{id:'aceitunas',n:'Aceitunas',ic:'🫒'},'ENCURTIDOS':{id:'encurtidos',n:'Encurtidos',ic:'🥒'},'TOMATE TRITURADO':{id:'tomate',n:'Tomate',ic:'🍅'},'SNACK':{id:'snack',n:'Snacks',ic:'🍿'},'SUPLEMENTOS':{id:'suplementos',n:'Suplementos',ic:'💊'},'LINEA GOURMET':{id:'gourmet',n:'Línea Gourmet',ic:'⭐'},'BEBIDAS':{id:'bebidas',n:'Bebidas',ic:'🥤'},'VINOS':{id:'vinos',n:'Vinos y Licores',ic:'🍷'},'PRODUCTOS DE FRIO':{id:'frio',n:'Productos de Frío',ic:'❄️'},'PRODUCTOS CONGELADOS':{id:'congelados',n:'Congelados',ic:'🧊'},'PALADEAR HOME':{id:'home',n:'Paladear Home',ic:'🏠'}};
+const MAY_CATEGORY_ASSETS=Object.freeze({
+  aceites:'cat-home-aceites.webp',aceitunas:'cat-home-aceitunas.webp',reposteria:'cat-home-reposteria.webp',
+  bebidas:'cat-home-bebidas.webp',cereales:'cat-home-cereales.webp',congelados:'cat-home-congelados.webp',
+  deshidratados:'cat-home-deshidratados.webp',dulces:'cat-home-dulces.webp',encurtidos:'cat-home-encurtidos.webp',
+  especias:'cat-home-especias.webp',frutos:'cat-home-frutos.webp',granos:'cat-home-granos.webp',
+  harinas:'cat-home-harinas.webp',infusiones:'cat-home-infusiones.webp',gourmet:'cat-home-gourmet.webp',
+  mantecas:'cat-home-mantecas.webp',frio:'cat-home-frio.webp',sintacc:'cat-home-sintacc.webp',
+  semillas:'cat-home-semillas.webp',snack:'cat-home-snack.webp',suplementos:'cat-home-suplementos.webp',
+  tomate:'cat-home-tomate.webp',vinos:'cat-home-vinos.webp',home:'cat-home-home.webp'
+});
+function _mayCatAsset(id){return MAY_CATEGORY_ASSETS[id]||'cat-home-home.webp';}
 let CATS=[],PRODS=[],searchTerm='',activeCatId=null,miniCartTimer=null;
 // Mapa de productos minoristas por productId (se construye bajo demanda).
 // IMPORTANTE: declarado acá arriba —y no más abajo— porque sincronizarDesdeSheets()
@@ -4919,8 +4979,84 @@ function _cargarInfoMay() {
 // Render UI mayorista
 function renderMayUI() {
   renderMayCatsUI();
+  renderMayHomeCategories();
+  renderMayHomeFeatured();
   renderMayCarrusel();
 }
+
+function renderMayHomeCategories(){
+  const track=document.getElementById('mayHomeCatsTrack');
+  if(!track||!CATS_MAY.length)return;
+  const cats=[...CATS_MAY].sort((a,b)=>a.n.localeCompare(b.n,'es',{sensitivity:'base'}));
+  track.innerHTML=cats.map(cat=>`<button type="button" class="may-home-cat" onclick="mayChooseHeaderCat('${cat.id}')">
+    <img src="${_mayCatAsset(cat.id)}" width="512" height="512" alt="" loading="lazy">
+    <span>${_escHtml(cat.n)}</span>
+  </button>`).join('');
+}
+
+function scrollMayHomeCats(direction){
+  const track=document.getElementById('mayHomeCatsTrack');
+  if(!track)return;
+  track.scrollBy({left:direction*Math.max(280,track.clientWidth*.78),behavior:'smooth'});
+}
+window.scrollMayHomeCats=scrollMayHomeCats;
+
+function _mayFeaturedProducts(){
+  const preferred=[
+    {art:'1716',rx:/NUEZ MARIPOSA EXTRA LIGHT/i},
+    {art:'1135',rx:/AVENA ARROLLADA GRUESA/i},
+    {art:'1583',rx:/SEMILLA DE CHIA/i},
+    {art:'1359',rx:/^LENTEJAS\b/i}
+  ];
+  const selected=[];
+  preferred.forEach(pref=>{
+    const p=PRODS_MAY.find(item=>String(item[12]&&item[12].artId||'')===pref.art)||PRODS_MAY.find(item=>pref.rx.test(item[2]||''));
+    if(p&&!selected.includes(p))selected.push(p);
+  });
+  if(selected.length<4){
+    const dietCats=['frutos','semillas','cereales','granos','deshidratados','harinas','infusiones'];
+    dietCats.forEach(catId=>{
+      if(selected.length>=4)return;
+      const p=PRODS_MAY.find(item=>item[1]===catId&&Object.values(item[7]||{})[0]&&Object.values(item[7]||{})[0][0]>0&&!selected.includes(item));
+      if(p)selected.push(p);
+    });
+  }
+  return selected.slice(0,4);
+}
+
+function renderMayHomeFeatured(){
+  const grid=document.getElementById('mayHomeFeaturedGrid');
+  if(!grid)return;
+  if(!PRODS_MAY.length){grid.innerHTML='<div class="may-feature-loading">Cargando selección...</div>';return;}
+  const products=_mayFeaturedProducts();
+  grid.innerHTML=products.map(p=>{
+    const cat=CATS_MAY.find(c=>c.id===p[1]);
+    const options=Object.keys(p[7]||{});
+    const price=options.length?p[7][options[0]][0]:0;
+    const hasImage=p[6]&&/^https?:/i.test(p[6]);
+    const image=hasImage?p[6]:_mayCatAsset(p[1]);
+    return `<article class="may-feature-card">
+      <button type="button" class="may-feature-visual" onclick="mayOpenFeaturedProduct('${p[1]}',${p[0]})" aria-label="Ver ${_escHtml(p[2])}">
+        <img src="${_escHtml(image)}" alt="${_escHtml(p[2])}" loading="lazy" onerror="this.src='${_mayCatAsset(p[1])}'">
+      </button>
+      <div class="may-feature-body">
+        <span class="may-feature-cat">${_escHtml(cat?cat.n:p[3])}</span>
+        <h3>${_tc(p[2])}</h3>
+        <div class="may-feature-meta">${_escHtml(options[0]||'Bulto cerrado')}</div>
+        <div class="may-feature-bottom">
+          <span class="may-feature-price">$${fmt(price)}</span>
+          <button type="button" class="may-feature-go" onclick="mayOpenFeaturedProduct('${p[1]}',${p[0]})">Ver producto</button>
+        </div>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+function mayOpenFeaturedProduct(catId,productId){
+  if(typeof mayShowProducts==='function')mayShowProducts({scroll:false});
+  if(typeof selectMayCat==='function')selectMayCat(catId,productId);
+}
+window.mayOpenFeaturedProduct=mayOpenFeaturedProduct;
 
 function renderMayCatsUI() {
   const isMobile = window.innerWidth < 768;
@@ -4944,10 +5080,7 @@ function renderMayCatsUI() {
       <span class="may-cat-menu-arrow" aria-hidden="true">→</span>
     </button>`;
     dropdownGrid.innerHTML = allButton + sortedCats.map(cat => {
-      const firstWithImage = PRODS_MAY.find(p => p[1] === cat.id && p[6] && /^https?:/i.test(p[6]));
-      const visual = firstWithImage
-        ? `<img src="${_escHtml(firstWithImage[6])}" alt="" loading="lazy" onerror="this.parentNode.textContent='${cat.ic || '🌿'}'">`
-        : (cat.ic || '🌿');
+      const visual = `<img src="${_mayCatAsset(cat.id)}" alt="" loading="lazy" onerror="this.parentNode.textContent='${cat.ic || '🌿'}'">`;
       return `<button class="may-cat-menu-btn${cat.id === activeCatIdMay ? ' active' : ''}" onclick="mayChooseHeaderCat('${cat.id}')">
         <span class="may-cat-thumb" aria-hidden="true">${visual}</span>
         <span class="may-cat-menu-name">${cat.n}</span>
@@ -7531,6 +7664,176 @@ window.addEventListener('online', function() {
   .may-redesign .mayorista-section .add-btn{min-height:42px;padding:9px 5px;gap:5px;font-size:11.5px;white-space:nowrap}
   .may-redesign .mayorista-section .allcat-sec{margin-bottom:30px}
   .may-redesign .mayorista-section .allcat-name{font-size:16px}
+}
+</style>
+<style>
+/* Home mayorista — segunda etapa: ritmo por franjas, carruseles y cierre editorial. */
+.may-redesign .may-home-hero{height:clamp(520px,calc(88svh - 70px),680px);min-height:520px}
+.may-home-content{padding:0;background:#edf5f9;color:#173e60}
+.may-redesign #chat-fab{display:none!important}
+.may-home-band{position:relative;width:100%;padding:58px 0}
+.may-home-band::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:rgba(255,255,255,.46)}
+.may-home-band-categories{padding:44px 0 48px;background:#758467;color:#fff}
+.may-home-band-featured{background:#f5efe4}
+.may-home-band-info{padding:50px 0;background:#ead7ca}
+.may-home-band-list{padding:38px 0 54px;background:#e2e8dc}
+.may-home-shell{width:min(1376px,calc(100% - 64px));margin:0 auto}
+.may-home-categories{padding-top:0}
+.may-home-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:25px}
+.may-home-section-head .may-home-section-kicker{margin-bottom:8px;color:#647f93}
+.may-home-section-head h2{margin:0;color:#173e60;font-size:clamp(28px,2.7vw,40px);font-weight:850;letter-spacing:-.04em;line-height:1.06}
+.may-home-band-categories .may-home-section-kicker{color:rgba(255,255,255,.72)}
+.may-home-band-categories .may-home-section-head h2{color:#fff}
+.may-home-carousel-controls{display:flex;gap:9px}
+.may-home-carousel-controls button{
+  display:grid;place-items:center;width:42px;height:42px;padding:0;border:1px solid rgba(255,255,255,.5);
+  border-radius:50%;background:rgba(255,255,255,.92);color:#31536a;font:800 19px 'Montserrat',sans-serif;
+  box-shadow:0 5px 14px rgba(31,49,31,.12);transition:transform .16s ease,background .16s ease
+}
+.may-home-carousel-controls button:hover{background:#fff;transform:translateY(-2px)}
+.may-home-carousel-controls button:active{transform:scale(.94)}
+.may-home-cats-carousel{overflow:hidden}
+.may-home-cats-grid{
+  display:flex;gap:15px;overflow-x:auto;padding:2px 2px 12px;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  overscroll-behavior-inline:contain;scrollbar-width:none
+}
+.may-home-cats-grid::-webkit-scrollbar{display:none}
+.may-home-cat{
+  position:relative;display:flex;flex:0 0 158px;min-width:0;aspect-ratio:auto;min-height:190px;padding:11px 11px 14px;
+  flex-direction:column;align-items:center;justify-content:flex-start;gap:11px;overflow:hidden;border:1px solid rgba(255,255,255,.48);
+  border-radius:20px;background:#fbf7ef;color:#173e60;box-shadow:0 9px 24px rgba(37,52,34,.15);
+  scroll-snap-align:start;isolation:auto;transition:transform .2s ease,box-shadow .2s ease
+}
+.may-home-cat::after{display:none}
+.may-home-cat img{width:134px;height:134px;display:block;flex:0 0 auto;border-radius:50%;object-fit:cover;transition:transform .3s ease}
+.may-home-cat span{position:static;color:#173e60;font-size:12px;font-weight:800;line-height:1.18;text-align:center;text-shadow:none}
+.may-home-cat:hover{transform:translateY(-4px);box-shadow:0 15px 30px rgba(37,52,34,.2)}
+.may-home-cat:hover img{transform:scale(1.045)}
+.may-home-cat:focus-visible,.may-home-carousel-controls button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+.may-home-text-link{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 0;border:0;background:transparent;color:#315d7e;
+  font:800 13px 'Montserrat',sans-serif;white-space:nowrap
+}
+.may-home-text-link:hover{color:#173e60}
+.may-home-featured-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.may-feature-card{
+  min-width:0;overflow:hidden;border:1px solid rgba(49,77,89,.10);border-radius:20px;background:#fff;
+  box-shadow:0 10px 28px rgba(62,57,45,.09);transition:transform .2s ease,box-shadow .2s ease
+}
+.may-feature-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(62,57,45,.14)}
+.may-feature-visual{display:block;width:100%;height:190px;padding:0;border:0;background:#f4eee4;overflow:hidden}
+.may-feature-visual img{width:100%;height:100%;display:block;object-fit:contain;padding:12px;transition:transform .3s ease}
+.may-feature-card:hover .may-feature-visual img{transform:scale(1.035)}
+.may-feature-body{padding:17px 17px 18px}
+.may-feature-cat{display:block;margin-bottom:7px;color:#6f8465;font-size:9.5px;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+.may-feature-card h3{min-height:38px;margin:0;color:#173e60;font-size:14px;font-weight:800;line-height:1.32}
+.may-feature-meta{margin-top:8px;color:#71808a;font-size:10.5px;font-weight:650}
+.may-feature-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-top:14px}
+.may-feature-price{color:#173e60;font-size:20px;font-weight:850;letter-spacing:-.025em}
+.may-feature-go{padding:9px 13px;border:0;border-radius:999px;background:#456b89;color:#fff;font:800 10.5px 'Montserrat',sans-serif}
+.may-feature-go:focus-visible,.may-feature-visual:focus-visible,.may-home-text-link:focus-visible{outline:3px solid #6f96b2;outline-offset:3px}
+
+.may-home-info-card{
+  grid-template-columns:minmax(0,1.25fr) minmax(330px,.75fr);height:310px;min-height:310px;border-radius:26px;
+  background:#d58565;border-color:rgba(138,67,46,.18);box-shadow:0 15px 40px rgba(102,64,46,.14)
+}
+.may-home-info-copy{padding:30px 38px}
+.may-home-info-card .may-home-section-kicker{margin-bottom:7px;color:#7d3f30}
+.may-home-info-card .distb-top{margin-bottom:11px}
+.may-home-info-card .distb-name{font-size:clamp(24px,2.15vw,32px)}
+.may-home-info-card .distb-note{margin-bottom:14px;line-height:1.48}
+.may-home-info-card .distb-track{height:10px}
+.may-home-info-card .distb-reward{margin-top:7px}
+.distb-conditions{margin-top:12px}
+.distb-conditions span{padding:6px 9px;background:rgba(255,249,241,.52)}
+.may-home-info-visual::after{background:linear-gradient(90deg,#d58565 0%,rgba(213,133,101,.54) 20%,transparent 55%)}
+
+.may-home-list-card{
+  grid-template-columns:minmax(0,1.18fr) minmax(330px,.82fr);height:236px;min-height:236px;margin-top:0;border-radius:25px;
+  background:#7f906f;color:#fff;border-color:rgba(68,92,58,.17);box-shadow:0 14px 36px rgba(54,74,50,.13)
+}
+.may-home-list-copy{padding:28px 38px}
+.may-home-list-copy .may-home-section-kicker{margin-bottom:7px;color:rgba(255,255,255,.72)}
+.may-home-list-copy h2{color:#fff;font-size:clamp(25px,2.35vw,35px)}
+.may-home-list-copy p{margin-top:10px;color:rgba(255,255,255,.87)}
+.may-home-list-cta{margin-top:16px;padding:10px 16px;background:#fff;color:#173e60}
+.may-home-list-visual::after{background:linear-gradient(90deg,#7f906f 0%,rgba(127,144,111,.42) 24%,transparent 57%)}
+
+.may-home-footer{display:none;padding:44px 0 18px;background:#123f63;color:#fff}
+.may-redesign.may-home-view .may-home-footer{display:block}
+.may-home-footer-grid{display:grid;grid-template-columns:1.35fr 1fr .9fr 1fr;gap:38px;align-items:start}
+.may-home-footer-brand{display:flex;align-items:center;gap:15px}
+.may-home-footer-brand img{width:72px;height:72px;border:1.5px solid rgba(255,255,255,.8);border-radius:50%;object-fit:cover;transform:scale(1);background:#456b89}
+.may-home-footer-brand div,.may-home-footer-col{display:flex;flex-direction:column;gap:7px}
+.may-home-footer-brand strong,.may-home-footer-col strong{font-size:13px;font-weight:800}
+.may-home-footer-brand span,.may-home-footer-col span,.may-home-footer-col a{color:rgba(255,255,255,.76);font-size:11px;line-height:1.6;text-decoration:none}
+.may-home-footer-col a:hover{color:#fff;text-decoration:underline}
+.may-home-footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:32px;padding-top:16px;border-top:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.58);font-size:10px}
+.may-home-footer-bottom nav{display:flex;gap:18px}
+.may-home-footer-bottom button,.may-home-footer-bottom a{padding:0;border:0;background:none;color:inherit;font:inherit;text-decoration:none}
+.may-home-footer-bottom button:hover,.may-home-footer-bottom a:hover{color:#fff}
+
+/* Las fotos editoriales reemplazan las imágenes aleatorias del primer producto. */
+.may-cat-thumb img{width:100%;height:100%;padding:0;object-fit:cover;mix-blend-mode:normal}
+
+@media(max-width:1120px){
+  .may-home-info-card{grid-template-columns:minmax(0,1.2fr) minmax(290px,.8fr)}
+  .may-home-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+  .may-redesign .may-home-hero{height:calc(90svh - 68px);min-height:520px;max-height:650px}
+  .may-home-band{padding:38px 0}
+  .may-home-band-categories{padding:29px 0 31px}
+  .may-home-band-featured{padding:40px 0 44px}
+  .may-home-band-info{padding:34px 0}
+  .may-home-band-list{padding:0 0 38px;background:#e2e8dc}
+  .may-home-shell{width:calc(100% - 28px)}
+  .may-home-section-head{align-items:center;gap:12px;margin-bottom:19px}
+  .may-home-section-head h2{font-size:27px}
+  .may-home-section-head .may-home-section-kicker{font-size:9.5px}
+  .may-home-carousel-controls{gap:6px}
+  .may-home-carousel-controls button{width:36px;height:36px;font-size:16px}
+  .may-home-cat{flex-basis:126px;min-height:157px;padding:8px 8px 11px;border-radius:17px;gap:9px}
+  .may-home-cat img{width:108px;height:108px}
+  .may-home-cat span{font-size:10.5px}
+  .may-home-text-link{font-size:11px}
+  .may-home-featured-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .may-feature-card{border-radius:15px}
+  .may-feature-visual{height:132px}
+  .may-feature-visual img{padding:7px}
+  .may-feature-body{padding:12px}
+  .may-feature-cat{font-size:8px}
+  .may-feature-card h3{min-height:48px;font-size:11.5px;line-height:1.36}
+  .may-feature-meta{font-size:9px}
+  .may-feature-bottom{align-items:center;margin-top:11px}
+  .may-feature-price{font-size:15px}
+  .may-feature-go{padding:8px 9px;font-size:9px}
+  .may-home-info-card{display:flex;height:auto;min-height:0;flex-direction:column;border-radius:22px}
+  .may-home-info-copy{padding:24px 20px 18px}
+  .may-home-info-card .distb-name{font-size:24px}
+  .may-home-info-card .distb-note{font-size:12px;line-height:1.48}
+  .may-home-info-card .distb-title{font-size:10px}
+  .may-home-info-card .distb-cnt{font-size:18px}
+  .may-home-info-card .distb-goal{font-size:9.5px}
+  .may-home-info-card .distb-reward{font-size:10px}
+  .distb-conditions span{font-size:9px}
+  .may-home-info-visual{height:126px;min-height:126px}
+  .may-home-info-visual::after{background:linear-gradient(180deg,#d58565 0%,rgba(213,133,101,.18) 40%,transparent 75%)}
+  .may-home-info-visual img{object-position:center 58%}
+  .may-home-list-card{height:auto;min-height:0;border-radius:22px}
+  .may-home-list-copy{padding:25px 20px 20px}
+  .may-home-list-copy h2{font-size:25px}
+  .may-home-list-copy p{font-size:12px}
+  .may-home-list-visual{height:126px;min-height:126px}
+  .may-home-list-visual::after{background:linear-gradient(180deg,#7f906f 0%,rgba(127,144,111,.2) 42%,transparent 76%)}
+  .may-home-footer{padding:36px 0 88px}
+  .may-home-footer-grid{grid-template-columns:1fr 1fr;gap:26px 18px}
+  .may-home-footer-brand{grid-column:1/-1}
+  .may-home-footer-brand img{width:62px;height:62px}
+  .may-home-footer-col:last-child{grid-column:1/-1}
+  .may-home-footer-bottom{align-items:flex-start;flex-direction:column;margin-top:26px}
+  .may-home-footer-bottom nav{gap:15px}
 }
 </style>
 <div id="tutbOverlay">
