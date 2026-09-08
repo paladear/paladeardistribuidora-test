@@ -1,0 +1,1387 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Lista Mayorista | Paladear Distribuidora</title>
+<meta name="description" content="Lista mayorista completa de Paladear Distribuidora, Mendoza. Venta únicamente por bulto cerrado. Mínimo de $250.000 solo en el primer pedido.">
+<link rel="icon" href="favicon-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--azul:#547692;--azul-dark:#3d5a72;--azul-light:#cfdce8;--bg:#dce8f2;--fg:#1a3050;--card:#fff;--border:#d6e2eb;--muted-fg:#5a6b7d;--menor:#2d5f8a;--mayor:#15803d;--mayor-bg:#eaf7ee;--oferta:#c2410c;--oferta-bg:#fff3ea;--whatsapp:#25d366;--muted:#e3e8ed;
+/* anchos de columna: los mismos en toda la pagina para que todo quede alineado */
+--cPre:92px;--cCant:118px}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--fg);padding-bottom:24px;font-size:16px}
+
+/* ══ Encabezado ══ */
+.top{position:sticky;top:0;z-index:50;background:var(--azul);box-shadow:0 2px 14px rgba(26,48,80,.25)}
+.top-in{max-width:1080px;margin:0 auto;padding:9px 12px;display:flex;align-items:center;gap:9px}
+.logo{width:42px;height:42px;border-radius:50%;background:#fff;flex-shrink:0;object-fit:contain;padding:2px}
+.btn-volver{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.16);border:none;color:#fff;font-family:inherit;font-weight:700;font-size:13px;padding:9px 12px;border-radius:10px;cursor:pointer;white-space:nowrap;text-decoration:none;flex-shrink:0}
+.btn-volver:hover{background:rgba(255,255,255,.3)}
+.btn-volver svg{flex-shrink:0}
+.top-t{color:#fff;font-weight:800;font-size:16px;line-height:1.15}
+.top-t small{display:block;font-weight:500;font-size:11.5px;opacity:.9}
+.btn-print{margin-left:auto;background:rgba(255,255,255,.16);border:none;color:#fff;font-family:inherit;font-weight:700;font-size:13px;padding:9px 12px;border-radius:10px;cursor:pointer;white-space:nowrap}
+.btn-print:hover{background:rgba(255,255,255,.3)}
+.fila-busq{max-width:1080px;margin:0 auto;padding:0 12px 10px;display:flex;gap:8px;align-items:center}
+/* Botón hamburguesa + "Categorías" */
+.btn-cat{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.16);border:none;color:#fff;font-family:inherit;font-weight:700;font-size:13.5px;padding:11px 14px;border-radius:12px;cursor:pointer;white-space:nowrap;flex-shrink:0}
+.btn-cat:hover{background:rgba(255,255,255,.3)}
+.ham{display:flex;flex-direction:column;gap:3px}
+.ham i{display:block;width:17px;height:2.5px;background:#fff;border-radius:2px}
+.busq-wrap{position:relative;flex:1;min-width:0}
+.busq-wrap input{width:100%;border:none;border-radius:12px;padding:13px 15px;font-size:16px;font-family:inherit;font-weight:600;color:var(--fg);outline:none;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.busq-wrap input::placeholder{color:#93a5b5;font-weight:500}
+.busq-wrap input{padding-right:42px}
+.busq-wrap input::-webkit-search-cancel-button{display:none}
+.q-x{display:none;position:absolute;right:7px;top:50%;transform:translateY(-50%);width:30px;height:30px;border:none;border-radius:50%;background:#e3e8ed;color:#5a6b7d;font-size:19px;line-height:1;cursor:pointer;align-items:center;justify-content:center}
+.q-x.on{display:flex}
+/* Barra que aparece al buscar: dice qué se buscó y permite volver a la lista completa */
+.volver{display:none;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--border);border-radius:11px;padding:9px 12px;margin-bottom:12px}
+.volver.on{display:flex}
+.volver .txt{flex:1;min-width:0;font-size:13px;font-weight:700;color:var(--muted-fg);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.volver button{background:var(--azul);color:#fff;border:none;border-radius:9px;padding:9px 13px;font-family:inherit;font-size:13px;font-weight:800;cursor:pointer;white-space:nowrap}
+/* Sugerencias predictivas */
+.sug{display:none;position:absolute;top:calc(100% + 5px);left:0;right:0;background:#fff;border-radius:12px;box-shadow:0 10px 28px rgba(15,28,42,.3);z-index:60;max-height:300px;overflow-y:auto;padding:5px}
+.sug.on{display:block}
+.sug-it{padding:10px 12px;font-size:14px;font-weight:600;color:var(--fg);cursor:pointer;border-radius:9px;display:flex;align-items:center;gap:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sug-it:hover,.sug-it.sel{background:var(--azul-light)}
+.sug-it.rubro.sel{background:var(--azul);color:#fff}
+/* Foco visible: se resalta la fila entera, suave, en vez de un borde grueso */
+:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
+.cant input:focus,.cant select:focus{outline:none;border-color:var(--azul)}
+.sug-it .ic{opacity:.5;flex-shrink:0}
+.sug-it.rubro{background:var(--azul-light);color:var(--azul-dark);font-weight:800;margin-bottom:2px}
+.sug-it.rubro:hover{background:var(--azul);color:#fff}
+
+/* ══ Panel de categorías ══ */
+.cat-ov{position:fixed;inset:0;background:rgba(15,28,42,.55);z-index:80;display:none}
+.cat-ov.on{display:block}
+.cat-panel{position:fixed;top:0;left:0;bottom:0;width:280px;max-width:86vw;background:var(--card);z-index:81;transform:translateX(-100%);transition:transform .25s;display:flex;flex-direction:column}
+.cat-panel.on{transform:none}
+.cat-h{background:var(--azul);color:#fff;padding:15px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0}
+.cat-h h2{font-size:16px;font-weight:800;flex:1}
+.cat-x{background:rgba(255,255,255,.18);border:none;color:#fff;width:34px;height:34px;border-radius:50%;font-size:20px;cursor:pointer;line-height:1}
+.cat-list{overflow-y:auto;padding:8px}
+.cat-b{display:block;width:100%;text-align:left;background:none;border:none;border-radius:10px;padding:12px 13px;font-family:inherit;font-size:14.5px;font-weight:700;color:var(--fg);cursor:pointer}
+.cat-b:hover{background:var(--azul-light)}
+.cat-b span{float:right;font-size:12px;font-weight:600;color:var(--muted-fg)}
+
+/* ══ Contenido ══ */
+.wrap{max-width:1080px;margin:0 auto;padding:12px}
+.ayuda{background:#fff8e6;border:1.5px solid #f0d089;border-radius:12px;padding:11px 13px;font-size:13px;font-weight:600;color:#7a5f18;margin-bottom:13px;line-height:1.55}
+.ayuda b{color:#5c4610}
+.rubro{margin-bottom:20px;scroll-margin-top:170px}
+/* Título del rubro: sin emoji, letra grande y ancha */
+.rubro-h{background:var(--azul-dark);color:#fff;padding:11px 14px;border-radius:11px 11px 0 0;font-size:17px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;display:flex;align-items:center}
+.rubro-h .n{margin-left:auto;font-size:11.5px;font-weight:600;opacity:.8;letter-spacing:0;text-transform:none}
+.tabla{background:var(--card);border:1.5px solid var(--border);border-top:none;border-radius:0 0 11px 11px;overflow:hidden}
+/* Grid: mismas columnas en encabezado y filas => todo alineado */
+.hdr,.fila{display:grid;grid-template-columns:1fr var(--cPre) var(--cPre) var(--cCant);align-items:center;gap:7px;padding:8px 11px}
+.hdr{background:#eef4f9;border-bottom:1.5px solid var(--border);font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--muted-fg)}
+.hdr .c{text-align:center}
+.hdr .c.menor{color:var(--menor)}
+.hdr .c.mayor{color:var(--mayor)}
+.fila{border-bottom:1px solid var(--border);font-size:13.5px}
+.fila:last-child{border-bottom:none}
+.fila:nth-child(even){background:#fafcfe}
+.fila.tiene{background:#eef7f0}
+/* Fila enfocada (teclado): resaltado suave, gana sobre el rayado y sobre el verde de "ya cargada" */
+.fila:focus-within{background:#e9f1f9;box-shadow:inset 3px 0 0 var(--azul)}
+.fila.tiene:focus-within{background:#e4f0ea}
+.nom{font-weight:700;line-height:1.28;min-width:0;overflow-wrap:break-word}
+.nom .bulto{display:block;font-weight:600;font-size:11px;color:var(--muted-fg);margin-top:2px}
+@media(max-width:640px){.nom .bulto{font-size:10px}}
+@media print{.nom .bulto{font-size:7.4pt;color:#666}}
+/* Columnas de precio, cada una con su color */
+.pr{text-align:center;font-weight:800;font-size:14px;border-radius:8px;padding:5px 3px;line-height:1.2}
+.pr.menor{color:var(--menor);background:#eef4fa}
+.pr.mayor{color:var(--mayor);background:var(--mayor-bg)}
+/* Cantidad: número + unidad */
+.cant{display:flex;gap:4px;align-items:center}
+.cant input{flex:1;width:100%;min-width:0;border:2px solid var(--border);border-radius:8px;padding:7px 4px;font-family:inherit;font-size:16px;font-weight:700;text-align:center;color:var(--fg);outline:none;background:#fff}
+.cant input:focus{border-color:var(--azul)}
+.cant input.lleno{border-color:#16a34a;background:#f2fbf5}
+.cant select{flex:0 0 52px;border:2px solid var(--border);border-radius:8px;padding:7px 11px;font-family:inherit;font-size:16px;font-weight:700;color:var(--fg);outline:none;cursor:pointer;text-align:center;text-align-last:center;-webkit-appearance:none;appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6' fill='none' stroke='%2390a4b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1l4 4 4-4'/%3E%3C/svg%3E") no-repeat right 3px center;background-size:7px}
+.cant select:focus{border-color:var(--azul)}
+.cant .und{flex:0 0 52px;text-align:center;font-size:11.5px;font-weight:700;color:var(--muted-fg);white-space:nowrap}
+.sub{grid-column:1/-1;font-size:12px;font-weight:700;color:var(--mayor);padding-top:2px;display:none}
+.fila.tiene .sub{display:block}
+.vacio{text-align:center;padding:50px 20px;color:var(--muted-fg);font-size:16px;font-weight:600}
+.cargando{text-align:center;padding:60px 20px;color:var(--muted-fg);font-weight:700}
+
+/* ══ Barra del pedido ══ */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:70;background:#fff;box-shadow:0 -3px 18px rgba(26,48,80,.22);padding:9px 12px;padding-bottom:calc(9px + env(safe-area-inset-bottom));display:none}
+.barra.on{display:block}
+.barra-in{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:9px}
+.barra-info{flex:1;min-width:0}
+.barra-c{font-size:12px;font-weight:700;color:var(--muted-fg)}
+.barra-t{font-size:20px;font-weight:800;color:var(--azul-dark);line-height:1.15}
+.barra-t small{font-size:11px;font-weight:700;color:var(--mayor);display:block;line-height:1.3}
+.b-ver{background:var(--azul-light);color:var(--azul-dark);border:none;border-radius:11px;padding:11px 14px;font-family:inherit;font-size:13.5px;font-weight:800;cursor:pointer;white-space:nowrap}
+.b-wa{background:var(--whatsapp);color:#fff;border:none;border-radius:11px;padding:12px 16px;font-family:inherit;font-size:14.5px;font-weight:800;cursor:pointer;white-space:nowrap}
+
+/* ══ Panel del pedido ══ */
+.ov{position:fixed;inset:0;background:rgba(15,28,42,.55);z-index:71;display:none}
+.ov.on{display:block}
+.panel{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:520px;z-index:72;background:var(--bg);border-radius:18px 18px 0 0;max-height:86vh;display:none;flex-direction:column}
+@media(min-width:600px){.panel{bottom:6vh;border-radius:18px;max-height:80vh}}
+.panel.on{display:flex}
+.panel-h{background:var(--azul);color:#fff;padding:13px 15px;border-radius:18px 18px 0 0;display:flex;align-items:center;gap:10px;flex-shrink:0}
+.panel-h h2{font-size:16.5px;font-weight:800;flex:1}
+.panel-x{background:rgba(255,255,255,.18);border:none;color:#fff;width:34px;height:34px;border-radius:50%;font-size:20px;cursor:pointer;line-height:1}
+.panel-b{overflow-y:auto;padding:11px 13px;flex:1}
+.it{background:#fff;border:1.5px solid var(--border);border-radius:11px;padding:10px 12px 11px;margin-bottom:8px}
+.it-top{display:flex;align-items:flex-start;gap:8px}
+.it-n{flex:1;min-width:0;font-size:13.5px;font-weight:700;line-height:1.3}
+.it-n small{display:block;font-weight:600;color:var(--muted-fg);font-size:12px;margin-top:2px}
+/* Fila de edición: se puede cambiar la cantidad sin salir del pedido */
+.it-edit{display:flex;align-items:center;gap:7px;margin-top:8px}
+.it-edit input{width:74px;flex-shrink:0;border:2px solid var(--border);border-radius:8px;padding:7px 4px;font-family:inherit;font-size:16px;font-weight:700;text-align:center;color:var(--fg);outline:none;background:#fff}
+.it-edit input:focus{border-color:var(--azul)}
+.it-edit select{flex:0 0 52px;border:2px solid var(--border);border-radius:8px;padding:7px 11px;font-family:inherit;font-size:16px;font-weight:700;color:var(--fg);outline:none;cursor:pointer;text-align:center;text-align-last:center;-webkit-appearance:none;appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6' fill='none' stroke='%2390a4b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1l4 4 4-4'/%3E%3C/svg%3E") no-repeat right 3px center;background-size:7px}
+.it-edit select:focus{border-color:var(--azul)}
+.it-und{flex:0 0 52px;text-align:center;font-size:11.5px;font-weight:700;color:var(--muted-fg)}
+.it-edit .it-s{margin-left:auto;font-size:15px}
+.it-s{font-size:14px;font-weight:800;color:var(--azul-dark);text-align:right;white-space:nowrap}
+.it-x{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:22px;height:22px;margin:-2px -3px 0 0;padding:0;border:none;border-radius:50%;background:none;color:#a8b6c4;font-size:17px;line-height:1;cursor:pointer;transition:color .2s,background .2s}
+.it-x:hover{color:#b04020;background:rgba(212,84,60,.12)}
+.panel-f{border-top:1.5px solid var(--border);padding:12px 13px;padding-bottom:calc(12px + env(safe-area-inset-bottom));background:#fff;flex-shrink:0}
+.tot{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
+.tot span:first-child{font-size:14.5px;font-weight:700}
+.tot span:last-child{font-size:24px;font-weight:800;color:var(--azul-dark)}
+.aviso-may{background:var(--mayor-bg);border:1.5px solid #86efac;border-radius:10px;padding:9px 11px;font-size:12.5px;font-weight:700;color:var(--mayor);text-align:center;margin:8px 0;line-height:1.45}
+.b-wa-full{width:100%;justify-content:center;padding:14px}
+.nota{font-size:11.5px;color:var(--muted-fg);text-align:center;margin-top:8px;line-height:1.45}
+
+/* ══ Celular: todo en un renglón, más compacto ══ */
+@media(max-width:640px){
+  :root{--cPre:62px;--cCant:98px}
+  body{font-size:15px}
+  .wrap{padding:9px}
+  .logo{display:none}
+  .btn-volver{padding:8px 10px;font-size:12.5px}
+  .top-t{font-size:15px;min-width:0}
+  .top-t small{font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .hdr,.fila{gap:5px;padding:7px 8px;font-size:12px}
+  .hdr{font-size:9px;letter-spacing:.2px}
+  .nom{font-size:12.2px;line-height:1.25}
+  .pr{font-size:12.2px;padding:4px 1px}
+  .cant input{padding:6px 2px;font-size:16px}
+  .cant select{flex:0 0 46px;padding:6px 9px;background-position:right 2px center}
+  .cant .und{flex:0 0 46px}
+  .cant{gap:3px}
+  .rubro-h{font-size:14.5px;letter-spacing:.8px;padding:9px 11px}
+  .sub{font-size:11px}
+}
+/* ══ Impresión: sábana prolija y alineada ══ */
+@media print{
+  @page{margin:11mm 9mm}
+  body{background:#fff;padding:0;font-size:9pt}
+  .top,.barra,.ov,.panel,.cat-ov,.cat-panel,.ayuda,.sug,.btn-volver{display:none!important}
+  .wrap{max-width:none;padding:0}
+  .print-h{display:block!important;text-align:center;margin-bottom:7mm;border-bottom:2px solid #3d5a72;padding-bottom:3mm}
+  .print-h h1{font-size:15pt;font-weight:900;letter-spacing:1px;color:#1a3050}
+  .print-h div{font-size:8.5pt;color:#555;margin-top:1mm}
+  .rubro{margin-bottom:4mm;break-inside:auto}
+  .rubro-h{background:#3d5a72!important;color:#fff!important;border-radius:0;padding:2mm 3mm;font-size:10pt;letter-spacing:.8px;-webkit-print-color-adjust:exact;print-color-adjust:exact;break-after:avoid}
+  .rubro-h .n{display:none}
+  .tabla{border:.4pt solid #999;border-radius:0}
+  /* En papel no hay cantidad: solo producto y precios, bien alineados */
+  .hdr,.fila{grid-template-columns:1fr 24mm 24mm;gap:0;padding:1.1mm 3mm;break-inside:avoid}
+  .hdr{background:#eef4f9!important;font-size:7.5pt;-webkit-print-color-adjust:exact;print-color-adjust:exact;border-bottom:.4pt solid #999}
+  .fila{font-size:9pt;border-bottom:.3pt solid #ddd}
+  .fila:nth-child(even){background:#f7fafc!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .fila.tiene{background:transparent!important}
+  .nom{font-size:8.6pt;font-weight:600}
+  .pr{background:none!important;font-size:9pt;padding:0;text-align:right}
+  .pr.menor{color:#1a3050!important}
+  .pr.mayor{color:#15803d!important}
+  .cant,.sub,.h-cant{display:none!important}
+}
+.print-h{display:none}
+
+/* ══ Banner de descuento por cantidad (mismo de la tienda) ══ */
+.descb-wrap{padding:0 0 14px}
+.descb-banner{position:relative;overflow:hidden;background:radial-gradient(circle at 6% 16%,rgba(212,84,60,.08) 0 46px,transparent 47px),radial-gradient(circle at 95% 88%,rgba(212,84,60,.08) 0 72px,transparent 73px),linear-gradient(135deg,#fdf1ec,#fbe4da);border:2px solid #d4543c;border-radius:20px;padding:22px 24px;box-shadow:0 4px 16px rgba(212,84,60,.16)}
+.descb-top{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;row-gap:6px}
+.descb-ic{width:28px;height:28px;object-fit:contain;flex-shrink:0}
+.descb-name{font-size:17px;font-weight:800;color:#b04020}
+.descb-go{font-size:12.5px;font-weight:700;color:#b04020;margin-left:auto;background:rgba(255,255,255,.75);border:1px solid rgba(212,84,60,.28);padding:4px 14px;border-radius:20px;white-space:nowrap}
+@media(max-width:640px){.descb-go{margin-left:0}}  /* si baja de renglón, alineado con el título */
+.descb-note{font-size:14px;color:#745b4f;font-weight:600;margin-bottom:16px;line-height:1.55}
+.descb-note b{color:#b04020}
+.descb-bulto{margin-top:14px;background:rgba(255,255,255,.72);border:1px solid rgba(212,84,60,.28);border-radius:12px;padding:10px 13px;font-size:12.5px;font-weight:600;color:#745b4f;line-height:1.6}
+.descb-bulto b{color:#b04020}
+.descb-mlabel{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.descb-cnt{font-size:20px;font-weight:800;color:#b04020;font-variant-numeric:tabular-nums}
+.descb-goal{font-size:12px;font-weight:600;color:#8a9bad}
+.descb-track{height:14px;background:#f2d9d0;border-radius:8px;overflow:hidden}
+.descb-fill{height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,#c25a3c,#e08a63);transition:width .5s ease}
+.descb-reward{margin-top:14px;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:800;color:#1c9d63;opacity:0;transform:translateY(5px);transition:all .4s;min-height:20px}
+.descb-reward.on{opacity:1;transform:none}
+@media(max-width:640px){.descb-banner{padding:17px 16px;border-radius:16px}.descb-name{font-size:15.5px}.descb-note{font-size:13px}.descb-go{font-size:11.5px;padding:3px 11px}}
+@media print{.descb-wrap{display:none!important}}
+
+/* ══ Checkout (traído de la tienda) ══ */
+.hidden{display:none!important}
+.wa-btn{background:var(--whatsapp);color:#fff;border:none;border-radius:12px;padding:15px;font-family:inherit;font-weight:800;font-size:16px;width:100%;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .2s;cursor:pointer}
+.wa-btn:hover{filter:brightness(1.08);transform:scale(1.02)}
+@media print{.checkout-overlay{display:none!important}}
+.checkout-overlay{position:fixed;inset:0;background:rgba(0,0,0,.52);z-index:10120;display:flex;align-items:flex-end;justify-content:center}
+@media(min-width:600px){.checkout-overlay{align-items:center}}
+.checkout-sheet{background:var(--card);border-radius:24px 24px 0 0;width:100%;max-width:520px;max-height:94vh;overflow-y:auto;box-shadow:0 -8px 40px rgba(0,0,0,.22);display:flex;flex-direction:column}
+@media(min-width:600px){.checkout-sheet{border-radius:20px;max-height:88vh}}
+.checkout-hdr{display:flex;align-items:center;gap:8px;padding:14px 16px 12px;border-bottom:1px solid var(--muted);position:sticky;top:0;background:var(--card);z-index:1;flex-shrink:0}
+.checkout-hdr-btn{background:var(--muted);border:none;border-radius:50%;width:32px;height:32px;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit;color:var(--fg);flex-shrink:0;line-height:1}
+.checkout-hdr h2{flex:1;font-size:17px;font-weight:700;margin:0;color:var(--azul-dark);text-align:center}
+.checkout-summary{padding:9px 16px;background:var(--muted);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted-fg);flex-shrink:0}
+.checkout-summary b{color:var(--azul-dark);font-size:15px}
+.checkout-body{padding:20px 16px;overflow-y:auto;flex:1}
+.checkout-step-lbl{font-size:15px;font-weight:600;color:var(--fg);margin:0 0 16px}
+.checkout-delivery-opts{display:flex;flex-direction:column;gap:10px}
+.checkout-delivery-btn{background:var(--card);border:2px solid var(--muted);border-radius:14px;padding:15px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .2s;font-family:inherit;text-align:left;width:100%}
+.checkout-delivery-btn:hover,.checkout-delivery-btn:active{border-color:var(--azul);background:rgba(84,118,146,.05)}
+.checkout-delivery-ic{width:48px;height:40px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.checkout-delivery-ic img{display:block;max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 2px 3px rgba(36,65,91,.20))}
+.checkout-delivery-ic.retiro img{width:38px}
+.checkout-delivery-ic.domicilio img{width:48px}
+.checkout-delivery-txt{flex:1}
+.checkout-delivery-txt b{display:block;font-size:15px;color:var(--fg);margin-bottom:2px;font-family:inherit}
+.checkout-delivery-txt small{font-size:12px;color:var(--muted-fg)}
+.checkout-delivery-arr{font-size:22px;color:var(--muted-fg);font-weight:200}
+.co-field{margin-bottom:16px}
+.co-field label{display:block;font-size:13px;font-weight:600;color:var(--fg);margin-bottom:5px}
+.co-field .opt-lbl{font-weight:400;color:var(--muted-fg);font-size:12px}
+.co-input{width:100%;box-sizing:border-box;padding:12px 14px;border:2px solid var(--muted);border-radius:10px;font-size:15px;font-family:inherit;color:var(--fg);background:var(--card);transition:border-color .2s;-webkit-appearance:none}
+.co-input:focus{outline:none;border-color:var(--azul)}
+.co-dir-opts{display:flex;flex-direction:column;gap:8px;margin-bottom:8px}
+.co-dir-opt,.co-field label.co-dir-opt{display:flex;align-items:center;gap:10px;border:2px solid var(--muted);border-radius:10px;padding:11px 13px;cursor:pointer;font-size:14px;font-weight:400;margin-bottom:0;background:var(--card);transition:border-color .15s,background .15s}
+.co-dir-opt-txt{display:block}
+.co-dir-opt.on{border-color:var(--azul);background:var(--azul-light)}
+.co-dir-opt input{accent-color:var(--azul);width:17px;height:17px;flex-shrink:0;margin:0}
+.co-dir-opt span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600;color:var(--fg)}
+.co-dir-opt.otra span{color:var(--azul-dark)}
+.co-dir-opt-txt{flex:1;min-width:0}
+.co-dir-opt-txt span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600;color:var(--fg)}
+.co-dir-opt-sub{display:block;font-size:12px;color:var(--muted-fg);font-weight:400;margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.co-nombre-mini{font-size:14px;color:var(--fg);background:var(--azul-light);border-radius:10px;padding:11px 13px;margin-bottom:16px}
+.co-nombre-mini a{color:var(--azul);font-weight:700;text-decoration:none}
+.co-pago-nota{font-size:13.5px;line-height:1.45;color:var(--fg);background:var(--azul-light);border-radius:10px;padding:11px 13px;margin:4px 0 12px}
+.co-dir-det-note{font-size:13px;font-weight:600;color:var(--azul-dark);margin:2px 0 10px}
+/* iOS: evitar el auto-zoom al tocar un campo (Safari hace zoom si la letra es <16px) */
+@media(max-width:767px){
+  .co-input,.cta-input,.cta-dir-in,#coStep2Dom input,#coStep2Dom textarea,#coStep2Retiro input,input[type="text"],input[type="search"],input[type="tel"],input[type="email"],input[type="number"],textarea,select{font-size:16px!important}
+}
+.co-hint{display:block;font-size:11px;color:var(--muted-fg);margin-top:4px;line-height:1.4}
+.co-saved-hint{text-align:center;font-size:11px;color:var(--muted-fg);margin-top:10px;line-height:1.5}
+.co-saved-hint a{color:var(--muted-fg);text-decoration:underline}
+.co-saved-hint a:hover{color:var(--azul)}
+.co-addr-row{display:flex;gap:8px;margin-bottom:6px}
+.co-addr-row .co-input{flex:1;margin:0}
+.co-map-btn{background:var(--azul);color:#fff;border:none;border-radius:10px;padding:0 13px;font-size:12px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:5px;white-space:nowrap;font-family:inherit;flex-shrink:0;height:48px}
+.co-loc-btn{background:transparent;border:1.5px solid var(--muted);border-radius:8px;padding:7px 11px;font-size:12px;color:var(--muted-fg);cursor:pointer;display:flex;align-items:center;gap:5px;font-family:inherit;margin-bottom:10px;width:100%}
+.co-loc-btn:hover{border-color:var(--azul);color:var(--azul)}
+#coMap{height:220px;border-radius:12px;overflow:hidden;margin-bottom:8px;border:2px solid var(--muted)}
+.co-map-confirm{display:flex;align-items:flex-start;gap:6px;background:#e8f5e9;border-radius:8px;padding:8px 10px;font-size:12px;color:#2e7d32;margin-bottom:8px;line-height:1.4}
+.co-pago-opts{display:flex;flex-direction:column;gap:10px}
+.co-radio{display:flex;align-items:flex-start;gap:10px;border:2px solid var(--muted);border-radius:10px;padding:12px;cursor:pointer;transition:border-color .2s;background:var(--card)}
+.co-radio:has(input:checked){border-color:var(--azul);background:rgba(84,118,146,.05)}
+.co-radio input{flex-shrink:0;margin-top:2px;accent-color:var(--azul);width:16px;height:16px}
+.co-radio span{font-size:13px;color:var(--fg);line-height:1.4}
+/* Row de campos lado a lado */
+.co-field-row{display:flex;gap:10px}
+.co-field-row .co-field{margin-bottom:16px}
+/* Radio tipo casa/depto inline */
+.co-tipo-opts{display:flex;gap:6px}
+.co-tipo-radio{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;border:2px solid var(--muted);border-radius:10px;padding:11px 6px;cursor:pointer;transition:border-color .2s;background:var(--card);font-size:13px;color:var(--fg)}
+.co-tipo-radio:has(input:checked){border-color:var(--azul);background:rgba(84,118,146,.07);color:var(--azul-dark);font-weight:600}
+.co-tipo-radio input{display:none}
+textarea.co-input{resize:vertical;min-height:60px;font-family:inherit}
+/* Caja de ubicación opcional */
+.co-ubicacion-box{background:var(--muted);border-radius:12px;padding:14px;margin-top:8px}
+.co-ubic-header{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.co-ubic-title{font-size:14px;font-weight:600;color:var(--azul-dark);margin-bottom:2px}
+.co-ubic-desc{font-size:12px;color:var(--muted-fg)}
+.co-ubic-btn{background:var(--azul);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;flex-shrink:0;white-space:nowrap}
+.co-ubic-btn:hover{background:var(--azul-dark)}
+.co-ubic-actions{display:flex;gap:8px;margin-top:10px}
+.co-ubic-hint{font-size:11px;color:var(--muted-fg);text-align:center;margin-top:8px;line-height:1.4}
+.co-ubic-close{display:block;background:transparent;border:none;color:var(--muted-fg);font-size:12px;cursor:pointer;font-family:inherit;text-decoration:underline;margin:8px auto 0;padding:4px}
+.co-ubic-close:hover{color:#e53935}
+.co-ubic-confirm{display:flex;align-items:center;gap:8px;background:#e8f5e9;border-radius:8px;padding:10px 12px;font-size:12px;color:#2e7d32;margin-top:10px;line-height:1.4;font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="print-h">
+  <h1>PALADEAR DISTRIBUIDORA — LISTA MAYORISTA</h1>
+  <div id="printFecha"></div>
+</div>
+
+<header class="top" id="top">
+  <div class="top-in">
+    <a class="btn-volver" href="index.html" title="Volver a la distribuidora"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span class="btn-volver-txt">Inicio</span></a>
+    <img class="logo" src="android-chrome-192x192.png" alt="Paladear">
+    <div class="top-t">Lista Mayorista<small>Paladear Distribuidora</small></div>
+    <button class="btn-print" onclick="window.print()">🖨️ Imprimir</button>
+  </div>
+  <div class="fila-busq">
+    <button class="btn-cat" onclick="abrirCats()"><span class="ham"><i></i><i></i><i></i></span>Categorías</button>
+    <div class="busq-wrap">
+      <input id="q" type="search" placeholder="Buscar un producto…" autocomplete="off"
+             oninput="alEscribir(this.value)" onfocus="alEscribir(this.value)" onblur="ocultarSugPronto()"
+             onkeydown="teclaBuscador(event)">
+      <button class="q-x" id="qx" onclick="limpiar()" aria-label="Borrar lo escrito">×</button>
+      <div class="sug" id="sug"></div>
+    </div>
+  </div>
+</header>
+
+<div class="cat-ov" id="catOv" onclick="cerrarCats()"></div>
+<aside class="cat-panel" id="catPanel">
+  <div class="cat-h"><h2>Categorías</h2><button class="cat-x" onclick="cerrarCats()" aria-label="Cerrar">×</button></div>
+  <div class="cat-list" id="catList"></div>
+</aside>
+
+<main class="wrap">
+  <div class="ayuda">📦 La venta es <b>únicamente por bulto cerrado</b>. Escribí <b>cuántos bultos</b> querés de cada producto en el casillero de la derecha — abajo del nombre dice cuánto trae cada bulto.</div>
+  <div class="descb-wrap">
+    <div class="descb-banner" id="descBanner">
+      <div class="descb-top">
+        <img class="descb-ic" src="icon-mayorista.png" alt="">
+        <span class="descb-name">Venta Mayorista</span>
+        <span class="descb-go">Solo bulto cerrado</span>
+      </div>
+      <div class="descb-note" id="descbNote"></div>
+      <div class="descb-mlabel" id="descbLabel"><span class="descb-cnt" id="descbCnt">$0</span><span class="descb-goal" id="descbGoal">Mínimo 1er pedido: $250.000</span></div>
+      <div class="descb-track" id="descbTrack"><div class="descb-fill" id="descbFill"></div></div>
+      <div class="descb-reward" id="descbRw"></div>
+      <div class="descb-bulto">📦 La venta es <b>únicamente por bulto cerrado</b>.<br>🧾 Los precios expresados en este catálogo <b>NO INCLUYEN IVA</b>.</div>
+    </div>
+  </div>
+  <div class="volver" id="volver"><span class="txt" id="volverTxt"></span><button onclick="limpiar()">← Ver toda la lista</button></div>
+  <div id="lista"><div class="cargando">Cargando la lista de precios…</div></div>
+</main>
+
+<div class="ov" id="ov" onclick="cerrarPanel()"></div>
+<section class="panel" id="panel">
+  <div class="panel-h"><h2>Tu pedido</h2><button class="panel-x" onclick="cerrarPanel()" aria-label="Cerrar">&times;</button></div>
+  <div class="panel-b" id="panelB"></div>
+  <div class="panel-f">
+    <div class="tot"><span>Total</span><span id="panelT">$0</span></div>
+    <div id="panelMay"></div>
+    <button class="b-wa b-wa-full" onclick="enviar()">Enviar por WhatsApp</button>
+    <div class="nota">Te confirmamos stock y precio final por WhatsApp.</div>
+  </div>
+</section>
+
+<div class="barra" id="barra">
+  <div class="barra-in">
+    <div class="barra-info">
+      <div class="barra-c" id="barraC">0 productos</div>
+      <div class="barra-t" id="barraT">$0<small id="barraMay"></small></div>
+    </div>
+    <button class="b-ver" onclick="abrirPanel()">Ver pedido</button>
+    <button class="b-wa" onclick="enviar()">Enviar</button>
+  </div>
+</div>
+
+
+<script>
+const WA='5492615652251';   // WhatsApp mayorista
+const MIN_PRIMER_PEDIDO=250000;  // mínimo SOLO para el primer pedido; después se compra sin mínimo
+const PEDIDOS_KEY='paladear_pedidos_may_v1';   // misma clave que la web: si ya pidió ahí, acá tampoco es su primer pedido
+/* El mínimo rige únicamente mientras no haya ningún pedido en el historial local (igual que la web) */
+function esPrimerPedido(){ try{ const a=JSON.parse(localStorage.getItem(PEDIDOS_KEY)||'[]'); return !Array.isArray(a)||a.length===0; }catch(e){ return true; } }
+function minimoVigente(){ return esPrimerPedido()?MIN_PRIMER_PEDIDO:0; }
+const SHEET='https://docs.google.com/spreadsheets/d/1aANKgaQFoiAixKQvPlRpZ0_PBQhES-iBWqOG1bsuLyg/gviz/tq?tqx=out:csv&sheet=';
+const INFO_MAY_CSV='https://docs.google.com/spreadsheets/d/1aANKgaQFoiAixKQvPlRpZ0_PBQhES-iBWqOG1bsuLyg/gviz/tq?tqx=out:csv&sheet=Info%20Mayorista';
+
+const RUBRO_MAP={'FRUTOS SECOS':{id:'frutos',n:'Frutos Secos'},'DESHIDRATADOS':{id:'deshidratados',n:'Deshidratados'},'SEMILLAS':{id:'semillas',n:'Semillas'},'ESPECIAS':{id:'especias',n:'Especias'},'INFUSIONES Y HIERBAS':{id:'infusiones',n:'Infusiones y Hierbas'},'CEREALES':{id:'cereales',n:'Cereales'},'GRANOS Y LEGUMBRES':{id:'granos',n:'Granos y Legumbres'},'HARINAS':{id:'harinas',n:'Harinas'},'PRODUCTOS SIN TACC':{id:'sintacc',n:'Sin TACC'},'DULCES, MIEL Y CHOCOLATES':{id:'dulces',n:'Dulces, Miel y Chocolates'},'AZUCAR, CACAO Y REPOSTERIA':{id:'reposteria',n:'Azúcar, Cacao y Repostería'},'MANTECAS Y PASTAS':{id:'mantecas',n:'Mantecas y Pastas'},'ACEITES Y VINAGRES':{id:'aceites',n:'Aceites y Vinagres'},'ACEITUNAS':{id:'aceitunas',n:'Aceitunas'},'ENCURTIDOS':{id:'encurtidos',n:'Encurtidos'},'TOMATE TRITURADO':{id:'tomate',n:'Tomate'},'SNACK':{id:'snack',n:'Snacks'},'SUPLEMENTOS':{id:'suplementos',n:'Suplementos'},'LINEA GOURMET':{id:'gourmet',n:'Línea Gourmet'},'BEBIDAS':{id:'bebidas',n:'Bebidas'},'VINOS':{id:'vinos',n:'Vinos y Licores'},'PRODUCTOS DE FRIO':{id:'frio',n:'Productos de Frío'},'PRODUCTOS CONGELADOS':{id:'congelados',n:'Congelados'},'PALADEAR HOME':{id:'home',n:'Paladear Home'}};
+
+/* Etiqueta del bulto, igual que en la web (_bultoLabel) */
+function bultoTexto(n,unidad){ const s=String(n).replace('.',','); if(unidad==='kg')return s+' Kg'; return n===1?'1 unidad':s+' unidades'; }
+
+/* Utilidades copiadas de la tienda para que los precios coincidan */
+function _precio(s){const c=(s||'').replace(/[^0-9,.]/g,'').replace(/\./g,'').replace(',','.');const n=parseFloat(c);return isNaN(n)?0:Math.round(n)}
+function _norm(s){return(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toUpperCase().replace(/[^A-Z0-9]/g,' ').replace(/\s+/g,' ').trim()}
+function _tc(s){return(s||'').toLowerCase().replace(/[^\s\-\/(]+/g,w=>w.charAt(0).toUpperCase()+w.slice(1))}
+function fmt(n){return Math.round(n||0).toLocaleString('es-AR')}
+function _parseCSV(t){
+  const f=[];let c='',row=[],q=false;
+  for(let i=0;i<t.length;i++){const ch=t[i];
+    if(q){ if(ch==='"'){ if(t[i+1]==='"'){c+='"';i++;} else q=false; } else c+=ch; }
+    else { if(ch==='"')q=true; else if(ch===','){row.push(c);c='';} else if(ch==='\n'){row.push(c);f.push(row);row=[];c='';} else if(ch!=='\r')c+=ch; }
+  }
+  if(c||row.length){row.push(c);f.push(row);}
+  return f;
+}
+
+let PRODS=[], CATS=[], pedido={}, filtro='';
+
+async function cargar(){
+  try{
+    const [infoTxt,preTxt]=await Promise.all([
+      fetch(INFO_MAY_CSV+'&t='+Date.now(),{cache:'no-store'}).then(r=>r.text()),
+      fetch(SHEET+'Mayorista&t='+Date.now(),{cache:'no-store'}).then(r=>r.text())
+    ]);
+    /* Hoja "Info Mayorista": A=Artículo, B=Nombre, C=Bulto ("12 unid." / "2,5 kg") */
+    const INFO={};
+    _parseCSV(infoTxt).forEach((c,i)=>{
+      if(i===0||c.length<3)return;
+      const artId=(c[0]||'').trim(); if(!artId)return;
+      const nombre=(c[1]||'').trim();
+      const bultoRaw=(c[2]||'').trim();
+      const bulto = parseFloat(bultoRaw.replace(',','.'))||1;   // misma lectura que la web
+      const e={
+        nombre,
+        bulto,
+        // Un bulto con decimales (ej. 11,34) nunca son unidades sueltas: es peso.
+        // Así, si en la planilla falta la palabra "kg", igual se muestra bien.
+        bultoUnidad: (/kg|kgr|kilo/i.test(bultoRaw) || bulto%1!==0) ? 'kg' : 'unidad'
+      };
+      INFO[artId]=e;
+      if(nombre&&_norm(nombre)!==artId)INFO[_norm(nombre)]=e;
+    });
+    /* Hoja "Mayorista": C=Rubro, D=Artículo, E=Nombre, F=precio POR UNIDAD.
+       El precio del bulto es el unitario x la cantidad del bulto (igual que la web). */
+    const catMap={},tmp=[];
+    _parseCSV(preTxt).forEach((c,i)=>{
+      if(i===0||c.length<6)return;
+      const rubro=(c[2]||'').trim().toUpperCase();
+      const artId=(c[3]||'').trim();
+      const nombre=(c[4]||'').trim();
+      const pu=_precio(c[5]||'');                 // precio por unidad
+      if(!nombre||!pu||!rubro)return;
+      const cat=RUBRO_MAP[rubro]; if(!cat)return;
+      catMap[cat.id]=cat;
+      const inf=INFO[artId]||INFO[_norm(nombre)]||{};
+      const bulto=inf.bulto||1;
+      const bultoUnidad=inf.bultoUnidad||'unidad';
+      tmp.push({
+        id:artId||_norm(nombre), cat:cat.id, nombre:_tc(inf.nombre||nombre),
+        pu, bulto, bultoUnidad,
+        pb:pu*bulto,                              // precio del bulto cerrado (se redondea recién al mostrar,
+                                                  // igual que la web: si no, con varios bultos se acumula diferencia)
+        bultoLabel:bultoTexto(bulto,bultoUnidad)
+      });
+    });
+    PRODS=tmp;
+    CATS=Object.keys(RUBRO_MAP).map(k=>RUBRO_MAP[k]).filter(c=>catMap[c.id])
+      .sort((a,b)=>a.n.localeCompare(b.n,'es'));   // alfabético: sábana y menú hamburguesa
+    render();
+  }catch(e){
+    document.getElementById('lista').innerHTML='<div class="vacio">No pudimos cargar la lista.<br>Revisá tu conexión.<br><br><button class="b-ver" onclick="location.reload()">Reintentar</button></div>';
+  }
+}
+
+/* ── Precios mayoristas ──
+   La venta es SIEMPRE por bulto cerrado: la cantidad que se carga es la cantidad de BULTOS.
+   No hay ofertas del mes ni segunda lista: un solo precio por bulto.
+   Los precios NO incluyen IVA. */
+function subtotalDe(p,it){ return (!it||!it.cant)?0:Math.round(p.pb*it.cant); }
+function cantTexto(p,it){
+  if(!it||!it.cant)return '';
+  return it.cant+(it.cant===1?' bulto':' bultos')+' ('+p.bultoLabel+' c/u)';
+}
+
+/* ── Dibujar la sábana ── */
+function render(){
+  const cont=document.getElementById('lista');
+  const f=_norm(filtro);
+  let html='',hay=0;
+  // El menú de categorías se arma con TODAS, sin importar el filtro del buscador
+  document.getElementById('catList').innerHTML=CATS.map(c=>
+    `<button class="cat-b" onclick="irA('${c.id}')">${c.n}<span>${PRODS.filter(p=>p.cat===c.id).length}</span></button>`
+  ).join('');
+  // Aviso de búsqueda activa
+  const vb=document.getElementById('volver');
+  vb.classList.toggle('on',!!filtro);
+  if(filtro) document.getElementById('volverTxt').textContent='Resultados para “'+filtro+'”';
+  document.getElementById('qx').classList.toggle('on',!!filtro);
+  CATS.forEach(cat=>{
+    let items=PRODS.filter(p=>p.cat===cat.id);
+    if(f) items=items.filter(p=>_norm(p.nombre).includes(f));
+    if(!items.length)return;
+    hay+=items.length;
+    items.sort((a,b)=>a.nombre.localeCompare(b.nombre,'es'));
+    html+=`<section class="rubro" id="r_${cat.id}">
+      <div class="rubro-h">${cat.n}<span class="n">${items.length}</span></div>
+      <div class="tabla">
+        <div class="hdr"><div>Producto</div><div class="c menor">Por unidad</div><div class="c mayor">Por bulto</div><div class="c h-cant">Bultos</div></div>`;
+    items.forEach(p=>{
+      const it=pedido[p.id];
+      const tiene=!!(it&&it.cant);
+      html+=`<div class="fila${tiene?' tiene':''}" id="f_${p.id}">
+        <div class="nom">${p.nombre}<small class="bulto">Bulto: ${p.bultoLabel}</small></div>
+        <div class="pr menor">$${fmt(p.pu)}</div>
+        <div class="pr mayor">$${fmt(p.pb)}</div>
+        <div class="cant">
+          <input type="number" inputmode="numeric" min="0" step="1" placeholder="0"
+                 value="${it&&it.cant?it.cant:''}" class="${tiene?'lleno':''}"
+                 aria-label="Bultos de ${p.nombre}"
+                 oninput="setCant('${p.id}',this.value)">
+          <span class="und">${p.bulto===1?'bulto':'bultos'}</span>
+        </div>
+        <div class="sub" id="s_${p.id}">${tiene?cantTexto(p,it)+' · $'+fmt(subtotalDe(p,it)):''}</div>
+      </div>`;
+    });
+    html+='</div></section>';
+  });
+  cont.innerHTML=hay?html:`<div class="vacio">No encontramos “${filtro}”.<br><br><button class="b-ver" onclick="limpiar()">Ver todo</button></div>`;
+  actualizarBarra();
+}
+
+/* ── Teclado: se puede armar todo el pedido sin tocar el mouse ──
+   Enter salta al casillero siguiente (Shift+Enter, al anterior); al final cae en Enviar.
+   Tab sigue funcionando normal: casillero → g/kg → casillero siguiente. */
+function casilleros(){ return Array.from(document.querySelectorAll('.fila .cant input')); }
+function saltarCasillero(inp,dir){
+  const l=casilleros(), i=l.indexOf(inp);
+  if(i<0)return;
+  const sig=l[i+dir];
+  if(sig){ sig.focus(); sig.select(); sig.scrollIntoView({block:'center'}); }
+  else if(dir>0){ const b=document.querySelector('.barra.on .b-wa'); if(b)b.focus(); }
+}
+document.addEventListener('keydown',e=>{
+  const t=e.target;
+  // Enter dentro de un casillero de cantidad
+  if(e.key==='Enter'&&t.tagName==='INPUT'&&t.closest('.cant')){
+    e.preventDefault(); saltarCasillero(t,e.shiftKey?-1:1); return;
+  }
+  // Escape cierra lo que esté abierto
+  if(e.key==='Escape'){
+    if(document.getElementById('panel').classList.contains('on')){ cerrarPanel(); return; }
+    if(document.getElementById('catPanel').classList.contains('on')){ cerrarCats(); return; }
+    if(document.getElementById('sug').classList.contains('on')){ document.getElementById('sug').classList.remove('on'); sugSel=-1; return; }
+  }
+});
+
+function irA(id){
+  cerrarCats();
+  // Si había una búsqueda activa, se limpia: así el rubro elegido siempre aparece completo
+  if(filtro){ document.getElementById('q').value=''; filtro=''; render(); }
+  setTimeout(()=>{const el=document.getElementById('r_'+id); if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},280);
+}
+function abrirCats(){document.getElementById('catOv').classList.add('on');document.getElementById('catPanel').classList.add('on');document.body.style.overflow='hidden';}
+function cerrarCats(){document.getElementById('catOv').classList.remove('on');document.getElementById('catPanel').classList.remove('on');document.body.style.overflow='';}
+
+/* ── Pedido: una sola entrada por producto (nunca se repite) ── */
+function esMayorista(){ return totales().esMay; }
+/* La cantidad son BULTOS: número entero, no fracciones */
+function setCant(pid,v){
+  const p=PRODS.find(x=>x.id===pid); if(!p)return;
+  const n=Math.floor(parseFloat(String(v).replace(',','.')));
+  if(!n||n<=0){ delete pedido[pid]; }
+  else{ pedido[pid]={cant:n}; }
+  guardar(); refrescarFila(pid); actualizarBarra();
+}
+function borrar(pid){
+  delete pedido[pid]; guardar();
+  const fila=document.getElementById('f_'+pid);
+  if(fila){ const i=fila.querySelector('input'); if(i){i.value='';i.classList.remove('lleno');} }
+  refrescarFila(pid); actualizarBarra();
+}
+/* Refresca solo esa fila: así no se pierde el foco mientras se escribe */
+function refrescarFila(pid){
+  const p=PRODS.find(x=>x.id===pid); if(!p)return;
+  const fila=document.getElementById('f_'+pid); if(!fila)return;
+  const it=pedido[pid], tiene=!!(it&&it.cant);
+  fila.classList.toggle('tiene',tiene);
+  const inp=fila.querySelector('input'); if(inp) inp.classList.toggle('lleno',tiene);
+  const sub=document.getElementById('s_'+pid);
+  if(sub) sub.textContent=tiene?cantTexto(p,it)+' · $'+fmt(subtotalDe(p,it)):'';
+}
+function guardar(){ try{localStorage.setItem('pld_catalogo_may',JSON.stringify({pedido}));}catch(e){} }
+function recuperar(){
+  try{
+    const s=localStorage.getItem('pld_catalogo_may'); if(!s)return;
+    const d=JSON.parse(s)||{};
+    pedido=d.pedido||d||{};
+  }catch(e){ pedido={}; }
+}
+
+/* Total del pedido. `minimo` es 0 cuando ya no es el primer pedido.
+   `alcanza` dice si se puede enviar (siempre true si no hay mínimo vigente). */
+function totales(){
+  let n=0, total=0, bultos=0;
+  Object.keys(pedido).forEach(id=>{
+    const p=PRODS.find(x=>x.id===id); if(!p)return;
+    const s=subtotalDe(p,pedido[id]);
+    if(s<=0)return;
+    n++; total+=s; bultos+=pedido[id].cant;
+  });
+  const minimo=minimoVigente();
+  return {n,total,bultos,minimo,esPrimero:esPrimerPedido(),alcanza:minimo===0||total>=minimo,final:total};
+}
+function esMayorista(){ return true; }   // en la distribuidora siempre rige la lista mayorista
+
+/* Los productos del pedido salen SIEMPRE en orden alfabético (panel y mensaje de WhatsApp) */
+function idsDelPedido(){
+  return Object.keys(pedido)
+    .filter(id=>{const p=PRODS.find(x=>x.id===id);return p&&subtotalDe(p,pedido[id])>0;})
+    .sort((a,b)=>{
+      const pa=PRODS.find(x=>x.id===a), pb=PRODS.find(x=>x.id===b);
+      return pa.nombre.localeCompare(pb.nombre,'es');
+    });
+}
+function pintarPanel(){
+  const t=totales(), ids=idsDelPedido();
+  document.getElementById('panelB').innerHTML = ids.length
+    ? ids.map(id=>{
+        const p=PRODS.find(x=>x.id===id), it=pedido[id];
+        return `<div class="it" id="i_${id}">
+          <div class="it-top">
+            <div class="it-n">${p.nombre}<small>${p.bultoLabel} por bulto</small></div>
+            <button class="it-x" onclick="borrarDesdePanel('${id}')" aria-label="Quitar ${p.nombre}" title="Quitar">&times;</button>
+          </div>
+          <div class="it-edit">
+            <input type="number" inputmode="numeric" min="0" step="1" value="${it.cant}"
+                   aria-label="Bultos de ${p.nombre}" oninput="setCantPanel('${id}',this.value)">
+            <span class="it-und">${it.cant===1?'bulto':'bultos'}</span>
+            <span class="it-s" id="is_${id}">$${fmt(subtotalDe(p,it))}</span>
+          </div>
+        </div>`;
+      }).join('')
+    : '<div class="vacio">Todavía no cargaste nada.</div>';
+  document.getElementById('panelT').textContent='$'+fmt(t.final);
+  document.getElementById('panelMay').innerHTML = t.minimo===0
+    ? `<div class="aviso-may">✓ Comprás sin mínimo · Venta por bulto cerrado</div>`
+    : (t.alcanza
+        ? `<div class="aviso-may">✓ Alcanzaste el mínimo de tu primer pedido</div>`
+        : (t.n?`<div class="aviso-may" style="background:#fff8e6;border-color:#f0d68a;color:#8a6d1f">Tu primer pedido tiene un mínimo de $${fmt(t.minimo)}<br>Faltan $${fmt(t.minimo-t.total)}</div>`:''));
+}
+function abrirPanel(){
+  pintarPanel();
+  document.getElementById('ov').classList.add('on');
+  document.getElementById('panel').classList.add('on');
+  document.body.style.overflow='hidden';
+  setTimeout(()=>{const b=document.querySelector('.panel .b-wa-full'); if(b)b.focus();},60);
+}
+function cerrarPanel(){
+  document.getElementById('ov').classList.remove('on');
+  document.getElementById('panel').classList.remove('on');
+  document.body.style.overflow='';
+  const v=document.querySelector('.barra .b-ver'); if(v)v.focus();
+}
+function borrarDesdePanel(pid){ borrar(pid); pintarPanel(); }
+
+/* Editar la cantidad desde el pedido. NO se reconstruye el panel: si no, se perdería
+   el foco mientras se escribe (mismo motivo que en las filas de la lista). */
+function setCantPanel(pid,v){
+  const n=Math.floor(parseFloat(String(v).replace(',','.')));
+  if(!n||n<=0) delete pedido[pid];
+  else pedido[pid]={cant:n};
+  guardar();
+  // el casillero de la lista tiene que quedar con el mismo número que se acaba de escribir acá
+  const fila=document.getElementById('f_'+pid);
+  if(fila){ const i=fila.querySelector('.cant input'); if(i) i.value=(n&&n>0)?n:''; }
+  refrescarFila(pid); actualizarBarra();
+}
+/* Refresca subtotales y total sin tocar los casilleros que se están editando */
+function refrescarPanel(){
+  const t=totales();
+  idsDelPedido().forEach(id=>{
+    const p=PRODS.find(x=>x.id===id), el=document.getElementById('is_'+id);
+    if(el) el.textContent='$'+fmt(subtotalDe(p,pedido[id]));
+  });
+  // si se vacía el casillero, el producto deja de sumar: su renglón queda atenuado
+  document.querySelectorAll('.it').forEach(it=>{
+    const id=it.id.slice(2);
+    const vacio=!pedido[id];
+    it.style.opacity=vacio?'.5':'';
+    const s=document.getElementById('is_'+id); if(s&&vacio)s.textContent='$0';
+  });
+  document.getElementById('panelT').textContent='$'+fmt(t.final);
+  document.getElementById('panelMay').innerHTML = t.minimo===0
+    ? `<div class="aviso-may">✓ Comprás sin mínimo · Venta por bulto cerrado</div>`
+    : (t.alcanza
+        ? `<div class="aviso-may">✓ Alcanzaste el mínimo de tu primer pedido</div>`
+        : (t.n?`<div class="aviso-may" style="background:#fff8e6;border-color:#f0d68a;color:#8a6d1f">Tu primer pedido tiene un mínimo de $${fmt(t.minimo)}<br>Faltan $${fmt(t.minimo-t.total)}</div>`:''));
+}
+
+function actualizarBarra(){
+  const t=totales();
+  const b=document.getElementById('barra');
+  b.classList.toggle('on',t.n>0);
+  document.getElementById('barraC').textContent=t.n+(t.n===1?' producto':' productos')+' · '+t.bultos+(t.bultos===1?' bulto':' bultos');
+  document.getElementById('barraT').firstChild.nodeValue='$'+fmt(t.final);
+  document.getElementById('barraMay').textContent = t.minimo===0
+    ? 'Sin mínimo de compra · Venta por bulto cerrado'
+    : (t.alcanza?'✓ Alcanzaste el mínimo de tu primer pedido'
+               :'Faltan $'+fmt(t.minimo-t.total)+' para el mínimo del primer pedido');
+  // recién ahora, con el texto ya puesto, se reserva la altura real de la barra
+  document.body.style.paddingBottom=t.n>0?(b.offsetHeight+14)+'px':'24px';
+  // Marca qué columna de precio rige ahora mismo
+  document.body.classList.toggle('esmay',t.alcanza);
+  Object.keys(pedido).forEach(refrescarFila);
+  if(document.getElementById('panel').classList.contains('on')) refrescarPanel();
+  pintarBanner();
+}
+
+
+/* ── WhatsApp: un renglón por producto, nunca repetido ── */
+function enviar(){
+  const ids=idsDelPedido();
+  if(!ids.length){ alert('Todavía no cargaste cantidades.\n\nEscribí cuántos bultos querés en el casillero de la derecha de cada producto.'); return; }
+  const t=totales();
+  // El mínimo rige SOLO en el primer pedido (igual que la web)
+  if(!t.alcanza){
+    alert('⚠️ Tu PRIMER pedido tiene un mínimo de compra de $'+fmt(t.minimo)+'.\n\nTotal actual: $'+fmt(t.total)+'\nFaltan: $'+fmt(t.minimo-t.total)+'\n\n✨ A partir de tu segundo pedido comprás sin mínimo.');
+    return;
+  }
+  abrirCheckout();   // primero los datos del cliente, después WhatsApp
+}
+/* ── Buscador predictivo (mismo criterio que la tienda: empieza con > palabra > contiene) ── */
+let tBusq=null;
+function alEscribir(v){
+  clearTimeout(tBusq);
+  document.getElementById('qx').classList.toggle('on',!!(v||'').trim());
+  sugerencias(v);
+  tBusq=setTimeout(()=>{ filtro=(v||'').trim(); render(); },260);
+}
+function sugerencias(v){
+  const caja=document.getElementById('sug');
+  const t=(v||'').trim();
+  if(t.length<2){ caja.classList.remove('on'); caja.innerHTML=''; return; }
+  const q=_norm(t);
+  const rub=CATS.map(c=>{
+    const cn=_norm(c.n); let s=0;
+    if(cn.startsWith(q))s=3; else if(cn.split(' ').some(w=>w.startsWith(q)))s=2; else if(cn.includes(q))s=1;
+    return {c,s};
+  }).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).slice(0,2);
+  const prod=PRODS.map(p=>{
+    const tn=_norm(p.nombre); let s=0;
+    if(tn.startsWith(q))s=3; else if(tn.split(' ').some(w=>w.startsWith(q)))s=2; else if(tn.includes(q))s=1;
+    return {p,s};
+  }).filter(x=>x.s>0).sort((a,b)=>b.s-a.s);
+  const vistos=new Set(), top=[];
+  for(const{p}of prod){ if(vistos.has(p.nombre))continue; vistos.add(p.nombre); top.push(p); if(top.length>=6)break; }
+  if(!rub.length&&!top.length){ caja.classList.remove('on'); caja.innerHTML=''; return; }
+  caja.innerHTML =
+    rub.map(x=>`<div class="sug-it rubro" data-t="r" data-v="${x.c.id}" onmousedown="elegirRubro('${x.c.id}')">${x.c.n}</div>`).join('')+
+    top.map(p=>`<div class="sug-it" data-t="p" data-v="${p.nombre.replace(/"/g,'&quot;')}" onmousedown="elegirProd('${p.nombre.replace(/'/g,"\\'")}')"><span class="ic">🔍</span>${p.nombre}</div>`).join('');
+  caja.classList.add('on');
+  sugSel=-1;
+}
+function elegirProd(n){
+  document.getElementById('q').value=n;
+  document.getElementById('sug').classList.remove('on');
+  filtro=n; render();
+}
+function elegirRubro(id){
+  document.getElementById('q').value='';
+  document.getElementById('sug').classList.remove('on');
+  filtro=''; render(); irA(id);
+}
+/* Flechas y Enter en el buscador, para no necesitar el mouse */
+let sugSel=-1;
+function sugLista(){ return Array.from(document.querySelectorAll('#sug .sug-it')); }
+function marcarSug(i){
+  const l=sugLista(); if(!l.length)return;
+  sugSel=Math.max(-1,Math.min(i,l.length-1));
+  l.forEach((el,k)=>el.classList.toggle('sel',k===sugSel));
+  if(l[sugSel])l[sugSel].scrollIntoView({block:'nearest'});
+}
+function teclaBuscador(e){
+  const abierto=document.getElementById('sug').classList.contains('on');
+  if(e.key==='ArrowDown'&&abierto){ e.preventDefault(); marcarSug(sugSel+1); return; }
+  if(e.key==='ArrowUp'&&abierto){ e.preventDefault(); marcarSug(sugSel-1); return; }
+  if(e.key==='Enter'){
+    e.preventDefault();
+    const l=sugLista();
+    if(abierto&&sugSel>=0&&l[sugSel]){
+      const el=l[sugSel];
+      if(el.dataset.t==='r'){ elegirRubro(el.dataset.v); return; }  // el rubro se encarga del scroll
+      elegirProd(el.dataset.v);
+    }else{
+      // sin sugerencia elegida: se aplica lo escrito y el foco baja al primer casillero
+      document.getElementById('sug').classList.remove('on');
+      clearTimeout(tBusq); filtro=document.getElementById('q').value.trim(); render();
+    }
+    setTimeout(()=>{ const p=casilleros()[0]; if(p){p.focus();p.select();} },220);
+  }
+}
+
+function ocultarSugPronto(){ setTimeout(()=>document.getElementById('sug').classList.remove('on'),160); }
+function limpiar(){
+  document.getElementById('q').value='';
+  filtro='';
+  document.getElementById('sug').classList.remove('on');
+  document.getElementById('qx').classList.remove('on');
+  render();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+var _RETIRO = {
+  minorista: {   // en la distribuidora el retiro es en el depósito de Guaymallén
+    dirCorta: 'Ruta Prov. 50 Nº 13080, KM 8 — Guaymallén',
+    dirLarga: 'Ruta Provincial 50 Nº 13080, KM 8 — Guaymallén, Mendoza',
+    horarioCorto: 'Lun–Vie 8 a 16 · Sáb 8 a 13hs',
+    horarioLargo: 'Lunes a Viernes 08:00 a 16:00hs · Sábados 08:00 a 13:00hs',
+    mapa: 'https://maps.app.goo.gl/MXySPy9mbBFm8oVaA'
+  }
+};
+var _PALADEAR_PERFIL_KEY = 'paladear_perfil_v1';  // misma clave que la tienda: los datos del cliente se comparten
+var _coVenta = 'minorista';
+var _coEntrega = null;
+var _coMap = null, _coMarker = null, _leafletReady = false;
+
+// ═══ PERFIL LOCAL (localStorage) — recuerda datos del cliente entre pedidos ═══
+var _PALADEAR_PERFIL_KEY = 'paladear_perfil_v1';
+function _coCargarPerfil() {
+  try { return JSON.parse(localStorage.getItem(_PALADEAR_PERFIL_KEY) || '{}') || {}; }
+  catch(e) { return {}; }
+}
+function _coGuardarPerfil(p) {
+  try { localStorage.setItem(_PALADEAR_PERFIL_KEY, JSON.stringify(p)); } catch(e) {}
+}
+function _coSet(id, val) {
+  var el = document.getElementById(id);
+  if (el && !el.value && val) el.value = val;
+}
+function _coAutocompletar() {
+  var p = _coCargarPerfil();
+  if (!p || !Object.keys(p).length) return;
+  _coSet('coNombre', p.nombre);
+  _coSet('coNombreDom', p.nombre);
+  _coSet('coHorarioRetiro', p.horarioRetiro);
+  // Los detalles de la dirección (piso, tipo, entre calles, indicaciones) viven en cada
+  // dirección guardada; los campos quedan vacíos para cargar una dirección nueva.
+}
+window.coBorrarPerfil = function() {
+  if (!confirm('¿Borrar tus datos guardados (nombre, dirección, etc.)?')) return;
+  try { localStorage.removeItem(_PALADEAR_PERFIL_KEY); } catch(e) {}
+  ['coNombre','coNombreDom','coHorarioRetiro','coCalle','coNumero','coLocalidad','coPisoDepto','coEntreCalles','coIndicaciones'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  document.querySelectorAll('input[name="coTipo"],input[name="coPago"]').forEach(function(r){ r.checked = false; });
+  var _pv = document.getElementById('coProvincia'); if (_pv) _pv.value = 'Mendoza';
+  _coBuildDirOpts();
+  _coNombreCompacto();
+};
+
+// Direcciones guardadas en el checkout: radios para elegir rápido + "otra dirección".
+// Los detalles (piso, tipo, entre calles, indicaciones, mapa) solo se piden al cargar una
+// dirección NUEVA y quedan guardados con ella.
+function _ctaEsc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function _cuentaDirecciones(p){
+  p=p||_coCargarPerfil();
+  var raw=Array.isArray(p.direcciones)?p.direcciones.filter(Boolean):(p.direccion?[p.direccion]:[]);
+  return raw.map(function(d,i){
+    if(typeof d==='string'){
+      var o={dir:d};
+      if(i===0){if(p.pisoDepto)o.piso=p.pisoDepto;if(p.tipoViv)o.tipo=p.tipoViv;if(p.entreCalles)o.entre=p.entreCalles;if(p.indicaciones)o.indic=p.indicaciones;}
+      return o;
+    }
+    return (d&&d.dir)?d:null;
+  }).filter(Boolean);
+}
+var _coDirsCache=[];
+function _coBuildDirOpts(){
+  var wrap=document.getElementById('coDirOpts');
+  var inp=document.getElementById('coDirNueva');
+  var det=document.getElementById('coDirDetalles');
+  if(!wrap||!inp)return;
+  _coDirsCache=_cuentaDirecciones(_coCargarPerfil());
+  var dirs=_coDirsCache;
+  if(!dirs.length){wrap.style.display='none';wrap.innerHTML='';inp.style.display='';if(det)det.style.display='';return;}
+  var h='';
+  dirs.forEach(function(d,i){
+    var extras=[];
+    if(d.tipo)extras.push(d.tipo==='depto'?'Depto':'Casa');
+    if(d.piso)extras.push(d.piso);
+    if(d.entre)extras.push('entre '+d.entre);
+    var sub=extras.length?'<span class="co-dir-opt-sub">'+_ctaEsc(extras.join(' · '))+'</span>':'';
+    h+='<label class="co-dir-opt'+(i===0?' on':'')+'"><input type="radio" name="coDirSel" value="'+i+'"'+(i===0?' checked':'')+'><span class="co-dir-opt-txt"><span>'+_ctaEsc(d.dir)+'</span>'+sub+'</span></label>';
+  });
+  h+='<label class="co-dir-opt otra"><input type="radio" name="coDirSel" value="__otra"><span>➕ Usar otra dirección…</span></label>';
+  wrap.innerHTML=h;
+  wrap.style.display='';
+  inp.style.display='none';
+  if(det)det.style.display='none';
+  wrap.onchange=function(){
+    var sel=wrap.querySelector('input[name="coDirSel"]:checked');
+    wrap.querySelectorAll('.co-dir-opt').forEach(function(l){l.classList.toggle('on',sel&&l.contains(sel));});
+    if(sel&&sel.value==='__otra'){inp.style.display='';if(det)det.style.display='';var c=document.getElementById('coCalle');if(c)c.focus();}
+    else{inp.style.display='none';if(det)det.style.display='none';}
+  };
+}
+// Dirección efectiva como OBJETO: la elegida en los radios, o una nueva armada con los campos.
+// Para direcciones nuevas: calle, número, localidad y provincia son OBLIGATORIOS.
+function _coDirObjActual(){
+  var sel=document.querySelector('#coDirOpts input[name="coDirSel"]:checked');
+  if(sel&&sel.value!=='__otra'){var d=_coDirsCache[parseInt(sel.value,10)];if(d)return d;}
+  var calle=(document.getElementById('coCalle').value||'').trim();
+  var num=(document.getElementById('coNumero').value||'').trim();
+  var loc=(document.getElementById('coLocalidad').value||'').trim();
+  var prov=(document.getElementById('coProvincia').value||'').trim();
+  if(!calle){_coMarkRequired('coCalle');return null;}
+  if(!num){_coMarkRequired('coNumero');return null;}
+  if(!loc){_coMarkRequired('coLocalidad');return null;}
+  if(!prov){_coMarkRequired('coProvincia');return null;}
+  var tipoEl=document.querySelector('input[name="coTipo"]:checked');
+  var o={dir:calle+' '+num+', '+loc+', '+prov,
+    calle:calle,num:num,loc:loc,prov:prov,
+    piso:(document.getElementById('coPisoDepto').value||'').trim(),
+    tipo:tipoEl?tipoEl.value:'',
+    entre:(document.getElementById('coEntreCalles').value||'').trim(),
+    indic:(document.getElementById('coIndicaciones').value||'').trim()};
+  return o;
+}
+function _coDireccionActual(){var d=_coDirObjActual();return d?d.dir:'';}
+window._coDireccionActual=_coDireccionActual;
+// Nombre compacto: si ya lo tenemos guardado, mostrar "A nombre de X · Cambiar" en vez del campo
+function _coNombreCompacto(){
+  var nom=(_coCargarPerfil().nombre||'').trim();
+  [['coNombreField','coNombreMiniR','coNombreTxtR'],['coNombreDomField','coNombreMiniDom','coNombreTxtDom']].forEach(function(ids){
+    var f=document.getElementById(ids[0]),m=document.getElementById(ids[1]),t=document.getElementById(ids[2]);
+    if(!f||!m||!t)return;
+    if(nom){f.classList.add('hidden');t.textContent=nom;m.classList.remove('hidden');}
+    else{f.classList.remove('hidden');m.classList.add('hidden');}
+  });
+}
+window.coCambiarNombre=function(which){
+  var f=document.getElementById(which==='R'?'coNombreField':'coNombreDomField');
+  var m=document.getElementById(which==='R'?'coNombreMiniR':'coNombreMiniDom');
+  if(f)f.classList.remove('hidden');
+  if(m)m.classList.add('hidden');
+  var inp=document.getElementById(which==='R'?'coNombre':'coNombreDom');
+  if(inp)inp.focus();
+};
+
+function abrirCheckout() {
+  _coEntrega = null;
+  var _ret = _RETIRO.minorista;
+  var _subEl = document.getElementById('coRetiroSub');
+  if (_subEl) _subEl.textContent = _ret.dirCorta + ' · ' + _ret.horarioCorto;
+  var _hintEl = document.getElementById('coRetiroHint');
+  if (_hintEl) _hintEl.textContent = 'Horarios del depósito: ' + _ret.horarioLargo;
+  document.getElementById('coStep1').classList.remove('hidden');
+  document.getElementById('coStep2Retiro').classList.add('hidden');
+  document.getElementById('coStep2Dom').classList.add('hidden');
+  document.getElementById('coTitle').textContent = 'Finalizar pedido';
+  document.getElementById('coBtnBack').style.display = 'none';
+  _coRenderSummary();
+  document.getElementById('checkoutOverlay').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  _coAutocompletar();
+  _coBuildDirOpts();
+  _coNombreCompacto();
+}
+window.abrirCheckout = abrirCheckout;
+
+function cerrarCheckout() {
+  document.getElementById('checkoutOverlay').classList.add('hidden');
+  document.body.style.overflow = '';
+  _coEntrega = null;
+}
+window.cerrarCheckout = cerrarCheckout;
+
+function _coBack() {
+  _coEntrega = null;
+  document.getElementById('coStep1').classList.remove('hidden');
+  document.getElementById('coStep2Retiro').classList.add('hidden');
+  document.getElementById('coStep2Dom').classList.add('hidden');
+  document.getElementById('coTitle').textContent = 'Finalizar pedido';
+  document.getElementById('coBtnBack').style.display = 'none';
+}
+window._coBack = _coBack;
+
+function _coRenderSummary() {
+  var t = totales();
+  document.getElementById('coSummary').innerHTML =
+    '<span>' + t.n + ' producto' + (t.n !== 1 ? 's' : '') + '</span>' +
+    '<span>Total: <b>$' + fmt(t.final) + '</b></span>';
+}
+
+function coElegirEntrega(tipo) {
+  _coEntrega = tipo;
+  document.getElementById('coStep1').classList.add('hidden');
+  document.getElementById('coStep2Retiro').classList.toggle('hidden', tipo !== 'retiro');
+  document.getElementById('coStep2Dom').classList.toggle('hidden', tipo !== 'domicilio');
+  document.getElementById('coTitle').textContent = tipo === 'retiro' ? 'Retiro en el depósito' : 'Envío a domicilio';
+  document.getElementById('coBtnBack').style.display = '';
+}
+window.coElegirEntrega = coElegirEntrega;
+
+function _coLoadLeaflet() {
+  if (window.L) return;
+  if (!document.getElementById('leafletCSS')) {
+    var lk = document.createElement('link');
+    lk.id = 'leafletCSS';
+    lk.rel = 'stylesheet';
+    lk.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';
+    document.head.appendChild(lk);
+  }
+  if (!document.getElementById('leafletJS')) {
+    var sc = document.createElement('script');
+    sc.id = 'leafletJS';
+    sc.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
+    sc.onload = function(){ _leafletReady = true; };
+    document.head.appendChild(sc);
+  }
+}
+
+function _coInitMap() {
+  if (_coMap) { setTimeout(function(){ _coMap.invalidateSize(); }, 100); return; }
+  var mapDiv = document.getElementById('coMap');
+  if (!mapDiv || !window.L) { setTimeout(_coInitMap, 500); return; }
+  _coMap = L.map('coMap').setView([-32.89, -68.83], 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap', maxZoom: 19
+  }).addTo(_coMap);
+  _coMarker = L.marker([-32.89, -68.83], {draggable: true}).addTo(_coMap);
+  _coMarker.on('dragend', function(){
+    var p = _coMarker.getLatLng();
+    _coCoords = { lat: p.lat, lng: p.lng };
+    _coShowConfirm();
+  });
+  setTimeout(function(){ _coMap.invalidateSize(); }, 150);
+}
+
+// Coords guardadas (sin tocar el campo de dirección)
+var _coCoords = null;
+
+function coAbrirUbicacion() {
+  _coLoadLeaflet();
+  document.getElementById('coUbicacionPanel').classList.remove('hidden');
+  document.getElementById('coUbicBtn').style.display = 'none';
+  // Esperar a Leaflet y inicializar
+  var tries = 0;
+  var waiter = setInterval(function() {
+    tries++;
+    if (window.L) { clearInterval(waiter); _coInitMap(); }
+    else if (tries > 30) { clearInterval(waiter); alert('No se pudo cargar el mapa. Revisá tu conexión.'); }
+  }, 200);
+}
+window.coAbrirUbicacion = coAbrirUbicacion;
+
+function coCerrarUbicacion() {
+  document.getElementById('coUbicacionPanel').classList.add('hidden');
+  document.getElementById('coUbicBtn').style.display = '';
+  document.getElementById('coUbicConfirm').classList.add('hidden');
+  _coCoords = null;
+}
+window.coCerrarUbicacion = coCerrarUbicacion;
+
+function coBuscarMapa() {
+  var addr = _coDireccionActual();
+  if (!addr) {
+    alert('Primero completá calle, número y localidad arriba.');
+    var _c = document.getElementById('coCalle');
+    if (_c) _c.focus();
+    return;
+  }
+  if (!window.L || !_coMap) { _coLoadLeaflet(); setTimeout(coBuscarMapa, 800); return; }
+  var q = addr + ', Mendoza, Argentina';
+  fetch('https://nominatim.openstreetmap.org/search?format=json&q=' + encodeURIComponent(q) + '&limit=1&countrycodes=ar')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if (data && data.length) {
+        var lat = parseFloat(data[0].lat), lon = parseFloat(data[0].lon);
+        _coMap.setView([lat, lon], 16);
+        _coMarker.setLatLng([lat, lon]);
+        _coCoords = { lat: lat, lng: lon };
+        _coShowConfirm();
+        setTimeout(function(){ _coMap.invalidateSize(); }, 100);
+      } else {
+        alert('No se encontró la dirección. Probá escribirla más completa o usá "Mi ubicación actual".');
+      }
+    })
+    .catch(function(){ alert('No se pudo buscar la dirección. Revisá tu conexión.'); });
+}
+window.coBuscarMapa = coBuscarMapa;
+
+function coUsarUbicacion() {
+  if (!navigator.geolocation) { alert('Tu dispositivo no permite compartir la ubicación.'); return; }
+  navigator.geolocation.getCurrentPosition(
+    function(pos) {
+      var lat = pos.coords.latitude, lon = pos.coords.longitude;
+      if (!window.L || !_coMap) { _coLoadLeaflet(); setTimeout(coUsarUbicacion, 800); return; }
+      _coMap.setView([lat, lon], 17);
+      _coMarker.setLatLng([lat, lon]);
+      _coCoords = { lat: lat, lng: lon };
+      _coShowConfirm();
+      setTimeout(function(){ _coMap.invalidateSize(); }, 100);
+    },
+    function(){ alert('No se pudo obtener tu ubicación. Activá los permisos de ubicación o arrastrá el pin en el mapa.'); },
+    { enableHighAccuracy: true, timeout: 8000 }
+  );
+}
+window.coUsarUbicacion = coUsarUbicacion;
+
+function _coShowConfirm() {
+  document.getElementById('coUbicConfirm').classList.remove('hidden');
+}
+
+function coEnviar() {
+  var tipo = _coEntrega;
+  var nombre, horario, direccion, pago, deliveryMsg;
+
+  if (tipo === 'retiro') {
+    nombre = (document.getElementById('coNombre').value || '').trim();
+    if (!nombre) { _coMarkRequired('coNombre'); return; }
+    horario = (document.getElementById('coHorarioRetiro').value || '').trim();
+    var _retM = _RETIRO.minorista;
+    deliveryMsg = '\n\n🏬 *RETIRO EN EL DEPÓSITO*\n👤 ' + nombre;
+    deliveryMsg += '\n🕐 Horario preferido: ' + (horario || 'Sin preferencia');
+    deliveryMsg += '\n📍 ' + _retM.dirLarga;
+    if (_retM.mapa) deliveryMsg += '\n\uD83D\uDD17 ' + _retM.mapa;
+    deliveryMsg += '\n💳 Pago: a definir en el depósito';
+  } else {
+    nombre = (document.getElementById('coNombreDom').value || '').trim();
+    if (!nombre) { _coMarkRequired('coNombreDom'); return; }
+    var dirObj = _coDirObjActual();
+    if (!dirObj) return; // _coDirObjActual ya marcó el campo obligatorio que falta
+    direccion = dirObj.dir;
+    // Si marcó el pin del mapa en esta sesión, queda guardado con la dirección elegida
+    if (_coCoords && !(dirObj.lat && dirObj.lng)) { dirObj.lat = _coCoords.lat; dirObj.lng = _coCoords.lng; }
+    deliveryMsg = '\n\n🚚 *ENVÍO A DOMICILIO*\n👤 ' + nombre;
+    deliveryMsg += '\n📍 ' + direccion;
+    if (dirObj.piso) deliveryMsg += '\n🏠 Piso/Depto: ' + dirObj.piso;
+    if (dirObj.tipo) deliveryMsg += '\n🏢 Tipo: ' + (dirObj.tipo === 'casa' ? 'Casa' : 'Departamento');
+    if (dirObj.entre) deliveryMsg += '\n\uD83D\uDEA6 Entre calles: ' + dirObj.entre;
+    if (dirObj.indic) deliveryMsg += '\n📝 Indicaciones: ' + dirObj.indic;
+    // Link de Google Maps SIEMPRE: pin exacto si lo tiene, sino búsqueda por la dirección escrita
+    if (dirObj.lat && dirObj.lng) {
+      deliveryMsg += '\n📌 Ubicación exacta: https://maps.google.com/?q=' + dirObj.lat + ',' + dirObj.lng;
+    } else {
+      var _q = /mendoza/i.test(direccion) ? direccion : direccion + ', Mendoza, Argentina';
+      deliveryMsg += '\n\uD83D\uDD17 Ver en Google Maps: https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(_q);
+    }
+    deliveryMsg += '\n💳 Pago: Transferencia bancaria';
+  }
+
+  // ── Mensaje con los productos del catálogo (un renglón por producto, nunca repetido) ──
+  var ids = idsDelPedido();
+  if (!ids.length) { alert('Todavía no cargaste cantidades.'); return; }
+  var t = totales();
+  if (!t.alcanza) {   // red de seguridad: no se envía un primer pedido por debajo del mínimo
+    alert('⚠️ Tu PRIMER pedido tiene un mínimo de compra de $'+fmt(t.minimo)+'.\n\nFaltan: $'+fmt(t.minimo-t.total));
+    return;
+  }
+  // Mismo formato que el pedido mayorista de la web
+  var msg = '📦 *Pedido Mayorista - Paladear Distribuidora*\n\n';
+  ids.forEach(function(id){
+    var p = PRODS.find(function(x){return x.id===id;}), it = pedido[id];
+    msg += '*' + it.cant + '* - ' + p.nombre + ' (' + p.bultoLabel + ' por bulto)\n   $' + fmt(subtotalDe(p,it)) + '\n';
+  });
+  msg += '\n*TOTAL: $' + fmt(t.total) + '*\n_(Lista Mayorista)_';
+  msg += deliveryMsg + '\n\n_Pedido armado desde la lista mayorista_';
+  var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
+
+  // Guardar perfil para próximos pedidos
+  var _perfil = _coCargarPerfil();
+  _perfil.nombre = nombre;
+  if (tipo === 'retiro') {
+    if (horario) _perfil.horarioRetiro = horario;
+  } else {
+    _perfil.direccion = direccion;
+    var _dl = direccion.trim().toLowerCase();
+    var _dirsArr = _cuentaDirecciones(_perfil).filter(function(d){ return d.dir.trim().toLowerCase() !== _dl; });
+    _dirsArr.unshift(dirObj);
+    _perfil.direcciones = _dirsArr.slice(0, 6);
+    delete _perfil.pisoDepto; delete _perfil.tipoViv; delete _perfil.entreCalles; delete _perfil.indicaciones;
+  }
+  _coGuardarPerfil(_perfil);
+
+  // Queda registrado en el historial: por eso el próximo pedido ya no tiene mínimo
+  try{
+    var hist=JSON.parse(localStorage.getItem(PEDIDOS_KEY)||'[]'); if(!Array.isArray(hist))hist=[];
+    var num=(parseInt(localStorage.getItem('paladear_pedido_may_n')||'0',10)||0)+1;
+    localStorage.setItem('paladear_pedido_may_n',String(num));
+    var d=new Date();
+    var fecha=('0'+d.getDate()).slice(-2)+'/'+('0'+(d.getMonth()+1)).slice(-2)+'/'+d.getFullYear();
+    var snap=ids.map(function(id){var p=PRODS.find(function(x){return x.id===id;});return {pid:p.id,n:p.nombre,c:pedido[id].cant,l1:p.pb,_sub:subtotalDe(p,pedido[id])};});
+    hist.unshift({n:num,fecha:fecha,total:t.total,count:snap.length,direccion:(typeof direccion!=='undefined'?direccion:''),cart:snap});
+    if(hist.length>50)hist=hist.slice(0,50);
+    localStorage.setItem(PEDIDOS_KEY,JSON.stringify(hist));
+  }catch(e){}
+
+  // El pedido se vacía recién cuando ya se envió
+  pedido = {}; guardar();
+  cerrarCheckout(); cerrarPanel(); render();
+  window.open(url, '_blank');
+}
+window.coEnviar = coEnviar;
+
+function _coMarkRequired(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  el.style.borderColor = '#e53935';
+  el.scrollIntoView({behavior:'smooth', block:'center'});
+  el.focus();
+  el.addEventListener('input', function(){ el.style.borderColor = ''; }, {once:true});
+}
+
+
+/* ── El banner sigue el total real del pedido ── */
+/* El banner muestra la condición REAL del cliente:
+   - Primer pedido: barra de progreso hacia el mínimo de $250.000.
+   - Del segundo en adelante: no hay mínimo, así que no se muestra barra ni meta. */
+function pintarBanner(){
+  var cnt=document.getElementById('descbCnt'), fill=document.getElementById('descbFill'),
+      rw=document.getElementById('descbRw'), goal=document.getElementById('descbGoal'),
+      note=document.getElementById('descbNote'), lbl=document.getElementById('descbLabel'),
+      track=document.getElementById('descbTrack');
+  if(!cnt)return;
+  var t=totales();
+
+  if(t.minimo===0){
+    // Ya hizo al menos un pedido: sin mínimo
+    note.innerHTML='✨ Ya hiciste tu primer pedido: a partir de ahora comprás <b>SIN MÍNIMO</b>.';
+    lbl.style.display='none'; track.style.display='none';
+    if(t.n>0){ rw.textContent='Tu pedido: $'+fmt(t.total); rw.style.color=''; rw.classList.add('on'); }
+    else rw.classList.remove('on');
+    return;
+  }
+
+  note.innerHTML='🛒 Realizá tu primer pedido alcanzando el mínimo de compra: <b>$'+fmt(MIN_PRIMER_PEDIDO)+'</b>.<br>✨ A partir de tu segundo pedido, comprás <b>SIN MÍNIMO</b>.';
+  lbl.style.display=''; track.style.display='';
+  fill.style.width=Math.min(100,(t.total/MIN_PRIMER_PEDIDO)*100)+'%';
+  cnt.textContent='$'+fmt(t.total);
+  if(t.alcanza){
+    goal.textContent='✓ Mínimo alcanzado';
+    goal.style.color='#1c9d63';
+    rw.textContent='¡Ya podés enviar tu primer pedido!';
+    rw.style.color='';
+    rw.classList.add('on');
+  }else{
+    goal.textContent='Mínimo 1er pedido: $'+fmt(MIN_PRIMER_PEDIDO);
+    goal.style.color='';
+    if(t.n>0){
+      rw.textContent='Faltan $'+fmt(MIN_PRIMER_PEDIDO-t.total)+' para alcanzar el mínimo';
+      rw.style.color='#745b4f';
+      rw.classList.add('on');
+    }else rw.classList.remove('on');
+  }
+}
+
+document.getElementById('printFecha').textContent='Precios actualizados al '+new Date().toLocaleDateString('es-AR')+' · Venta únicamente por bulto cerrado';
+recuperar();
+cargar();
+</script>
+<div id="checkoutOverlay" class="checkout-overlay hidden" onclick="if(event.target===this)cerrarCheckout()">
+  <div class="checkout-sheet">
+    <!-- Header -->
+    <div class="checkout-hdr">
+      <button class="checkout-hdr-btn" id="coBtnBack" onclick="_coBack()" style="display:none" title="Volver">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+      </button>
+      <h2 id="coTitle">Finalizar pedido</h2>
+      <button class="checkout-hdr-btn" onclick="cerrarCheckout()" title="Cerrar">✕</button>
+    </div>
+    <!-- Resumen -->
+    <div class="checkout-summary" id="coSummary"></div>
+    <!-- Body dinámico -->
+    <div class="checkout-body" id="coBody">
+      <!-- Step 1 -->
+      <div id="coStep1">
+        <p class="checkout-step-lbl">¿Cómo querés recibir tu pedido?</p>
+        <div class="checkout-delivery-opts">
+          <button class="checkout-delivery-btn" onclick="coElegirEntrega('retiro')">
+            <span class="checkout-delivery-ic retiro"><img src="nav-inicio.png" alt="" aria-hidden="true"></span>
+            <div class="checkout-delivery-txt"><b>Retiro en el depósito</b><small id="coRetiroSub">Ruta Prov. 50 Nº 13080, KM 8 — Guaymallén</small></div>
+            <span class="checkout-delivery-arr">›</span>
+          </button>
+          <button class="checkout-delivery-btn" onclick="coElegirEntrega('domicilio')">
+            <span class="checkout-delivery-ic domicilio"><img src="camion-envio.png" alt="" aria-hidden="true"></span>
+            <div class="checkout-delivery-txt"><b>Envío a domicilio</b><small>Hacemos envíos a todo el país</small></div>
+            <span class="checkout-delivery-arr">›</span>
+          </button>
+        </div>
+      </div>
+      <!-- Step 2: Retiro -->
+      <div id="coStep2Retiro" class="hidden">
+        <div class="co-field" id="coNombreField">
+          <label>Nombre y apellido <span style="color:#e53935">*</span></label>
+          <input type="text" id="coNombre" placeholder="Tu nombre completo" class="co-input" autocomplete="name">
+        </div>
+        <div class="co-nombre-mini hidden" id="coNombreMiniR">👤 A nombre de <b id="coNombreTxtR"></b> · <a href="#" onclick="coCambiarNombre('R');return false">Cambiar</a></div>
+        <div class="co-field">
+          <label>Horario preferido de retiro <span class="opt-lbl">(opcional)</span></label>
+          <input type="text" id="coHorarioRetiro" placeholder="Ej: entre 10 y 12hs" class="co-input">
+          <span class="co-hint" id="coRetiroHint">Horarios del depósito: Lunes a Viernes 08:00 a 16:00hs · Sábados 08:00 a 13:00hs</span>
+        </div>
+        <div class="co-pago-nota">💳 En el depósito podés pagar con <b>efectivo o transferencia</b>.</div>
+        <button class="wa-btn" style="margin-top:8px" onclick="coEnviar()"><svg viewBox="0 0 24 24" width="19" height="19" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.006 22l4.984-1.307A9.961 9.961 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.25a8.24 8.24 0 01-4.258-1.178l-.306-.181-3.157.828.844-3.07-.2-.319A8.25 8.25 0 1112 20.25z"/></svg> Enviar pedido por WhatsApp</button>
+        <div class="co-saved-hint">💾 Guardamos tus datos en este dispositivo para tu próximo pedido. <a href="#" onclick="coBorrarPerfil();return false">Borrar mis datos</a></div>
+      </div>
+      <!-- Step 2: Domicilio -->
+      <div id="coStep2Dom" class="hidden">
+        <div class="co-field" id="coNombreDomField">
+          <label>Nombre y apellido <span style="color:#e53935">*</span></label>
+          <input type="text" id="coNombreDom" placeholder="Tu nombre completo" class="co-input" autocomplete="name">
+        </div>
+        <div class="co-nombre-mini hidden" id="coNombreMiniDom">👤 A nombre de <b id="coNombreTxtDom"></b> · <a href="#" onclick="coCambiarNombre('Dom');return false">Cambiar</a></div>
+        <div class="co-field">
+          <label>Dirección <span style="color:#e53935">*</span></label>
+          <div id="coDirOpts" class="co-dir-opts" style="display:none"></div>
+          <div id="coDirNueva">
+            <div class="co-field-row">
+              <div class="co-field" style="flex:2;margin-bottom:0">
+                <label>Calle <span style="color:#e53935">*</span></label>
+                <input type="text" id="coCalle" placeholder="Ej: San Martín" class="co-input" autocomplete="address-line1">
+              </div>
+              <div class="co-field" style="flex:1;margin-bottom:0">
+                <label>Número <span style="color:#e53935">*</span></label>
+                <input type="text" id="coNumero" placeholder="Ej: 1234" class="co-input" inputmode="numeric">
+              </div>
+            </div>
+            <div class="co-field-row" style="margin-top:10px">
+              <div class="co-field" style="flex:1.3;margin-bottom:0">
+                <label>Localidad <span style="color:#e53935">*</span></label>
+                <input type="text" id="coLocalidad" placeholder="Ej: Godoy Cruz" class="co-input" autocomplete="address-level2">
+              </div>
+              <div class="co-field" style="flex:1;margin-bottom:0">
+                <label>Provincia <span style="color:#e53935">*</span></label>
+                <input type="text" id="coProvincia" value="Mendoza" class="co-input" autocomplete="address-level1">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Detalles de la dirección: solo al cargar una dirección NUEVA (quedan guardados con ella) -->
+        <div id="coDirDetalles">
+        <div class="co-dir-det-note">Contanos cómo llegar <span class="opt-lbl">(opcional — queda guardado con esta dirección)</span></div>
+        <div class="co-field-row">
+          <div class="co-field" style="flex:1">
+            <label>Piso / Depto <span class="opt-lbl">(opcional)</span></label>
+            <input type="text" id="coPisoDepto" placeholder="Ej: 3°B" class="co-input">
+          </div>
+          <div class="co-field" style="flex:1.4">
+            <label>Tipo <span class="opt-lbl">(opcional)</span></label>
+            <div class="co-tipo-opts">
+              <label class="co-tipo-radio"><input type="radio" name="coTipo" value="casa"><span>🏠 Casa</span></label>
+              <label class="co-tipo-radio"><input type="radio" name="coTipo" value="depto"><span>🏢 Depto</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="co-field">
+          <label>Entre calles <span class="opt-lbl">(opcional)</span></label>
+          <input type="text" id="coEntreCalles" placeholder="Ej: entre Belgrano y San Martín" class="co-input">
+        </div>
+        <div class="co-field">
+          <label>Indicaciones para llegar <span class="opt-lbl">(opcional)</span></label>
+          <textarea id="coIndicaciones" placeholder="Ej: casa rosada, tocar timbre 2 veces" class="co-input" rows="2"></textarea>
+        </div>
+        </div><!-- /coDirDetalles -->
+        <div class="co-pago-nota">💳 El pedido se abona por <b>transferencia bancaria</b> — te pasamos el alias por WhatsApp.<br>🚚 <b>Envío gratis</b> en compras desde <b>$40.000</b> en Gran Mendoza (si es menor, el envío se abona aparte).</div>
+        <button class="wa-btn" style="margin-top:8px" onclick="coEnviar()"><svg viewBox="0 0 24 24" width="19" height="19" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.006 22l4.984-1.307A9.961 9.961 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.25a8.24 8.24 0 01-4.258-1.178l-.306-.181-3.157.828.844-3.07-.2-.319A8.25 8.25 0 1112 20.25z"/></svg> Enviar pedido por WhatsApp</button>
+        <div class="co-saved-hint">💾 Guardamos tus datos en este dispositivo para tu próximo pedido. <a href="#" onclick="coBorrarPerfil();return false">Borrar mis datos</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

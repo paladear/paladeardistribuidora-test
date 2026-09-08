@@ -1,0 +1,51 @@
+{
+  "name": "Paladear Distribuidora",
+  "short_name": "Distribuidora",
+  "description": "Lista de precios mayorista de Paladear — venta por bulto en Mendoza.",
+  "id": "/paladeardistribuidora-test/",
+  "start_url": "/paladeardistribuidora-test/?utm_source=pwa",
+  "scope": "/paladeardistribuidora-test/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#547692",
+  "orientation": "portrait-primary",
+  "lang": "es-AR",
+  "dir": "ltr",
+  "categories": [
+    "shopping",
+    "food",
+    "business"
+  ],
+  "icons": [
+    {
+      "src": "favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "app-icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "app-icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": []
+}
