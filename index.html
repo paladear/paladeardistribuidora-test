@@ -7,6 +7,10 @@ layout: null
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+<link rel="preload" as="image" href="cat-home-aceites.webp" fetchpriority="high">
+<link rel="preload" as="image" href="cat-home-aceitunas.webp" fetchpriority="high">
+<link rel="preload" as="image" href="cat-home-reposteria.webp" fetchpriority="high">
+<link rel="preload" as="image" href="cat-home-bebidas.webp" fetchpriority="high">
 <meta name="color-scheme" content="light only">
 <meta name="supported-color-schemes" content="light">
 <script>if(/Android/i.test(navigator.userAgent||''))document.documentElement.classList.add('android-ui');</script>
@@ -933,7 +937,7 @@ textarea.co-input{resize:vertical;min-height:60px;font-family:inherit}
 }
 
 /* ── BOTÓN VOLVER ARRIBA ── */
-#backToTop{position:fixed;bottom:176px;right:24px;z-index:999;width:42px;height:42px;border-radius:50%;background:rgba(77,125,138,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;border:none;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s,transform .2s;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+#backToTop{position:fixed;bottom:176px;right:24px;z-index:999;width:42px;height:42px;border-radius:50%;background:rgba(77,125,138,.72);color:#fff;border:none;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s,transform .2s;box-shadow:0 2px 12px rgba(0,0,0,.15)}
 #backToTop.visible{opacity:1;pointer-events:auto}
 #backToTop:hover{transform:scale(1.1);background:rgba(77,125,138,.8)}
 @media(max-width:767px){#backToTop{bottom:calc(176px + env(safe-area-inset-bottom));right:18px;width:38px;height:38px;font-size:17px}}
@@ -1708,36 +1712,14 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
   </section>
 
   <section class="may-home-band may-home-band-banners" aria-label="Información mayorista">
-   <div class="may-home-shell may-home-banners-grid">
-    <section class="may-home-info-card" aria-labelledby="distbTitle">
-      <div class="may-home-info-copy">
-        <span class="may-home-section-kicker">Compra mayorista</span>
-        <div class="distb-top">
-          <span class="distb-name">Tu primer pedido, sin vueltas</span>
-        </div>
-        <div class="distb-note" id="distbTitle">Elegí productos por <b>bulto cerrado</b>. Solo el primer pedido requiere un mínimo de <b>$250.000</b>; desde el segundo, comprás <b>sin mínimo</b>.</div>
-        <div class="may-home-info-points" aria-label="Condiciones principales">
-          <span><b>1º pedido</b>$250.000 mínimo</span>
-          <span><b>Después</b>Sin mínimo</span>
-        </div>
-      </div>
-      <div class="may-home-info-visual" aria-hidden="true">
-        <img src="home-compra-mayorista-v2.webp" width="1200" height="900" alt="">
-      </div>
-    </section>
-
-    <a class="may-home-list-card" href="catalogo.html" aria-label="Abrir la lista mayorista completa">
-      <div class="may-home-list-copy">
-        <span class="may-home-section-kicker">Lista mayorista</span>
-        <h2>Todos los precios,<br>en una sola hoja</h2>
-        <p>Consultá todos los productos con su precio por unidad y por bulto.</p>
-        <span class="may-home-list-cta">Ver la lista completa <span aria-hidden="true">→</span></span>
-      </div>
-      <div class="may-home-list-visual" aria-hidden="true">
-        <img src="home-lista-mayorista-v2.webp" width="1200" height="900" alt="">
-      </div>
-    </a>
-   </div>
+    <div class="may-home-shell may-home-banners-grid">
+      <figure class="may-home-reference-banner may-home-reference-banner-info">
+        <img src="banner-compra-mayorista.png" width="877" height="516" loading="lazy" decoding="async" alt="Compra mayorista simple y rápida: primer pedido mínimo de $250.000 y compras siguientes sin mínimo, siempre por bulto cerrado.">
+      </figure>
+      <a class="may-home-reference-banner may-home-reference-banner-list" href="catalogo.html" aria-label="Abrir la lista mayorista completa">
+        <img src="banner-lista-mayorista.png" width="877" height="484" loading="lazy" decoding="async" alt="Lista mayorista con todos los precios por unidad y por bulto.">
+      </a>
+    </div>
   </section>
 
   <section class="may-home-growth" aria-labelledby="mayHomeGrowthTitle">
@@ -2125,7 +2107,7 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
 <button id="chat-fab" onclick="toggleChat()" title="Consultar">💬</button>
 <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver arriba">↑</button>
 <button id="cart-fab" onclick="openCart()" title="Ver carrito"><img class="fab-icon" src="icon-carrito.png" alt=""><span class="cart-count" id="cartCount">0</span></button>
-<button id="cart-fab-may" onclick="openCartMay()" title="Ver pedido mayorista" aria-label="Ver pedido mayorista" style="display:none"><svg class="fab-cart-svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h3l2.2 12.2a2.5 2.5 0 0 0 2.5 2.1h9.7a2.5 2.5 0 0 0 2.4-1.8L27 11H9"/><path d="M13 15h10"/><circle cx="13" cy="26" r="1.6" fill="currentColor" stroke="none"/><circle cx="23" cy="26" r="1.6" fill="currentColor" stroke="none"/></svg><span class="cart-count" id="cartCountFabMay">0</span></button>
+<button id="cart-fab-may" onclick="openCartMay()" title="Ver pedido mayorista" aria-label="Ver pedido mayorista" style="display:none"><svg class="fab-cart-svg" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h3l2.2 12.2a2.5 2.5 0 0 0 2.5 2.1h9.7a2.5 2.5 0 0 0 2.4-1.8L27 11H9"/><path d="M13 15h10"/><circle cx="13" cy="26" r="2.15"/><circle cx="23" cy="26" r="2.15"/></svg><span class="cart-count" id="cartCountFabMay">0</span></button>
 <div id="chat-box">
   <div id="chat-header">
     <img src="chat-avatar.jpg" loading="lazy" onerror="this.style.display='none'" alt="">
@@ -5042,7 +5024,7 @@ function renderMayHomeCategories(){
   for(let i=0;i<cats.length;i+=4)pages.push(cats.slice(i,i+4));
   track.innerHTML=pages.map((page,pageIndex)=>`<div class="may-home-cat-page" data-may-cat-page="${pageIndex}" role="group" aria-label="Página ${pageIndex+1} de categorías">
     ${page.map(cat=>`<button type="button" class="may-home-cat" onclick="mayChooseHeaderCat('${cat.id}')">
-      <img src="${_mayCatAsset(cat.id)}" width="512" height="512" alt="" loading="lazy">
+      <img src="${_mayCatAsset(cat.id)}" width="512" height="512" alt="" loading="${pageIndex===0?'eager':'lazy'}" decoding="async"${pageIndex===0?' fetchpriority="high"':''}>
       <span>${_escHtml(cat.n)}</span>
     </button>`).join('')}
   </div>`).join('');
@@ -7564,7 +7546,7 @@ window.addEventListener('online', function() {
 .may-offers-soon-card button{margin-top:28px;padding:13px 24px;border:0;border-radius:999px;background:#456b89;color:#fff;font:800 13px 'Montserrat',sans-serif}
 
 /* Menú de categorías: mega-menú integrado en desktop; hoja inferior en mobile. */
-.may-redesign .may-cats-overlay{z-index:9000;background:rgba(17,48,72,.16);backdrop-filter:blur(1.5px)}
+.may-redesign .may-cats-overlay{z-index:9000;background:rgba(17,48,72,.16)}
 .may-redesign .may-cats-panel{
   --may-menu-top:150px;position:fixed;left:clamp(150px,15.2vw,220px);right:24px;top:var(--may-menu-top);bottom:auto;
   z-index:9001;width:auto;max-height:min(68vh,570px);padding:24px 26px 28px;overflow:auto;
@@ -7729,7 +7711,7 @@ window.addEventListener('online', function() {
   .may-redesign .may-home-bulto span{font-size:8px}.may-redesign .may-home-bulto b{font-size:9px}
   .may-redesign .header-dropdowns .hdrop-panel{top:66px;right:8px}
   .may-offers-soon{min-height:calc(100svh - 68px);padding:88px 16px 40px}
-  .may-redesign .may-cats-overlay{background:rgba(0,0,0,.42);backdrop-filter:none}
+  .may-redesign .may-cats-overlay{background:rgba(0,0,0,.42)}
   .may-redesign .may-cats-panel{
     position:fixed;left:0;right:0;top:auto!important;bottom:0;width:100%;max-height:78vh;
     padding:20px 16px 26px;border:0;border-radius:20px 20px 0 0;background:#f9fcfe
@@ -7971,10 +7953,6 @@ window.addEventListener('online', function() {
 .may-redesign .hd-nav-inner{width:calc(100% - var(--may-nav-safe-start));margin-left:var(--may-nav-safe-start)}
 .may-redesign .may-cats-panel{left:var(--may-nav-safe-start)}
 
-.may-redesign .may-home-hero::after{
-  content:"";position:absolute;z-index:1;right:22%;top:108px;width:180px;height:250px;opacity:.14;pointer-events:none;
-  background:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 250'%3E%3Cg fill='none' stroke='%23113f63' stroke-width='4' stroke-linecap='round'%3E%3Cpath d='M26 232C82 186 109 105 149 20'/%3E%3Cpath d='M68 174C39 170 23 146 29 121c27-2 48 18 39 53Z' fill='%23113f63' fill-opacity='.2'/%3E%3Cpath d='M91 132c-2-29 15-51 40-55 8 27-8 50-40 55Z' fill='%23113f63' fill-opacity='.17'/%3E%3Cpath d='M115 87c-1-24 14-42 35-45 5 23-9 41-35 45Z' fill='%23113f63' fill-opacity='.15'/%3E%3C/g%3E%3C/svg%3E")
-}
 .may-redesign .may-home-hero-copy{top:clamp(88px,8.2vw,112px)}
 .may-redesign .may-home-hero p{margin-top:29px}
 .may-home-hero-benefits{display:flex;align-items:stretch;gap:0;max-width:490px;margin-top:25px}
@@ -8012,18 +7990,16 @@ window.addEventListener('online', function() {
 .may-home-carousel-controls{display:none}
 
 .may-home-band-featured{overflow:hidden;background:#dcebf5}
-.may-home-band-featured::after,.may-home-band-banners::after{
-  content:"";position:absolute;right:1.5%;bottom:-54px;width:210px;height:285px;opacity:.1;pointer-events:none;
-  background:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 250'%3E%3Cg fill='none' stroke='%23265f86' stroke-width='4'%3E%3Cpath d='M26 232C82 186 109 105 149 20'/%3E%3Cpath d='M68 174C39 170 23 146 29 121c27-2 48 18 39 53Z' fill='%23265f86' fill-opacity='.25'/%3E%3Cpath d='M91 132c-2-29 15-51 40-55 8 27-8 50-40 55Z' fill='%23265f86' fill-opacity='.2'/%3E%3Cpath d='M115 87c-1-24 14-42 35-45 5 23-9 41-35 45Z' fill='%23265f86' fill-opacity='.18'/%3E%3C/g%3E%3C/svg%3E")
-}
 .may-home-band-featured>.may-home-shell,.may-home-band-banners>.may-home-shell{position:relative;z-index:1}
 .may-feature-card{background:#fff}
 .may-feature-visual{background:#fff}
 .may-feature-visual img{background:#fff}
 
 .may-home-band-banners{overflow:hidden;padding:48px 0;background:#f6f0e7}
-.may-home-band-banners::after{right:auto;left:-22px;bottom:-80px;opacity:.075}
-.may-home-banners-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.may-home-banners-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:22px}
+.may-home-reference-banner{display:block;width:100%;margin:0;overflow:hidden;background:transparent;color:inherit;text-decoration:none}
+.may-home-reference-banner img{display:block;width:100%;height:auto}
+.may-home-reference-banner-list:focus-visible{outline:3px solid #315f81;outline-offset:4px;border-radius:24px}
 .may-home-info-card,.may-home-list-card{
   display:grid;grid-template-columns:minmax(0,1.08fr) minmax(210px,.92fr);height:286px;min-height:286px;margin:0;
   border-radius:25px;box-shadow:0 15px 35px rgba(30,67,93,.12)
@@ -8081,7 +8057,6 @@ window.addEventListener('online', function() {
   .may-redesign{--may-nav-safe-start:0px}
   .may-redesign .hd-nav-inner{width:100%;margin-left:0}
   .may-redesign .may-cats-panel{left:0}
-  .may-redesign .may-home-hero::after{right:-32px;top:108px;width:128px;height:180px;opacity:.1}
   .may-redesign .may-home-hero-copy{top:66px}
   .may-redesign .may-home-hero p{margin-top:21px;font-size:13px;line-height:1.5}
   .may-home-hero-benefits{margin-top:18px;max-width:342px}
@@ -8094,7 +8069,6 @@ window.addEventListener('online', function() {
   .may-home-cat img{width:98px;height:98px;border-width:2.5px}
   .may-home-cat span{font-size:9.5px}
   .may-home-cat-arrow{top:45px;width:31px;height:31px;font-size:23px}
-  .may-home-band-featured::after{right:-48px;width:170px;height:230px}
   .may-home-band-banners{padding:34px 0}
   .may-home-banners-grid{grid-template-columns:1fr;gap:15px}
   .may-home-info-card,.may-home-list-card{display:flex;height:auto;min-height:0;flex-direction:column;border-radius:21px}
@@ -8159,11 +8133,11 @@ window.addEventListener('online', function() {
   .may-mobile-header-btn:active{background:rgba(255,255,255,.2);transform:scale(.94)}
 
   .may-mobile-bottom-nav{
-    position:fixed;left:0;right:0;bottom:0;z-index:10010;display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));height:calc(68px + env(safe-area-inset-bottom));
+    position:fixed!important;inset:auto 0 0 0!important;z-index:10010;display:grid;width:100%;
+    grid-template-columns:repeat(3,minmax(0,1fr));min-height:calc(68px + env(safe-area-inset-bottom));
     padding:7px 16px calc(7px + env(safe-area-inset-bottom));border-top:1px solid rgba(34,78,111,.13);
-    background:rgba(255,255,255,.96);box-shadow:0 -8px 26px rgba(25,59,84,.13);
-    -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)
+    background:#fff;box-shadow:0 -8px 26px rgba(25,59,84,.13);
+    -webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);isolation:isolate
   }
   .may-mobile-nav-link{
     position:relative;display:flex;min-width:0;align-items:center;justify-content:center;flex-direction:column;gap:3px;
@@ -8175,22 +8149,21 @@ window.addEventListener('online', function() {
   .may-mobile-nav-link:active{transform:scale(.95)}
   body.cart-open .may-mobile-bottom-nav,body.may-cats-open .may-mobile-bottom-nav{display:none}
 
-  .may-redesign .may-home-hero{height:440px;min-height:0;margin:0;background:#c9e1ef}
-  .may-redesign .may-home-hero-media{height:360px;bottom:auto}
+  .may-redesign .may-home-hero{height:360px;min-height:0;margin:0;background:#c9e1ef}
+  .may-redesign .may-home-hero-media{height:100%;bottom:0}
   .may-redesign .may-home-hero-bg{object-fit:cover;object-position:center bottom}
   .may-redesign .may-home-hero-shade{
     background:linear-gradient(90deg,rgba(211,234,246,.97) 0%,rgba(211,234,246,.87) 47%,rgba(211,234,246,.25) 72%,rgba(211,234,246,.04) 100%)
   }
-  .may-redesign .may-home-hero::after{display:none}
-  .may-redesign .may-home-hero-copy{left:20px;right:20px;top:59px;width:auto;text-align:left}
+  .may-redesign .may-home-hero-copy{left:20px;right:20px;top:59px;bottom:0;width:auto;text-align:left}
   .may-redesign .may-home-eyebrow{margin-bottom:8px;font-size:9.5px;letter-spacing:.15em}
   .may-redesign .may-home-hero h1{font-size:clamp(24px,7.45vw,29.5px);line-height:1.01;white-space:nowrap}
   .may-redesign .may-home-hero p{max-width:248px;margin-top:13px;font-size:11.5px;line-height:1.46;text-wrap:pretty}
   .may-redesign .may-home-cta{height:42px;margin-top:18px;padding:0 19px;gap:10px;font-size:11px;box-shadow:0 6px 15px rgba(20,57,84,.15)}
   .may-redesign .may-home-cta svg{width:17px;height:17px}
   .may-home-hero-benefits{
-    position:absolute;left:-20px;top:301px;width:100vw;height:80px;max-width:none;margin:0;padding:10px 12px;
-    align-items:center;background:rgba(239,247,252,.94);box-shadow:0 -1px 0 rgba(43,88,121,.08)
+    position:absolute;left:-20px;right:-20px;top:auto;bottom:0;width:auto;height:62px;max-width:none;margin:0;padding:7px 12px;
+    align-items:center;background:rgba(233,244,250,.92);box-shadow:0 -1px 0 rgba(43,88,121,.08)
   }
   .may-home-hero-benefits span{grid-template-columns:21px auto;padding:1px 9px;gap:6px;font-size:7.6px;line-height:1.27}
   .may-home-hero-benefits svg{width:20px;height:20px}
@@ -8234,14 +8207,14 @@ window.addEventListener('online', function() {
   .may-mobile-header-btn,.may-redesign .hd-accesos>.hd-acceso:nth-child(2){width:38px;height:38px}
   .may-redesign .may-home-hero-copy{left:17px;right:17px}
   .may-redesign .may-home-hero p{max-width:218px;font-size:10.5px}
-  .may-home-hero-benefits{left:-17px}
+  .may-home-hero-benefits{left:-17px;right:-17px}
   .may-home-info-card,.may-home-list-card{grid-template-columns:minmax(0,1.55fr) minmax(102px,.82fr)}
   .may-home-info-copy,.may-home-list-copy{padding-left:14px}
   .may-home-info-card .distb-name,.may-home-list-copy h2{font-size:17px}
   .may-home-info-card .distb-note{font-size:8.4px}
 }
 
-/* Home v3: carrusel por páginas, banners fotográficos y textura botánica. */
+/* Home v3: carrusel por páginas y banners fotográficos. */
 .may-mobile-socials{display:none}
 .may-home-cat-page{display:contents}
 .may-home-cat-pagination{display:none}
@@ -8279,25 +8252,18 @@ window.addEventListener('online', function() {
 }
 .may-home-info-points b{color:#123f63;font-size:9.5px;font-weight:850}
 
-.may-home-band-categories::after,.may-home-band-featured::after,.may-home-band-banners::after{
-  content:"";position:absolute;width:245px;height:305px;pointer-events:none;
-  background:center/contain no-repeat url('leaf-shadow.svg')
-}
-.may-home-band-categories::after{right:-58px;bottom:-90px;opacity:.12;filter:brightness(0) invert(1)}
-.may-home-band-featured::after{right:-55px;top:24px;bottom:auto;opacity:.11}
-.may-home-band-banners::after{left:-72px;right:auto;bottom:-88px;opacity:.09;transform:rotate(12deg)}
 .may-home-band-categories>.may-home-shell,.may-home-band-featured>.may-home-shell,.may-home-band-banners>.may-home-shell{position:relative;z-index:1}
 
 @media(max-width:760px){
   .may-redesign .header-inner{padding-right:10px}
   .may-redesign .hd-accesos{display:none!important}
-  .may-mobile-socials{display:flex;align-items:center;gap:3px;margin-right:auto}
+  .may-mobile-socials{display:flex;align-items:center;gap:2px;margin-right:auto}
   .may-mobile-socials a{
-    display:grid;width:29px;height:29px;place-items:center;border-radius:9px;color:rgba(255,255,255,.96);
+    display:grid;width:34px;height:34px;place-items:center;border-radius:10px;color:#fff;
     text-decoration:none;transition:background .18s ease,transform .16s ease
   }
   .may-mobile-socials a:active{background:rgba(255,255,255,.16);transform:scale(.92)}
-  .may-mobile-socials svg{width:18px;height:18px}
+  .may-mobile-socials svg{width:22px;height:22px}
 
   .may-home-band-categories{padding:34px 0 29px}
   .may-home-band-categories .may-home-section-head{margin-bottom:19px}
@@ -8318,14 +8284,14 @@ window.addEventListener('online', function() {
     width:105px;height:105px;border:2.5px solid rgba(255,255,255,.92);border-radius:50%;
     box-shadow:0 7px 17px rgba(16,47,70,.22)
   }
-  .may-home-cat span{font-size:10px;line-height:1.22}
-  .may-home-cat-pagination{display:flex;align-items:center;justify-content:center;gap:0;margin-top:11px}
-  .may-home-cat-pagination button{position:relative;width:34px;height:34px;padding:0;border:0;background:transparent;cursor:pointer}
+  .may-home-cat span{font-size:12px;line-height:1.25}
+  .may-home-cat-pagination{display:flex;align-items:center;justify-content:center;gap:2px;margin-top:11px}
+  .may-home-cat-pagination button{position:relative;width:30px;height:30px;padding:0;border:0;background:transparent;cursor:pointer}
   .may-home-cat-pagination button::before{
-    content:"";position:absolute;inset:14px;border-radius:999px;background:rgba(255,255,255,.38);
-    transition:inset .22s ease,background-color .22s ease
+    content:"";position:absolute;left:10px;top:10px;width:10px;height:10px;border:1.5px solid rgba(255,255,255,.76);
+    border-radius:50%;background:transparent;transition:background-color .22s ease,transform .22s ease
   }
-  .may-home-cat-pagination button[aria-current="true"]::before{inset:14px 9px;background:#fff}
+  .may-home-cat-pagination button[aria-current="true"]::before{background:#fff;transform:scale(1.08)}
   .may-home-cat-pagination button:focus-visible{outline:2px solid #fff;outline-offset:-4px;border-radius:10px}
   .may-home-cat-arrow{display:none!important}
 
@@ -8345,10 +8311,6 @@ window.addEventListener('online', function() {
   .may-home-list-visual img{width:85%;object-position:61% center}
   .may-home-info-visual::after{background:linear-gradient(90deg,#e6f2f8 0%,rgba(230,242,248,.98) 48%,rgba(230,242,248,.7) 66%,rgba(230,242,248,.08) 90%,transparent)}
   .may-home-list-visual::after{background:linear-gradient(90deg,#315f81 0%,rgba(49,95,129,.98) 48%,rgba(49,95,129,.72) 66%,rgba(49,95,129,.08) 90%,transparent)}
-  .may-home-band-categories::after{right:-82px;bottom:-94px;width:230px;height:285px;opacity:.1}
-  .may-home-band-featured::after{right:-78px;top:26px;width:210px;height:260px;opacity:.1}
-  .may-home-band-banners::after{left:-85px;bottom:-90px;width:220px;height:275px;opacity:.085}
-
   .may-redesign.may-home-view #cart-fab-may,.may-redesign.may-offers-view #cart-fab-may{
     border:2px solid #fff;box-shadow:0 0 0 2px rgba(44,91,124,.5),0 8px 22px rgba(20,55,80,.3)
   }
@@ -8357,10 +8319,12 @@ window.addEventListener('online', function() {
 
 @media(max-width:350px){
   .may-mobile-socials{gap:1px}
-  .may-mobile-socials a{width:27px;height:27px}
+  .may-mobile-socials a{width:31px;height:31px}
+  .may-mobile-socials svg{width:20px;height:20px}
   .may-mobile-header-actions{gap:2px}
   .may-home-cat img{width:96px;height:96px}
   .may-home-cat{min-height:123px}
+  .may-home-cat span{font-size:11px}
   .may-home-info-copy,.may-home-list-copy{padding-left:14px}
   .may-home-info-card .distb-name,.may-home-list-copy h2{font-size:16.5px}
   .may-home-info-card .distb-note{font-size:8px}
