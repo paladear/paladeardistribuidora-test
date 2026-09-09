@@ -1652,6 +1652,7 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
 <!-- Home mayorista: primera etapa del rediseño. El resto del home se suma después. -->
 <section class="may-home-hero may-home-hero-image" id="mayHomeHero" aria-label="Venta mayorista Paladear: más sabores, más oportunidades">
   <picture class="may-home-hero-media">
+    <source media="(max-width:760px)" srcset="HEROMAYORISTA1-MOBILE.PNG">
     <img class="may-home-hero-bg" src="HEROMAYORISTA1.PNG" width="1774" height="887" alt="Venta mayorista Paladear. Más sabores, más oportunidades. Productos saludables y de calidad por bulto cerrado para tu negocio.">
   </picture>
   <button type="button" class="may-home-hero-hotspot" onclick="mayShowProducts()" aria-label="Ver productos mayoristas"></button>
@@ -8530,9 +8531,9 @@ body.may-redesign.checkout-open #cart-fab-may,body.may-redesign.checkout-open #b
   .cart-item>div:first-child{min-width:0}
   .cart-item>div:last-child{display:grid!important;grid-template-columns:auto auto auto;align-items:center;gap:5px!important}
   .cart-item-price{min-width:68px;font-size:13px}
-  .may-redesign .may-home-hero.may-home-hero-image{height:260px!important;aspect-ratio:auto;background:#dceefa}
-  .may-redesign .may-home-hero-image .may-home-hero-bg{object-position:center bottom!important;transform-origin:center bottom}
-  .may-home-hero-hotspot{left:3%;top:72%;width:27%;height:27%}
+  .may-redesign .may-home-hero.may-home-hero-image{height:auto!important;aspect-ratio:1774/1174;background:#dceefa}
+  .may-redesign .may-home-hero-image .may-home-hero-bg{object-position:center!important;transform:none!important;transform-origin:center center}
+  .may-home-hero-hotspot{left:4.2%;top:82.7%;width:20.2%;height:8.5%}
 }
 </style>
 
