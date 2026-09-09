@@ -15,15 +15,6 @@ layout: null
 <meta name="supported-color-schemes" content="light">
 <script>if(/Android/i.test(navigator.userAgent||''))document.documentElement.classList.add('android-ui');</script>
 <meta name="google-site-verification" content="jZAof6C7e-min-6NmCVtqpdcvkP1vfr2s_rP7np4HEs" />
-<!-- Microsoft Clarity (métricas: grabaciones, mapas de calor y embudo) -->
-<script type="text/javascript">
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-  })(window, document, "clarity", "script", "x1k2nmx9oy");
-</script>
-  
 <!-- ══════════ FAVICON ══════════ -->
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -1508,7 +1499,7 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
   </div>
   <div class="loader-logo-wrap">
     <div class="loader-ring"></div>
-    <img class="loader-logo" src="android-chrome-192x192.png" alt="Paladear" onerror="this.style.display='none'">
+    <img class="loader-logo" src="logo-mayorista-hd.webp" alt="Paladear Distribuidora" onerror="this.style.display='none'">
   </div>
   <div class="loading-text">Cargando Paladear...</div>
 </div>
@@ -1794,25 +1785,6 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
 </div>
 
 <!-- ── HEADER COMPACTO (aparece al scrollear en minorista/mayorista) ── -->
-<div class="compact-header" id="compactHeader">
-  <div class="compact-inner">
-    <img class="compact-logo" src="android-chrome-192x192.png" alt="Paladear" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="cursor:pointer">
-    <div class="search-wrap-compact">
-      <input class="compact-search" id="compactSearchInput" type="search" placeholder="Buscar productos..." oninput="compactOnSearch(this.value);_updateSuggestions(this.value)" onblur="_hideSuggestionsDelayed();compactSearchBlur()" aria-label="Buscar productos">
-      <div class="search-suggestions" id="searchSuggestions"></div>
-    </div>
-    <button class="compact-hamb" onclick="openCuenta()" aria-label="Mi cuenta">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.6 3.2-5.6 7-5.6s7 2 7 5.6"/></svg>
-    </button>
-    <button class="compact-hamb" onclick="compactOpenCats()" aria-label="Categorías">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-    </button>
-  </div>
-  <svg class="compact-wave" viewBox="0 0 1440 16" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,0 H1440 V6 C1200,18 960,2 720,10 C480,18 240,2 0,8 Z"/>
-  </svg>
-</div>
-
 <!-- ── BANNER ENVÍOS ── -->
 <div class="envios-banner">
   <div class="envios-convoy">
@@ -5020,8 +4992,9 @@ function renderMayHomeCategories(){
   const track=document.getElementById('mayHomeCatsTrack');
   if(!track||!CATS_MAY.length)return;
   const cats=[...CATS_MAY].sort((a,b)=>a.n.localeCompare(b.n,'es',{sensitivity:'base'}));
+  const pageSize=window.innerWidth<=760?4:6;
   const pages=[];
-  for(let i=0;i<cats.length;i+=4)pages.push(cats.slice(i,i+4));
+  for(let i=0;i<cats.length;i+=pageSize)pages.push(cats.slice(i,i+pageSize));
   track.innerHTML=pages.map((page,pageIndex)=>`<div class="may-home-cat-page" data-may-cat-page="${pageIndex}" role="group" aria-label="Página ${pageIndex+1} de categorías">
     ${page.map(cat=>`<button type="button" class="may-home-cat" onclick="mayChooseHeaderCat('${cat.id}')">
       <img src="${_mayCatAsset(cat.id)}" width="512" height="512" alt="" loading="${pageIndex===0?'eager':'lazy'}" decoding="async"${pageIndex===0?' fetchpriority="high"':''}>
@@ -5030,7 +5003,7 @@ function renderMayHomeCategories(){
   </div>`).join('');
   const pagination=document.getElementById('mayHomeCatsPagination');
   if(pagination){
-    pagination.innerHTML=pages.map((page,index)=>`<button type="button" onclick="goMayHomeCatPage(${index})" aria-label="Ver categorías ${index*4+1} a ${index*4+page.length}"${index===0?' aria-current="true"':''}></button>`).join('');
+    pagination.innerHTML=pages.map((page,index)=>`<button type="button" onclick="goMayHomeCatPage(${index})" aria-label="Ver categorías ${index*pageSize+1} a ${index*pageSize+page.length}"${index===0?' aria-current="true"':''}></button>`).join('');
   }
   track.onscroll=_updateMayHomeCatControls;
   requestAnimationFrame(_updateMayHomeCatControls);
@@ -5058,6 +5031,11 @@ function goMayHomeCatPage(index){
   _mayCatScrollFrame=requestAnimationFrame(step);
 }
 window.goMayHomeCatPage=goMayHomeCatPage;
+
+const _mayHomeCatsBreakpoint=window.matchMedia('(max-width:760px)');
+function _rerenderMayHomeCatsAtBreakpoint(){renderMayHomeCategories();}
+if(_mayHomeCatsBreakpoint.addEventListener)_mayHomeCatsBreakpoint.addEventListener('change',_rerenderMayHomeCatsAtBreakpoint);
+else if(_mayHomeCatsBreakpoint.addListener)_mayHomeCatsBreakpoint.addListener(_rerenderMayHomeCatsAtBreakpoint);
 
 function scrollMayHomeCats(direction){
   const track=document.getElementById('mayHomeCatsTrack');
@@ -7948,10 +7926,14 @@ window.addEventListener('online', function() {
 </style>
 <style>
 /* Revisión visual azul/crema basada en las maquetas mayoristas. */
-.may-redesign .header{--may-nav-safe-start:calc(clamp(25px,4.7vw,72px) + var(--may-logo-size) + 42px)}
-.may-redesign .header-inner{z-index:8}
+.may-redesign .header{--may-nav-safe-start:calc(clamp(25px,4.7vw,72px) + var(--may-logo-size) + 64px)}
+.may-redesign .header-inner{z-index:8;max-width:none}
+.may-redesign .compact-header{display:none!important}
 .may-redesign .hd-nav-inner{width:calc(100% - var(--may-nav-safe-start));margin-left:var(--may-nav-safe-start)}
 .may-redesign .may-cats-panel{left:var(--may-nav-safe-start)}
+.may-redesign .loader-logo,.may-redesign .compact-logo,.may-redesign .tutb-logo{
+  object-fit:cover;clip-path:circle(32.25% at 50% 50%);scale:1.55
+}
 
 .may-redesign .may-home-hero-copy{top:clamp(88px,8.2vw,112px)}
 .may-redesign .may-home-hero p{margin-top:29px}
@@ -8032,7 +8014,7 @@ window.addEventListener('online', function() {
 .may-home-growth{position:relative;display:block;height:230px;overflow:hidden;background:#17496e;color:#fff}
 .may-home-growth>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .may-home-growth-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,55,87,.92) 0%,rgba(24,73,108,.65) 43%,rgba(24,73,108,.08) 72%)}
-.may-home-growth-content{position:relative;z-index:1;display:flex;height:100%;align-items:center;justify-content:space-between;gap:28px}
+.may-home-growth-content{position:relative;z-index:1;display:flex;height:100%;align-items:flex-start;justify-content:center;flex-direction:column;gap:18px}
 .may-home-growth-content>div>span{display:block;margin-bottom:9px;color:#a9cbe0;font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
 .may-home-growth h2{margin:0;color:#fff;font-size:clamp(28px,3vw,42px);letter-spacing:-.04em;line-height:1.03}
 .may-home-growth p{max-width:520px;margin:12px 0 0;color:rgba(255,255,255,.82);font-size:13px;line-height:1.55}
@@ -8106,19 +8088,23 @@ window.addEventListener('online', function() {
   .may-redesign .hd-nav{display:none!important}
   .may-redesign .compact-header{display:none!important}
   .may-redesign .hd-buscador{display:none}
+  .may-redesign.may-mobile-search-open .header-inner{padding:7px 10px}
+  .may-redesign.may-mobile-search-open .header .logo-wrap,
+  .may-redesign.may-mobile-search-open .may-mobile-socials,
+  .may-redesign.may-mobile-search-open .may-mobile-header-actions,
+  .may-redesign.may-mobile-search-open .hd-accesos{display:none!important}
   .may-redesign.may-mobile-search-open .hd-buscador{
-    position:fixed;left:12px;right:12px;top:76px;z-index:10042;display:block!important;
-    max-width:none;padding:8px 48px 8px 8px;border:1px solid rgba(18,60,97,.12);border-radius:18px;
-    background:rgba(255,255,255,.98);box-shadow:0 14px 34px rgba(17,49,73,.22)
+    position:relative;inset:auto;z-index:auto;display:block!important;flex:1 1 auto;width:100%;min-width:0;
+    max-width:none;padding:0 44px 0 0;border:0;border-radius:0;background:transparent;box-shadow:none
   }
   .may-redesign.may-mobile-search-open .hd-buscador .compact-search{
-    display:block;width:100%;height:44px;padding:0 14px 0 42px;border-radius:12px;background:#eef6fb;font-size:14px
+    display:block;width:100%;height:44px;padding:0 14px 0 42px;border-radius:13px;background:#fff;font-size:16px
   }
-  .may-redesign.may-mobile-search-open .hd-buscador .hd-lupa{left:22px}
-  .may-redesign.may-mobile-search-open .hd-buscador .search-suggestions{top:calc(100% + 7px);left:0;right:0}
+  .may-redesign.may-mobile-search-open .hd-buscador .hd-lupa{left:14px}
+  .may-redesign.may-mobile-search-open .hd-buscador .search-suggestions{top:calc(100% + 9px);left:0;right:44px}
   .may-mobile-search-close{
-    position:absolute;right:10px;top:12px;display:grid;width:36px;height:36px;place-items:center;padding:0;
-    border:0;border-radius:10px;background:#456b89;color:#fff;font:400 24px/1 Arial,sans-serif
+    position:absolute;right:0;top:4px;display:grid;width:36px;height:36px;place-items:center;padding:0;
+    border:1px solid rgba(255,255,255,.36);border-radius:11px;background:rgba(255,255,255,.1);color:#fff;font:400 24px/1 Arial,sans-serif
   }
   .may-redesign .hd-accesos{display:flex;flex:0 0 auto;gap:0;margin:0}
   .may-redesign .hd-accesos>.hd-acceso:not(:nth-child(2)){display:none!important}
@@ -8218,6 +8204,7 @@ window.addEventListener('online', function() {
 .may-mobile-socials{display:none}
 .may-home-cat-page{display:contents}
 .may-home-cat-pagination{display:none}
+.may-home-cat-arrow{display:none!important}
 .fab-cart-svg{display:block;width:31px;height:31px;color:#fff;filter:none}
 .may-redesign #cart-fab-may{
   border:2px solid rgba(255,255,255,.95);color:#fff;text-shadow:none;filter:none;
@@ -8317,6 +8304,29 @@ window.addEventListener('online', function() {
   .may-redesign #cart-fab-may .fab-cart-svg{width:29px;height:29px}
 }
 
+@media(min-width:761px){
+  .may-home-cats-carousel{margin-inline:0;overflow:hidden}
+  .may-home-cats-grid{
+    display:flex;gap:0;padding:4px 0 7px;overflow-x:auto;scroll-snap-type:x mandatory;
+    overscroll-behavior-inline:contain;scrollbar-width:none
+  }
+  .may-home-cats-grid::-webkit-scrollbar{display:none}
+  .may-home-cat-page{
+    display:grid;flex:0 0 100%;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;
+    align-items:start;scroll-snap-align:start;scroll-snap-stop:always
+  }
+  .may-home-cat{width:100%;max-width:142px;min-height:165px;justify-self:center;flex:none;scroll-snap-align:none}
+  .may-home-cat img{width:clamp(92px,8.5vw,122px);height:clamp(92px,8.5vw,122px)}
+  .may-home-cat-pagination{display:flex;align-items:center;justify-content:center;gap:3px;margin-top:12px}
+  .may-home-cat-pagination button{position:relative;width:30px;height:30px;padding:0;border:0;background:transparent;cursor:pointer}
+  .may-home-cat-pagination button::before{
+    content:"";position:absolute;left:10px;top:10px;width:10px;height:10px;border:1.5px solid rgba(255,255,255,.76);
+    border-radius:50%;background:transparent;transition:background-color .22s ease,transform .22s ease
+  }
+  .may-home-cat-pagination button[aria-current="true"]::before{background:#fff;transform:scale(1.08)}
+  .may-home-cat-pagination button:focus-visible{outline:2px solid #fff;outline-offset:-3px;border-radius:10px}
+}
+
 @media(max-width:350px){
   .may-mobile-socials{gap:1px}
   .may-mobile-socials a{width:31px;height:31px}
@@ -8334,7 +8344,7 @@ window.addEventListener('online', function() {
   <div class="tutb-modal">
     <button class="tutb-close" onclick="cerrarTutorial()" aria-label="Cerrar">×</button>
     <div class="tutb-head">
-      <img class="tutb-logo" src="android-chrome-192x192.png" alt="Paladear">
+      <img class="tutb-logo" src="logo-mayorista-hd.webp" alt="Paladear Distribuidora">
       <h2>¿Cómo comprar en Paladear?</h2>
       <div class="tutb-sub">Bienvenidos a la Distribuidora Mayorista 👇</div>
     </div>

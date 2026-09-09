@@ -317,7 +317,66 @@ textarea.co-input{resize:vertical;min-height:60px;font-family:inherit}
 .co-ubic-hint{font-size:11px;color:var(--muted-fg);text-align:center;margin-top:8px;line-height:1.4}
 .co-ubic-close{display:block;background:transparent;border:none;color:var(--muted-fg);font-size:12px;cursor:pointer;font-family:inherit;text-decoration:underline;margin:8px auto 0;padding:4px}
 .co-ubic-close:hover{color:#e53935}
-.co-ubic-confirm{display:flex;align-items:center;gap:8px;background:#e8f5e9;border-radius:8px;padding:10px 12px;font-size:12px;color:#2e7d32;margin-top:10px;line-height:1.4;font-weight:600}
+  .co-ubic-confirm{display:flex;align-items:center;gap:8px;background:#e8f5e9;border-radius:8px;padding:10px 12px;font-size:12px;color:#2e7d32;margin-top:10px;line-height:1.4;font-weight:600}
+
+/* Rediseño visual de la lista: misma identidad azul/crema del home mayorista. */
+body{--catalog-safe-start:calc(clamp(25px,4.7vw,72px) + 110px + 64px);background:#f6f0e7}
+.top{overflow:visible;background:#456b89;box-shadow:0 5px 18px rgba(19,49,72,.16)}
+.top-in{position:relative;width:100%;max-width:none;height:88px;padding:0 clamp(24px,3.5vw,52px) 0 var(--catalog-safe-start);gap:18px}
+.top-logo-link{
+  position:absolute;left:clamp(25px,4.7vw,72px);top:34px;z-index:3;display:block;width:110px;height:110px;
+  overflow:hidden;border:2px solid rgba(255,255,255,.92);border-radius:50%;background:#456b89;
+  box-shadow:0 8px 20px rgba(17,44,66,.28);line-height:0
+}
+.top-logo-link .logo{position:absolute;inset:0;display:block;width:100%;height:100%;padding:0;border-radius:0;background:transparent;object-fit:cover;transform:scale(1.55)}
+.btn-volver,.btn-print{height:42px;padding:0 14px;border:1px solid rgba(255,255,255,.28);border-radius:12px;background:rgba(255,255,255,.08)}
+.btn-volver:hover,.btn-print:hover{background:rgba(255,255,255,.16)}
+.top-t{font-size:17px;letter-spacing:-.01em}
+.top-t small{margin-top:3px;color:rgba(255,255,255,.78)}
+.fila-busq{
+  width:calc(100% - var(--catalog-safe-start));max-width:none;min-height:56px;margin:0 0 0 var(--catalog-safe-start);
+  padding:7px 42px 7px 28px;gap:16px;border-radius:0 0 0 44px;background:#fff;
+  box-shadow:0 7px 18px rgba(22,50,73,.08)
+}
+.btn-cat{height:40px;padding:0 18px 0 0;border-right:1px solid #d8e3ec;border-radius:0;background:transparent;color:#173b5e}
+.btn-cat:hover{background:transparent;color:#4f7897}
+.ham i{height:2px;background:#173b5e}
+.busq-wrap input{height:42px;padding:0 44px 0 16px;border:1px solid #dce8f0;border-radius:999px;background:#eef5fa;color:#173b5e;box-shadow:none}
+.busq-wrap input:focus{outline:2px solid #9fbcd0;outline-offset:1px;background:#fff}
+.wrap{width:min(1376px,calc(100% - 64px));max-width:none;padding:34px 0 48px}
+.ayuda{margin-bottom:18px;border:1px solid #c4dce9;border-radius:15px;background:#e5f1f7;color:#315b78}
+.ayuda b{color:#123f63}
+.descb-banner{border:1px solid #c5dce9;background:#dcebf5;box-shadow:0 10px 28px rgba(35,72,98,.09)}
+.descb-name,.descb-go,.descb-note b,.descb-bulto b,.descb-cnt{color:#17486c}
+.descb-go,.descb-bulto{border-color:#bdd5e4;background:rgba(255,255,255,.72);color:#46677d}
+.descb-fill{background:#456b89}
+.descb-track{background:#c8dce8}
+.descb-reward{color:#315f80}
+.descb-banner{padding:18px 22px}
+.descb-note{margin-bottom:10px}
+.descb-mlabel,.descb-track,.descb-reward{display:none!important}
+.descb-bulto{margin-top:0}
+.rubro-h{background:#456b89}
+.tabla{border-color:#d5e2ea;box-shadow:0 5px 16px rgba(31,65,89,.055)}
+.cat-h{background:#456b89}
+
+@media(max-width:640px){
+  body{--catalog-safe-start:0px}
+  .top-in{height:68px;padding:6px 8px 6px 100px;gap:6px}
+  .top-logo-link{left:10px;top:24px;width:82px;height:82px;border-width:2px}
+  .top-logo-link .logo{display:block!important}
+  .btn-volver{width:38px;padding:0;justify-content:center}
+  .btn-volver-txt{display:none}
+  .top-t{font-size:13px;white-space:nowrap}
+  .top-t small{display:none}
+  .btn-print{width:42px;padding:0;font-size:0}
+  .btn-print::before{content:"⎙";font-size:22px;line-height:1}
+  .fila-busq{width:100%;min-height:56px;margin:0;padding:7px 9px 7px 100px;gap:7px;border-radius:0}
+  .btn-cat{width:40px;height:40px;justify-content:center;padding:0;border-right:0;font-size:0}
+  .busq-wrap input{height:42px;font-size:16px}
+  .wrap{width:calc(100% - 18px);padding:20px 0 30px}
+  .ayuda{font-size:12px}
+}
 </style>
 </head>
 <body>
@@ -330,7 +389,7 @@ textarea.co-input{resize:vertical;min-height:60px;font-family:inherit}
 <header class="top" id="top">
   <div class="top-in">
     <a class="btn-volver" href="index.html" title="Volver a la distribuidora"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span class="btn-volver-txt">Inicio</span></a>
-    <img class="logo" src="android-chrome-192x192.png" alt="Paladear">
+    <a class="top-logo-link" href="index.html" aria-label="Volver a Paladear Distribuidora"><img class="logo" src="logo-mayorista-hd.webp" alt="Paladear Distribuidora"></a>
     <div class="top-t">Lista Mayorista<small>Paladear Distribuidora</small></div>
     <button class="btn-print" onclick="window.print()">🖨️ Imprimir</button>
   </div>
@@ -365,7 +424,7 @@ textarea.co-input{resize:vertical;min-height:60px;font-family:inherit}
       <div class="descb-mlabel" id="descbLabel"><span class="descb-cnt" id="descbCnt">$0</span><span class="descb-goal" id="descbGoal">Mínimo 1er pedido: $250.000</span></div>
       <div class="descb-track" id="descbTrack"><div class="descb-fill" id="descbFill"></div></div>
       <div class="descb-reward" id="descbRw"></div>
-      <div class="descb-bulto">📦 La venta es <b>únicamente por bulto cerrado</b>.<br>🧾 Los precios expresados en este catálogo <b>NO INCLUYEN IVA</b>.</div>
+      <div class="descb-bulto">🧾 Los precios expresados en este catálogo <b>NO INCLUYEN IVA</b>.</div>
     </div>
   </div>
   <div class="volver" id="volver"><span class="txt" id="volverTxt"></span><button onclick="limpiar()">← Ver toda la lista</button></div>
