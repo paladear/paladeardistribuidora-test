@@ -1662,11 +1662,8 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
 <main class="may-home-content" aria-label="Inicio mayorista">
   <section class="may-home-band may-home-band-categories" aria-labelledby="mayHomeCatsTitle">
     <div class="may-home-shell may-home-categories">
-      <div class="may-home-section-head">
-        <div>
-          <span class="may-home-section-kicker">Explorá el catálogo</span>
-          <h2 id="mayHomeCatsTitle">Comprá por categoría</h2>
-        </div>
+      <div class="may-home-section-head may-home-categories-head">
+        <span class="may-home-section-kicker" id="mayHomeCatsTitle">Explorá por categoría</span>
       </div>
       <div class="may-home-cats-carousel">
         <div class="may-home-cats-grid" id="mayHomeCatsTrack" aria-label="Todas las categorías"></div>
@@ -8534,6 +8531,42 @@ body.may-redesign.checkout-open #cart-fab-may,body.may-redesign.checkout-open #b
   .may-redesign .may-home-hero.may-home-hero-image{height:auto!important;aspect-ratio:1774/1174;background:#dceefa}
   .may-redesign .may-home-hero-image .may-home-hero-bg{object-position:center!important;transform:none!important;transform-origin:center center}
   .may-home-hero-hotspot{left:4.2%;top:82.7%;width:20.2%;height:8.5%}
+}
+
+/* Franja de categorías compacta: un único rótulo y mayor presencia del contenido. */
+.may-home-band-categories{padding:18px 0 16px}
+.may-home-band-categories .may-home-categories-head{
+  display:flex;align-items:center;justify-content:center;margin:0 0 13px;text-align:center
+}
+.may-home-band-categories .may-home-categories-head .may-home-section-kicker{
+  position:relative;display:inline-block;margin:0;padding:0 0 8px;color:#fff;font-size:12px;font-weight:800;
+  line-height:1;letter-spacing:.16em;text-transform:uppercase
+}
+.may-home-band-categories .may-home-categories-head .may-home-section-kicker::after{
+  content:"";position:absolute;left:50%;bottom:0;width:52px;height:2px;border-radius:999px;
+  background:rgba(255,255,255,.84);transform:translateX(-50%)
+}
+
+@media(min-width:761px){
+  .may-home-cat-page{gap:16px}
+  .may-home-cat{max-width:190px;min-height:0;gap:9px}
+  .may-home-cat img{width:min(100%,clamp(118px,11vw,166px));height:auto;aspect-ratio:1}
+  .may-home-cat span{font-size:clamp(12px,1vw,15px);line-height:1.22}
+  .may-home-cat-pagination{margin-top:6px}
+}
+
+@media(max-width:760px){
+  .may-home-band-categories{padding:13px 0 10px}
+  .may-home-band-categories .may-home-categories-head{margin-bottom:9px}
+  .may-home-band-categories .may-home-categories-head .may-home-section-kicker{padding-bottom:7px;font-size:10px}
+  .may-home-band-categories .may-home-categories-head .may-home-section-kicker::after{width:44px;height:1.5px}
+  .may-home-cat-page{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+  .may-home-cat{min-height:100px;padding:0 1px;gap:6px}
+  .may-home-cat img{width:clamp(62px,19vw,78px);height:clamp(62px,19vw,78px);border-width:2px}
+  .may-home-cat span{font-size:clamp(8px,2.3vw,10px);line-height:1.15}
+  .may-home-cat-pagination{margin-top:2px}
+  .may-home-cat-pagination button{width:25px;height:25px}
+  .may-home-cat-pagination button::before{left:8px;top:8px;width:9px;height:9px}
 }
 </style>
 
