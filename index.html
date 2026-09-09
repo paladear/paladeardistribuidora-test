@@ -1650,30 +1650,11 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
 </nav>
 
 <!-- Home mayorista: primera etapa del rediseño. El resto del home se suma después. -->
-<section class="may-home-hero" id="mayHomeHero" aria-labelledby="mayHeroTitle">
+<section class="may-home-hero may-home-hero-image" id="mayHomeHero" aria-label="Venta mayorista Paladear: más sabores, más oportunidades">
   <picture class="may-home-hero-media">
-    <source media="(max-width:760px)" srcset="hero-mayorista-mobile-v2.webp">
-    <img class="may-home-hero-bg" src="hero-mayorista-test.webp" width="1815" height="867" alt="Depósito mayorista con cajas preparadas para despacho">
+    <img class="may-home-hero-bg" src="HEROMAYORISTA1.PNG" width="1774" height="887" alt="Venta mayorista Paladear. Más sabores, más oportunidades. Productos saludables y de calidad por bulto cerrado para tu negocio.">
   </picture>
-  <div class="may-home-hero-shade" aria-hidden="true"></div>
-  <div class="may-home-hero-copy">
-    <span class="may-home-eyebrow">Venta mayorista</span>
-    <h1 id="mayHeroTitle">Más sabores,<br>más oportunidades</h1>
-    <p>Elegí calidad. Comprá por volumen. Y hacé crecer tu negocio con cada elección.</p>
-    <div class="may-home-hero-benefits" aria-label="Beneficios de la compra mayorista">
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 18 18 4M7 4h.01M17 18h.01"/><circle cx="7" cy="7" r="3"/><circle cx="17" cy="15" r="3"/></svg>Precios<br>mayoristas</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="m4 7 8-4 8 4-8 4-8-4Z"/><path d="M4 7v10l8 4 8-4V7M12 11v10"/></svg>Compra por<br>bulto cerrado</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>Envíos a<br>todo el país</span>
-    </div>
-    <button type="button" class="may-home-cta" onclick="mayShowProducts()">
-      Ver productos
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-    </button>
-  </div>
-  <div class="may-home-bulto" aria-label="Venta solo por bulto cerrado">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="m4 7 8-4 8 4-8 4-8-4Z"/><path d="M4 7v10l8 4 8-4V7M12 11v10"/></svg>
-    <span>Venta solo por<br><b>bulto cerrado</b></span>
-  </div>
+  <button type="button" class="may-home-hero-hotspot" onclick="mayShowProducts()" aria-label="Ver productos mayoristas"></button>
 </section>
 
 <!-- Continuación del Home: categorías, destacados e información comercial. -->
@@ -8477,6 +8458,20 @@ window.addEventListener('online', function() {
 body.account-open .may-mobile-bottom-nav,body.checkout-open .may-mobile-bottom-nav,
 body.may-redesign.account-open #cart-fab-may,body.may-redesign.account-open #backToTop,
 body.may-redesign.checkout-open #cart-fab-may,body.may-redesign.checkout-open #backToTop{display:none!important}
+.may-redesign .may-home-hero.may-home-hero-image{
+  position:relative;height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:1774/887;
+  overflow:hidden;background:#dcebf5
+}
+.may-redesign .may-home-hero-image .may-home-hero-media{position:absolute;inset:0;display:block;width:100%;height:100%}
+.may-redesign .may-home-hero-image .may-home-hero-bg{
+  position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain!important;object-position:center!important;
+  filter:none!important;transform:none!important
+}
+.may-home-hero-hotspot{
+  position:absolute;z-index:4;left:4.2%;top:76.2%;width:20.2%;height:11%;padding:0;border:0;border-radius:999px;
+  background:transparent;cursor:pointer
+}
+.may-home-hero-hotspot:focus-visible{outline:3px solid #fff;outline-offset:3px}
 
 @media(max-width:760px){
   .may-mobile-bottom-nav{grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -8518,6 +8513,7 @@ body.may-redesign.checkout-open #cart-fab-may,body.may-redesign.checkout-open #b
   .cart-item>div:first-child{min-width:0}
   .cart-item>div:last-child{display:grid!important;grid-template-columns:auto auto auto;align-items:center;gap:5px!important}
   .cart-item-price{min-width:68px;font-size:13px}
+  .may-home-hero-hotspot{left:3%;top:68%;width:27%;height:24%}
 }
 </style>
 
