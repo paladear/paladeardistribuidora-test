@@ -330,6 +330,7 @@ body{--catalog-safe-start:calc(clamp(25px,4.7vw,72px) + 110px + 64px);background
 }
 .top-logo-link .logo{position:absolute;inset:0;display:block;width:100%;height:100%;padding:0;border-radius:0;background:transparent;object-fit:cover;transform:scale(1.55)}
 .btn-volver,.btn-print{height:42px;padding:0 14px;border:1px solid rgba(255,255,255,.28);border-radius:12px;background:rgba(255,255,255,.08)}
+.btn-print{display:inline-flex;align-items:center;justify-content:center;gap:8px}
 .btn-volver:hover,.btn-print:hover{background:rgba(255,255,255,.16)}
 .top-t{font-size:17px;letter-spacing:-.01em}
 .top-t small{margin-top:3px;color:rgba(255,255,255,.78)}
@@ -344,7 +345,8 @@ body{--catalog-safe-start:calc(clamp(25px,4.7vw,72px) + 110px + 64px);background
 .busq-wrap input{height:42px;padding:0 44px 0 16px;border:1px solid #dce8f0;border-radius:999px;background:#eef5fa;color:#173b5e;box-shadow:none}
 .busq-wrap input:focus{outline:2px solid #9fbcd0;outline-offset:1px;background:#fff}
 .wrap{width:min(1376px,calc(100% - 64px));max-width:none;padding:34px 0 48px}
-.ayuda{margin-bottom:18px;border:1px solid #c4dce9;border-radius:15px;background:#e5f1f7;color:#315b78}
+.ayuda{display:flex;align-items:flex-start;gap:9px;margin-bottom:18px;border:1px solid #c4dce9;border-radius:15px;background:#e5f1f7;color:#315b78}
+.ayuda svg{flex:0 0 auto;margin-top:1px}
 .ayuda b{color:#123f63}
 .descb-banner{border:1px solid #c5dce9;background:#dcebf5;box-shadow:0 10px 28px rgba(35,72,98,.09)}
 .descb-name,.descb-go,.descb-note b,.descb-bulto b,.descb-cnt{color:#17486c}
@@ -369,8 +371,8 @@ body{--catalog-safe-start:calc(clamp(25px,4.7vw,72px) + 110px + 64px);background
   .btn-volver-txt{display:none}
   .top-t{font-size:13px;white-space:nowrap}
   .top-t small{display:none}
-  .btn-print{width:42px;padding:0;font-size:0}
-  .btn-print::before{content:"⎙";font-size:22px;line-height:1}
+  .btn-print{width:42px;padding:0;font-size:0;gap:0}
+  .btn-print svg{width:20px;height:20px}
   .fila-busq{width:100%;min-height:56px;margin:0;padding:7px 9px 7px 100px;gap:7px;border-radius:0}
   .btn-cat{width:40px;height:40px;justify-content:center;padding:0;border-right:0;font-size:0}
   .busq-wrap input{height:42px;font-size:16px}
@@ -391,7 +393,7 @@ body{--catalog-safe-start:calc(clamp(25px,4.7vw,72px) + 110px + 64px);background
     <a class="btn-volver" href="index.html" title="Volver a la distribuidora"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg><span class="btn-volver-txt">Inicio</span></a>
     <a class="top-logo-link" href="index.html" aria-label="Volver a Paladear Distribuidora"><img class="logo" src="logo-mayorista-hd.webp" alt="Paladear Distribuidora"></a>
     <div class="top-t">Lista Mayorista<small>Paladear Distribuidora</small></div>
-    <button class="btn-print" onclick="window.print()">🖨️ Imprimir</button>
+    <button class="btn-print" onclick="window.print()"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><rect x="6" y="14" width="12" height="7" rx="1"/><path d="M6 17H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/></svg> Imprimir</button>
   </div>
   <div class="fila-busq">
     <button class="btn-cat" onclick="abrirCats()"><span class="ham"><i></i><i></i><i></i></span>Categorías</button>
@@ -412,11 +414,11 @@ body{--catalog-safe-start:calc(clamp(25px,4.7vw,72px) + 110px + 64px);background
 </aside>
 
 <main class="wrap">
-  <div class="ayuda">📦 La venta es <b>únicamente por bulto cerrado</b>. Escribí <b>cuántos bultos</b> querés de cada producto en el casillero de la derecha — abajo del nombre dice cuánto trae cada bulto.</div>
+  <div class="ayuda"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="m4 7 8-4 8 4-8 4-8-4Z"/><path d="M4 7v10l8 4 8-4V7M12 11v10"/></svg><span>La venta es <b>únicamente por bulto cerrado</b>. Escribí <b>cuántos bultos</b> querés de cada producto en el casillero de la derecha — abajo del nombre dice cuánto trae cada bulto.</span></div>
   <div class="descb-wrap">
     <div class="descb-banner" id="descBanner">
       <div class="descb-top">
-        <img class="descb-ic" src="icon-mayorista.png" alt="">
+        <img class="descb-ic" src="logo-mayorista-hd.webp" alt="">
         <span class="descb-name">Venta Mayorista</span>
         <span class="descb-go">Solo bulto cerrado</span>
       </div>
@@ -424,7 +426,7 @@ body{--catalog-safe-start:calc(clamp(25px,4.7vw,72px) + 110px + 64px);background
       <div class="descb-mlabel" id="descbLabel"><span class="descb-cnt" id="descbCnt">$0</span><span class="descb-goal" id="descbGoal">Mínimo 1er pedido: $250.000</span></div>
       <div class="descb-track" id="descbTrack"><div class="descb-fill" id="descbFill"></div></div>
       <div class="descb-reward" id="descbRw"></div>
-      <div class="descb-bulto">🧾 Los precios expresados en este catálogo <b>NO INCLUYEN IVA</b>.</div>
+      <div class="descb-bulto">Los precios expresados en este catálogo <b>NO INCLUYEN IVA</b>.</div>
     </div>
   </div>
   <div class="volver" id="volver"><span class="txt" id="volverTxt"></span><button onclick="limpiar()">← Ver toda la lista</button></div>
@@ -795,7 +797,7 @@ function enviar(){
   const t=totales();
   // El mínimo rige SOLO en el primer pedido (igual que la web)
   if(!t.alcanza){
-    alert('⚠️ Tu PRIMER pedido tiene un mínimo de compra de $'+fmt(t.minimo)+'.\n\nTotal actual: $'+fmt(t.total)+'\nFaltan: $'+fmt(t.minimo-t.total)+'\n\n✨ A partir de tu segundo pedido comprás sin mínimo.');
+    alert('Tu primer pedido tiene un mínimo de compra de $'+fmt(t.minimo)+'.\n\nTotal actual: $'+fmt(t.total)+'\nFaltan: $'+fmt(t.minimo-t.total)+'\n\nA partir de tu segundo pedido comprás sin mínimo.');
     return;
   }
   abrirCheckout();   // primero los datos del cliente, después WhatsApp
@@ -1227,7 +1229,7 @@ function coEnviar() {
   if (!ids.length) { alert('Todavía no cargaste cantidades.'); return; }
   var t = totales();
   if (!t.alcanza) {   // red de seguridad: no se envía un primer pedido por debajo del mínimo
-    alert('⚠️ Tu PRIMER pedido tiene un mínimo de compra de $'+fmt(t.minimo)+'.\n\nFaltan: $'+fmt(t.minimo-t.total));
+    alert('Tu primer pedido tiene un mínimo de compra de $'+fmt(t.minimo)+'.\n\nFaltan: $'+fmt(t.minimo-t.total));
     return;
   }
   // Mismo formato que el pedido mayorista de la web
@@ -1299,14 +1301,14 @@ function pintarBanner(){
 
   if(t.minimo===0){
     // Ya hizo al menos un pedido: sin mínimo
-    note.innerHTML='✨ Ya hiciste tu primer pedido: a partir de ahora comprás <b>SIN MÍNIMO</b>.';
+    note.innerHTML='Ya hiciste tu primer pedido: a partir de ahora comprás <b>SIN MÍNIMO</b>.';
     lbl.style.display='none'; track.style.display='none';
     if(t.n>0){ rw.textContent='Tu pedido: $'+fmt(t.total); rw.style.color=''; rw.classList.add('on'); }
     else rw.classList.remove('on');
     return;
   }
 
-  note.innerHTML='🛒 Realizá tu primer pedido alcanzando el mínimo de compra: <b>$'+fmt(MIN_PRIMER_PEDIDO)+'</b>.<br>✨ A partir de tu segundo pedido, comprás <b>SIN MÍNIMO</b>.';
+  note.innerHTML='Realizá tu primer pedido alcanzando el mínimo de compra: <b>$'+fmt(MIN_PRIMER_PEDIDO)+'</b>.<br>A partir de tu segundo pedido, comprás <b>SIN MÍNIMO</b>.';
   lbl.style.display=''; track.style.display='';
   fill.style.width=Math.min(100,(t.total/MIN_PRIMER_PEDIDO)*100)+'%';
   cnt.textContent='$'+fmt(t.total);
@@ -1421,7 +1423,7 @@ cargar();
           <div class="co-field" style="flex:1.4">
             <label>Tipo <span class="opt-lbl">(opcional)</span></label>
             <div class="co-tipo-opts">
-              <label class="co-tipo-radio"><input type="radio" name="coTipo" value="casa"><span>🏠 Casa</span></label>
+              <label class="co-tipo-radio"><input type="radio" name="coTipo" value="casa"><span>Casa</span></label>
               <label class="co-tipo-radio"><input type="radio" name="coTipo" value="depto"><span>🏢 Depto</span></label>
             </div>
           </div>

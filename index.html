@@ -1555,7 +1555,7 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
   <div class="hd-buscador">
     <svg class="hd-lupa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
     <input class="compact-search" id="compactSearchInput" type="search"
-           placeholder="Buscar productos por nombre, categoría o código..."
+           placeholder="Buscar productos"
            oninput="compactOnSearch(this.value);_updateSuggestions(this.value)"
            onblur="_hideSuggestionsDelayed();compactSearchBlur()" aria-label="Buscar productos">
     <div class="search-suggestions" id="searchSuggestions"></div>
@@ -1595,13 +1595,13 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
         <span class="btn-info-icon" aria-hidden="true">i</span><span class="btn-txt">Info</span> <span class="arrow">▼</span>
       </button>
       <div class="hdrop-panel">
-        <div class="hdrop-title">ℹ️ Información</div>
+        <div class="hdrop-title"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 11v6M12 7h.01"/></svg> Información</div>
         <div class="hdrop-row"><span class="ic"><svg viewBox="0 0 24 24" width="15" height="15" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.006 22l4.984-1.307A9.961 9.961 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.25a8.24 8.24 0 01-4.258-1.178l-.306-.181-3.157.828.844-3.07-.2-.319A8.25 8.25 0 1112 20.25z"/></svg></span><div><strong>Contacto</strong>+549 261 565 2251</div></div>
-        <div class="hdrop-row"><span class="ic">🕗</span><div><strong>Horario</strong>Lunes a Viernes · 08:00 a 16:00 hs<br>Sábados · 08:00 a 13:00 hs</div></div>
-        <div class="hdrop-row"><span class="ic">📍</span><div><strong>Depósito mayorista</strong>Ruta Provincial 50 Nº 13080, KM 8 — Guaymallén, Mendoza · <a href="https://maps.app.goo.gl/MXySPy9mbBFm8oVaA" target="_blank" rel="noopener noreferrer" style="color:var(--azul);font-weight:600;text-decoration:underline">Ver en mapa</a></div></div>
-        <div class="hdrop-row"><span class="ic">🏷️</span><div><strong>Condición de venta</strong>Venta <b>únicamente por bulto cerrado</b>.<br>Mínimo de $250.000 <b>solo en tu primer pedido</b>: a partir del segundo, sin mínimo.</div></div>
-        <div class="hdrop-row"><span class="ic">🚚</span><div><strong>Envíos</strong>Consultá por nuestros canales de venta al por mayor</div></div>
-        <button class="hdrop-cta min-cta" onclick="closeAllHdrops();window.open('https://wa.me/5492615652251','_blank')">💬 Contactar por WhatsApp</button>
+        <div class="hdrop-row"><span class="ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span><div><strong>Horario</strong>Lunes a Viernes · 08:00 a 16:00 hs<br>Sábados · 08:00 a 13:00 hs</div></div>
+        <div class="hdrop-row"><span class="ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><strong>Depósito mayorista</strong>Ruta Provincial 50 Nº 13080, KM 8 — Guaymallén, Mendoza · <a href="https://maps.app.goo.gl/MXySPy9mbBFm8oVaA" target="_blank" rel="noopener noreferrer" style="color:var(--azul);font-weight:600;text-decoration:underline">Ver en mapa</a></div></div>
+        <div class="hdrop-row"><span class="ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="m4 7 8-4 8 4-8 4-8-4Z"/><path d="M4 7v10l8 4 8-4V7M12 11v10"/></svg></span><div><strong>Condición de venta</strong>Venta <b>únicamente por bulto cerrado</b>.<br>Mínimo de $250.000 <b>solo en tu primer pedido</b>: a partir del segundo, sin mínimo.</div></div>
+        <div class="hdrop-row"><span class="ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span><div><strong>Envíos</strong>Consultá por nuestros canales de venta al por mayor</div></div>
+        <button class="hdrop-cta min-cta" onclick="closeAllHdrops();window.open('https://wa.me/5492615652251','_blank')"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.84 9.84 0 0 0-8.5 14.8L2 22l5.34-1.5A9.92 9.92 0 1 0 12.04 2Zm0 17.97a8 8 0 0 1-4.08-1.12l-.29-.17-3.17.89.9-3.09-.19-.31a7.88 7.88 0 1 1 6.83 3.8Z"/></svg> Contactar por WhatsApp</button>
       </div>
     </div>
     <style>
@@ -1642,6 +1642,10 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
   <button type="button" class="may-mobile-nav-link" data-may-view="ofertas" onclick="mayShowSoon()">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13 13 20 4 11V4h7l9 9Z"/><circle cx="8.5" cy="8.5" r="1" fill="currentColor" stroke="none"/></svg>
     <span>Ofertas</span>
+  </button>
+  <button type="button" class="may-mobile-nav-link" onclick="openCuenta()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.7 3.1-5.8 7-5.8s7 2.1 7 5.8"/></svg>
+    <span>Mi cuenta</span>
   </button>
 </nav>
 
@@ -1804,7 +1808,7 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
   <div class="may-tabs-wrap" id="mainTabs">
     <div class="tabs-pill" id="tabsPill"></div>
     <button class="may-tab active" id="tabMayorista" onclick="switchTab('mayorista')">
-      <img class="may-tab-icon" src="icon-mayorista.png" alt="" aria-hidden="true">
+      <img class="may-tab-icon" src="logo-mayorista-hd.webp" alt="" aria-hidden="true">
       <span>Productos</span>
     </button>
   </div>
@@ -1850,7 +1854,7 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
 
   <!-- Banner promo Lista Mayorista — solo desktop -->
   <div class="mayorista-banner-promo desktop-only" onclick="switchTab('mayorista')">
-    <div class="may-promo-icon"><img src="icon-mayorista.png" alt="" style="width:38px;height:38px;object-fit:contain"></div>
+    <div class="may-promo-icon"><img src="logo-mayorista-hd.webp" alt="" style="width:38px;height:38px;object-fit:contain"></div>
     <div class="may-promo-text">
       <h3>¿Comprás en grandes volúmenes?</h3>
       <p>Accedé a nuestra <strong>Lista Mayorista</strong> — Venta por bulto cerrado. Mínimo de $250.000 solo en tu primer pedido</p>
@@ -1870,7 +1874,7 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
   <div class="mobile-prods-area hidden" id="mobileProdsArea"></div>
   <!-- Banner promo Lista Mayorista — solo mobile, va DESPUÉS de los productos -->
   <div class="mayorista-banner-promo mobile-only" onclick="switchTab('mayorista')" style="margin-top:18px">
-    <div class="may-promo-icon"><img src="icon-mayorista.png" alt="" style="width:38px;height:38px;object-fit:contain"></div>
+    <div class="may-promo-icon"><img src="logo-mayorista-hd.webp" alt="" style="width:38px;height:38px;object-fit:contain"></div>
     <div class="may-promo-text">
       <h3>¿Comprás en grandes volúmenes?</h3>
       <p>Accedé a nuestra <strong>Lista Mayorista</strong> — Por bulto cerrado. Mínimo solo en el 1er pedido</p>
@@ -1919,15 +1923,6 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
     <div id="mayDesktopProdsArea"></div>
   </div>
   <div class="mobile-prods-area hidden" id="mayMobileProdsArea"></div>
-  <!-- Repetir aviso cerca del carrito -->
-  <div class="mayorista-badge" style="margin-top:24px">
-    <div class="may-warn">📦 Venta ÚNICAMENTE por bulto cerrado</div>
-    <div class="may-warn">🛒 Mínimo de $250.000 solo en tu primer pedido — después, sin mínimo</div>
-  </div>
-  <div style="margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-    <button class="wa-btn" onclick="pedirWAMayorista()" style="background:#25d366;max-width:320px">💬 Pedir por WhatsApp</button>
-    <button class="wa-btn" onclick="descargarListaMayorista()" style="background:var(--azul-dark);max-width:320px">⬇️ Descargar Lista PDF</button>
-  </div>
 </div>
 
 <div class="modal-overlay hidden" id="catModal">
@@ -2046,7 +2041,7 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
 
 <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
 <div class="cart-panel" id="cartPanel">
-  <div class="cart-header"><h2><img class="head-icon" src="icon-carrito.png" alt="">Tu pedido</h2><div class="cart-header-actions"><button class="cart-chat-btn" onclick="toggleChat()" title="Consultar" aria-label="Consultar">💬</button><button class="close-btn" onclick="closeCart()" aria-label="Cerrar"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></button></div></div>
+  <div class="cart-header"><h2><img class="head-icon" src="icon-carrito.png" alt="">Tu pedido</h2><div class="cart-header-actions"><button class="cart-chat-btn" onclick="toggleChat()" title="Consultar" aria-label="Consultar"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.8-.9L3 21l1.8-4.8A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></svg></button><button class="close-btn" onclick="closeCart()" aria-label="Cerrar"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></button></div></div>
   <div class="cart-body" id="cartBody"></div>
   <div class="cart-footer hidden" id="cartFooter"></div>
 </div>
@@ -2054,7 +2049,7 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
 <!-- CARRITO MAYORISTA PANEL -->
 <div class="cart-overlay" id="cartOverlayMay" onclick="closeCartMay()"></div>
 <div class="cart-panel" id="cartPanelMay">
-  <div class="cart-header"><h2><img class="head-icon" src="icon-mayorista.png" alt="">Pedido Mayorista</h2><div class="cart-header-actions"><button class="close-btn" onclick="closeCartMay()" aria-label="Cerrar"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></button></div></div>
+  <div class="cart-header"><h2><svg class="head-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="9.5" cy="20" r="1.35"/><circle cx="18" cy="20" r="1.35"/></svg>Pedido Mayorista</h2><div class="cart-header-actions"><button class="close-btn" onclick="closeCartMay()" aria-label="Cerrar"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg></button></div></div>
   <div class="cart-body" id="cartBodyMay"></div>
   <div class="cart-footer hidden" id="cartFooterMay"></div>
 </div>
@@ -2224,7 +2219,17 @@ function calcWeight(opc,qty){let m=opc.match(/^(\d+)g$/i);if(m){let t=parseInt(m
 function _norm(s){return(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase().replace(/[^A-Z0-9]/g,' ').replace(/\s+/g,' ').trim()}
 function _precio(s){const clean=(s||'').replace(/[^0-9,.]/g,'').replace(/\./g,'').replace(',','.');const n=parseFloat(clean);return isNaN(n)?0:Math.round(n)}
 function _bultoLabel(n,unidad){const s=String(n).replace('.',',');if(unidad==='kg')return s+' Kg';return n===1?'1 Unidad':s+' Unidades';}
-function _tc(s){return(s||'').toLowerCase().replace(/[^\s\-\/(]+/g,function(w){return w.charAt(0).toUpperCase()+w.slice(1);});}
+const _TC_CONNECTORS=new Set(['a','al','con','de','del','e','el','en','la','las','los','o','para','por','sin','u','un','una','y','x']);
+const _TC_SPECIAL={tacc:'TACC',iva:'IVA',kg:'kg',gr:'gr',g:'g',ml:'ml'};
+function _tc(s){
+  var first=true;
+  return String(s||'').toLocaleLowerCase('es-AR').replace(/[a-záéíóúüñ]+/gi,function(word){
+    var key=word.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+    var out=_TC_SPECIAL[key]||((!first&&_TC_CONNECTORS.has(key))?word:word.charAt(0).toUpperCase()+word.slice(1));
+    first=false;
+    return out;
+  });
+}
 const _STOPWORDS=new Set(['DE','DEL','LA','EL','LOS','LAS','UN','UNA','Y','O','CON','EN','X','POR']);
 function _fuzzyMatch(q,t){const qn=_norm(q).split(' ').filter(w=>w.length>1&&!_STOPWORDS.has(w));const tn=_norm(t);if(!qn.length)return false;return qn.some(w=>tn.includes(w))}
 function _levenshtein(a,b){
@@ -2518,6 +2523,11 @@ function renderProdsHTML(cat,prods,prefix){
 const TRASH_SVG='<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>';
 const EDIT_SVG='<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>';
 const ADD_CART_ICON='<span class="add-cart-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h2l2.4 10.3a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L21 7H6"/><circle cx="9" cy="20" r="1.4" fill="currentColor" stroke="none"/><circle cx="18" cy="20" r="1.4" fill="currentColor" stroke="none"/></svg></span>';
+const MAY_CUBE_ICON='<span class="may-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m4 7 8-4 8 4-8 4-8-4Z"/><path d="M4 7v10l8 4 8-4V7M12 11v10"/></svg></span>';
+const MAY_GRID_ICON='<span class="may-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="6" height="6" rx="1.4"/><rect x="14" y="4" width="6" height="6" rx="1.4"/><rect x="4" y="14" width="6" height="6" rx="1.4"/><rect x="14" y="14" width="6" height="6" rx="1.4"/></svg></span>';
+const MAY_INFO_ICON='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 11v6"/><path d="M12 7h.01"/></svg>';
+const MAY_PRODUCT_PLACEHOLDER='<span class="may-product-placeholder" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linejoin="round"><path d="m4 7 8-4 8 4-8 4-8-4Z"/><path d="M4 7v10l8 4 8-4V7M12 11v10"/></svg></span>';
+window.MAY_PRODUCT_PLACEHOLDER=MAY_PRODUCT_PLACEHOLDER;
 function _acumLabel(p){
   const cartAcum=cart.filter(i=>i.pid===p[0]);
   if(!cartAcum.length)return'';
@@ -2826,6 +2836,7 @@ function openCuenta(){
   document.getElementById('cuentaOverlay').classList.add('open');
   document.getElementById('cuentaPanel').classList.add('open');
   document.body.style.overflow='hidden';
+  document.body.classList.add('account-open');
   renderCuenta();
   try{history.pushState({view:'cuenta'},'');}catch(e){}
 }
@@ -2834,6 +2845,7 @@ function closeCuenta(){
   document.getElementById('cuentaOverlay').classList.remove('open');
   document.getElementById('cuentaPanel').classList.remove('open');
   document.body.style.overflow='';
+  document.body.classList.remove('account-open');
 }
 window.closeCuenta=closeCuenta;
 function renderCuenta(){
@@ -2855,12 +2867,12 @@ function renderCuenta(){
   if(!tienePerfil)h+='<button class="cta-completar" onclick="_cuentaAbrirForm()">Completar mis datos</button>';
   h+='</div>';
   h+=_cuentaFormHTML(p,dirs);
-  var boxSvg='<img src="icon-mayorista.png" alt="" loading="lazy">';
+  var boxSvg=MAY_CUBE_ICON;
   var chevSvg='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>';
   var ped=_cuentaCargarPedidos();
   h+='<div class="cta-sec"><h3 class="cta-sec-title">Mis pedidos</h3>';
   if(!ped.length){
-    h+='<div class="cta-vacio"><img src="icon-mayorista.png" alt="" loading="lazy" style="width:34px;height:34px;object-fit:contain;display:block;margin:0 auto 10px;opacity:.55">Todavía no hiciste pedidos.<br>Cuando envíes uno por WhatsApp, va a quedar guardado acá.</div>';
+    h+='<div class="cta-vacio"><span class="cta-empty-order-icon">'+MAY_CUBE_ICON+'</span>Todavía no hiciste pedidos.<br>Cuando envíes uno por WhatsApp, va a quedar guardado acá.</div>';
   }else{
     h+='<div class="cta-pedidos">';
     ped.forEach(function(pe,i){
@@ -4988,6 +5000,19 @@ function renderMayUI() {
   renderMayCarrusel();
 }
 
+let _mayCatalogWasMobile=window.innerWidth<768;
+let _mayCatalogResizeTimer=null;
+window.addEventListener('resize',function(){
+  clearTimeout(_mayCatalogResizeTimer);
+  _mayCatalogResizeTimer=setTimeout(function(){
+    const isMobileNow=window.innerWidth<768;
+    if(isMobileNow===_mayCatalogWasMobile)return;
+    _mayCatalogWasMobile=isMobileNow;
+    renderMayHomeCategories();
+    if(currentTab==='mayorista')renderMayCarrusel();
+  },120);
+},{passive:true});
+
 function renderMayHomeCategories(){
   const track=document.getElementById('mayHomeCatsTrack');
   if(!track||!CATS_MAY.length)return;
@@ -5156,16 +5181,16 @@ function renderMayCatsUI() {
   
   if (dropdownGrid) {
     const allButton = `<button class="may-cat-menu-btn${!activeCatIdMay ? ' active' : ''}" onclick="mayChooseHeaderCat(null)">
-      <span class="may-cat-thumb may-cat-all" aria-hidden="true">✦</span>
+      <span class="may-cat-thumb may-cat-all" aria-hidden="true">${MAY_GRID_ICON}</span>
       <span class="may-cat-menu-name">Todos los productos</span>
-      <span class="may-cat-menu-arrow" aria-hidden="true">→</span>
+      <span class="may-cat-menu-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
     </button>`;
     dropdownGrid.innerHTML = allButton + sortedCats.map(cat => {
-      const visual = `<img src="${_mayCatAsset(cat.id)}" alt="" loading="lazy" onerror="this.parentNode.textContent='${cat.ic || '🌿'}'">`;
+      const visual = `<img src="${_mayCatAsset(cat.id)}" alt="" loading="lazy" onerror="this.hidden=true;this.parentNode.classList.add('may-cat-thumb-fallback')">`;
       return `<button class="may-cat-menu-btn${cat.id === activeCatIdMay ? ' active' : ''}" onclick="mayChooseHeaderCat('${cat.id}')">
         <span class="may-cat-thumb" aria-hidden="true">${visual}</span>
         <span class="may-cat-menu-name">${cat.n}</span>
-        <span class="may-cat-menu-arrow" aria-hidden="true">→</span>
+        <span class="may-cat-menu-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </button>`;
     }).join('');
   }
@@ -5177,9 +5202,9 @@ function renderMayCarrusel() {
   const mobile = document.getElementById('mayMobileProdsArea');
   
   if (!PRODS_MAY.length) {
-    const msg = '<div style="padding:48px;text-align:center;color:var(--muted-fg);font-size:15px">🔄 Cargando productos mayoristas...</div>';
-    if (desktop) desktop.innerHTML = msg;
-    if (mobile) { mobile.innerHTML = msg; mobile.classList.remove('hidden'); }
+    const msg = '<div class="may-catalog-loading"><span></span>Cargando productos mayoristas...</div>';
+    if (desktop) desktop.innerHTML = isMobile ? '' : msg;
+    if (mobile) { mobile.innerHTML = isMobile ? msg : ''; mobile.classList.toggle('hidden',!isMobile); }
     return;
   }
   
@@ -5199,14 +5224,14 @@ function renderMayCarrusel() {
           <span>Venta por bulto cerrado</span>
           <h1>Catálogo mayorista</h1>
         </div>
-        <button class="catalog-filter-btn" onclick="toggleMayCatsDropdown()"><span aria-hidden="true">☰</span> Categorías</button>
+        <button class="catalog-filter-btn" onclick="toggleMayCatsDropdown(this)">${MAY_GRID_ICON} Categorías</button>
       </div>`;
       catsSorted.forEach(cat => {
         const prods = PRODS_MAY.filter(p => p[1] === cat.id).sort((a, b) => a[2].localeCompare(b[2], 'es', { sensitivity: 'base' }));
         if (!prods.length) return;
         h += `<section class="allcat-sec">
           <div class="allcat-head">
-            <span class="allcat-img" style="font-size:34px;display:flex;align-items:center;justify-content:center">${cat.ic || '🌿'}</span>
+            <span class="allcat-img" aria-hidden="true">${MAY_CUBE_ICON}</span>
             <span class="allcat-name">${cat.n}</span>
             <span class="allcat-count">${prods.length}</span>
           </div>
@@ -5216,8 +5241,8 @@ function renderMayCarrusel() {
       return h;
     }
 
-    if (desktop) desktop.innerHTML = buildAllMay('');
-    if (mobile) { mobile.innerHTML = buildAllMay('m'); mobile.classList.remove('hidden'); }
+    if (desktop) desktop.innerHTML = isMobile ? '' : buildAllMay('');
+    if (mobile) { mobile.innerHTML = isMobile ? buildAllMay('m') : ''; mobile.classList.toggle('hidden',!isMobile); }
   } else {
     selectMayCat(activeCatIdMay);
   }
@@ -5250,11 +5275,11 @@ function _cardHTMLMay(p) {
   const cat = CATS_MAY.find(c => c.id === p[1]);
   const bulto = p[12] ? p[12].bulto : 1;
   return `<div class="carousel-card" onclick="selectMayCat('${p[1]}', ${p[0]})">
-    <div class="carousel-card-img">${hasSrc ? `<img src="${p[6]}" alt="${p[2]}" onerror="this.parentNode.innerHTML='🌿'" loading="lazy">` : (cat ? cat.ic : '🌿')}</div>
+    <div class="carousel-card-img">${hasSrc ? `<img src="${p[6]}" alt="${p[2]}" onerror="this.parentNode.innerHTML=MAY_PRODUCT_PLACEHOLDER" loading="lazy">` : MAY_PRODUCT_PLACEHOLDER}</div>
     <div class="carousel-card-body">
       <div class="carousel-card-name">${_tc(p[2])}</div>
       <div class="carousel-card-cat">${cat ? cat.n : ''}</div>
-      <span class="bulto-badge">📦 ${opts[0] || 'Bulto'}</span>
+      <span class="bulto-badge">${MAY_CUBE_ICON}${opts[0] || 'Bulto'}</span>
       <div class="carousel-card-price">$${fmt(precio)}</div>
     </div>
   </div>`;
@@ -5293,8 +5318,8 @@ function selectMayCat(catId, productId) {
   const desktop = document.getElementById('mayDesktopProdsArea');
   const mobile  = document.getElementById('mayMobileProdsArea');
 
-  if (desktop) desktop.innerHTML = _buildGrid('');
-  if (mobile)  { mobile.innerHTML = _buildGrid('m'); mobile.classList.remove('hidden'); }
+  if (desktop) desktop.innerHTML = isMobile ? '' : _buildGrid('');
+  if (mobile)  { mobile.innerHTML = isMobile ? _buildGrid('m') : ''; mobile.classList.toggle('hidden',!isMobile); }
 
   // Scroll: si viene productId, scrollear a esa card; si no, al área
   const area = isMobile ? mobile : desktop;
@@ -5344,21 +5369,21 @@ function renderCardMay(p, suffix) {
   const id        = 'may_' + p[0] + (suffix ? '_' + suffix : '');
   const cartItem  = cartMay.find(i => i.pid === p[0]);
   const acumQty   = cartItem ? cartItem.c : 0;
-  const acumInfo  = acumQty > 0 ? `<span class="acum-badge">🛒 ${acumQty} ${acumQty === 1 ? 'bulto' : 'bultos'} · $${fmt(precio * acumQty)}</span>` : '';
+  const acumInfo  = acumQty > 0 ? `<div class="card-subtotal"><span>Subtotal</span><strong>$${fmt(precio * acumQty)}</strong></div>` : '';
   const cat       = CATS_MAY.find(c => c.id === p[1]);
 
   let h = `<div class="pcard" id="${id}">`;
 
   // Imagen
   h += `<div class="pcard-img" onclick="zoomImg(this)" data-src="${hasSrc ? p[6] : ''}">${hasSrc
-    ? `<img src="${p[6]}" alt="${p[2]}" onerror="this.parentNode.innerHTML='${cat ? cat.ic : '🌿'}'" loading="lazy">`
-    : (cat ? cat.ic : '🌿')}</div>`;
+    ? `<img src="${p[6]}" alt="${p[2]}" onerror="this.parentNode.innerHTML=MAY_PRODUCT_PLACEHOLDER" loading="lazy">`
+    : MAY_PRODUCT_PLACEHOLDER}</div>`;
 
   h += `<div class="pcard-body">`;
 
   // Nombre
   h += `<div class="pcard-head"><div class="pcard-name">${_tc(p[2])}</div>`;
-  if(infoText) h += `<button class="info-btn" onclick="showInfo(${p[0]})" title="Ver información">ℹ️</button>`;
+  if(infoText) h += `<button class="info-btn" onclick="showInfo(${p[0]})" title="Ver información" aria-label="Ver información">${MAY_INFO_ICON}</button>`;
   h += `</div>`;
 
   // Rubro
@@ -5366,7 +5391,7 @@ function renderCardMay(p, suffix) {
   if(_mayBrand && _mayBrand !== 'Varios' && _mayBrand !== 'Granel') h += `<div class="pcard-brand">${_mayBrand}</div>`;
 
   // Badge bulto
-  h += `<div style="margin:6px 0 2px"><span class="bulto-badge">📦 ${bultoLabel}</span></div>`;
+  h += `<div style="margin:6px 0 2px"><span class="bulto-badge">${MAY_CUBE_ICON}${bultoLabel}</span></div>`;
 
   // Selector de sabor si aplica
   if (sabores && sabores.length) {
@@ -5388,8 +5413,8 @@ function renderCardMay(p, suffix) {
     <button class="qty-btn" onclick="chgQtyMay('${id}',-1)">−</button>
     <span class="qty-val" id="${id}_q">1</span>
     <button class="qty-btn" onclick="chgQtyMay('${id}',1)">+</button>
-    ${acumInfo}
   </div>`;
+  h += acumInfo;
   h += `<button class="add-btn" id="${id}_ab" onclick="addToCartMay(${p[0]},'${id}')">${ADD_CART_ICON} Agregar al pedido</button>`;
 
   // Acciones si ya está en el carrito
@@ -5441,7 +5466,7 @@ function addToCartMay(pid, elId) {
   const btn = document.getElementById(elId + '_ab');
   if (btn) {
     btn.classList.add('added');
-    btn.innerHTML = '✓ Agregado!';
+    btn.innerHTML = '<span class="add-cart-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span> Agregado';
     setTimeout(() => { btn.classList.remove('added'); btn.innerHTML = ADD_CART_ICON + ' Agregar al pedido'; }, 1400);
   }
 
@@ -5462,8 +5487,7 @@ function addToCartMay(pid, elId) {
       inner.style.cssText = 'width:100%;height:100%;object-fit:contain;border-radius:50%';
       fly.appendChild(inner);
     } else {
-      fly.textContent = '📦';
-      fly.style.fontSize = '28px';
+      fly.innerHTML = MAY_PRODUCT_PLACEHOLDER;
       fly.style.display = 'flex';
       fly.style.alignItems = 'center';
       fly.style.justifyContent = 'center';
@@ -5512,9 +5536,9 @@ function _triggerMayMinimoToast() {
     toast.id = 'mayMinimoToast';
     toast.className = 'may-toast';
     toast.innerHTML =
-      '<div style="font-size:40px;margin-bottom:6px">🎉</div>' +
-      '<div class="may-toast-title" style="font-size:18px;letter-spacing:1px">¡MÍNIMO<br>ALCANZADO!</div>' +
-      '<div style="margin-top:10px;font-size:13px;color:var(--muted-fg);line-height:1.5">Superaste los <strong>$250.000</strong><br>Ya podés enviar tu primer pedido 📦<br><span style="font-size:12px">✨ Los próximos, sin mínimo</span></div>';
+      '<div class="may-toast-icon">'+MAY_CUBE_ICON+'</div>' +
+      '<div class="may-toast-title" style="font-size:18px;letter-spacing:1px">MÍNIMO<br>ALCANZADO</div>' +
+      '<div style="margin-top:10px;font-size:13px;color:var(--muted-fg);line-height:1.5">Superaste los <strong>$250.000</strong><br>Ya podés enviar tu primer pedido.<br><span style="font-size:12px">Los próximos, sin mínimo.</span></div>';
     document.body.appendChild(toast);
   }
   toast.classList.remove('hide');
@@ -5622,7 +5646,7 @@ function _pintarDistBanner(){
   if(minimo===0){
     // Ya hizo su primer pedido: no hay mínimo, así que la barra no tiene sentido
     title.textContent='Comprás sin mínimo';
-    note.innerHTML='✨ Ya hiciste tu primer pedido: a partir de ahora comprás <b>SIN MÍNIMO</b>.';
+    note.innerHTML='Ya hiciste tu primer pedido: a partir de ahora comprás <b>SIN MÍNIMO</b>.';
     lbl.style.display='none'; track.style.display='none';
     if(total>0){ rw.innerHTML='<span class="distb-pill">✓</span> Tu pedido: $'+fmt(total); rw.classList.add('on'); }
     else rw.classList.remove('on');
@@ -5630,7 +5654,7 @@ function _pintarDistBanner(){
   }
 
   title.textContent='Condición especial para tu primer pedido';
-  note.innerHTML='🛒 Realizá tu primer pedido alcanzando el mínimo de compra: <b>$'+fmt(MIN_COMPRA_MAYORISTA)+'</b>.<br>✨ A partir de tu segundo pedido, comprás <b>SIN MÍNIMO</b>.';
+  note.innerHTML='Realizá tu primer pedido alcanzando el mínimo de compra: <b>$'+fmt(MIN_COMPRA_MAYORISTA)+'</b>.<br>A partir de tu segundo pedido, comprás <b>SIN MÍNIMO</b>.';
   lbl.style.display=''; track.style.display='';
   fill.style.width=Math.min(100,(total/MIN_COMPRA_MAYORISTA)*100)+'%';
   cnt.textContent='$'+fmt(total);
@@ -5681,7 +5705,7 @@ function renderCartMay() {
   const body   = document.getElementById('cartBodyMay');
   const footer = document.getElementById('cartFooterMay');
   if (!cartMay.length) {
-    body.innerHTML = '<div class="cart-empty"><span class="big">📦</span><div style="font-size:16px;font-weight:600;margin-bottom:6px">Tu pedido mayorista está vacío</div><div style="font-size:14px;color:var(--muted-fg)">Agregá productos para armar tu pedido</div></div>';
+    body.innerHTML = '<div class="cart-empty"><span class="big may-empty-cart-icon">'+MAY_CUBE_ICON+'</span><div style="font-size:16px;font-weight:700;margin-bottom:6px">Tu pedido mayorista está vacío</div><div style="font-size:14px;color:var(--muted-fg)">Agregá productos para armar tu pedido</div></div>';
     footer.classList.add('hidden');
     return;
   }
@@ -5691,7 +5715,7 @@ function renderCartMay() {
   const pct    = minVig > 0 ? Math.min(100, Math.round(total / minVig * 100)) : 100;
   const progColor = cumple ? '#16a34a' : 'var(--azul)';
   const progMsg   = cumple
-    ? '✅ Mínimo alcanzado — podés hacer tu pedido'
+    ? 'Mínimo alcanzado — podés hacer tu pedido'
     : `Faltan $${fmt(minVig - total)} para el mínimo`;
 
   let h = '';
@@ -5699,7 +5723,7 @@ function renderCartMay() {
     const sub = it.l1 * it.c;
     h += `<div class="cart-item">
       <div style="flex:1">
-        <div class="cart-item-name">${it.n}</div>
+        <div class="cart-item-name">${_tc(it.n)}</div>
         <span class="cart-item-opt">${it.bultoLabel || 'Bulto'} × ${it.c} — $${fmt(it.l1)}/bulto</span>
       </div>
       <div style="display:flex;align-items:center;gap:6px">
@@ -5729,7 +5753,7 @@ function renderCartMay() {
       </div>
       <div style="font-size:11.5px;color:var(--muted-fg);margin-top:6px;text-align:center;line-height:1.4">Mínimo solo en tu primer pedido · Venta por bulto cerrado</div>
     </div>`
-    : `<div style="background:#f0fdf4;border:1.5px solid #86efac;border-radius:10px;padding:9px 12px;margin-bottom:10px;text-align:center;font-size:12.5px;color:#15803d;font-weight:600;line-height:1.4">✨ Sin mínimo de compra · Venta por bulto cerrado</div>`;
+    : `<div style="background:#f0fdf4;border:1.5px solid #86efac;border-radius:10px;padding:9px 12px;margin-bottom:10px;text-align:center;font-size:12.5px;color:#15803d;font-weight:600;line-height:1.4">Sin mínimo de compra · Venta por bulto cerrado</div>`;
 
   footer.classList.remove('hidden');
   footer.innerHTML = `
@@ -5768,7 +5792,7 @@ function pedirWAMayorista() {
   const total = cartMay.reduce((a, i) => a + i.l1 * i.c, 0);
   const minVig = _minimoMayVigente();
   if (minVig > 0 && total < minVig) {
-    alert(`⚠️ Tu PRIMER pedido tiene un mínimo de compra de $${fmt(minVig)}.\n\nTotal actual: $${fmt(total)}\nFaltan: $${fmt(minVig - total)}\n\n✨ A partir de tu segundo pedido comprás sin mínimo.`);
+    alert(`Tu primer pedido tiene un mínimo de compra de $${fmt(minVig)}.\n\nTotal actual: $${fmt(total)}\nFaltan: $${fmt(minVig - total)}\n\nA partir de tu segundo pedido comprás sin mínimo.`);
     return;
   }
   closeCartMay();
@@ -5828,7 +5852,7 @@ function _doSearchMay(val) {
   
   let h = `<h1 style="font-size:18px;color:var(--azul-dark);margin-bottom:12px;font-weight:700">Resultados para "${searchTermMay}"</h1>`;
   if (!results.length) {
-    h += '<div style="text-align:center;padding:44px 0;color:var(--muted-fg);font-size:17px">No se encontraron productos 🔍</div>';
+    h += '<div style="text-align:center;padding:44px 0;color:var(--muted-fg);font-size:15px">No se encontraron productos</div>';
   } else {
     const suffix = isMobile ? 'searchm' : 'searchd';
     h += '<div class="prod-grid">';
@@ -6145,6 +6169,7 @@ function abrirCheckout(venta) {
   document.getElementById('coBtnBack').style.display = 'none';
   _coRenderSummary();
   document.getElementById('checkoutOverlay').classList.remove('hidden');
+  document.body.classList.add('checkout-open');
   document.body.style.overflow = 'hidden';
   _coAutocompletar();
   _coBuildDirOpts();
@@ -6157,6 +6182,7 @@ window.abrirCheckout = abrirCheckout;
 
 function cerrarCheckout() {
   document.getElementById('checkoutOverlay').classList.add('hidden');
+  document.body.classList.remove('checkout-open');
   document.body.style.overflow = '';
   if (_coMap) { _coMap.remove(); _coMap = null; _coMarker = null; }
   _coCoords = null;
@@ -7225,12 +7251,12 @@ window.addEventListener('online', function() {
         <p class="checkout-step-lbl">¿Cómo querés recibir tu pedido?</p>
         <div class="checkout-delivery-opts">
           <button class="checkout-delivery-btn" onclick="coElegirEntrega('retiro')">
-            <span class="checkout-delivery-ic retiro"><img src="nav-inicio.png" alt="" aria-hidden="true"></span>
+            <span class="checkout-delivery-ic retiro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v10h16V10"/><path d="M3 10h18l-2-6H5l-2 6Z"/><path d="M8 20v-6h5v6M3 10c0 1.7 1.2 3 2.7 3 1.3 0 2.3-.7 2.8-1.8.5 1.1 1.5 1.8 2.8 1.8s2.3-.7 2.8-1.8c.5 1.1 1.5 1.8 2.8 1.8 1.6 0 2.8-1.3 2.8-3"/></svg></span>
             <div class="checkout-delivery-txt"><b>Retiro en el local</b><small id="coRetiroSub">Pueyrredón 588, Mendoza · Lun–Sáb 10 a 20hs</small></div>
             <span class="checkout-delivery-arr">›</span>
           </button>
           <button class="checkout-delivery-btn" onclick="coElegirEntrega('domicilio')">
-            <span class="checkout-delivery-ic domicilio"><img src="camion-envio.png" alt="" aria-hidden="true"></span>
+            <span class="checkout-delivery-ic domicilio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span>
             <div class="checkout-delivery-txt"><b>Envío a domicilio</b><small>Hacemos envíos a todo el país</small></div>
             <span class="checkout-delivery-arr">›</span>
           </button>
@@ -7242,14 +7268,14 @@ window.addEventListener('online', function() {
           <label>Nombre y apellido <span style="color:#e53935">*</span></label>
           <input type="text" id="coNombre" placeholder="Tu nombre completo" class="co-input" autocomplete="name">
         </div>
-        <div class="co-nombre-mini hidden" id="coNombreMiniR">👤 A nombre de <b id="coNombreTxtR"></b> · <a href="#" onclick="coCambiarNombre('R');return false">Cambiar</a></div>
+        <div class="co-nombre-mini hidden" id="coNombreMiniR">A nombre de <b id="coNombreTxtR"></b> · <a href="#" onclick="coCambiarNombre('R');return false">Cambiar</a></div>
         <div class="co-field">
           <label>Horario preferido de retiro <span class="opt-lbl">(opcional)</span></label>
           <input type="text" id="coHorarioRetiro" placeholder="Ej: entre 10 y 12hs" class="co-input">
           <span class="co-hint" id="coRetiroHint">Horarios del local: Lunes a Sábados 10:00 a 20:00hs</span>
         </div>
         <button class="wa-btn" style="margin-top:8px" onclick="coEnviar()"><svg viewBox="0 0 24 24" width="19" height="19" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.006 22l4.984-1.307A9.961 9.961 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.25a8.24 8.24 0 01-4.258-1.178l-.306-.181-3.157.828.844-3.07-.2-.319A8.25 8.25 0 1112 20.25z"/></svg> Enviar pedido por WhatsApp</button>
-        <div class="co-saved-hint">💾 Guardamos tus datos en este dispositivo para tu próximo pedido. <a href="#" onclick="coBorrarPerfil();return false">Borrar mis datos</a></div>
+        <div class="co-saved-hint">Tus datos quedan guardados en este dispositivo para tu próximo pedido. <a href="#" onclick="coBorrarPerfil();return false">Borrar mis datos</a></div>
       </div>
       <!-- Step 2: Domicilio -->
       <div id="coStep2Dom" class="hidden">
@@ -7257,7 +7283,7 @@ window.addEventListener('online', function() {
           <label>Nombre y apellido <span style="color:#e53935">*</span></label>
           <input type="text" id="coNombreDom" placeholder="Tu nombre completo" class="co-input" autocomplete="name">
         </div>
-        <div class="co-nombre-mini hidden" id="coNombreMiniDom">👤 A nombre de <b id="coNombreTxtDom"></b> · <a href="#" onclick="coCambiarNombre('Dom');return false">Cambiar</a></div>
+        <div class="co-nombre-mini hidden" id="coNombreMiniDom">A nombre de <b id="coNombreTxtDom"></b> · <a href="#" onclick="coCambiarNombre('Dom');return false">Cambiar</a></div>
         <div class="co-field">
           <label>Dirección <span style="color:#e53935">*</span></label>
           <div id="coDirOpts" class="co-dir-opts" style="display:none"></div>
@@ -7295,8 +7321,8 @@ window.addEventListener('online', function() {
           <div class="co-field" style="flex:1.4">
             <label>Tipo <span class="opt-lbl">(opcional)</span></label>
             <div class="co-tipo-opts">
-              <label class="co-tipo-radio"><input type="radio" name="coTipo" value="casa"><span>🏠 Casa</span></label>
-              <label class="co-tipo-radio"><input type="radio" name="coTipo" value="depto"><span>🏢 Depto</span></label>
+              <label class="co-tipo-radio"><input type="radio" name="coTipo" value="casa"><span>Casa</span></label>
+              <label class="co-tipo-radio"><input type="radio" name="coTipo" value="depto"><span>Departamento</span></label>
             </div>
           </div>
         </div>
@@ -7312,13 +7338,13 @@ window.addEventListener('online', function() {
         <div class="co-field" style="margin-top:18px">
           <label>Medio de pago <span style="color:#e53935">*</span></label>
           <div class="co-pago-opts">
-            <label class="co-radio co-pago-efectivo" id="coRadioEfectivoWrap"><input type="radio" name="coPago" value="efectivo"><span>💵 Efectivo</span></label>
-            <label class="co-radio"><input type="radio" name="coPago" value="transferencia"><span>🏦 Transferencia bancaria</span></label>
-            <label class="co-radio"><input type="radio" name="coPago" value="tarjeta"><span>💳 Tarjeta de débito/crédito</span></label>
+            <label class="co-radio co-pago-efectivo" id="coRadioEfectivoWrap"><input type="radio" name="coPago" value="efectivo"><span>Efectivo</span></label>
+            <label class="co-radio"><input type="radio" name="coPago" value="transferencia"><span>Transferencia bancaria</span></label>
+            <label class="co-radio"><input type="radio" name="coPago" value="tarjeta"><span>Tarjeta de débito/crédito</span></label>
           </div>
         </div>
         <button class="wa-btn" style="margin-top:8px" onclick="coEnviar()"><svg viewBox="0 0 24 24" width="19" height="19" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.006 22l4.984-1.307A9.961 9.961 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.25a8.24 8.24 0 01-4.258-1.178l-.306-.181-3.157.828.844-3.07-.2-.319A8.25 8.25 0 1112 20.25z"/></svg> Enviar pedido por WhatsApp</button>
-        <div class="co-saved-hint">💾 Guardamos tus datos en este dispositivo para tu próximo pedido. <a href="#" onclick="coBorrarPerfil();return false">Borrar mis datos</a></div>
+        <div class="co-saved-hint">Tus datos quedan guardados en este dispositivo para tu próximo pedido. <a href="#" onclick="coBorrarPerfil();return false">Borrar mis datos</a></div>
       </div>
     </div>
   </div>
@@ -7326,7 +7352,7 @@ window.addEventListener('online', function() {
 
 <!-- checkout script moved into main script -->
 
-<!-- ═══ MODAL BIENVENIDA / TUTORIAL (cada 30 minutos) ═══ -->
+<!-- ═══ MODAL BIENVENIDA / TUTORIAL (solo la primera visita) ═══ -->
 <style>
   #tutbOverlay{position:fixed;inset:0;background:rgba(26,48,80,.58);display:none;align-items:center;justify-content:center;padding:12px;z-index:10300}
   #tutbOverlay.tutb-show{display:flex}
@@ -7370,7 +7396,8 @@ window.addEventListener('online', function() {
   .tutb-steps-row{display:flex;justify-content:space-between;gap:4px}
   .tutb-step{flex:1;text-align:center}
   .tutb-step .tutb-n{width:21px;height:21px;border-radius:50%;background:#547692;color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 4px}
-  .tutb-step .tutb-em{font-size:15px;display:block;margin-bottom:1px}
+  .tutb-step .tutb-em{display:grid;width:25px;height:25px;place-items:center;margin:0 auto 3px;color:#547692}
+  .tutb-step .tutb-em svg{display:block;width:21px;height:21px}
   .tutb-step .tutb-t{font-size:10.5px;color:#3a4d63;font-weight:600;line-height:1.25}
   .tutb-step-arrow{color:#b8c6d4;font-size:14px;align-self:center;margin-top:-10px}
 
@@ -8346,29 +8373,29 @@ window.addEventListener('online', function() {
     <div class="tutb-head">
       <img class="tutb-logo" src="logo-mayorista-hd.webp" alt="Paladear Distribuidora">
       <h2>¿Cómo comprar en Paladear?</h2>
-      <div class="tutb-sub">Bienvenidos a la Distribuidora Mayorista 👇</div>
+      <div class="tutb-sub">Bienvenidos a la Distribuidora Mayorista</div>
     </div>
     <div class="tutb-opt tutb-may" onclick="tutorialIr('mayorista')">
       <div class="tutb-top">
-        <img class="tutb-ic" src="icon-mayorista.png" alt="">
+        <img class="tutb-ic" src="logo-mayorista-hd.webp" alt="">
         <span class="tutb-name">Venta por mayor</span>
         <span class="tutb-go">Revendedores →</span>
       </div>
       <div class="tutb-cond">Condición especial para tu primer pedido</div>
-      <div class="tutb-note">🛒 Realizá tu primer pedido alcanzando el mínimo de compra: <b>$250.000</b>.<br>✨ A partir de tu segundo pedido, comprás <b>SIN MÍNIMO</b>.</div>
+      <div class="tutb-note">Realizá tu primer pedido alcanzando el mínimo de compra: <b>$250.000</b>.<br>A partir de tu segundo pedido, comprás <b>SIN MÍNIMO</b>.</div>
       <div class="tutb-mlabel"><span class="tutb-cnt" id="tutbCntMay">$0</span><span class="tutb-goal">Mínimo 1er pedido: $250.000</span></div>
       <div class="tutb-track"><div class="tutb-fill" id="tutbFillMay"></div></div>
       <div class="tutb-reward tutb-rmay" id="tutbRwMay"><span class="tutb-pill">✓ LISTO</span> Mínimo alcanzado, ya podés comprar</div>
-      <div class="tutb-bulto">📦 La venta es <b>únicamente por bulto cerrado</b>.<br><span class="tutb-iva">🧾 Los precios expresados en este catálogo<br><b>NO INCLUYEN IVA</b>.</span></div>
+      <div class="tutb-bulto">La venta es <b>únicamente por bulto cerrado</b>.<br><span class="tutb-iva">Los precios expresados en este catálogo<br><b>NO INCLUYEN IVA</b>.</span></div>
     </div>
     <div class="tutb-steps">
       <div class="tutb-steps-title">Y comprar es así de fácil</div>
       <div class="tutb-steps-row">
-        <div class="tutb-step"><span class="tutb-n">1</span><span class="tutb-em">🔎</span><span class="tutb-t">Elegí productos</span></div>
+        <div class="tutb-step"><span class="tutb-n">1</span><span class="tutb-em"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 4.5 4.5"/></svg></span><span class="tutb-t">Elegí productos</span></div>
         <div class="tutb-step-arrow">→</div>
-        <div class="tutb-step"><span class="tutb-n">2</span><span class="tutb-em">🛒</span><span class="tutb-t">Se suman al carrito</span></div>
+        <div class="tutb-step"><span class="tutb-n">2</span><span class="tutb-em"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="9.5" cy="20" r="1.35"/><circle cx="18" cy="20" r="1.35"/></svg></span><span class="tutb-t">Se suman al carrito</span></div>
         <div class="tutb-step-arrow">→</div>
-        <div class="tutb-step"><span class="tutb-n">3</span><span class="tutb-em">📲</span><span class="tutb-t">Enviás por WhatsApp</span></div>
+        <div class="tutb-step"><span class="tutb-n">3</span><span class="tutb-em"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2"/><path d="M9.5 5h5M11 18.5h2"/></svg></span><span class="tutb-t">Enviás por WhatsApp</span></div>
       </div>
     </div>
   </div>
@@ -8410,6 +8437,90 @@ window.addEventListener('online', function() {
 })();
 </script>
 
+<style id="mayorista-final-polish">
+/* Sistema visual final: iconos de línea, catálogo estable y header persistente. */
+.head-icon-svg{display:block;width:25px;height:25px;margin-right:9px;flex:0 0 auto}
+.cart-header h2{display:flex;align-items:center}
+.may-inline-icon{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;line-height:1}
+.may-inline-icon svg{display:block;width:1.15em;height:1.15em}
+.bulto-badge{display:inline-flex;align-items:center;gap:5px;max-width:100%;line-height:1.25}
+.bulto-badge .may-inline-icon{font-size:14px}
+.allcat-img{display:grid;width:38px;height:38px;place-items:center;flex:0 0 38px;border:1px solid #cedee9;border-radius:11px;background:#edf5f9;color:#315f81}
+.allcat-img .may-inline-icon{font-size:22px}
+.may-cat-menu-arrow svg{display:block;width:17px;height:17px}
+.may-cat-all .may-inline-icon{font-size:24px}
+.may-cat-thumb-fallback::before{content:"";width:19px;height:19px;border:1.7px solid currentColor;border-radius:5px;opacity:.72}
+.may-product-placeholder{display:grid;width:62px;height:62px;place-items:center;border:1px solid #d5e4ed;border-radius:17px;background:#edf5f9;color:#62829a}
+.may-product-placeholder svg{width:30px;height:30px}
+.info-btn svg{display:block;width:21px;height:21px}
+.card-subtotal{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;width:100%;min-height:34px;margin:0 0 9px;padding:7px 9px;border:1px solid #cedee9;border-radius:9px;background:#edf5f9;color:#527088;font-size:10.5px;font-weight:700;line-height:1.2}
+.card-subtotal span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card-subtotal strong{color:#173e60;font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.may-catalog-loading{display:flex;align-items:center;justify-content:center;gap:10px;padding:48px;color:var(--muted-fg);font-size:14px}
+.may-catalog-loading span{width:18px;height:18px;border:2px solid #c5d8e5;border-top-color:#456b89;border-radius:50%;animation:mayCatalogSpin .7s linear infinite}
+@keyframes mayCatalogSpin{to{transform:rotate(360deg)}}
+.may-toast-icon{display:grid;width:46px;height:46px;place-items:center;margin:0 auto 8px;border-radius:14px;background:#e7f2f8;color:#315f81;font-size:26px}
+.may-empty-cart-icon{display:grid!important;width:58px;height:58px;margin:0 auto 14px!important;place-items:center;border:1px solid #d2e2ec;border-radius:17px;background:#edf5f9;color:#547692;opacity:1!important;font-size:29px!important}
+.cta-empty-order-icon{display:grid;width:42px;height:42px;margin:0 auto 10px;place-items:center;border:1px solid #d2e2ec;border-radius:13px;background:#edf5f9;color:#547692;font-size:23px}
+.checkout-delivery-ic{width:46px;height:46px;border:1px solid #d0e1eb;border-radius:14px;background:#edf5f9;color:#315f81}
+.checkout-delivery-ic svg{width:27px;height:27px}
+.co-nombre-mini{position:relative;padding-left:35px}
+.co-nombre-mini::before{content:"";position:absolute;left:14px;top:50%;width:10px;height:10px;border:1.7px solid #547692;border-radius:50%;transform:translateY(-70%)}
+.co-nombre-mini::after{content:"";position:absolute;left:11px;top:50%;width:16px;height:8px;border:1.7px solid #547692;border-bottom:0;border-radius:10px 10px 0 0;transform:translateY(25%)}
+.co-saved-hint{padding-top:9px;border-top:1px solid #e5edf2}
+.may-redesign.may-products-view .header{position:sticky;top:0;z-index:10020}
+.may-redesign.may-products-view{scroll-padding-top:168px}
+.may-redesign .may-home-bulto{display:none!important}
+.may-home-hero-benefits{max-width:600px}
+.may-home-hero-benefits span{grid-template-columns:38px auto;padding-inline:20px;gap:10px;font-size:12.5px;font-weight:700;line-height:1.3}
+.may-home-hero-benefits svg{width:33px;height:33px}
+body.account-open .may-mobile-bottom-nav,body.checkout-open .may-mobile-bottom-nav,
+body.may-redesign.account-open #cart-fab-may,body.may-redesign.account-open #backToTop,
+body.may-redesign.checkout-open #cart-fab-may,body.may-redesign.checkout-open #backToTop{display:none!important}
+
+@media(max-width:760px){
+  .may-mobile-bottom-nav{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .may-mobile-bottom-nav{padding-inline:8px}
+  .may-mobile-nav-link{padding-inline:4px;font-size:9.5px}
+  .may-redesign.may-products-view .header{height:68px;min-height:68px}
+  .may-redesign.may-products-view .header-inner{
+    display:grid;grid-template-columns:68px minmax(0,1fr) 42px;align-items:center;width:100%;height:68px;min-height:68px;
+    padding:6px 9px;gap:8px
+  }
+  .may-redesign.may-products-view .header .logo-wrap{position:relative;left:auto;top:auto;width:62px;height:62px;grid-column:1;margin:0;border-width:1.5px;box-shadow:0 4px 12px rgba(19,43,63,.27)}
+  .may-redesign.may-products-view .hd-buscador{
+    position:relative;display:block!important;grid-column:2;min-width:0;width:100%;max-width:none;padding:0;background:transparent
+  }
+  .may-redesign.may-products-view .hd-buscador .compact-search{display:block;width:100%;height:42px;padding:0 12px 0 39px;border-radius:13px;font-size:16px;box-shadow:none}
+  .may-redesign.may-products-view .hd-buscador .hd-lupa{left:13px;width:18px;height:18px}
+  .may-redesign.may-products-view .hd-buscador .search-suggestions{left:0;right:0;top:calc(100% + 8px)}
+  .may-redesign.may-products-view .may-mobile-search-close,
+  .may-redesign.may-products-view .may-mobile-socials,
+  .may-redesign.may-products-view .hd-accesos,
+  .may-redesign.may-products-view .may-mobile-header-actions>button:first-child{display:none!important}
+  .may-redesign.may-products-view .may-mobile-header-actions{display:flex!important;grid-column:3;margin:0}
+  .may-redesign.may-products-view .may-mobile-header-actions>button:last-child{display:grid!important;width:42px;height:42px}
+  .may-redesign.may-products-view #maySearchResults.active{top:68px;padding:14px 12px calc(92px + env(safe-area-inset-bottom));z-index:10000}
+  .may-redesign.may-products-view .mayorista-section{padding-top:28px!important}
+  .may-redesign.may-products-view{scroll-padding-top:82px}
+  .may-redesign .may-home-hero-copy{top:45px;bottom:auto}
+  .may-redesign .may-home-hero p{margin-top:13px}
+  .may-home-hero-benefits{position:static;width:min(100%,330px);height:auto;max-width:330px;margin:15px 0 0;padding:0;align-items:stretch;background:transparent;box-shadow:none}
+  .may-home-hero-benefits span{grid-template-columns:21px minmax(0,1fr);padding:1px 9px;gap:5px;font-size:8px;line-height:1.25}
+  .may-home-hero-benefits span:first-child{padding-left:0}
+  .may-home-hero-benefits svg{width:20px;height:20px}
+  .may-redesign .may-home-cta{margin-top:17px}
+  .allcat-img{width:34px;height:34px;flex-basis:34px;border-radius:10px}
+  .allcat-img .may-inline-icon{font-size:20px}
+  .card-subtotal{min-height:32px;padding:6px 7px;font-size:9px}
+  .card-subtotal strong{font-size:11.5px}
+  .cart-item{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px}
+  .cart-item>div:first-child{min-width:0}
+  .cart-item>div:last-child{display:grid!important;grid-template-columns:auto auto auto;align-items:center;gap:5px!important}
+  .cart-item-price{min-width:68px;font-size:13px}
+}
+</style>
+
 <script>
 /* Navegación exclusiva del tester mayorista. No modifica la lógica del catálogo. */
 (function(){
@@ -8444,6 +8555,7 @@ window.addEventListener('online', function() {
     options=options||{};
     document.body.classList.add('may-home-view');
     document.body.classList.remove('may-offers-view');
+    document.body.classList.remove('may-products-view');
     document.body.classList.remove('compact-on');
     window.mayToggleMobileSearch(false);
     setActive('home');
@@ -8457,6 +8569,7 @@ window.addEventListener('online', function() {
     options=options||{};
     document.body.classList.remove('may-home-view');
     document.body.classList.remove('may-offers-view');
+    document.body.classList.add('may-products-view');
     if(!options.keepSearch)window.mayToggleMobileSearch(false);
     setActive('productos');
     if(typeof window.switchTab==='function')window.switchTab('mayorista');
@@ -8470,7 +8583,7 @@ window.addEventListener('online', function() {
   };
 
   window.mayShowSoon=function(){
-    document.body.classList.remove('may-home-view','compact-on');
+    document.body.classList.remove('may-home-view','may-products-view','compact-on');
     document.body.classList.add('may-offers-view');
     window.mayToggleMobileSearch(false);
     setActive('ofertas');
