@@ -235,19 +235,24 @@ body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--fg);mi
 #loadingOverlay.hidden{opacity:0;pointer-events:none}
 .loader-logo-wrap{position:relative;width:140px;height:140px;display:flex;align-items:center;justify-content:center;z-index:2}
 .loader-logo{width:104px;height:104px;border-radius:50%;object-fit:cover;box-shadow:0 6px 22px rgba(84,118,146,.22)}
-.loader-ring{position:absolute;inset:0;border:5px solid rgba(84,118,146,.15);border-top-color:var(--azul);border-radius:50%;animation:spin 1.2s linear infinite}
+.loader-ring{position:absolute;inset:0;border:5px solid rgba(69,107,137,.16);border-top-color:#456b89;border-radius:50%;animation:spin 1.2s linear infinite}
 .loading-text{font-family:'Montserrat',sans-serif;font-size:17px;color:var(--azul-dark);font-weight:600;letter-spacing:.5px;z-index:2}
 .loader-bubbles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
 .loader-bubble{position:absolute;border-radius:50%;bottom:-90px;animation-iteration-count:infinite;animation-timing-function:linear;will-change:transform;box-shadow:0 4px 14px rgba(0,0,0,.06)}
-.loader-bubble.b1{width:54px;height:54px;background:#6B8FAB;left:6%;animation:floatSwayL 32s infinite linear}
-.loader-bubble.b2{width:34px;height:34px;background:#8FB573;left:16%;animation:floatSwayR 38s infinite linear;animation-delay:-8s}
-.loader-bubble.b3{width:46px;height:46px;background:#B5916C;left:80%;animation:floatSwayL 36s infinite linear;animation-delay:-14s}
-.loader-bubble.b4{width:40px;height:40px;background:#6B8FAB;left:90%;animation:floatSwayR 30s infinite linear;animation-delay:-4s}
-.loader-bubble.b5{width:28px;height:28px;background:#8FB573;left:10%;animation:floatSwayR 34s infinite linear;animation-delay:-20s}
-.loader-bubble.b6{width:50px;height:50px;background:#B5916C;left:84%;animation:floatSwayL 40s infinite linear;animation-delay:-26s}
-.loader-bubble.b7{width:38px;height:38px;background:#6B8FAB;left:3%;animation:floatSwayR 35s infinite linear;animation-delay:-12s}
-.loader-bubble.b8{width:60px;height:60px;background:#6B8FAB;left:74%;animation:floatSwayL 33s infinite linear;animation-delay:-22s}
-.loader-bubble.b9{width:42px;height:42px;background:#6B8FAB;left:22%;animation:floatSwayR 37s infinite linear;animation-delay:-16s}
+.loader-bubble.b1{width:54px;height:54px;background:#456b89;left:6%;animation:floatSwayL 32s infinite linear}
+.loader-bubble.b2{width:34px;height:34px;background:#8fb0c6;left:16%;animation:floatSwayR 38s infinite linear;animation-delay:-8s}
+.loader-bubble.b3{width:46px;height:46px;background:#6288a5;left:80%;animation:floatSwayL 36s infinite linear;animation-delay:-14s}
+.loader-bubble.b4{width:40px;height:40px;background:#456b89;left:90%;animation:floatSwayR 30s infinite linear;animation-delay:-4s}
+.loader-bubble.b5{width:28px;height:28px;background:#8fb0c6;left:10%;animation:floatSwayR 34s infinite linear;animation-delay:-20s}
+.loader-bubble.b6{width:50px;height:50px;background:#6288a5;left:84%;animation:floatSwayL 40s infinite linear;animation-delay:-26s}
+.loader-bubble.b7{width:38px;height:38px;background:#456b89;left:3%;animation:floatSwayR 35s infinite linear;animation-delay:-12s}
+.loader-bubble.b8{width:60px;height:60px;background:#6288a5;left:74%;animation:floatSwayL 33s infinite linear;animation-delay:-22s}
+.loader-bubble.b9{width:42px;height:42px;background:#8fb0c6;left:22%;animation:floatSwayR 37s infinite linear;animation-delay:-16s}
+
+/* Estilos críticos: evitan que los PNG/SVG del rediseño aparezcan a tamaño
+   natural durante los milisegundos previos a que se lea el bloque final. */
+.may-brand-ui-icon,.fab-cart-img,.head-icon-img,.may-mobile-bottom-nav img,.may-mobile-header-actions img{width:24px;height:24px;object-fit:contain}
+.may-mobile-bottom-nav,.may-mobile-header-actions,.may-mobile-search-close,.may-mobile-socials{display:none}
 @keyframes floatSwayL{0%{transform:translate(0,0)}12.5%{transform:translate(-2vw,-15vh)}25%{transform:translate(-3vw,-30vh)}37.5%{transform:translate(-1vw,-45vh)}50%{transform:translate(2vw,-60vh)}62.5%{transform:translate(1vw,-75vh)}75%{transform:translate(-2vw,-90vh)}87.5%{transform:translate(-1vw,-105vh)}100%{transform:translate(0,-120vh)}}
 @keyframes floatSwayR{0%{transform:translate(0,0)}12.5%{transform:translate(2vw,-15vh)}25%{transform:translate(3vw,-30vh)}37.5%{transform:translate(1vw,-45vh)}50%{transform:translate(-2vw,-60vh)}62.5%{transform:translate(-1vw,-75vh)}75%{transform:translate(2vw,-90vh)}87.5%{transform:translate(1vw,-105vh)}100%{transform:translate(0,-120vh)}}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -4992,6 +4997,22 @@ window.addEventListener('resize',function(){
   },120);
 },{passive:true});
 
+const _mayHomeCatPreloads=new Map();
+function _preloadMayHomeCategoryImages(cats){
+  const warm=function(){
+    cats.forEach(function(cat){
+      const src=_mayCatAsset(cat.id);
+      if(_mayHomeCatPreloads.has(src))return;
+      const img=new Image();
+      img.decoding='async';
+      img.src=src;
+      _mayHomeCatPreloads.set(src,img);
+    });
+  };
+  if('requestIdleCallback' in window)requestIdleCallback(warm,{timeout:900});
+  else setTimeout(warm,250);
+}
+
 function renderMayHomeCategories(){
   const track=document.getElementById('mayHomeCatsTrack');
   if(!track||!CATS_MAY.length)return;
@@ -5001,7 +5022,7 @@ function renderMayHomeCategories(){
   for(let i=0;i<cats.length;i+=pageSize)pages.push(cats.slice(i,i+pageSize));
   track.innerHTML=pages.map((page,pageIndex)=>`<div class="may-home-cat-page" data-may-cat-page="${pageIndex}" role="group" aria-label="Página ${pageIndex+1} de categorías">
     ${page.map(cat=>`<button type="button" class="may-home-cat" onclick="mayChooseHeaderCat('${cat.id}')">
-      <img src="${_mayCatAsset(cat.id)}" width="512" height="512" alt="" loading="${pageIndex===0?'eager':'lazy'}" decoding="async"${pageIndex===0?' fetchpriority="high"':''}>
+      <img src="${_mayCatAsset(cat.id)}" width="512" height="512" alt="" loading="${pageIndex<2?'eager':'lazy'}" decoding="async"${pageIndex===0?' fetchpriority="high"':''}>
       <span>${_escHtml(cat.n)}</span>
     </button>`).join('')}
   </div>`).join('');
@@ -5011,6 +5032,7 @@ function renderMayHomeCategories(){
   }
   track.onscroll=_updateMayHomeCatControls;
   requestAnimationFrame(_updateMayHomeCatControls);
+  _preloadMayHomeCategoryImages(cats);
 }
 
 let _mayCatScrollFrame=0;
@@ -7333,8 +7355,7 @@ window.addEventListener('online', function() {
 
 <!-- ═══ MODAL BIENVENIDA / TUTORIAL (solo la primera visita) ═══ -->
 <style>
-  #tutbOverlay{position:fixed;inset:0;background:rgba(26,48,80,.58);display:none;align-items:center;justify-content:center;padding:12px;z-index:10300}
-  #tutbOverlay.tutb-show{display:flex}
+  #tutbOverlay,#tutbOverlay.tutb-show{display:none!important}
   .tutb-modal{background:#fff;border-radius:20px;max-width:430px;width:100%;padding:18px 18px 16px;box-shadow:0 20px 50px rgba(26,48,80,.35);position:relative;font-family:'Montserrat',sans-serif;animation:tutbPop .25s ease}
   @keyframes tutbPop{from{transform:scale(.96);opacity:0}to{transform:scale(1);opacity:1}}
   .tutb-close{position:absolute;top:11px;right:14px;background:none;border:none;font-size:23px;color:#bbb;cursor:pointer;line-height:1;z-index:2}
@@ -8401,6 +8422,7 @@ window.addEventListener('online', function() {
     cerrarTutorial();
   };
   function mostrar(){
+    return;
     try{
       if(localStorage.getItem(FLAG))return;
     }catch(e){}
@@ -8567,6 +8589,33 @@ body.may-redesign.checkout-open #cart-fab-may,body.may-redesign.checkout-open #b
   .may-home-cat-pagination{margin-top:2px}
   .may-home-cat-pagination button{width:25px;height:25px}
   .may-home-cat-pagination button::before{left:8px;top:8px;width:9px;height:9px}
+}
+
+/* Footer ordenado: misma grilla y ritmo visual en todas las pantallas. */
+.may-home-footer-grid{grid-template-columns:1.45fr 1.15fr 1fr .82fr;gap:clamp(30px,4vw,64px)}
+.may-home-footer-brand{align-items:flex-start}
+.may-home-footer-brand>div{padding-top:7px}
+.may-home-footer-brand strong,.may-home-footer-col strong{margin-bottom:3px;color:#fff;line-height:1.25}
+.may-home-footer-col{min-width:0}
+.may-home-footer-col span,.may-home-footer-col a{line-height:1.72}
+.may-home-footer-bottom{margin-top:38px}
+
+@media(max-width:760px){
+  .may-home-footer{padding:30px 0 calc(92px + env(safe-area-inset-bottom))}
+  .may-home-footer-grid{display:grid;grid-template-columns:1fr;gap:0}
+  .may-home-footer-brand{grid-column:auto;align-items:center;padding:0 0 22px;border-bottom:1px solid rgba(255,255,255,.18)}
+  .may-home-footer-brand>div{padding-top:0}
+  .may-home-footer-logo{width:58px;height:58px;flex-basis:58px}
+  .may-home-footer-brand strong{font-size:14px}
+  .may-home-footer-brand span{font-size:10.5px}
+  .may-home-footer-col,.may-home-footer-col:last-child{grid-column:auto;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+  .may-home-footer-col strong{font-size:12.5px}
+  .may-home-footer-col span,.may-home-footer-col a{font-size:10.5px;line-height:1.62}
+  .may-home-footer-socials{gap:8px;margin-top:8px}
+  .may-home-footer-socials a{width:35px;height:35px;border:1px solid rgba(255,255,255,.14);border-radius:10px}
+  .may-home-footer-socials svg{width:18px;height:18px}
+  .may-home-footer-bottom{align-items:center;margin-top:18px;padding-top:0;border-top:0;text-align:center}
+  .may-home-footer-bottom nav{justify-content:center;width:100%;gap:22px}
 }
 </style>
 
