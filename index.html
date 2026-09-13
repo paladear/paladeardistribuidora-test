@@ -8617,6 +8617,166 @@ body.may-redesign.checkout-open #cart-fab-may,body.may-redesign.checkout-open #b
   .may-home-footer-bottom{align-items:center;margin-top:18px;padding-top:0;border-top:0;text-align:center}
   .may-home-footer-bottom nav{justify-content:center;width:100%;gap:22px}
 }
+
+/* Escala visual amplia: conserva la composición y acerca la presencia a la minorista. */
+@media(min-width:761px){
+  .may-redesign .header{--may-head-h:102px;--may-logo-size:142px}
+  .may-redesign .header-inner{padding-left:clamp(174px,18.5vw,278px);gap:clamp(22px,2.7vw,42px)}
+  .may-redesign .hd-buscador .compact-search{height:52px;padding-left:53px;font-size:15px}
+  .may-redesign .hd-buscador .hd-lupa{left:19px;width:22px;height:22px}
+  .may-redesign .hd-accesos{gap:clamp(18px,2.2vw,34px)}
+  .may-redesign .hd-acceso svg{width:30px;height:30px}
+  .may-redesign .hd-acceso .hd-wa-icon{width:32px;height:32px}
+  .may-redesign .hd-acceso>span:not(.hd-pedido-n){font-size:12px}
+  .may-redesign .hd-acceso>span:not(.hd-pedido-n) b{font-size:13px}
+  .may-redesign .hd-nav{height:64px}
+  .may-redesign .hd-nav-inner{min-height:64px;padding-inline:34px 46px}
+  .may-redesign .hd-cats,.may-redesign .hd-nav-link{height:44px;margin:10px 0;padding-inline:23px;font-size:14.5px}
+  .may-redesign .hd-cats svg{width:22px;height:22px}
+  .may-redesign .hd-nav-link{min-width:108px}
+
+  .may-redesign .may-home-hero.may-home-hero-image{aspect-ratio:1.887!important}
+  .may-redesign .may-home-hero-image .may-home-hero-media{left:-3%;right:auto;width:106%;height:100%}
+  .may-redesign .may-home-hero-image .may-home-hero-bg{object-fit:contain!important;transform:none!important}
+  .may-home-hero-hotspot{left:1.5%;top:76.2%;width:21.5%;height:11%}
+
+  .may-home-shell{width:min(1560px,calc(100% - 40px))}
+  .may-home-band{padding:68px 0 72px}
+  .may-home-band-categories{padding:25px 0 23px}
+  .may-home-band-categories .may-home-categories-head{margin-bottom:17px}
+  .may-home-band-categories .may-home-categories-head .may-home-section-kicker{font-size:14px;padding-bottom:10px}
+  .may-home-band-categories .may-home-categories-head .may-home-section-kicker::after{width:62px;height:2px}
+  .may-home-cat-page{gap:18px}
+  .may-home-cat{max-width:212px;gap:11px}
+  .may-home-cat img{width:min(100%,clamp(142px,12.4vw,184px))}
+  .may-home-cat span{font-size:clamp(14px,1.12vw,17px);line-height:1.22}
+  .may-home-cat-pagination{margin-top:9px}
+
+  .may-home-section-head{margin-bottom:31px}
+  .may-home-section-head h2{font-size:clamp(34px,3.15vw,48px)}
+  .may-home-section-head .may-home-section-kicker{font-size:12px}
+  .may-home-text-link{font-size:15px}
+  .may-home-featured-grid{gap:22px}
+  .may-feature-card{border-radius:22px}
+  .may-feature-visual{height:232px}
+  .may-feature-visual img{padding:14px}
+  .may-feature-body{padding:20px 20px 22px}
+  .may-feature-cat{font-size:11px}
+  .may-feature-card h3{min-height:44px;font-size:16px}
+  .may-feature-meta{font-size:12px}
+  .may-feature-bottom{margin-top:16px}
+  .may-feature-price{font-size:24px}
+  .may-feature-go{padding:11px 16px;font-size:12px}
+
+  .may-home-band-banners{padding:58px 0}
+  .may-home-banners-grid{gap:18px}
+  .may-home-reference-banner{border-radius:26px;box-shadow:0 15px 36px rgba(30,67,93,.11)}
+  .may-home-growth{height:292px}
+  .may-home-growth-content{gap:22px}
+  .may-home-growth-content>div>span{font-size:12px}
+  .may-home-growth h2{font-size:clamp(38px,3.6vw,54px)}
+  .may-home-growth p{max-width:620px;font-size:16px}
+  .may-home-growth a{padding:16px 26px;font-size:14px}
+
+  .may-home-footer{padding:52px 0 22px}
+  .may-home-footer-logo{width:88px;height:88px;flex-basis:88px}
+  .may-home-footer-brand{gap:18px}
+  .may-home-footer-brand strong,.may-home-footer-col strong{font-size:15px}
+  .may-home-footer-brand span,.may-home-footer-col span,.may-home-footer-col a{font-size:13px}
+  .may-home-footer-socials a{width:42px;height:42px}
+  .may-home-footer-socials svg{width:22px;height:22px}
+  .may-home-footer-bottom{font-size:12px}
+
+  .may-redesign .mayorista-section{max-width:1560px!important;padding-inline:clamp(20px,2.5vw,40px)!important}
+  .may-redesign .mayorista-section .pcard-img{height:245px}
+  .may-redesign .mayorista-section .pcard-body{padding:16px}
+  .may-redesign .mayorista-section .pcard-name{font-size:16px}
+  .may-redesign .mayorista-section .add-btn{min-height:48px;font-size:14px}
+  .may-redesign .mayorista-section .allcat-name{font-size:20px}
+}
+
+@media(min-width:1540px){
+  .may-redesign .mayorista-section .prod-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+}
+
+@media(max-width:760px){
+  .may-redesign .header{--may-head-h:74px;--may-logo-size:70px}
+  .may-redesign .header-inner{height:74px;min-height:74px;padding:6px 9px 6px 88px}
+  .may-redesign .header .logo-wrap{left:9px;top:6px}
+  .may-redesign .hd-buscador .compact-search{height:44px;font-size:14px}
+  .may-mobile-header-btn,.may-redesign .hd-accesos>.hd-acceso:nth-child(2){width:44px;height:44px}
+  .may-mobile-header-btn svg{width:26px;height:26px}
+
+  .may-redesign .may-home-hero.may-home-hero-image{aspect-ratio:1.349!important}
+  .may-redesign .may-home-hero-image .may-home-hero-media{left:0;right:auto;width:112%;height:100%}
+  .may-redesign .may-home-hero-image .may-home-hero-bg{width:100%;height:100%;object-fit:contain!important;object-position:left center!important;transform:none!important}
+  .may-home-hero-hotspot{left:4.8%;top:82.7%;width:22.5%;height:8.5%}
+
+  .may-home-shell{width:calc(100% - 16px)}
+  .may-home-band{padding:46px 0 50px}
+  .may-home-band-categories{padding:19px 0 16px}
+  .may-home-band-categories .may-home-categories-head{margin-bottom:12px}
+  .may-home-band-categories .may-home-categories-head .may-home-section-kicker{font-size:11.5px}
+  .may-home-cat-page{gap:7px 4px}
+  .may-home-cat{min-height:116px;gap:7px}
+  .may-home-cat img{width:clamp(76px,21vw,84px);height:clamp(76px,21vw,84px)}
+  .may-home-cat span{font-size:clamp(9.5px,2.65vw,11px);line-height:1.18}
+  .may-home-cat-pagination{margin-top:5px}
+  .may-home-cat-pagination button{width:28px;height:28px}
+  .may-home-cat-pagination button::before{left:8px;top:8px;width:12px;height:12px}
+
+  .may-home-section-head{margin-bottom:23px}
+  .may-home-section-head{flex-wrap:wrap;row-gap:7px}
+  .may-home-section-head h2{font-size:31px}
+  .may-home-section-head .may-home-section-kicker{font-size:10.5px}
+  .may-home-text-link{margin-left:auto;font-size:12px}
+  .may-home-featured-grid{gap:11px}
+  .may-feature-visual{height:158px}
+  .may-feature-body{padding:14px}
+  .may-feature-cat{font-size:8.7px}
+  .may-feature-card h3{min-height:51px;font-size:13px}
+  .may-feature-meta{font-size:10px}
+  .may-feature-price{font-size:18px}
+  .may-feature-go{padding:9px 11px;font-size:9.5px}
+
+  .may-home-band-banners{padding:36px 0 42px}
+  .may-home-banners-grid{gap:18px}
+  .may-home-reference-banner{border-radius:22px;box-shadow:0 12px 28px rgba(30,67,93,.11)}
+  .may-home-growth{height:286px}
+  .may-home-growth-content{gap:19px;padding-inline:8px}
+  .may-home-growth-content>div>span{font-size:10.5px}
+  .may-home-growth h2{font-size:34px}
+  .may-home-growth p{max-width:310px;font-size:14px}
+  .may-home-growth a{padding:14px 21px;font-size:12.5px}
+
+  .may-mobile-bottom-nav{min-height:calc(74px + env(safe-area-inset-bottom));padding-top:8px}
+  .may-mobile-nav-link{font-size:10.5px}
+  .may-mobile-nav-link>img{width:30px;height:30px}
+  .may-redesign.may-home-view #cart-fab-may,.may-redesign.may-offers-view #cart-fab-may{bottom:calc(88px + env(safe-area-inset-bottom));width:58px;height:58px}
+
+  .may-home-footer{padding-top:36px}
+  .may-home-footer-logo{width:66px;height:66px;flex-basis:66px}
+  .may-home-footer-brand strong{font-size:15px}
+  .may-home-footer-brand span,.may-home-footer-col span,.may-home-footer-col a{font-size:12px}
+  .may-home-footer-col strong{font-size:14px}
+
+  .may-redesign.may-products-view .header{height:74px;min-height:74px}
+  .may-redesign.may-products-view .header-inner{height:74px;min-height:74px;grid-template-columns:74px minmax(0,1fr) 44px}
+  .may-redesign.may-products-view .header .logo-wrap{width:68px;height:68px}
+  .may-redesign.may-products-view .hd-buscador .compact-search{height:44px;font-size:16px}
+  .may-redesign.may-products-view #maySearchResults.active{top:74px}
+  .may-redesign .mayorista-section .pcard-img{height:174px}
+  .may-redesign .mayorista-section .pcard-body{padding:11px}
+  .may-redesign .mayorista-section .pcard-name{font-size:14px}
+  .may-redesign .mayorista-section .price-min{font-size:16px}
+  .may-redesign .mayorista-section .price-unit{font-size:11px}
+  .may-redesign .mayorista-section .qty-btn{width:34px;height:34px}
+  .may-redesign .mayorista-section .qty-val{font-size:16px}
+  .may-redesign .mayorista-section .add-btn{min-height:45px;font-size:12.5px}
+  .may-redesign .mayorista-section .allcat-name{font-size:18px}
+  .card-subtotal{min-height:35px;font-size:9.5px}
+  .card-subtotal strong{font-size:12.5px}
+}
 </style>
 
 <script>
