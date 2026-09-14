@@ -3468,27 +3468,18 @@ function _driveToImg(raw){
 // Fotos de productos servidas desde Cloudinary (public_id = ID del artículo).
 // El Apps Script del dueño sube cada foto acá con ese mismo ID.
 const _CLOUD='hswu4zpv';
-var _FOTOS_PROPIAS = {};   // {articulo: extension} - se llena con fotos-propias.json
-(function(){
-  // Las fotos que subiste desde el panel viven en este mismo repo y mandan sobre
-  // las de Cloudinary. Si el archivo no esta, sigue todo como antes.
-  try{
-    fetch('fotos-propias.json?t=' + Date.now(), {cache:'no-store'})
-      .then(function(r){ return r.ok ? r.json() : {}; })
-      .then(function(j){
-        _FOTOS_PROPIAS = j || {};
-        // repintar lo que ya estaba en pantalla con la foto buena
-        document.querySelectorAll('img[data-art]').forEach(function(im){
-          var u = _prodImg(im.getAttribute('data-art'), im.getAttribute('data-w') || 500);
-          if (u && im.src !== u) im.src = u;
-        });
-      }).catch(function(){});
-  }catch(e){}
-})();
+// Las fotos que compartiste desde el panel viven en este mismo repo y mandan
+// sobre las de Cloudinary. Si el archivo no está, sigue todo como antes.
+var _FOTOS_PROPIAS = {};   // {articulo: extension}
+var _FOTOS_LISTAS = fetch('fotos-propias.json?t=' + Date.now(), {cache:'no-store'})
+  .then(function(r){ return r.ok ? r.json() : {}; })
+  .then(function(j){ _FOTOS_PROPIAS = j || {}; })
+  .catch(function(){});
+function _tieneFotoPropia(id){ return !!(id && _FOTOS_PROPIAS[String(id).trim()]); }
 function _prodImg(id,w){
   if (!id) return '';
-  var ext = _FOTOS_PROPIAS[String(id).trim()];
-  if (ext) return 'fotos/' + String(id).trim() + '.' + ext;
+  var clave = String(id).trim(), ext = _FOTOS_PROPIAS[clave];
+  if (ext) return 'fotos/' + clave + '.' + ext;
   return 'https://res.cloudinary.com/'+_CLOUD+'/image/upload/f_auto,q_auto,w_'+(w||500)+'/'+id;
 }
 
@@ -3591,7 +3582,7 @@ function sincronizarDesdeSheets(){
         const esKgNombre=/x kg|xkg|x 1 kg| kg/i.test(nombre);
         const esKg=_infCants.length?esKgInfo:esKgNombre;
         const esEspecia=['especias','infusiones'].includes(cat.id);
-        const imgUrl=(inf.imagen||imgPrecios)?_prodImg(productId,500):'';
+        const imgUrl=(inf.imagen||imgPrecios||_tieneFotoPropia(productId))?_prodImg(productId,500):'';
         const infoText=inf.info||'';
         const sabores=inf.sabores||null;
         let opts;
@@ -4880,7 +4871,7 @@ function cargarMayorista() {
     }
   } catch(e) {}
 
-  Promise.all([_cargarInfoMay(), _cargarInfo()]).then(([infoMay, INFO]) => {
+  Promise.all([_cargarInfoMay(), _cargarInfo(), _FOTOS_LISTAS]).then(([infoMay, INFO]) => {
     function _procesarCSVMayorista(csv) {
       const filas = _parseCSV(csv);
       const prodsTemp = [];
@@ -4898,7 +4889,7 @@ function cargarMayorista() {
         const inf          = infoMay[artId] || infoMay[_norm(nombre)] || {};
         const bulto        = inf.bulto  || 1;
         const sabores      = inf.sabores || null;
-        const imgUrl       = inf.imagen ? _prodImg(artId,500) : '';
+        const imgUrl       = (inf.imagen || _tieneFotoPropia(artId)) ? _prodImg(artId,500) : '';
         const nombreFinal  = inf.nombre  || nombre;
         const precioTotal  = precio * bulto;
         // Texto de info: viene de la MISMA hoja "Info" que lee la minorista (INFO_CSV_URL),
