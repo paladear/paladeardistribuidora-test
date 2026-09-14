@@ -22,15 +22,15 @@
 //      en segundo plano. Casi nunca cambian.
 // ════════════════════════════════════════════════════════
 
-const CACHE_VERSION = 'paladear-distri-test-v15';
+const CACHE_VERSION = 'paladear-distri-test-v16';
 const CACHE_PREFIX = 'paladear-distri-test-';
 
 const SHELL_FILES = [
-  '/paladeardistribuidora-test/android-chrome-192x192.png',
-  '/paladeardistribuidora-test/android-chrome-512x512.png',
-  '/paladeardistribuidora-test/apple-touch-icon.png',
-  '/paladeardistribuidora-test/favicon-32x32.png',
-  '/paladeardistribuidora-test/og-image.jpg',
+  '/paladeardistribuidora-test/android-chrome-may-p-192.png',
+  '/paladeardistribuidora-test/android-chrome-may-p-512.png',
+  '/paladeardistribuidora-test/apple-touch-icon-may-p.png',
+  '/paladeardistribuidora-test/favicon-may-p-32.png',
+  '/paladeardistribuidora-test/og-image-may-blue.jpg',
 ];
 
 // ── INSTALL ─────────────────────────────────────────────
