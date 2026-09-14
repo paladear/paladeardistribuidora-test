@@ -3468,7 +3468,29 @@ function _driveToImg(raw){
 // Fotos de productos servidas desde Cloudinary (public_id = ID del artículo).
 // El Apps Script del dueño sube cada foto acá con ese mismo ID.
 const _CLOUD='hswu4zpv';
-function _prodImg(id,w){ return id?('https://res.cloudinary.com/'+_CLOUD+'/image/upload/f_auto,q_auto,w_'+(w||500)+'/'+id):''; }
+var _FOTOS_PROPIAS = {};   // {articulo: extension} - se llena con fotos-propias.json
+(function(){
+  // Las fotos que subiste desde el panel viven en este mismo repo y mandan sobre
+  // las de Cloudinary. Si el archivo no esta, sigue todo como antes.
+  try{
+    fetch('fotos-propias.json?t=' + Date.now(), {cache:'no-store'})
+      .then(function(r){ return r.ok ? r.json() : {}; })
+      .then(function(j){
+        _FOTOS_PROPIAS = j || {};
+        // repintar lo que ya estaba en pantalla con la foto buena
+        document.querySelectorAll('img[data-art]').forEach(function(im){
+          var u = _prodImg(im.getAttribute('data-art'), im.getAttribute('data-w') || 500);
+          if (u && im.src !== u) im.src = u;
+        });
+      }).catch(function(){});
+  }catch(e){}
+})();
+function _prodImg(id,w){
+  if (!id) return '';
+  var ext = _FOTOS_PROPIAS[String(id).trim()];
+  if (ext) return 'fotos/' + String(id).trim() + '.' + ext;
+  return 'https://res.cloudinary.com/'+_CLOUD+'/image/upload/f_auto,q_auto,w_'+(w||500)+'/'+id;
+}
 
 // Parsea "250g/500g/1kg" o "1 unidad" y devuelve array de claves de opciones válidas
 function _parseCantidades(str){
