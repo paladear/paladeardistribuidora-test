@@ -2,10 +2,16 @@
 layout: null
 ---
 <!DOCTYPE html>
-<html lang="es-AR">
+<html lang="es-AR" class="pal-first-paint">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style id="critical-first-paint">
+/* Evita que el navegador pinte iconos y estructura antes de leer el CSS final. */
+html.pal-first-paint{background:#dce8f2}
+html.pal-first-paint body>*{visibility:hidden!important}
+html.pal-first-paint body>#loadingOverlay{visibility:visible!important}
+</style>
 <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
 <link rel="preload" as="image" href="cat-home-aceites.webp" fetchpriority="high">
 <link rel="preload" as="image" href="cat-home-aceitunas.webp" fetchpriority="high">
@@ -2117,7 +2123,17 @@ try{if(cart.length){var _badge0=document.getElementById('cartCount');if(_badge0)
 const APPS_SCRIPT_URL='https://script.google.com/macros/s/AKfycbwpRm16QpdpCNTtRwtmoZsNPesqA3Vfli2LEubvunNiV0lFTH-rKPLNaIpsm531F3c9/exec';
 function fmt(n){return n.toLocaleString('es-AR')}
 let _loaderHidden=false;
-function hideLoader(){if(_loaderHidden)return;_loaderHidden=true;const o=document.getElementById('loadingOverlay');if(o){o.classList.add('hidden');setTimeout(()=>{if(o.parentNode)o.remove()},500)}}
+function hideLoader(){
+  if(_loaderHidden)return;
+  _loaderHidden=true;
+  const revealPage=()=>{
+    document.documentElement.classList.remove('pal-first-paint');
+    const o=document.getElementById('loadingOverlay');
+    if(o){o.classList.add('hidden');setTimeout(()=>{if(o.parentNode)o.remove()},500)}
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',revealPage,{once:true});
+  else revealPage();
+}
 // Timeout de seguridad: máximo 6s de espera
 setTimeout(hideLoader,6000);
 
