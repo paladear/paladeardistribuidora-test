@@ -3479,7 +3479,9 @@ function _tieneFotoPropia(id){ return !!(id && _FOTOS_PROPIAS[String(id).trim()]
 function _prodImg(id,w){
   if (!id) return '';
   var clave = String(id).trim(), ext = _FOTOS_PROPIAS[clave];
-  if (ext) return 'fotos/' + clave + '.' + ext;
+  // Absoluta a propósito: las tarjetas validan con startsWith('http') y una ruta
+  // relativa las haría mostrar el placeholder.
+  if (ext) return new URL('fotos/' + clave + '.' + ext, document.baseURI).href;
   return 'https://res.cloudinary.com/'+_CLOUD+'/image/upload/f_auto,q_auto,w_'+(w||500)+'/'+id;
 }
 
