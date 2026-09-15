@@ -8798,11 +8798,28 @@ body.may-redesign.checkout-open #cart-fab-may,body.may-redesign.checkout-open #b
 
   var originalSearch=window.compactOnSearch;
   if(typeof originalSearch==='function'){
+    function keepCompactSearchFocus(){
+      var input=document.querySelector('.header .hd-buscador .compact-search')||document.getElementById('compactSearchInput');
+      if(!input)return;
+      document.body.classList.add('compact-on');
+      requestAnimationFrame(function(){
+        try{input.focus({preventScroll:true});}catch(e){input.focus();}
+        var len=(input.value||'').length;
+        try{input.setSelectionRange(len,len);}catch(e){}
+      });
+      setTimeout(function(){
+        if(document.activeElement!==input){
+          try{input.focus({preventScroll:true});}catch(e){input.focus();}
+        }
+      },80);
+    }
     window.compactOnSearch=function(value){
+      var shouldKeepFocus=String(value||'').trim()&&(document.body.classList.contains('may-home-view')||document.body.classList.contains('may-offers-view'));
       if(String(value||'').trim()&&(document.body.classList.contains('may-home-view')||document.body.classList.contains('may-offers-view'))){
         window.mayShowProducts({scroll:false,keepSearch:true});
       }
       originalSearch(value);
+      if(shouldKeepFocus)keepCompactSearchFocus();
       if(document.body.classList.contains('may-mobile-search-open')){
         requestAnimationFrame(function(){
           var input=document.querySelector('.header .hd-buscador .compact-search');
