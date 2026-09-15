@@ -1388,8 +1388,8 @@ body.cart-open #cart-fab,body.cart-open #chat-fab{display:none!important}
 .tabs-pill::after{right:-28px;background:radial-gradient(circle at 100% 0%,transparent 28px,var(--bg) 29px)}
 .tabs-pill.sliding{animation:pillSlide .45s forwards}
 @keyframes pillSlide{0%{transform:translateX(var(--pill-dx,0));animation-timing-function:cubic-bezier(.2,.6,.35,1)}60%{transform:translateX(calc(var(--pill-dx,0) * -0.05));animation-timing-function:ease-in-out}80%{transform:translateX(calc(var(--pill-dx,0) * 0.02));animation-timing-function:ease-out}100%{transform:translateX(0)}}
-.may-tab{cursor:pointer;padding:8px 12px 18px;border-radius:0;font-weight:700;font-size:15px;transition:color .2s;border:none;background:transparent;color:rgba(255,255,255,.78);flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;position:relative;z-index:2;font-family:inherit;line-height:1.1}
-.may-tab-icon{width:36px;height:36px;object-fit:contain;display:block;flex-shrink:0;transform-origin:center center;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.may-tab{cursor:pointer;padding:11px 14px 20px;border-radius:0;font-weight:700;font-size:15.5px;transition:color .2s;border:none;background:transparent;color:rgba(255,255,255,.78);flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;position:relative;z-index:2;font-family:inherit;line-height:1.1}
+.may-tab-icon{width:40px;height:40px;object-fit:contain;display:block;flex-shrink:0;transform-origin:center center;backface-visibility:hidden;-webkit-backface-visibility:hidden}
 .may-tab.active{color:var(--azul-dark);position:relative;z-index:3}
 .may-tab.active .may-tab-icon{animation:iconBounce .35s ease-out forwards}
 @keyframes iconBounce{0%{transform:scale(.92)}60%{transform:scale(1.08)}100%{transform:scale(1.04)}}
@@ -1427,6 +1427,14 @@ body.compact-on .compact-header{transform:translateY(0);pointer-events:auto}
 .compact-wave path{fill:#547692}
 @media(min-width:768px){.compact-inner{padding:10px 24px;min-height:64px;gap:14px}.compact-logo{width:48px;height:48px}.compact-hamb{width:44px;height:44px}.compact-search{font-size:15px;padding:10px 18px}}
 .may-pcard .pcard-name-may{font-weight:700;font-size:15px;line-height:1.35;margin-bottom:4px}
+/* ── Nombre, contenido y marca ── */
+.info-modal-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:4px 0 10px}
+.info-modal-meta .nom-c{margin-left:0;font-size:15px}
+.info-modal-meta .nom-m,.search-suggestion-item .nom-m{display:inline;margin:0 0 0 7px;font-size:10.5px}
+.nom-p{font-weight:800}
+.nom-c{font-weight:500;color:var(--muted-fg,#5b6f80);margin-left:5px}
+.nom-m{display:block;margin-top:2px;font-style:normal;font-weight:700;font-size:10.5px;
+  letter-spacing:.09em;text-transform:uppercase;color:#6d90aa}
 .may-qty-row{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
 
 /* ── UNIFICACIÓN BANNERS MIX & GRANOLA (al final para ganar la cascada) ── */
@@ -1713,7 +1721,9 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
         <span class="may-home-section-kicker" id="mayHomeCatsTitle">Explorá por categoría</span>
       </div>
       <div class="may-home-cats-carousel">
+        <button type="button" class="may-cats-flecha izq" id="mayCatsIzq" aria-label="Ver categorías anteriores">&#8249;</button>
         <div class="may-home-cats-grid" id="mayHomeCatsTrack" aria-label="Todas las categorías"></div>
+        <button type="button" class="may-cats-flecha der" id="mayCatsDer" aria-label="Ver más categorías">&#8250;</button>
         <div class="may-home-cat-pagination" id="mayHomeCatsPagination" role="group" aria-label="Páginas de categorías"></div>
       </div>
     </div>
@@ -2151,7 +2161,8 @@ let cart=_loadCart();
 // rompía todo el script cuando había productos guardados → pantalla de carga
 // infinita. Actualizamos el badge a mano; updateCartCount() corre normal después.
 try{if(cart.length){var _badge0=document.getElementById('cartCount');if(_badge0)_badge0.textContent=cart.length;}}catch(e){}
-const APPS_SCRIPT_URL='https://script.google.com/macros/s/AKfycbwpRm16QpdpCNTtRwtmoZsNPesqA3Vfli2LEubvunNiV0lFTH-rKPLNaIpsm531F3c9/exec';
+// La tienda minorista, de donde se sacan los precios de lista para comparar.
+const TIENDA_MIN = 'https://paladear.github.io/paladeartienda/';
 function fmt(n){return n.toLocaleString('es-AR')}
 let _loaderHidden=false;
 function hideLoader(){
@@ -2652,6 +2663,7 @@ function showInfo(pid){
     <button class="info-modal-close" onclick="document.getElementById('infoModal').remove()">×</button>
     ${hasSrc?`<div class="info-modal-img"><img src="${p[6]}" alt="${p[2]}"></div>`:''}
     <h3 class="info-modal-title">${_tc(p[2])}</h3>
+    ${(_envaseDeMay(p)||_marcaDeMay(p))?`<div class="info-modal-meta">${_envaseDeMay(p)?`<span class="nom-c">${_envaseDeMay(p)}</span>`:''}${_marcaDeMay(p)?`<em class="nom-m">${_marcaDeMay(p)}</em>`:''}</div>`:''}
     <div class="info-modal-text">${p[8].replace(/\n/g,'<br>')}</div>
   </div>`;
   document.body.appendChild(m);
@@ -3150,11 +3162,13 @@ function _updateSuggestions(value){
   for(const{p}of scored){
     const nombre=_tc(p[2]);
     if(seen.has(nombre))continue;
-    seen.add(nombre);top.push(nombre);
+    // El envase y la marca van en la sugerencia para poder distinguir dos parecidos;
+    // al elegirla, en el buscador se escribe el nombre solo.
+    seen.add(nombre);top.push({txt:nombre,html:_nomHTMLMay(p,nombre)});
     if(top.length>=6)break;
   }
   if(!top.length){box.classList.remove('active');box.innerHTML='';return;}
-  box.innerHTML=top.map(n=>`<div class="search-suggestion-item" onmousedown="_pickSuggestion('${n.replace(/'/g,"\\'")}')"><span class="sug-icon">🔍</span>${n}</div>`).join('');
+  box.innerHTML=top.map(n=>`<div class="search-suggestion-item" onmousedown="_pickSuggestion('${n.txt.replace(/'/g,"\\'")}')"><span class="sug-icon">🔍</span>${n.html}</div>`).join('');
   box.classList.add('active');
 }
 window._updateSuggestions=_updateSuggestions;
@@ -3489,8 +3503,6 @@ function sendChat(){
 
 /* ── CARGA DESDE SHEETS ── */
 // URL pública de la hoja "Info" como CSV. Se completa cuando la publiques.
-// Va a ser algo tipo: https://docs.google.com/spreadsheets/d/e/XXXXXX/pub?gid=YYY&single=true&output=csv
-const INFO_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT2RlZaSdlV-aaVGUw7YI9MVE1MHjopNhbjTOfWBZwPNo_clhJUao2KNcNowEzsdBGpd2Bh5-2rt1aH/pub?gid=1603230501&single=true&output=csv';
 
 function _parseCSV(csv){
   const rows=[];
@@ -3608,11 +3620,29 @@ function _cargarInfo(){
       console.log(`📘 Info: ${Object.keys(mapa).length} entradas cargadas`);
       resolve(mapa);
     }
-    // Cargar directamente desde Sheet (GID estable, el usuario nunca reemplaza esta hoja)
-    if(!INFO_CSV_URL||INFO_CSV_URL.indexOf('REEMPLAZAR')>=0){console.warn('ℹ️ Hoja Info no configurada aún');resolve({});return;}
-    fetch(INFO_CSV_URL+'&t='+Date.now(),{cache:'no-store'})
-      .then(r=>r.text()).then(csv=>_procesar(csv))
-      .catch(err=>{console.warn('⚠️ Error cargando Info:',err);resolve({});});
+    // Las fichas minoristas salen del panel de la tienda minorista, no del Sheet.
+    fetch(TIENDA_MIN + 'catalogo-panel.json?t=' + Date.now(), {cache:'no-store'})
+      .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+      .then(j => {
+        const fichas = j.fichas || {}, mapa = {};
+        Object.keys(fichas).forEach(id => {
+          const f = fichas[id];
+          const entrada = {
+            nombre: f.nombre || '',
+            cantidades: _parseCantidades(f.cantidades),
+            info: f.desc || '',
+            sabores: _parseCantidades(f.sabores),
+            imagen: f.imagen || '',
+            mix: f.mix === true,
+            oferta: f.oferta || 0
+          };
+          mapa[id] = entrada;
+          if (entrada.nombre && _norm(entrada.nombre) !== id) mapa[_norm(entrada.nombre)] = entrada;
+        });
+        console.log('📘 Info: ' + Object.keys(mapa).length + ' entradas del panel');
+        resolve(mapa);
+      })
+      .catch(err => { console.warn('⚠️ Error cargando las fichas del panel:', err); resolve({}); });
   });
 }
 
@@ -3694,26 +3724,27 @@ function sincronizarDesdeSheets(){
       }
     }
 
-    // Cargar directamente desde Apps Script JSONP (referencia la hoja por nombre, no GID)
+    // Los precios minoristas salen de la lista que publica el panel en la tienda
+    // minorista. Antes venían del Apps Script del Google Sheet.
     window.recibirPrecios=function(csv){
       try { _procesarCSV(csv); }
       catch(e){ console.warn('⚠️ Error procesando CSV:',e); hideLoader(); }
     };
     let _retried=false;
     function _cargarScript(){
-      const s=document.createElement('script');
-      s.onerror=()=>{
-        if(!_retried){
-          _retried=true;
-          console.warn('⚠️ Error cargando Sheet, reintentando en 3s...');
-          setTimeout(_cargarScript,3000);
-        } else {
-          console.warn('⚠️ Error cargando Sheet tras reintento');
-          renderCatsUI();renderCarruseles();hideLoader();
-        }
-      };
-      s.src=APPS_SCRIPT_URL+'?callback=recibirPrecios&t='+Date.now()+'&v='+Math.random().toString(36).slice(2);
-      document.head.appendChild(s);
+      fetch(TIENDA_MIN + 'precios-min.csv?t=' + Date.now(), {cache:'no-store'})
+        .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.text(); })
+        .then(csv => window.recibirPrecios(csv))
+        .catch(e => {
+          if(!_retried){
+            _retried=true;
+            console.warn('⚠️ Error cargando precios minoristas, reintentando en 3s...',e);
+            setTimeout(_cargarScript,3000);
+          } else {
+            console.warn('⚠️ Error cargando precios minoristas tras reintento',e);
+            renderCatsUI();renderCarruseles();hideLoader();
+          }
+        });
     }
     _cargarScript();
   });
@@ -4758,9 +4789,6 @@ function _triggerMayoristaConfetti(){
 // ── LISTA MAYORISTA ──
 // ▼▼▼ CONFIGURACIÓN: reemplazá estos GIDs con los de tu Google Sheet ▼▼▼
 // Para obtenerlos: abrí el Sheet → hacé clic en la pestaña de cada hoja → fijate el gid=XXXXXXX en la URL
-const MAY_PRECIOS_GID = '545595949'; // Hoja 3 — Precios Mayorista (precio por unidad)
-const MAY_INFO_GID    = '896338689'; // Hoja 4 — Info Mayorista (col C = bultos)
-const SHEET_BASE_URL  = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT2RlZaSdlV-aaVGUw7YI9MVE1MHjopNhbjTOfWBZwPNo_clhJUao2KNcNowEzsdBGpd2Bh5-2rt1aH/pub';
 // ▲▲▲ FIN CONFIGURACIÓN ▲▲▲
 // Número WhatsApp mayorista
 const WA_MAYORISTA = '5492615652251';
@@ -4965,7 +4993,7 @@ function cargarMayorista() {
         const imgUrl       = (inf.imagen || _tieneFotoPropia(artId)) ? _prodImg(artId,500) : '';
         const nombreFinal  = inf.nombre  || nombre;
         const precioTotal  = precio * bulto;
-        // Texto de info: viene de la MISMA hoja "Info" que lee la minorista (INFO_CSV_URL),
+        // Texto de info: sale del panel de la tienda minorista,
         // cruzado por Artículo(ID) — así ambas páginas muestran la misma descripción.
         const artIdKey     = artId.replace(/\./g, '').replace(/,.*$/, '');
         const infoBase     = INFO[artIdKey] || INFO[_norm(nombreFinal)] || {};
@@ -4977,7 +5005,8 @@ function cargarMayorista() {
         prodsTemp.push([
           pid++, cat.id, nombreFinal, rubro, 'und', false, imgUrl,
           opts, infoText, sabores, false, false,
-          { bulto, bultoUnidad: inf.bultoUnidad || 'unidad', artId }
+          { bulto, bultoUnidad: inf.bultoUnidad || 'unidad', artId,
+            marca: inf.marca || '', envase: inf.envase || '' }
         ]);
 
         MAY_BULTO_MAP[artId] = { bulto, nombre: nombreFinal, sabores, imagen: imgUrl, precio };
@@ -5008,8 +5037,8 @@ function cargarMayorista() {
       if (mob)  mob.innerHTML  = '';
     }
 
-    // Cargar por nombre de hoja (sin GID — "Mayorista" nunca cambia aunque cambies el Excel)
-    const mayUrl = 'https://docs.google.com/spreadsheets/d/1aANKgaQFoiAixKQvPlRpZ0_PBQhES-iBWqOG1bsuLyg/gviz/tq?tqx=out:csv&sheet=Mayorista&t=' + Date.now();
+    // La lista mayorista sale del propio repo: la publica el panel desde el Excel.
+    const mayUrl = 'precios-may.csv?t=' + Date.now();
     fetch(mayUrl, { cache: 'no-store' })
       .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
       .then(csv => _procesarCSVMayorista(csv))
@@ -5053,11 +5082,28 @@ function _cargarInfoMay() {
       });
       resolve(mapa);
     }
-    // Cargar directamente desde Sheet (GID estable, el usuario nunca reemplaza esta hoja)
-    if (MAY_INFO_GID.includes('REEMPLAZAR')) { console.warn('ℹ️ MAY_INFO_GID no configurado.'); resolve({}); return; }
-    const infoUrl = SHEET_BASE_URL + '?gid=' + MAY_INFO_GID + '&single=true&output=csv';
-    fetch(infoUrl + '&t=' + Date.now(), { cache: 'no-store' })
-      .then(r => r.text()).then(csv => _procesar(csv))
+    // Las fichas mayoristas salen del panel de esta misma distribuidora.
+    fetch('catalogo-panel.json?t=' + Date.now(), { cache: 'no-store' })
+      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(j => {
+        const fichas = j.fichas || {}, mapa = {};
+        Object.keys(fichas).forEach(artId => {
+          const f = fichas[artId];
+          const bultoRaw = String(f.bulto == null ? '' : f.bulto).trim();
+          const bulto = parseFloat(bultoRaw.replace(',', '.')) || 1;
+          const bultoUnidad = f.bultoUnidad ||
+            ((/kg|kgr|kilo/i.test(bultoRaw) || (bulto % 1 !== 0)) ? 'kg' : 'unidad');
+          const entry = {
+            nombre: f.nombre || '', bulto, bultoUnidad,
+            marca: f.marca || '', envase: f.envase || '',
+            sabores: f.sabores ? String(f.sabores).split('/').map(x => x.trim()).filter(Boolean) : null,
+            imagen: f.imagen || ''
+          };
+          mapa[artId] = entry;
+          if (entry.nombre && _norm(entry.nombre) !== artId) mapa[_norm(entry.nombre)] = entry;
+        });
+        resolve(mapa);
+      })
       .catch(() => resolve({}));
   });
 }
@@ -5289,7 +5335,34 @@ function _updateMayHomeCatControls(){
     if(index===current)dot.setAttribute('aria-current','true');
     else dot.removeAttribute('aria-current');
   });
+  // Las flechas se apagan en los extremos, para que se vea que no hay más.
+  const izq=document.getElementById('mayCatsIzq'), der=document.getElementById('mayCatsDer');
+  if(izq)izq.disabled=current<=0;
+  if(der)der.disabled=current>=pages.length-1;
+  if(izq)izq.dataset.p=current;
+  if(der)der.dataset.p=current;
 }
+
+/* Las flechas corren una página entera, igual que los puntitos de abajo. */
+(function(){
+  function paso(d){
+    const track=document.getElementById('mayHomeCatsTrack');
+    if(!track)return;
+    const pages=Array.from(track.querySelectorAll('.may-home-cat-page'));
+    if(!pages.length)return;
+    let current=0;
+    pages.forEach((page,index)=>{
+      if(Math.abs(page.offsetLeft-track.scrollLeft)<Math.abs(pages[current].offsetLeft-track.scrollLeft))current=index;
+    });
+    goMayHomeCatPage(current+d);
+  }
+  document.addEventListener('click',function(ev){
+    const b=ev.target.closest&&ev.target.closest('.may-cats-flecha');
+    if(!b||b.disabled)return;
+    ev.preventDefault();
+    paso(b.classList.contains('izq')?-1:1);
+  });
+})();
 
 function _mayFeaturedProducts(){
   const maxCount=window.innerWidth<768?6:8;
@@ -5536,6 +5609,22 @@ function volverMayInicio() {
 }
 window.volverMayInicio = volverMayInicio;
 
+/* ── NOMBRE, CANTIDAD Y MARCA ─────────────────────────────────────────────────
+   Igual que en la tienda minorista: el nombre en negra, el contenido del envase
+   en gris al lado y la marca en mayúsculas finitas. Un producto que se vende por
+   peso no trae envase, así que muestra el nombre solo, como siempre. */
+function _envaseDeMay(p){ return (p[12] && p[12].envase) || ''; }
+function _marcaDeMay(p){ return (p[12] && p[12].marca) || ''; }
+
+function _nomHTMLMay(p, nombreYaPintado){
+  const base = nombreYaPintado || _tc(p[2]);
+  const env = _envaseDeMay(p), mar = _marcaDeMay(p);
+  if (!env && !mar) return `<b class="nom-p">${base}</b>`;
+  return `<b class="nom-p">${base}</b>`
+    + (env ? `<span class="nom-c">${env}</span>` : '')
+    + (mar ? `<em class="nom-m">${mar}</em>` : '');
+}
+
 function renderCardMay(p, suffix) {
   const opts      = Object.keys(p[7]);
   const precio    = opts.length ? p[7][opts[0]][0] : 0;
@@ -5566,7 +5655,7 @@ function renderCardMay(p, suffix) {
   h += `<div class="pcard-body">`;
 
   // Nombre
-  h += `<div class="pcard-head"><div class="pcard-name">${_tc(p[2])}</div>`;
+  h += `<div class="pcard-head"><div class="pcard-name">${_nomHTMLMay(p)}</div>`;
   if(infoText) h += `<button class="info-btn" onclick="showInfo(${p[0]})" title="Ver información" aria-label="Ver información">${MAY_INFO_ICON}</button>`;
   h += `</div>`;
 
@@ -6733,7 +6822,6 @@ var _recetasFiltroActivo = '';
 var _ultimaCatRecetas = '';
 
 // URL de la hoja "inspiracion" — usa gviz/tq para resolver por nombre
-const RECETAS_URL = 'https://docs.google.com/spreadsheets/d/1aANKgaQFoiAixKQvPlRpZ0_PBQhES-iBWqOG1bsuLyg/gviz/tq?tqx=out:csv&sheet=inspiracion';
 
 function _parseCSVRows(text) {
   // Parser CSV completo que respeta comillas (incluso saltos de línea dentro de campos)
@@ -6795,21 +6883,11 @@ function _parseRecetasCSV(text) {
 
 
 function cargarRecetas() {
-  if (_recetasCargadas) return Promise.resolve(RECETAS);
-  return fetch(RECETAS_URL + '&t=' + Date.now(), { cache: 'no-store' })
-    .then(r => r.text())
-    .then(text => {
-      RECETAS = _parseRecetasCSV(text);
-      _recetasCargadas = true;
-      console.log('🍴 Paladear: ' + RECETAS.length + ' recetas cargadas');
-      return RECETAS;
-    })
-    .catch(err => {
-      console.warn('No se pudieron cargar las recetas:', err);
-      RECETAS = [];
-      _recetasCargadas = true;
-      return RECETAS;
-    });
+  // La sección Inspiración no se muestra en la distribuidora y su hoja era la
+  // última atadura al Google Sheet: queda sin datos, sin pedir nada afuera.
+  _recetasCargadas = true;
+  RECETAS = [];
+  return Promise.resolve(RECETAS);
 }
 
 function _getInstagramPostId(url) {
@@ -7656,15 +7734,15 @@ window.addEventListener('online', function() {
   box-shadow:0 7px 18px rgba(22,50,73,.08);pointer-events:auto
 }
 .may-redesign .hd-cats,.may-redesign .hd-nav-link{
-  position:relative;display:inline-flex;align-items:center;justify-content:center;height:38px;margin:9px 0;
-  padding:0 20px;border:0;background:transparent;color:#173b5e;font-family:inherit;
-  font-size:13px;font-weight:700;line-height:1;white-space:nowrap
+  position:relative;display:inline-flex;align-items:center;justify-content:center;height:46px;margin:8px 0;
+  padding:0 24px;border:0;background:transparent;color:#173b5e;font-family:inherit;
+  font-size:15.5px;font-weight:700;line-height:1;white-space:nowrap
 }
 .may-redesign .hd-cats{gap:10px;padding-left:0;margin-right:20px}
 .may-redesign .hd-cats::after{content:"";position:absolute;right:-10px;width:1px;height:24px;background:#d8e3ec}
 .may-redesign .hd-cats svg{width:20px;height:20px}
 .may-redesign .hd-cats .hd-cats-flecha{width:14px;height:14px;opacity:.7}
-.may-redesign .hd-nav-link{min-width:96px;border-radius:999px;transition:color .18s ease,background .18s ease,box-shadow .18s ease}
+.may-redesign .hd-nav-link{min-width:110px;border-radius:999px;transition:color .18s ease,background .18s ease,box-shadow .18s ease}
 .may-redesign .hd-cats:hover,.may-redesign .hd-nav-link:hover{color:#4f7897}
 .may-redesign .hd-nav-link.active{background:#e7f1f7;color:#123c61;box-shadow:inset 0 0 0 1px #d5e5ef}
 .may-redesign .header-dropdowns{position:static;width:0;min-width:0;margin:0;overflow:visible}
@@ -7885,7 +7963,7 @@ window.addEventListener('online', function() {
   .may-redesign .hd-acceso>span:not(.hd-pedido-n){display:none}
   .may-redesign .hd-acceso svg{width:22px;height:22px}
   .may-redesign .hd-pedido-n{left:14px;top:0;border-color:#456b89}
-  .may-redesign .hd-nav{height:49px}
+  .may-redesign .hd-nav{height:58px}
   .may-redesign .hd-nav-inner{width:100%;min-height:49px;margin:0;padding:0 10px;gap:0;border-radius:0;overflow-x:auto;scrollbar-width:none}
   .may-redesign .hd-nav-inner::-webkit-scrollbar{display:none}
   .may-redesign .hd-cats,.may-redesign .hd-nav-link{height:35px;margin:7px 0;padding:0 12px;font-size:11.5px}
@@ -8005,11 +8083,24 @@ window.addEventListener('online', function() {
 .may-home-cats-grid::-webkit-scrollbar{display:none}
 .may-home-cat{
   position:relative;display:flex;flex:0 0 158px;min-width:0;aspect-ratio:auto;min-height:190px;padding:11px 11px 14px;
-  flex-direction:column;align-items:center;justify-content:flex-start;gap:11px;overflow:hidden;border:1px solid rgba(255,255,255,.48);
+  flex-direction:column;align-items:center;justify-content:flex-start;gap:5px;overflow:hidden;border:1px solid rgba(255,255,255,.48);
   border-radius:20px;background:#fbf7ef;color:#173e60;box-shadow:0 9px 24px rgba(37,52,34,.15);
   scroll-snap-align:start;isolation:auto;transition:transform .2s ease,box-shadow .2s ease
 }
 .may-home-cat::after{display:none}
+/* Flechas para correr las categorías. Solo en desktop: en el teléfono se arrastra. */
+.may-home-cats-carousel{position:relative}
+.may-cats-flecha{display:none}
+@media(min-width:900px){
+  .may-cats-flecha{display:grid;place-items:center;position:absolute;top:calc(50% - 18px);transform:translateY(-50%);
+    z-index:4;width:44px;height:44px;border-radius:50%;border:1px solid #d8e3ec;background:#fff;color:#1d4f75;
+    font-size:26px;line-height:1;cursor:pointer;box-shadow:0 4px 14px rgba(23,62,96,.16);
+    transition:background .15s,box-shadow .15s,opacity .15s}
+  .may-cats-flecha:hover{background:#eef5fa;box-shadow:0 6px 18px rgba(23,62,96,.22)}
+  .may-cats-flecha.izq{left:-6px}
+  .may-cats-flecha.der{right:-6px}
+  .may-cats-flecha[disabled]{opacity:.32;cursor:default;box-shadow:none}
+}
 .may-home-cat img{width:134px;height:134px;display:block;flex:0 0 auto;border-radius:50%;object-fit:cover;transition:transform .3s ease}
 .may-home-cat span{position:static;color:#173e60;font-size:12px;font-weight:800;line-height:1.18;text-align:center;text-shadow:none}
 .may-home-cat:hover{transform:translateY(-4px);box-shadow:0 15px 30px rgba(37,52,34,.2)}
@@ -8022,6 +8113,7 @@ window.addEventListener('online', function() {
 }
 .may-home-text-link:hover{color:#173e60}
 .may-home-featured-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.may-home-featured-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 .may-feature-card{
   min-width:0;overflow:hidden;border:1px solid rgba(49,77,89,.10);border-radius:20px;background:#fff;
   box-shadow:0 10px 28px rgba(62,57,45,.09);transition:transform .2s ease,box-shadow .2s ease
@@ -8099,7 +8191,7 @@ window.addEventListener('online', function() {
   .may-home-section-head .may-home-section-kicker{font-size:9.5px}
   .may-home-carousel-controls{gap:6px}
   .may-home-carousel-controls button{width:36px;height:36px;font-size:16px}
-  .may-home-cat{flex-basis:126px;min-height:157px;padding:8px 8px 11px;border-radius:17px;gap:9px}
+  .may-home-cat{flex-basis:126px;min-height:157px;padding:8px 8px 11px;border-radius:17px;gap:4px}
   .may-home-cat img{width:108px;height:108px}
   .may-home-cat span{font-size:10.5px}
   .may-home-text-link{font-size:11px}
@@ -8286,7 +8378,7 @@ window.addEventListener('online', function() {
   .may-redesign .may-home-cta{margin-top:22px}
   .may-home-cats-carousel{margin-inline:-4px}
   .may-home-cats-grid{gap:15px;padding:3px 34px 7px}
-  .may-home-cat{flex-basis:104px;min-height:139px;gap:8px}
+  .may-home-cat{flex-basis:104px;min-height:139px;gap:4px}
   .may-home-cat img{width:98px;height:98px;border-width:2.5px}
   .may-home-cat span{font-size:9.5px}
   .may-home-cat-arrow{top:45px;width:31px;height:31px;font-size:23px}
@@ -8784,7 +8876,7 @@ body.may-redesign.checkout-open #cart-fab-may,body.may-redesign.checkout-open #b
 
 @media(min-width:761px){
   .may-home-cat-page{gap:16px}
-  .may-home-cat{max-width:190px;min-height:0;gap:9px}
+  .may-home-cat{max-width:190px;min-height:0;gap:4px}
   .may-home-cat img{width:min(100%,clamp(118px,11vw,166px));height:auto;aspect-ratio:1}
   .may-home-cat span{font-size:clamp(12px,1vw,15px);line-height:1.22}
   .may-home-cat-pagination{margin-top:6px}
@@ -8796,7 +8888,7 @@ body.may-redesign.checkout-open #cart-fab-may,body.may-redesign.checkout-open #b
   .may-home-band-categories .may-home-categories-head .may-home-section-kicker{padding-bottom:7px;font-size:10px}
   .may-home-band-categories .may-home-categories-head .may-home-section-kicker::after{width:44px;height:1.5px}
   .may-home-cat-page{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
-  .may-home-cat{min-height:100px;padding:0 1px;gap:6px}
+  .may-home-cat{min-height:100px;padding:0 1px;gap:4px}
   .may-home-cat img{width:clamp(62px,19vw,78px);height:clamp(62px,19vw,78px);border-width:2px}
   .may-home-cat span{font-size:clamp(8px,2.3vw,10px);line-height:1.15}
   .may-home-cat-pagination{margin-top:2px}
@@ -9048,7 +9140,7 @@ body.may-redesign.checkout-open #cart-fab-may,body.may-redesign.checkout-open #b
 
 @media(min-width:761px){
   .may-home-cat-page{grid-template-columns:repeat(4,minmax(0,1fr));gap:30px 22px}
-  .may-home-cat{width:100%;max-width:250px;min-height:218px;padding:0 5px;gap:9px}
+  .may-home-cat{width:100%;max-width:250px;min-height:218px;padding:0 5px;gap:4px}
   .may-home-cat img{width:clamp(120px,11vw,168px);height:clamp(120px,11vw,168px)}
   .may-home-cat-arc{max-width:230px}
   .may-home-cat-arc text{font-size:17px;letter-spacing:.105em}
@@ -9060,7 +9152,7 @@ body.may-redesign.checkout-open #cart-fab-may,body.may-redesign.checkout-open #b
   .may-home-band-categories .may-home-categories-head{margin-bottom:17px}
   .may-home-band-categories .may-home-categories-head .may-home-section-kicker{font-size:12px}
   .may-home-cat-page{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 10px}
-  .may-home-cat{min-height:138px;padding:0 3px;gap:7px}
+  .may-home-cat{min-height:138px;padding:0 3px;gap:4px}
   .may-home-cat img{width:102px;height:102px;border-width:2.5px}
   .may-home-cat-arc{max-width:none}
   .may-home-cat-arc text{font-size:15px}
