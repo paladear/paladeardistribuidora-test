@@ -1,5 +1,3629 @@
 {
- "fichas": {},
+ "fichas": {
+  "1260": {
+   "nombre": "🔴 ENVASES VACIOS",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "",
+   "rubro": "OTROS",
+   "origen": "sheet"
+  },
+  "2265": {
+   "nombre": "ACEITE DE COCO NEUTRO X 200GR - ENTRENUTS",
+   "bulto": "12 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1DT-EJI0FphtfZMGLOEMrSeYMNeaS2Dbp/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de coco de sabor y aroma suaves, práctico para cocinar, hornear o preparar recetas en las que no se busca gusto a coco. Su perfil neutro y su textura lo vuelven muy versátil tanto en recetas dulces como saladas.",
+   "origen": "sheet"
+  },
+  "2141": {
+   "nombre": "ACEITE DE COCO NEUTRO X 360GR - ENTRENUTS",
+   "bulto": "12 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/152trCrtVnqrqBpTZmgkdRxJtLgjKj0VW/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de coco de sabor y aroma suaves, práctico para cocinar, hornear o preparar recetas en las que no se busca gusto a coco. Su perfil neutro y su textura lo vuelven muy versátil tanto en recetas dulces como saladas.",
+   "origen": "sheet"
+  },
+  "2142": {
+   "nombre": "ACEITE DE COCO VIRGEN X 200GR - ENTRENUTS",
+   "bulto": "12 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1bIaTu-IwSu3LSvSHplMMRH646c_O-vfl/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de coco con aroma y sabor característicos, ideal para preparaciones dulces, saladas y cocciones. Aporta una textura cremosa y un perfil tropical que realza cada receta.",
+   "origen": "sheet"
+  },
+  "2266": {
+   "nombre": "ACEITE DE COCO VIRGEN X 360GR - ENTRENUTS",
+   "bulto": "12 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/10RUG87XYxr6t9RrYo6_F7kMzVyukmkJU/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de coco con aroma y sabor característicos, ideal para preparaciones dulces, saladas y cocciones. Aporta una textura cremosa y un perfil tropical que realza cada receta.",
+   "origen": "sheet"
+  },
+  "1012": {
+   "nombre": "ACEITE DE OLIVA  X 1 L - LAUR",
+   "bulto": "6 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/18MosSegYZv-so0GIc6eiDLYBvuXj6EDe/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de oliva de perfil frutado y gran versatilidad para aderezar, cocinar o terminar platos. Aporta principalmente grasas monoinsaturadas, entre ellas ácido oleico, además de compuestos antioxidantes naturales en cantidades variables.",
+   "origen": "sheet"
+  },
+  "1011": {
+   "nombre": "ACEITE DE OLIVA - PANNOCCHIA X 1L",
+   "bulto": "6 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1rwI76CFaX0kpWKAsnFl2qhIFeJ-cfX9B/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de oliva de perfil frutado y gran versatilidad para aderezar, cocinar o terminar platos. Aporta principalmente grasas monoinsaturadas, entre ellas ácido oleico, además de compuestos antioxidantes naturales en cantidades variables.",
+   "origen": "sheet"
+  },
+  "1013": {
+   "nombre": "ACEITE DE OLIVA - PANNOCCHIA X 500ML",
+   "bulto": "6 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1S7OwVBL8FZwjVlnWz7lp92TIoUxcCT0Y/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de oliva de perfil frutado y gran versatilidad para aderezar, cocinar o terminar platos. Aporta principalmente grasas monoinsaturadas, entre ellas ácido oleico, además de compuestos antioxidantes naturales en cantidades variables.",
+   "origen": "sheet"
+  },
+  "1014": {
+   "nombre": "ACEITE DE OLIVA - PANNOCCHIA X 5L",
+   "bulto": "2 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1KbxYN7XLKm24zzgQf5aZioy-3zdq1rvp/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de oliva de perfil frutado y gran versatilidad para aderezar, cocinar o terminar platos. Aporta principalmente grasas monoinsaturadas, entre ellas ácido oleico, además de compuestos antioxidantes naturales en cantidades variables.",
+   "origen": "sheet"
+  },
+  "1008": {
+   "nombre": "ACEITE DE OLIVA X 3 L - RODRIGO DE VIVAR",
+   "bulto": "4 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1OZOxuJoqpIXHFQRDfeQiPzmnYGZtzmci/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de oliva de perfil frutado y gran versatilidad para aderezar, cocinar o terminar platos. Aporta principalmente grasas monoinsaturadas, entre ellas ácido oleico, además de compuestos antioxidantes naturales en cantidades variables.",
+   "origen": "sheet"
+  },
+  "1908": {
+   "nombre": "ACEITE DE OLIVA X 3L - VERDEOLIVA",
+   "bulto": "3 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1HhWAIhOPpJBly1q13x1tYuENnT8YT2-C/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de oliva de perfil frutado y gran versatilidad para aderezar, cocinar o terminar platos. Aporta principalmente grasas monoinsaturadas, entre ellas ácido oleico, además de compuestos antioxidantes naturales en cantidades variables.",
+   "origen": "sheet"
+  },
+  "1007": {
+   "nombre": "ACEITE DE OLIVA X 5 L - RODRIGO DE VIVAR",
+   "bulto": "1 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1H-W9VwJb8KVjAgM_o7EnQJyaFeN4CGi0/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de oliva de perfil frutado y gran versatilidad para aderezar, cocinar o terminar platos. Aporta principalmente grasas monoinsaturadas, entre ellas ácido oleico, además de compuestos antioxidantes naturales en cantidades variables.",
+   "origen": "sheet"
+  },
+  "1002": {
+   "nombre": "ACEITE DE OLIVA X 500 CC - LAUR",
+   "bulto": "6 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1A2gi-MF5FPGL07b8bam7cjKarlnaRTj4/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de oliva de perfil frutado y gran versatilidad para aderezar, cocinar o terminar platos. Aporta principalmente grasas monoinsaturadas, entre ellas ácido oleico, además de compuestos antioxidantes naturales en cantidades variables.",
+   "origen": "sheet"
+  },
+  "1009": {
+   "nombre": "ACEITE DE OLIVA X 500 CC - RODRIGO DE VIVAR",
+   "bulto": "6 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1KSYsbt1CWv9vqWtg_sb1PMZ3ZF-IfJTx/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de oliva de perfil frutado y gran versatilidad para aderezar, cocinar o terminar platos. Aporta principalmente grasas monoinsaturadas, entre ellas ácido oleico, además de compuestos antioxidantes naturales en cantidades variables.",
+   "origen": "sheet"
+  },
+  "2119": {
+   "nombre": "ACEITE DE OLIVA X 500ML - VERDEOLIVA",
+   "bulto": "20 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1gYtu83WZXt-pZgCxGEAdD48KAGt79yvH/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de oliva de perfil frutado y gran versatilidad para aderezar, cocinar o terminar platos. Aporta principalmente grasas monoinsaturadas, entre ellas ácido oleico, además de compuestos antioxidantes naturales en cantidades variables.",
+   "origen": "sheet"
+  },
+  "1909": {
+   "nombre": "ACEITE DE OLIVA X 5L - VERDEOLIVA",
+   "bulto": "1 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1-BTYBFcKSUF8WoXp9C4VcHaubtdnR55L/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de oliva de perfil frutado y gran versatilidad para aderezar, cocinar o terminar platos. Aporta principalmente grasas monoinsaturadas, entre ellas ácido oleico, además de compuestos antioxidantes naturales en cantidades variables.",
+   "origen": "sheet"
+  },
+  "1010": {
+   "nombre": "ACEITE DE OLIVA X 900 CC - RODRIGO DE VIVAR",
+   "bulto": "6 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1a4Djen_Q5drmMmJvn9FxpbC_OqDB0twf/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de oliva de perfil frutado y gran versatilidad para aderezar, cocinar o terminar platos. Aporta principalmente grasas monoinsaturadas, entre ellas ácido oleico, además de compuestos antioxidantes naturales en cantidades variables.",
+   "origen": "sheet"
+  },
+  "1894": {
+   "nombre": "ACEITE DE OLIVA X 900ML - VERDE OLIVA",
+   "bulto": "10 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/142O5TyjoOb0qFDAkbmnTDanpXRDxa8VN/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Aceite de oliva de perfil frutado y gran versatilidad para aderezar, cocinar o terminar platos. Aporta principalmente grasas monoinsaturadas, entre ellas ácido oleico, además de compuestos antioxidantes naturales en cantidades variables.",
+   "origen": "sheet"
+  },
+  "1020": {
+   "nombre": "ACEITUNAS DESCAROZADAS X1 KG - DURANG",
+   "bulto": "4 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/16hKXfibLKQ8Lh7PRlZ8aE5IowuyiZm5j/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1018": {
+   "nombre": "ACEITUNAS DESCAROZADAS X5 KG - VALLE DE LAS REINAS",
+   "bulto": "1 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1IrXSiby8oWQdE-i0SxqDTCwkHbR71K3Z/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1021": {
+   "nombre": "ACEITUNAS FILETEADAS X1 KG - DURANG",
+   "bulto": "4 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/16f8vDnblZ-IBDsmgIPUYvJ4q2r4p6RKj/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1023": {
+   "nombre": "ACEITUNAS FILETEADAS X4 KG - VALLE DE LAS REINAS",
+   "bulto": "1 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1V63rW62vAKYDRdlROHJgdKscavufYVkY/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1024": {
+   "nombre": "ACEITUNAS GRIEGAS X 1 KG - RODRIGO DE VIVAR",
+   "bulto": "4 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1SjcAtYy5_pKiEW-oqI36ukrQb6o0NxYr/view",
+   "rubro": "ACEITUNAS",
+   "desc": "Aceitunas negras de sabor intenso y textura carnosa, ideales para picadas, ensaladas y panes. Aportan grasas monoinsaturadas y vitamina E; por su conservación en salmuera también contienen sodio.",
+   "origen": "sheet"
+  },
+  "1025": {
+   "nombre": "ACEITUNAS GRIEGAS X 500GR - RODRIGO DE VIVAR",
+   "bulto": "6 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/16Yw8SvRLXB2M439BnKEK40CIRBBSqata/view",
+   "rubro": "ACEITUNAS",
+   "desc": "Aceitunas negras de sabor intenso y textura carnosa, ideales para picadas, ensaladas y panes. Aportan grasas monoinsaturadas y vitamina E; por su conservación en salmuera también contienen sodio.",
+   "origen": "sheet"
+  },
+  "2443": {
+   "nombre": "ACEITUNAS NEGRAS DESCAROZADAS X3 KG - DURANG",
+   "bulto": "1 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/17A_aCq6JKmEtpo6fOC74wZ8HW36XueuG/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1030": {
+   "nombre": "ACEITUNAS NEGRAS DESCAROZADAS X5 KG - DURANG",
+   "bulto": "1 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1XZJnyE7mOf20u1N92PdrgpeoAtWKAqu-/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1031": {
+   "nombre": "ACEITUNAS NEGRAS FILETEADAS X5 KG - DURANG",
+   "bulto": "1 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1nv0SBciMQCsB_mYpXHZnvpcr0q_VS-yj/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1026": {
+   "nombre": "ACEITUNAS NEGRAS Nº 0 X5 KG - DURANG",
+   "bulto": "1 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1EuNd1qNZk-VO5Nl-GgQsDnazTPCSFGb8/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1028": {
+   "nombre": "ACEITUNAS NEGRAS Nº 1 X5 KG - DURANG",
+   "bulto": "1 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1yxpme6iPFcvA4e-R48c2aXjP8r3lof6A/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1032": {
+   "nombre": "ACEITUNAS NEGRAS X1 KG - DURANG",
+   "bulto": "1 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Sf_otCfALRHKDxgUdFiP0K9y8DxFdLgC/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1033": {
+   "nombre": "ACEITUNAS RELLENAS CON ALMENDRAS X330 GR - AGROIANNI",
+   "bulto": "12 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1YLvJsxC79slK8q-mOq3SUQUbTRnh0_e5/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1037": {
+   "nombre": "ACEITUNAS RELLENAS SURTIDAS X330 GR - AGROIANNI",
+   "bulto": "12 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1qLOJrXgCyon3PG5PfdeD4lqHaK53m6I6/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1036": {
+   "nombre": "ACEITUNAS RELLENAS X 200 GR - DURANG",
+   "bulto": "6 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1tdWgffM1O9ps3tBKETvpjZ0ze8Uc8bzs/view",
+   "rubro": "ACEITUNAS",
+   "desc": "Aceitunas rellenas de sabor salado y textura firme, prácticas para picadas, aperitivos y ensaladas. Su relleno aporta un contraste sabroso que las convierte en un bocado listo para servir.",
+   "origen": "sheet"
+  },
+  "1034": {
+   "nombre": "ACEITUNAS RELLENAS X1 KG - DURANG",
+   "bulto": "4 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1N2FNwseFdCoIbpgsRKGuH51HexB37FbY/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1038": {
+   "nombre": "ACEITUNAS VERDES N°0 X5 KG - DURANG",
+   "bulto": "1 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1ESas6o5MqcRXfJlcdUfhLKNLARjFgc-V/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1056": {
+   "nombre": "ACEITUNAS VERDES N°0 X5 KG - RODRIGO DE VIVAR",
+   "bulto": "1 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1fW8ki2roLnJqghn5joCZVDvJidwURo8g/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1058": {
+   "nombre": "ACEITUNAS VERDES N°1 X5 KG - RODRIGO DE VIVAR",
+   "bulto": "1 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/15dmMqtVkrYMDt44NoftA8jS0ejrAtnw5/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1059": {
+   "nombre": "ACEITUNAS VERDES N°2 X5 KG - RODRIGO DE VIVAR",
+   "bulto": "1 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1YqTYHseFdYsHUexZZsHoxPRCBGkw32Ts/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1043": {
+   "nombre": "ACEITUNAS VERDES Nº 00 X 1 KG - RODRIGO DE VIVAR",
+   "bulto": "4 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1-z9vQ_0VyEe9tTblrjKuiokNv3ecj9If/view",
+   "rubro": "ACEITUNAS",
+   "desc": "Aceitunas verdes de pulpa firme y sabor característico, ideales para picadas, ensaladas y preparaciones saladas. Aportan grasas monoinsaturadas y vitamina E; la salmuera incrementa su contenido de sodio.",
+   "origen": "sheet"
+  },
+  "1049": {
+   "nombre": "ACEITUNAS VERDES Nº 00 X 500GR - RODRIGO DE VIVAR",
+   "bulto": "6 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1xQum6K1Y6_d4pTL6TDoxM-7yFwDqPcub/view",
+   "rubro": "ACEITUNAS",
+   "desc": "Aceitunas verdes de pulpa firme y sabor característico, ideales para picadas, ensaladas y preparaciones saladas. Aportan grasas monoinsaturadas y vitamina E; la salmuera incrementa su contenido de sodio.",
+   "origen": "sheet"
+  },
+  "1050": {
+   "nombre": "ACEITUNAS VERDES Nº 1 X 500GR - RODRIGO DE VIVAR",
+   "bulto": "6 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1SIvCTtZG5forSTYSfwmyICZU81Yw9d1P/view",
+   "rubro": "ACEITUNAS",
+   "desc": "Aceitunas verdes de pulpa firme y sabor característico, ideales para picadas, ensaladas y preparaciones saladas. Aportan grasas monoinsaturadas y vitamina E; la salmuera incrementa su contenido de sodio.",
+   "origen": "sheet"
+  },
+  "1044": {
+   "nombre": "ACEITUNAS VERDES Nº0 X 1 KG - RODRIGO DE VIVAR",
+   "bulto": "4 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1GUWDFv2V60PKV_pMiNbc59OmKZdEFN4o/view",
+   "rubro": "ACEITUNAS",
+   "desc": "Aceitunas verdes de pulpa firme y sabor característico, ideales para picadas, ensaladas y preparaciones saladas. Aportan grasas monoinsaturadas y vitamina E; la salmuera incrementa su contenido de sodio.",
+   "origen": "sheet"
+  },
+  "1051": {
+   "nombre": "ACEITUNAS VERDES Nº0 X 500GR - RODRIGO DE VIVAR",
+   "bulto": "6 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1YSpxUfC3TdhW3OckOg1xnBGCzSHTIX3U/view",
+   "rubro": "ACEITUNAS",
+   "desc": "Aceitunas verdes grandes, carnosas y de sabor equilibrado, ideales para picadas, ensaladas, panes y platos mediterráneos. Aportan grasas monoinsaturadas y una textura firme muy agradable.",
+   "origen": "sheet"
+  },
+  "1045": {
+   "nombre": "ACEITUNAS VERDES Nº1 X 1 KG - RODRIGO DE VIVAR",
+   "bulto": "4 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1_JEVQnhaBGEd7N9I2nZCGb7CEOGNDCgC/view",
+   "rubro": "ACEITUNAS",
+   "desc": "Aceitunas verdes de pulpa firme y sabor característico, ideales para picadas, ensaladas y preparaciones saladas. Aportan grasas monoinsaturadas y vitamina E; la salmuera incrementa su contenido de sodio.",
+   "origen": "sheet"
+  },
+  "1040": {
+   "nombre": "ACEITUNAS VERDES Nº1 X5 KG - DURANG",
+   "bulto": "1 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1LdblUkapivtb0I2IuG9BRiq_gz7ZX4zS/view",
+   "rubro": "ACEITUNAS",
+   "origen": "sheet"
+  },
+  "1064": {
+   "nombre": "ACETO BALSAMICO 500CC - ALCARAZ GOURMET",
+   "bulto": "12 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1YMehG75RBjLkKehMnf65VxkCnno2rTOm/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Condimento de sabor agridulce y acidez equilibrada, ideal para ensaladas, marinadas y terminaciones. Aporta pocas grasas; el contenido de azúcares y sodio depende de la elaboración indicada en la etiqueta.",
+   "origen": "sheet"
+  },
+  "2416": {
+   "nombre": "ACETO BALSAMICO X 250CC - MILLAN",
+   "bulto": "6 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1IOGhOiSEQdJLK-3PEc0_qOoL5gVz6UPG/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Condimento de sabor agridulce y acidez equilibrada, ideal para ensaladas, marinadas y terminaciones. Aporta pocas grasas; el contenido de azúcares y sodio depende de la elaboración indicada en la etiqueta.",
+   "origen": "sheet"
+  },
+  "1066": {
+   "nombre": "ACETO REDUCCION X 500CC - ALCARAZ GOURMET",
+   "bulto": "12 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/13zdwuvH1ANO2E6Ss6MTYIUFnMCaD7t4O/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Reducción de aceto de textura espesa y sabor agridulce, pensada para terminar ensaladas, quesos, carnes y vegetales. Su concentración de azúcares puede ser mayor que la de un vinagre común, por lo que se utiliza en pequeñas cantidades.",
+   "origen": "sheet"
+  },
+  "1067": {
+   "nombre": "ADEREZO DE PICKLES X200 GR - DURANG",
+   "bulto": "6 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1j4IFEGf_nmwwsybSEWHU_dn4b6xSip6d/view",
+   "rubro": "ENCURTIDOS",
+   "origen": "sheet"
+  },
+  "1068": {
+   "nombre": "ADOBO PARA PIZZA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Hpa-w2m8Vn_sBVxKa532gmJKiEyFaz3B/view",
+   "rubro": "ESPECIAS",
+   "desc": "Mezcla de hierbas y especias pensada para aromatizar pizzas, salsas y panes. Aporta sabor con una porción pequeña; el contenido de sodio depende de si la mezcla incluye sal.",
+   "origen": "sheet"
+  },
+  "4451": {
+   "nombre": "AGRIDULCE DE VEGETALES X200 GR - DURANG",
+   "bulto": "6 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1nwsntoS0fE2c7VL6FDjK7NiuWBwSMamh/view",
+   "rubro": "ENCURTIDOS",
+   "origen": "sheet"
+  },
+  "1079": {
+   "nombre": "AJI MOLIDO FINO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/198MWrKl_mMZ6ML255667bHX9yqNLsuFk/view",
+   "rubro": "ESPECIAS",
+   "desc": "Ají seco molido de picor moderado y aroma frutado, ideal para guisos, empanadas y salsas. Se utiliza en pequeñas cantidades y aporta compuestos aromáticos naturales del ají.",
+   "origen": "sheet"
+  },
+  "1082": {
+   "nombre": "AJIES DULCES X 110 GR - DURANG",
+   "bulto": "6 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Hh_VZ2mQ0b63SscIg2o80_RROEm8xZFV/view",
+   "rubro": "ENCURTIDOS",
+   "desc": "Ajíes de sabor suave y textura firme, ideales para picadas, ensaladas y sándwiches. Aportan fibra y compuestos vegetales; por su conservación pueden contener una cantidad considerable de sodio.",
+   "origen": "sheet"
+  },
+  "1081": {
+   "nombre": "AJIES DULCES X1 KG - DURANG",
+   "bulto": "2 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/13mT0mCyPkBslw1J2fcHQNlxEV39BK0GE/view",
+   "rubro": "ENCURTIDOS",
+   "origen": "sheet"
+  },
+  "1084": {
+   "nombre": "AJIES PICANTES X 110 GR - DURANG",
+   "bulto": "6 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/16EgW37ix5K7e9cAcJs4g-B6l0MwS3s6B/view",
+   "rubro": "ENCURTIDOS",
+   "desc": "Ajíes de sabor picante y textura firme, ideales para sumar intensidad a picadas, salsas y comidas. Aportan compuestos vegetales como capsaicinoides; por su conservación también pueden contener sodio.",
+   "origen": "sheet"
+  },
+  "1083": {
+   "nombre": "AJIES PICANTES X1 KG - DURANG",
+   "bulto": "2 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1SQ_mQS5pbd3JTxUIgD7Bko4SKrWNjVVO/view",
+   "rubro": "ENCURTIDOS",
+   "origen": "sheet"
+  },
+  "1085": {
+   "nombre": "AJO EN POLVO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/16oa97VYpy0-t9tRPDhLj5dI78OX1A1YY/view",
+   "rubro": "ESPECIAS",
+   "desc": "Ajo deshidratado y molido de sabor concentrado, práctico para adobos, salsas y vegetales. Permite condimentar con una cantidad pequeña y conserva compuestos naturales característicos del ajo.",
+   "origen": "sheet"
+  },
+  "1088": {
+   "nombre": "AJO GRANULADO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1i3FghkKESJrJw0LAOewl9xLoOI4Owp-a/view",
+   "rubro": "ESPECIAS",
+   "desc": "Ajo deshidratado en gránulos, de sabor intenso y textura práctica para marinadas, panes y carnes. Se utiliza en pequeñas cantidades y aporta los compuestos aromáticos propios del ajo.",
+   "origen": "sheet"
+  },
+  "1099": {
+   "nombre": "ALBAHACA EN HOJAS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Y5V26NL92wMotUp_Jgag0SMOWwtKpu34/view",
+   "rubro": "ESPECIAS",
+   "desc": "Hierba aromática de notas frescas y levemente dulces, ideal para tomate, pastas y salsas. Se usa en pequeñas cantidades y aporta compuestos vegetales aromáticos.",
+   "origen": "sheet"
+  },
+  "1100": {
+   "nombre": "ALCAPARRAS X 100GR - ALCARAZ GOURMET",
+   "bulto": "12 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/12kY3S9biElu2bu313qqt2eWDyQif3s38/view",
+   "rubro": "ENCURTIDOS",
+   "desc": "Alcaparras de sabor salado, ácido e intenso, ideales para salsas, pescados y ensaladas. Se usan en pequeñas cantidades y su conservación en salmuera hace que tengan un contenido elevado de sodio.",
+   "origen": "sheet"
+  },
+  "2434": {
+   "nombre": "ALCAPARRAS X500 GR - ALCARAZ GOURMET",
+   "bulto": "12 unid.",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1aVYwN9Yj7lc730-qiuKcMwrDbyjTolYY/view",
+   "rubro": "ENCURTIDOS",
+   "origen": "sheet"
+  },
+  "4452": {
+   "nombre": "ALMENDRA PARTIDA",
+   "bulto": "10 kilos.",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1haZ64ESOumYBedGUI0AvxzAmGItSUbYz/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Almendras de sabor suave y textura crocante, prácticas para colaciones, granolas, repostería y ensaladas. Aportan grasas insaturadas, proteína vegetal, fibra, vitamina E y minerales como el magnesio.",
+   "origen": "sheet"
+  },
+  "2445": {
+   "nombre": "ALMENDRAS CARMEL",
+   "bulto": "10 kilos.",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1uYxWt_bELrgHeyyJHZmHoVCqDlED52EK/view",
+   "rubro": "FRUTOS SECOS",
+   "origen": "sheet"
+  },
+  "1842": {
+   "nombre": "ALMENDRAS NONPAREIL",
+   "bulto": "10 kilos.",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/16PznJURYBrA658AwGfRM2tXNLzkz196Y/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Almendras de sabor suave y textura crocante, prácticas para colaciones, granolas, repostería y ensaladas. Aportan grasas insaturadas, proteína vegetal, fibra, vitamina E y minerales como el magnesio.",
+   "origen": "sheet"
+  },
+  "1113": {
+   "nombre": "ALMIDON DE MAIZ",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1-lmyboOmcA-wBKl-rgFLhLr_HUIjgD2a/view",
+   "rubro": "HARINAS",
+   "desc": "Almidón fino de maíz, útil para espesar salsas, dar ligereza a masas y preparar postres. Aporta principalmente hidratos de carbono y contiene muy poca fibra y proteína.",
+   "origen": "sheet"
+  },
+  "1115": {
+   "nombre": "ALMOHADITAS DE CHOCOLATE",
+   "bulto": "2.5 kilos.",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1WtjiyZpSTUeVK4OcYc1z6_cZs3ZOjiHQ/view",
+   "rubro": "CEREALES",
+   "desc": "Cereal crocante saborizado, práctico para desayunos y colaciones. Aporta principalmente hidratos de carbono; el contenido de azúcares, grasas y sodio depende de la formulación.",
+   "origen": "sheet"
+  },
+  "1117": {
+   "nombre": "ALMOHADITAS DE FRUTILLA",
+   "bulto": "2.5 kilos",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1yZdc6EAeBDlf895N0uizyQGemJi7ivZ-/view",
+   "rubro": "CEREALES",
+   "desc": "Cereal crocante saborizado, práctico para desayunos y colaciones. Aporta principalmente hidratos de carbono; el contenido de azúcares, grasas y sodio depende de la formulación.",
+   "origen": "sheet"
+  },
+  "1118": {
+   "nombre": "ALMOHADITAS DE LIMON",
+   "bulto": "2.5 kilos.",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1M76YRVivSWU1mROLRo7d1MfwQg3ypEI6/view",
+   "rubro": "CEREALES",
+   "desc": "Cereal crocante saborizado, práctico para desayunos y colaciones. Aporta principalmente hidratos de carbono; el contenido de azúcares, grasas y sodio depende de la formulación.",
+   "origen": "sheet"
+  },
+  "1114": {
+   "nombre": "ALMOHADITAS DOS SALVADOS",
+   "bulto": "1.5 kilos.",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1tWKPU9lnGg_x3xO5qKoe1Xe1Yoj0Qzby/view",
+   "rubro": "CEREALES",
+   "desc": "Cereal crocante elaborado con salvado, ideal para desayunos y colaciones. Aporta hidratos de carbono y fibra, y combina muy bien con yogur, leche, frutas o bebidas vegetales.",
+   "origen": "sheet"
+  },
+  "1121": {
+   "nombre": "ANILLOS DE AVENA Y MIEL",
+   "bulto": "2.5 kilos.",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1ypkgGfypNVXdAyhu3e_tctFL_pvRh2ih/view",
+   "rubro": "CEREALES",
+   "desc": "Cereal de sabor suave y textura versátil, ideal para desayunos, granolas, galletas y preparaciones calientes. Aporta hidratos de carbono complejos, fibra soluble y proteína vegetal, además de minerales como magnesio y fósforo.",
+   "origen": "sheet"
+  },
+  "1122": {
+   "nombre": "ANILLOS FRUTADOS",
+   "bulto": "2.5 kilos.",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Ud1G3_GTKzOJlgQUuWIsDS8gW8W7uN1n/view",
+   "rubro": "CEREALES",
+   "desc": "Cereal crocante saborizado, práctico para desayunos y colaciones. Aporta principalmente hidratos de carbono; el contenido de azúcares, grasas y sodio depende de la formulación.",
+   "origen": "sheet"
+  },
+  "1123": {
+   "nombre": "ANIS EN GRANO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/10Rj5SFRP2MBT2ivj_t8FM0I3xKYEw_G7/view",
+   "rubro": "ESPECIAS",
+   "desc": "Semillas aromáticas de sabor dulce y anisado, útiles en panes, infusiones y repostería. Se emplean en pequeñas cantidades y aportan aceites esenciales naturales.",
+   "origen": "sheet"
+  },
+  "1124": {
+   "nombre": "ANIS ESTRELLADO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/110BKpRZCGMZVqRQ1US6pEtFzah0Jqd00/view",
+   "rubro": "ESPECIAS",
+   "desc": "Especia de aroma intenso y sabor dulce, ideal para infusiones, compotas y preparaciones especiadas. Sus vistosas estrellas también aportan una presentación atractiva en bebidas y recetas.",
+   "origen": "sheet"
+  },
+  "1127": {
+   "nombre": "ARANDANOS DESHIDRATADOS",
+   "bulto": "11.34",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1-3hEiQdp5-wSKlvvcymYZu1DU6SVODsx/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Arándanos deshidratados de sabor agridulce, prácticos para granolas, yogures y repostería. Aportan hidratos de carbono, compuestos vegetales y un toque frutal intenso.",
+   "origen": "sheet"
+  },
+  "2214": {
+   "nombre": "ARANDANOS X30 COMPRIMIDOS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/10BhNh7ksbDfRed2slcohwcZ07ApXcAXQ/view",
+   "origen": "sheet"
+  },
+  "1129": {
+   "nombre": "ARROPE DE CHAÑAR X600 GR - MUPAY",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Yc780U_gZC-cewfwA6xM2gHW-mGLIeme/view",
+   "rubro": "DULCES, MIEL Y CHOCOLATES",
+   "origen": "sheet"
+  },
+  "1130": {
+   "nombre": "ARROPE DE TUNA X600 GR - MUPAY",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1QpsuR12cFn9MTFbww53gb08i1_BR6UW2/view",
+   "rubro": "DULCES, MIEL Y CHOCOLATES",
+   "origen": "sheet"
+  },
+  "1131": {
+   "nombre": "ARROZ INTEGRAL",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1D0a6R-nMl1uqcA7C-NRbVVYys29ljg5_/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Arroz integral de sabor suave y textura firme, ideal para guarniciones, ensaladas y bowls. Conserva el salvado, por lo que aporta hidratos de carbono complejos, fibra, vitaminas del grupo B y minerales.",
+   "origen": "sheet"
+  },
+  "1133": {
+   "nombre": "ARROZ YAMANI",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1RiePI2Fs0zkEbnaZzjQuI19i3uJtcxQn/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Arroz integral de sabor suave y textura firme, ideal para guarniciones, ensaladas y bowls. Conserva el salvado, por lo que aporta hidratos de carbono complejos, fibra, vitaminas del grupo B y minerales.",
+   "origen": "sheet"
+  },
+  "1134": {
+   "nombre": "AVELLANAS SIN CASCARA",
+   "bulto": "10 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1aJSoUs-mQkVvjAII9QM7n73cIpDNFwmr/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Avellanas de sabor delicado y textura crocante, ideales para colaciones, chocolates y repostería. Aportan grasas insaturadas, fibra, vitamina E y minerales como magnesio y cobre.",
+   "origen": "sheet"
+  },
+  "1135": {
+   "nombre": "AVENA ARROLLADA GRUESA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Y6Do4jttfSx_kCoknumMYRFQ8oP-lEw2/view",
+   "rubro": "CEREALES",
+   "desc": "Cereal de sabor suave y textura versátil, ideal para desayunos, granolas, galletas y preparaciones calientes. Aporta hidratos de carbono complejos, fibra soluble y proteína vegetal, además de minerales como magnesio y fósforo.",
+   "origen": "sheet"
+  },
+  "1136": {
+   "nombre": "AVENA INSTANTÁNEA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1T1EtpnddycW6n2lZy9DxfBBXFpMvdROQ/view",
+   "rubro": "CEREALES",
+   "desc": "Cereal de sabor suave y textura versátil, ideal para desayunos, granolas, galletas y preparaciones calientes. Aporta hidratos de carbono complejos, fibra soluble y proteína vegetal, además de minerales como magnesio y fósforo.",
+   "origen": "sheet"
+  },
+  "1137": {
+   "nombre": "AVENA TRADICIONAL",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Wrrzd3hO2ew6ry9B0tZ9rpmtMPzYcWhv/view",
+   "rubro": "CEREALES",
+   "desc": "Cereal de sabor suave y textura versátil, ideal para desayunos, granolas, galletas y preparaciones calientes. Aporta hidratos de carbono complejos, fibra soluble y proteína vegetal, además de minerales como magnesio y fósforo.",
+   "origen": "sheet"
+  },
+  "1138": {
+   "nombre": "AZAFRAN ESPAÑOL X CAPSULA",
+   "bulto": "10 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1vpzc6luyyWsCPGbYK2HfZCld8GEq3Zvv/view",
+   "rubro": "ESPECIAS",
+   "desc": "Especia de aroma delicado y color intenso, ideal para arroces, salsas y guisos. Se utiliza en cantidades muy pequeñas, por lo que su aporte nutricional por porción es reducido.",
+   "origen": "sheet"
+  },
+  "1140": {
+   "nombre": "AZUCAR IMPALPABLE",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1A0qdFEmUs_jNrUES8ccOmdecshqTJqma/view",
+   "rubro": "AZUCAR, CACAO Y REPOSTERIA",
+   "desc": "Azúcar molida muy fina, de textura sedosa y rápida disolución, ideal para glasés, coberturas, rellenos y decoración. Ayuda a lograr terminaciones delicadas y homogéneas en repostería.",
+   "origen": "sheet"
+  },
+  "1141": {
+   "nombre": "AZUCAR MASCABO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/10WsWJ94Z3AzM3O5DXfjBiWYjoFBCgCk6/view",
+   "rubro": "AZUCAR, CACAO Y REPOSTERIA",
+   "desc": "Azúcar de caña de sabor intenso, notas acarameladas y textura húmeda, útil en infusiones y repostería. Aporta principalmente hidratos de carbono simples; sus minerales se encuentran en cantidades pequeñas.",
+   "origen": "sheet"
+  },
+  "1142": {
+   "nombre": "AZUCAR NEGRA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/14zx8vpTVr0QajXK3Sfe-E-SEb5X-EwMD/view",
+   "rubro": "AZUCAR, CACAO Y REPOSTERIA",
+   "desc": "Azúcar de color oscuro, textura húmeda y sabor profundo a melaza, ideal para panes, galletas y tortas. Aporta humedad, color y un perfil acaramelado a las preparaciones.",
+   "origen": "sheet"
+  },
+  "2074": {
+   "nombre": "BARRA PROTEICA X40 GR - SIN TACC - CRUDDA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1xV00r5HSo3zy6rGeo_d5Yj28DoWrdl2j/view",
+   "rubro": "SNACK",
+   "desc": "Barra práctica para una colación, formulada con un aporte adicional de proteína. También puede aportar hidratos de carbono, grasas y fibra; los valores y edulcorantes dependen de la variedad.",
+   "origen": "sheet"
+  },
+  "1147": {
+   "nombre": "BASTONCITOS DE SALVADO DE TRIGO Y AVENA",
+   "bulto": "2,5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/19pulxRbH7xL56FagImtf_tiyKI4iPlvm/view",
+   "rubro": "CEREALES",
+   "desc": "Cereal de sabor suave y textura versátil, ideal para desayunos, granolas, galletas y preparaciones calientes. Aporta hidratos de carbono complejos, fibra soluble y proteína vegetal, además de minerales como magnesio y fósforo.",
+   "origen": "sheet"
+  },
+  "1150": {
+   "nombre": "BERENJENAS CONDIMENTADAS X200 GR - DURANG",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1vivsZ1XVLxnKOoE4npMrRJpz-VKziFom/view",
+   "rubro": "ENCURTIDOS",
+   "desc": "Berenjenas condimentadas de textura tierna y sabor especiado, ideales para picadas y sándwiches. Aportan fibra; grasas y sodio dependen del aceite, la salmuera y los condimentos utilizados.",
+   "origen": "sheet"
+  },
+  "2089": {
+   "nombre": "BICARBONATO  DE SODIO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1gyE8yPEaayBGMFLEmP6B_ijIRyW9apiA/view",
+   "rubro": "ESPECIAS",
+   "desc": "Ingrediente alcalino de uso culinario, útil como leudante o regulador de acidez en distintas preparaciones. Aporta sodio y se utiliza en cantidades pequeñas según la receta.",
+   "origen": "sheet"
+  },
+  "1151": {
+   "nombre": "BICARBONATO DE SODIO X50 GR - INDIAS",
+   "bulto": "25 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/17575rt-rqMMtAt_utc3qRj5ufJubO4OO/view",
+   "rubro": "ESPECIAS",
+   "desc": "Ingrediente versátil que ayuda a regular la acidez y favorece preparaciones más aireadas cuando se combina con ingredientes ácidos. Ideal para repostería, panificados y distintas recetas caseras.",
+   "origen": "sheet"
+  },
+  "1154": {
+   "nombre": "BOLDO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1J9BdkXR2a7LzKz2xazGBpa8jwTd5hmcV/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Hojas de aroma marcado y sabor herbal levemente amargo, elegidas tradicionalmente para preparar infusiones después de las comidas. Se combinan muy bien con menta, cedrón o un toque de miel.",
+   "origen": "sheet"
+  },
+  "1155": {
+   "nombre": "BOLITAS DE CHOCOLATE",
+   "bulto": "2,5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Q56-RkzQo7pP8geqUZ-AGVchPl4ItYdr/view",
+   "rubro": "CEREALES",
+   "desc": "Cereal crocante saborizado, práctico para desayunos y colaciones. Aporta principalmente hidratos de carbono; el contenido de azúcares, grasas y sodio depende de la formulación.",
+   "origen": "sheet"
+  },
+  "1163": {
+   "nombre": "CACAO AMARGO DE BRASIL",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/19jMlGqwqxZcMIC8f7D5QAQIHX8we9RiH/view",
+   "rubro": "AZUCAR, CACAO Y REPOSTERIA",
+   "desc": "Cacao sin azúcar de sabor intenso, ideal para repostería, bebidas y preparaciones con chocolate. Aporta fibra, minerales como magnesio y hierro, y compuestos antioxidantes naturales del cacao.",
+   "origen": "sheet"
+  },
+  "2216": {
+   "nombre": "CAFE VERDE X30 COMPRIMIDOS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1s_HQee3Ct7AVUZNXKhc64AwL58l6b-XF/view",
+   "desc": "Extracto de café verde en comprimidos, fuente de compuestos vegetales propios del grano sin tostar. Una opción práctica para quienes buscan sumar ingredientes de origen natural a su rutina activa.",
+   "origen": "sheet"
+  },
+  "1167": {
+   "nombre": "CANELA EN RAMA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1yLOgWp7aQmQ6Gfv4Zo-XRDknTZoLqrhi/view",
+   "rubro": "ESPECIAS",
+   "desc": "Especia de aroma cálido y sabor levemente dulce, ideal para infusiones, frutas y repostería. Se usa en pequeñas cantidades y aporta compuestos antioxidantes naturales.",
+   "origen": "sheet"
+  },
+  "1168": {
+   "nombre": "CANELA MOLIDA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1WXIYjf82ASvUYhrC3r924VmhPWNc9i3-/view",
+   "rubro": "ESPECIAS",
+   "desc": "Especia de aroma cálido y sabor levemente dulce, ideal para infusiones, frutas y repostería. Se usa en pequeñas cantidades y aporta compuestos antioxidantes naturales.",
+   "origen": "sheet"
+  },
+  "1176": {
+   "nombre": "CARDAMOMO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1gBK5oIsBtJbQv88srpZ6DZct7McJdEX7/view",
+   "rubro": "ESPECIAS",
+   "desc": "Especia cítrica y aromática, ideal para infusiones, curries, panes y postres. Se utiliza en pequeñas cantidades y aporta aceites esenciales responsables de su aroma.",
+   "origen": "sheet"
+  },
+  "2080": {
+   "nombre": "CARDOMARIANO X30 CAPSULAS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1ZW2LgeqdKgWWlI5Tn3W0-P4xDIy3L9HN/view",
+   "desc": "Cardo mariano concentrado en un formato simple de incorporar. Esta planta es tradicionalmente valorada en rutinas de bienestar digestivo y aporta compuestos vegetales como la silimarina.",
+   "origen": "sheet"
+  },
+  "2218": {
+   "nombre": "CAROTENO X10 CAPSULAS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1iFdEtBZgmu1ZI6I7Ed_HxhNyYRIDqWrP/view",
+   "desc": "Betacaroteno en cápsulas, un pigmento vegetal que el organismo puede convertir en vitamina A. La vitamina A participa en el mantenimiento de la visión, la piel y el funcionamiento normal del sistema inmune.",
+   "origen": "sheet"
+  },
+  "1178": {
+   "nombre": "CASCARILLA DE CACAO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/15FzyEn5HGuv699E9UBWoUIJT_oI7QHZ3/view",
+   "rubro": "AZUCAR, CACAO Y REPOSTERIA",
+   "desc": "Cáscara aromática del grano de cacao, ideal para preparar infusiones con notas suaves a chocolate. Contiene fibra y compuestos naturales del cacao; su aporte depende de la cantidad utilizada y del modo de preparación.",
+   "origen": "sheet"
+  },
+  "1180": {
+   "nombre": "CASTAÑAS CAJU",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Xoz8PXa0yjIg4WT0HIART70CGIFopFWP/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Fruto seco de textura crocante, ideal para colaciones, granolas y preparaciones. Aporta grasas insaturadas, proteína vegetal, fibra y minerales.",
+   "origen": "sheet"
+  },
+  "1182": {
+   "nombre": "CEBOLLA EN ESCAMAS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1vASYt2UrVhhl1AA7fXeWlWxGUz7_qosQ/view",
+   "rubro": "ESPECIAS",
+   "desc": "Cebolla deshidratada de sabor concentrado, práctica para sopas, salsas y adobos. Aporta pequeñas cantidades de fibra y compuestos vegetales; puede rehidratarse durante la cocción.",
+   "origen": "sheet"
+  },
+  "1185": {
+   "nombre": "CEBOLLITAS EN VINAGRE X330 GR - DURANG",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1mfqmzHF8EdLPlM2mrwP5hP9yFkQv3jrN/view",
+   "rubro": "ENCURTIDOS",
+   "origen": "sheet"
+  },
+  "1188": {
+   "nombre": "CEREZAS AL MARRASCHINO X170 GR - AGROIANNI",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/11j2OvzMbXf8HlUc_LepoKfIJ2zhgrqpZ/view",
+   "rubro": "LINEA GOURMET",
+   "desc": "Cerezas en almíbar de color intenso y sabor dulce, ideales para coctelería, helados y decoración de postres. Su brillo y presentación aportan un acabado atractivo a cada preparación.",
+   "origen": "sheet"
+  },
+  "1193": {
+   "nombre": "CEREZAS AL MARRASCHINO X330 GR - AGROIANNI",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1n-AmN8O6FFR4JPZ7DXpiOGF0SKi6uoZD/view",
+   "rubro": "LINEA GOURMET",
+   "desc": "Cerezas en almíbar de color intenso y sabor dulce, ideales para coctelería, helados y decoración de postres. Su brillo y presentación aportan un acabado atractivo a cada preparación.",
+   "origen": "sheet"
+  },
+  "1201": {
+   "nombre": "CHIMICHURRI",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1lqMuR5X-im_1fuC3d_k4-z-qmpWLDcBe/view",
+   "rubro": "ESPECIAS",
+   "desc": "Mezcla de hierbas y especias ideal para marinadas, carnes y vegetales. Aporta sabor con poca cantidad; el contenido de sodio depende de si la preparación incluye sal.",
+   "origen": "sheet"
+  },
+  "1202": {
+   "nombre": "CHIPS DE BANANA",
+   "bulto": "6,8 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1tHz0CPQn94o34AE_oymNrsxf_gCoDDya/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Rodajas de banana de textura crocante y sabor dulce, prácticas para colaciones y mezclas. Aportan principalmente hidratos de carbono; grasas y azúcares pueden variar según el método de elaboración.",
+   "origen": "sheet"
+  },
+  "1204": {
+   "nombre": "CHUCRUT X600 GR - ALCARAZ GOURMET",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1BLQaKI6BCeVw_78YR0DcVZBQUMm9HoVK/view",
+   "rubro": "ENCURTIDOS",
+   "desc": "Repollo fermentado de sabor ácido y textura crocante, ideal como guarnición o para sándwiches. Aporta fibra y productos de la fermentación; el sodio puede ser elevado según la elaboración.",
+   "origen": "sheet"
+  },
+  "1206": {
+   "nombre": "CIRUELA PRESIDENTE SIN CAROZO",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Tedikm7hqYFZZGrkfGX1KRlF2b1ETX8r/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Ciruelas deshidratadas de sabor dulce y textura tierna, prácticas para colaciones y repostería. Aportan hidratos de carbono, fibra, potasio y compuestos vegetales naturales.",
+   "origen": "sheet"
+  },
+  "1207": {
+   "nombre": "CIRUELAS D`AGEN CON CAROZO",
+   "bulto": "10 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/19xXY0pEbQvvg7sMKeDGhGmMqLaZFYnFA/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Ciruelas deshidratadas de sabor dulce y textura tierna, prácticas para colaciones y repostería. Aportan hidratos de carbono, fibra, potasio y compuestos vegetales naturales.",
+   "origen": "sheet"
+  },
+  "1208": {
+   "nombre": "CIRUELAS TIERNIZADAS SIN CAROZO",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1UaJqE6bpmw1tzb1xHxIzodRhMBZsqcHV/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Ciruelas deshidratadas de sabor dulce y textura tierna, prácticas para colaciones y repostería. Aportan hidratos de carbono, fibra, potasio y compuestos vegetales naturales.",
+   "origen": "sheet"
+  },
+  "2076": {
+   "nombre": "CITRATO DE MAGNESIO X30 COMPRIMIDOS - EL  NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1mRf1BFbOxI8NihwSkBQUNzjwF9W-ulYC/view",
+   "desc": "Magnesio en una presentación práctica para complementar la alimentación diaria. Este mineral participa en la producción de energía y en el funcionamiento normal de músculos y sistema nervioso.",
+   "origen": "sheet"
+  },
+  "2077": {
+   "nombre": "CITRATO DE POTASIO X30 COMPRIMIDOS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/11T6jTwiWh8vqbm2ReafK6EzW3UrdfWZr/view",
+   "desc": "Potasio en forma de citrato y en prácticos comprimidos. Este mineral participa en el equilibrio de líquidos y en el funcionamiento normal de músculos y sistema nervioso.",
+   "origen": "sheet"
+  },
+  "1209": {
+   "nombre": "CLAVO DE OLOR ENTERO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/10AZzo5zHczh5mib2nk55TMhenrY2W-7G/view",
+   "rubro": "ESPECIAS",
+   "desc": "Especia de aroma intenso, cálido y levemente picante, adecuada para infusiones, conservas y repostería. Se utiliza en cantidades pequeñas y aporta aceites esenciales naturales.",
+   "origen": "sheet"
+  },
+  "1211": {
+   "nombre": "COCO EN ESCAMAS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/13yWZQOqu5ijl1s3GTfAvjgy0utjCmGfq/view",
+   "rubro": "AZUCAR, CACAO Y REPOSTERIA",
+   "desc": "Coco deshidratado en láminas, de sabor suave y textura crocante, ideal para granolas, yogures y repostería. Aporta fibra y grasas, con predominio de grasas saturadas, además de minerales en cantidades variables.",
+   "origen": "sheet"
+  },
+  "1212": {
+   "nombre": "COCO RALLADO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/11d9JIijSF4dXlpzMgEpFLAulVjL2LUCH/view",
+   "rubro": "AZUCAR, CACAO Y REPOSTERIA",
+   "desc": "Pulpa de coco deshidratada y rallada, de sabor dulce natural y textura fina, ideal para tortas, galletas, rellenos y granolas. Aporta fibra, aroma tropical y una textura muy agradable.",
+   "origen": "sheet"
+  },
+  "2031": {
+   "nombre": "COLAGENO HIDROLIZADO - PEPTAN B 2000 LD",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/14NenshLi9fBZPcVZjxfVaIFcf9tGOJTf/view",
+   "rubro": "SUPLEMENTOS",
+   "desc": "Colágeno hidrolizado en una presentación fácil de sumar a la rutina. Aporta péptidos derivados del colágeno, una proteína naturalmente presente en piel, huesos, cartílagos y otros tejidos.",
+   "origen": "sheet"
+  },
+  "2222": {
+   "nombre": "COLAGENO X10 COMPRIMIDOS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1PMZLayzG6mqCWiG46kGKvGzdxB0XyfJe/view",
+   "desc": "Colágeno hidrolizado en una presentación fácil de sumar a la rutina. Aporta péptidos derivados del colágeno, una proteína naturalmente presente en piel, huesos, cartílagos y otros tejidos.",
+   "origen": "sheet"
+  },
+  "1214": {
+   "nombre": "COMINO MOLIDO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/14ga-yNjWExhPg_zBqPYRP8U20XTaTPA6/view",
+   "rubro": "ESPECIAS",
+   "desc": "Especia de aroma terroso y sabor cálido, ideal para legumbres, guisos y carnes. Se emplea en pequeñas cantidades y aporta compuestos aromáticos naturales.",
+   "origen": "sheet"
+  },
+  "1219": {
+   "nombre": "CONDIMENTO PARA ARROZ",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1mV89rz9BTpeWR_BspWModpBzXtGtq6VP/view",
+   "rubro": "ESPECIAS",
+   "desc": "Mezcla de especias diseñada para dar color, aroma y sabor a arroces, guisos y vegetales. Una forma simple de lograr preparaciones más intensas y apetitosas.",
+   "origen": "sheet"
+  },
+  "1229": {
+   "nombre": "COPOS DE MAIZ",
+   "bulto": "2,5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1P4UdCh-pg94nJfhD1wCBCNyniZMLzkwi/view",
+   "rubro": "CEREALES",
+   "desc": "Cereal de maíz liviano y crocante, práctico para desayunos y colaciones. Aporta principalmente hidratos de carbono; el contenido de azúcares y sodio depende de la formulación.",
+   "origen": "sheet"
+  },
+  "1228": {
+   "nombre": "COPOS DE MAIZ CON AZUCAR",
+   "bulto": "2,5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1L5n634OGcpybf7dAGm0hTnbx3y-OXPZC/view",
+   "rubro": "CEREALES",
+   "desc": "Cereal de maíz crocante con un toque dulce, práctico para desayunos y colaciones. Su textura liviana combina muy bien con leche, yogur, frutas o bebidas vegetales.",
+   "origen": "sheet"
+  },
+  "1101": {
+   "nombre": "CORAZONES DE ALCAUCIL CONDIMENTADOS X330 GR - DURANG",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1HArqd4wBBDbVAY4JGqOylHRqlV5Di-LA/view",
+   "rubro": "ENCURTIDOS",
+   "desc": "Corazones de alcaucil de textura tierna y sabor delicado, ideales para picadas, ensaladas y pastas. Aportan fibra; el sodio y las grasas dependen del líquido de cobertura y los condimentos.",
+   "origen": "sheet"
+  },
+  "1230": {
+   "nombre": "CORAZONES DE ALCAUCIL EN VINAGRE X300 GR - DURANG",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/12iWmYR5tCjRa5eN67cw2k6eeW3AJPk_D/view",
+   "rubro": "ENCURTIDOS",
+   "desc": "Corazones de alcaucil de textura tierna y sabor delicado, ideales para picadas, ensaladas y pastas. Aportan fibra; el sodio y las grasas dependen del líquido de cobertura y los condimentos.",
+   "origen": "sheet"
+  },
+  "2238": {
+   "nombre": "CREATINA MONOHIDRATO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1p1DC201LdeiFCMTYVAMZOiY5EWWXFFk_/view",
+   "rubro": "SUPLEMENTOS",
+   "desc": "Creatina monohidrato en polvo, uno de los suplementos más estudiados en nutrición deportiva. Es especialmente elegida para entrenamientos de fuerza y esfuerzos breves de alta intensidad.",
+   "origen": "sheet"
+  },
+  "2169": {
+   "nombre": "CURCUMA + PIMIENTA X30 COMPRIMIDOS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1_bjSV4yAeIyGT7WRMi-36m3vw2Z1eUGJ/view",
+   "desc": "Combinación de cúrcuma y pimienta, especias ricas en compuestos vegetales antioxidantes. La pimienta aporta piperina y completa una fórmula concentrada y práctica para la rutina diaria.",
+   "origen": "sheet"
+  },
+  "1236": {
+   "nombre": "CURCUMA MOLIDA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1GPRzBVDuypLKSEti6GOGlVC9JwMRyT_s/view",
+   "rubro": "ESPECIAS",
+   "desc": "Especia de color amarillo intenso y sabor terroso, ideal para arroces, curries, sopas y vegetales. Aporta curcuminoides naturales y un color vibrante que realza cada preparación.",
+   "origen": "sheet"
+  },
+  "1239": {
+   "nombre": "CURRY",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1jA1Da9nsYkxqb064qN-deDqSVofYK_sN/view",
+   "rubro": "ESPECIAS",
+   "desc": "Mezcla aromática de especias de perfil cálido, ideal para arroces, vegetales y salsas. Su composición y picor varían según la mezcla; se utiliza en pequeñas cantidades.",
+   "origen": "sheet"
+  },
+  "1240": {
+   "nombre": "CUSCUS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1sPguZghZaRYhB3z_t6QWeUhnHI7gXNMp/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Sémola de trigo precocida de cocción rápida y textura liviana, ideal para ensaladas y guarniciones. Aporta principalmente hidratos de carbono y algo de proteína; contiene gluten.",
+   "origen": "sheet"
+  },
+  "1242": {
+   "nombre": "DATILES DE EGIPTO CON CAROZO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1ggYi4CGKjZ9XCLcLwiXQoKgRtp-IhCP9/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Dátiles de sabor dulce y textura carnosa, ideales para colaciones, rellenos y preparaciones sin azúcar refinada. Aportan hidratos de carbono, fibra y minerales como potasio y magnesio.",
+   "origen": "sheet"
+  },
+  "2072": {
+   "nombre": "DIENTE DE LEON",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/18mTEIVJnA2Y3UI9ddfAnlKVnhfGDRRMa/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Hierba de sabor vegetal y levemente amargo, utilizada tradicionalmente en infusiones. Puede disfrutarse sola o combinada con otras hierbas para crear mezclas aromáticas y sin cafeína.",
+   "origen": "sheet"
+  },
+  "2403": {
+   "nombre": "DULCE DE ALCAYOTA X1 KG - DON FRANCISCO",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "",
+   "origen": "sheet"
+  },
+  "1244": {
+   "nombre": "DULCE DE ALCAYOTA X500 GR - DON FRANCISCO",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1hAmK_w0nFlj5twyDbbKKPHfwotPTyCIb/view",
+   "rubro": "DULCES, MIEL Y CHOCOLATES",
+   "desc": "Dulce frutal de textura fibrosa y sabor suave, ideal para tostadas, quesos y repostería. Aporta principalmente hidratos de carbono; la cantidad de azúcar depende de la receta.",
+   "origen": "sheet"
+  },
+  "1254": {
+   "nombre": "DULCE DE MEMBRILLO X1 KG - DON FRANCISCO",
+   "bulto": "1 unidad",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1wGO4YqplgiTtHKaJMhkW5-eC8h6xoc-1/view",
+   "rubro": "DULCES, MIEL Y CHOCOLATES",
+   "desc": "Dulce de membrillo de sabor frutado y textura firme, ideal para postres, rellenos y la clásica combinación con queso. Su consistencia permite cortarlo, servirlo y utilizarlo fácilmente en repostería.",
+   "origen": "sheet"
+  },
+  "1255": {
+   "nombre": "DULCE DE MEMBRILLO X5 KG - DON FRANCISCO",
+   "bulto": "1 unidad",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/18drVT084LD8IWwBZBA1ckFJY3iiZpvka/view",
+   "rubro": "DULCES, MIEL Y CHOCOLATES",
+   "origen": "sheet"
+  },
+  "1253": {
+   "nombre": "DULCE DE MEMBRILLO X500 GR - MUPAY",
+   "bulto": "20 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1M2tosfDbag8ZAAwyKx1kbQfsiw7okEBi/view",
+   "rubro": "DULCES, MIEL Y CHOCOLATES",
+   "desc": "Dulce de membrillo de sabor frutado y textura firme, ideal para postres, rellenos y la clásica combinación con queso. Su consistencia permite cortarlo, servirlo y utilizarlo fácilmente en repostería.",
+   "origen": "sheet"
+  },
+  "1681": {
+   "nombre": "DURAZNOS EN MITADES X 800 GR - VALLE DE LAS REINAS",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/15ItDERYBQ3-MiDwBEA9t1HY2y7aoMh1X/view",
+   "rubro": "LINEA GOURMET",
+   "origen": "sheet"
+  },
+  "1259": {
+   "nombre": "ENELDO EN SEMILLAS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1sq5b7TNau_jq6mH5KVC7MCcelnmq09uL/view",
+   "rubro": "SEMILLAS",
+   "desc": "Semillas aromáticas de sabor fresco y levemente anisado, ideales para encurtidos, panes y salsas. Se utilizan en pequeñas cantidades y aportan aceites esenciales naturales.",
+   "origen": "sheet"
+  },
+  "1263": {
+   "nombre": "ESENCIA ARTIFICIAL DE VAINILLA X 100 CC - INDIAS",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/19bIyRbLXWdeAbAWXd48C-5h7_3Batcai/view",
+   "rubro": "AZUCAR, CACAO Y REPOSTERIA",
+   "desc": "Saborizante concentrado con aroma a vainilla, práctico para perfumar tortas, cremas y postres. Se utiliza en pequeñas cantidades y su composición puede incluir aromatizantes, colorantes o conservantes según la etiqueta.",
+   "origen": "sheet"
+  },
+  "1264": {
+   "nombre": "ESPARRAGOS X250 GR - ALCARAZ GOURMET",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1MMKPiSQ6eUd3OsrGLPHAtSM65RCBam3x/view",
+   "rubro": "ENCURTIDOS",
+   "origen": "sheet"
+  },
+  "2032": {
+   "nombre": "EUCALIPTO EN HOJAS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1GmbKN3qrdwvYX4nm-iTQEo-w7Sna7rka/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Hojas de aroma intenso y balsámico, ideales para preparar infusiones aromáticas o disfrutar su perfume herbal. Su carácter fresco combina muy bien con miel, limón y otras hierbas.",
+   "origen": "sheet"
+  },
+  "1269": {
+   "nombre": "FECULA DE MANDIOCA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Wah3NjiqyA-U8PlvyFd3LDYdIsFHdkbS/view",
+   "rubro": "HARINAS",
+   "desc": "Fécula de textura fina y neutra, ideal para chipá, panificados y mezclas sin gluten. Aporta principalmente hidratos de carbono y ayuda a dar elasticidad a las masas.",
+   "origen": "sheet"
+  },
+  "1270": {
+   "nombre": "FINAS HIERBAS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1juMC_2Ac-qnLQfZCOIBapMnxOREGzAk2/view",
+   "rubro": "ESPECIAS",
+   "desc": "Mezcla de hierbas aromáticas de perfil suave, ideal para salsas, vegetales, huevos y carnes blancas. Aporta aroma con poca cantidad y su composición puede variar.",
+   "origen": "sheet"
+  },
+  "2217": {
+   "nombre": "FLEBOTONICO X30 COMPRIMIDOS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1F1_9MVWjAbpyX4QiKIyFh1Foh4qXMUqQ/view",
+   "desc": "Blend herbal concentrado en comprimidos, pensado para acompañar rutinas de bienestar corporal y movimiento cotidiano. Su presentación resulta práctica para llevar e incorporar todos los días.",
+   "origen": "sheet"
+  },
+  "1271": {
+   "nombre": "FRUTA ESCURRIDA",
+   "bulto": "10 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Q6aYP2IupHjGyGW62HuK0yczmhzAQgvn/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Fruta deshidratada de sabor concentrado y textura agradable, práctica para colaciones, granolas y repostería. Aporta hidratos de carbono, fibra y minerales, además de un dulzor frutal muy versátil.",
+   "origen": "sheet"
+  },
+  "1272": {
+   "nombre": "FRUTA GLASEADA",
+   "bulto": "2 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/11cW9L-NQ6hcmX5MEI-KkXIjNv-gNWyhZ/view",
+   "rubro": "DESHIDRATADOS",
+   "origen": "sheet"
+  },
+  "1954": {
+   "nombre": "FRUTA MULTICOLOR",
+   "bulto": "10 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1sJwlaZCtWN3eJshcjCjwgCc3KBQuK4fT/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Fruta deshidratada de sabor concentrado y textura agradable, práctica para colaciones, granolas y repostería. Aporta hidratos de carbono, fibra y minerales, además de un dulzor frutal muy versátil.",
+   "origen": "sheet"
+  },
+  "1273": {
+   "nombre": "FRUTILLA GLASEADA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1mB8nWKytdhw_aeVUxSXUXMEFg3E7Sq_E/view",
+   "rubro": "DESHIDRATADOS",
+   "origen": "sheet"
+  },
+  "2335": {
+   "nombre": "GARBANZOS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1XKJbeUo9SjbACD4dtqJQmF4u5To__P37/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Legumbre de textura cremosa y sabor suave, ideal para hummus, guisos y ensaladas. Aporta proteína vegetal, hidratos de carbono complejos, fibra, hierro y folato.",
+   "origen": "sheet"
+  },
+  "1276": {
+   "nombre": "GARRAPIÑADA DE MANI",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Aak-uAtZrdeIs0wgpM1t1J43vNSCY5bZ/view",
+   "rubro": "DULCES, MIEL Y CHOCOLATES",
+   "desc": "Maní tostado recubierto con caramelo crocante, de sabor dulce y textura irresistible. Ideal para compartir, sumar a una picada dulce o disfrutar como un pequeño gusto.",
+   "origen": "sheet"
+  },
+  "1702": {
+   "nombre": "GELATINA SIN SABOR",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1UQVEGcK8u84nFucxoQlFkI3gJjVppxfu/view",
+   "rubro": "ESPECIAS",
+   "desc": "Gelificante neutro utilizado para dar estructura a postres, mousses y preparaciones saladas. Aporta principalmente proteínas derivadas del colágeno; la cantidad por porción depende de la receta.",
+   "origen": "sheet"
+  },
+  "1281": {
+   "nombre": "GERMEN DE TRIGO NATURAL",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1oMEhZdsXYUDtcu9zYPz0DDc7lSkGBq68/view",
+   "rubro": "HARINAS",
+   "desc": "Parte nutritiva del grano de trigo, de sabor suave y textura granulada, ideal para yogures y masas. Aporta proteína, fibra, vitamina E y vitaminas del grupo B; contiene gluten.",
+   "origen": "sheet"
+  },
+  "2082": {
+   "nombre": "GINKGO BILOBA FORTE X10 COMPRIMIDOS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1LDrJVsyrk7Y2XrmBCItUR2JiJskYgnrR/view",
+   "desc": "Ginkgo biloba concentrado en comprimidos, una planta tradicionalmente elegida para rutinas de enfoque y bienestar mental. Su formato compacto permite sumarlo fácilmente al día.",
+   "origen": "sheet"
+  },
+  "2078": {
+   "nombre": "GLICINATO DE MAGNESIO X 30 COMPRIMIDOS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1QTEiTTOducupRnuYSwMy0yjx96l9KbER/view",
+   "desc": "Magnesio en una presentación práctica para complementar la alimentación diaria. Este mineral participa en la producción de energía y en el funcionamiento normal de músculos y sistema nervioso.",
+   "origen": "sheet"
+  },
+  "1282": {
+   "nombre": "GLUTEN DE TRIGO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1W6BzCdVlZbVdA-vLPnPwztzQX5wefh_w/view",
+   "rubro": "HARINAS",
+   "desc": "Proteína concentrada del trigo, utilizada para mejorar la elasticidad y estructura de panes o elaborar seitán. Aporta principalmente proteína y ayuda a conseguir masas más firmes y esponjosas. Contiene gluten.",
+   "origen": "sheet"
+  },
+  "1912": {
+   "nombre": "GRANOLA CON CHIPS DE CHOCOLATE",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1wt5BnuZzh5Ef8olB_3V36TU-2dfdI8AK/view",
+   "rubro": "CEREALES",
+   "desc": "Mezcla crocante a base de cereales, pensada para combinar con yogur, leche o frutas. Aporta hidratos de carbono, fibra y, según sus ingredientes, grasas y proteína vegetal; azúcares y calorías varían según la receta.",
+   "origen": "sheet"
+  },
+  "1286": {
+   "nombre": "GRANOLA MIX BERRIES - KÖS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1y2j0FAvDW0Yp3411EB6rCjfiYk1JVbpg/view",
+   "rubro": "CEREALES",
+   "desc": "Mezcla crocante a base de cereales, pensada para combinar con yogur, leche o frutas. Aporta hidratos de carbono, fibra y, según sus ingredientes, grasas y proteína vegetal; azúcares y calorías varían según la receta.",
+   "origen": "sheet"
+  },
+  "1287": {
+   "nombre": "GRANOLA MIX ENERGETICA - KÖS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1xZkK9rKGEu0Ih7cijzQIeR-hMUPK1nW5/view",
+   "rubro": "CEREALES",
+   "desc": "Mezcla crocante a base de cereales, pensada para combinar con yogur, leche o frutas. Aporta hidratos de carbono, fibra y, según sus ingredientes, grasas y proteína vegetal; azúcares y calorías varían según la receta.",
+   "origen": "sheet"
+  },
+  "1289": {
+   "nombre": "GRANOLA MIX TROPICAL - KÖS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1vDPGng1Bx-pfymsbqZquQ8o3DuurzGou/view",
+   "rubro": "CEREALES",
+   "desc": "Mezcla crocante a base de cereales, pensada para combinar con yogur, leche o frutas. Aporta hidratos de carbono, fibra y, según sus ingredientes, grasas y proteína vegetal; azúcares y calorías varían según la receta.",
+   "origen": "sheet"
+  },
+  "1897": {
+   "nombre": "GRANOLA SIN PASAS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1D16zkgWKPgqaxR0o7lwIlugBBDKoeM1F/view",
+   "rubro": "CEREALES",
+   "desc": "Mezcla crocante a base de cereales, pensada para combinar con yogur, leche o frutas. Aporta hidratos de carbono, fibra y, según sus ingredientes, grasas y proteína vegetal; azúcares y calorías varían según la receta.",
+   "origen": "sheet"
+  },
+  "1911": {
+   "nombre": "GRANOLA TRADICIONAL SIN FRUTOS SECOS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1gZTHH73FsNkAfJ0CDc6u7WCmaul_3mF9/view",
+   "rubro": "CEREALES",
+   "desc": "Mezcla crocante a base de cereales, pensada para combinar con yogur, leche o frutas. Aporta hidratos de carbono, fibra y, según sus ingredientes, grasas y proteína vegetal; azúcares y calorías varían según la receta.",
+   "origen": "sheet"
+  },
+  "1291": {
+   "nombre": "HARINA DE ALGARROBA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1jpPSXX6vdFBPGorCqfdhWOP1bZgoenub/view",
+   "rubro": "HARINAS",
+   "desc": "Harina de sabor dulce y tostado, ideal para repostería y bebidas como alternativa parcial al cacao. Aporta fibra, hidratos de carbono y minerales como calcio y potasio.",
+   "origen": "sheet"
+  },
+  "1293": {
+   "nombre": "HARINA DE ALMENDRAS SIN PIEL",
+   "bulto": "10 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1nIG8vVlVdpwVf3pmM1fRHMD7oZC5etah/view",
+   "rubro": "HARINAS",
+   "desc": "Harina de textura húmeda y sabor suave, ideal para repostería y preparaciones con menor proporción de cereales. Aporta grasas insaturadas, proteína vegetal, fibra, vitamina E y magnesio.",
+   "origen": "sheet"
+  },
+  "1294": {
+   "nombre": "HARINA DE ARROZ",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Gnmcuy25XM85NbHF3ptKDTIUUxvrb1kw/view",
+   "rubro": "HARINAS",
+   "desc": "Harina de sabor neutro y textura fina, útil en rebozados, salsas y mezclas sin gluten. Aporta principalmente hidratos de carbono y combina bien con otras harinas para mejorar la textura.",
+   "origen": "sheet"
+  },
+  "1295": {
+   "nombre": "HARINA DE AVENA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/156HiZP8rl-2TTpAp6lBpGiIP_O1W6Xti/view",
+   "rubro": "HARINAS",
+   "desc": "Harina de sabor suave, ideal para panqueques, galletas, panes y budines. Aporta hidratos de carbono complejos, fibra soluble y proteína vegetal, además de una textura agradable.",
+   "origen": "sheet"
+  },
+  "1296": {
+   "nombre": "HARINA DE CENTENO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1cACKXLLx6rdjnvh7f69XoHLh6ZOT_dGv/view",
+   "rubro": "HARINAS",
+   "origen": "sheet"
+  },
+  "1297": {
+   "nombre": "HARINA DE CHIA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/10m_L-7oc55O3wdP8gCKjcemmNCpamRFY/view",
+   "rubro": "HARINAS",
+   "desc": "Semilla de chía molida, útil para enriquecer panes, licuados y preparaciones. Aporta fibra, grasas omega 3 de origen vegetal, proteína y minerales.",
+   "origen": "sheet"
+  },
+  "1298": {
+   "nombre": "HARINA DE COCO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1TUeRvGC1e0qrr2t2lCyAAtGlaooCzRCf/view",
+   "rubro": "HARINAS",
+   "desc": "Harina rica en fibra y de sabor suave a coco, ideal para repostería y preparaciones que absorben bastante líquido. Aporta fibra, algo de proteína y grasas, principalmente saturadas.",
+   "origen": "sheet"
+  },
+  "1299": {
+   "nombre": "HARINA DE GARBANZO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1WE3hZUJpr9AAy8kbArE1T56acjz7Sq73/view",
+   "rubro": "HARINAS",
+   "desc": "Harina de legumbre de sabor característico, ideal para fainá, rebozados y masas saladas. Aporta proteína vegetal, fibra, hierro y folato.",
+   "origen": "sheet"
+  },
+  "1300": {
+   "nombre": "HARINA DE LINO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1COqF5AUobH03trgKdvqXmZzs-WJlSNAZ/view",
+   "rubro": "HARINAS",
+   "desc": "Semilla de lino molida, útil para panes, licuados y como aglutinante en recetas. Aporta fibra, grasas omega 3 de origen vegetal y proteína.",
+   "origen": "sheet"
+  },
+  "1303": {
+   "nombre": "HARINA DE MAIZ BLANCO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1MEHVUOUYtozuVNdJmR5U-uEs30vhe3FK/view",
+   "rubro": "HARINAS",
+   "desc": "Harina de maíz de sabor suave, ideal para panes, tortillas y preparaciones tradicionales. Aporta principalmente hidratos de carbono, además de algo de fibra y proteína vegetal.",
+   "origen": "sheet"
+  },
+  "1305": {
+   "nombre": "HARINA DE SOJA DESGRASADA FINA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1cPZxHhR5GxR50Gtfbum3cbEWTSeH3GTV/view",
+   "rubro": "HARINAS",
+   "desc": "Harina de soja desgrasada, útil para enriquecer panes, masas y preparaciones vegetales. Aporta una proporción alta de proteína vegetal y fibra; contiene soja.",
+   "origen": "sheet"
+  },
+  "2041": {
+   "nombre": "HARINA DE TRIGO SARRACENO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1HwPLGh5A4w3qY8QQ8oIB26nY6TFCWUY7/view",
+   "rubro": "HARINAS",
+   "desc": "Harina de pseudocereal de sabor intenso, ideal para panqueques, panes y mezclas sin trigo. Aporta hidratos de carbono complejos, fibra, proteína vegetal y magnesio.",
+   "origen": "sheet"
+  },
+  "1306": {
+   "nombre": "HARINA INTEGRAL FINA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1ZsaH95aMHYwlxty7pXQAr6PhDqVQwfvV/view",
+   "rubro": "HARINAS",
+   "desc": "Harina de trigo que conserva el salvado y el germen, ideal para panes y masas de sabor más intenso. Aporta hidratos de carbono complejos, fibra, proteína y vitaminas del grupo B; contiene gluten.",
+   "origen": "sheet"
+  },
+  "1822": {
+   "nombre": "HARINILLA DE MAIZ PARAGUAYA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1rx-t9NwtNgzUjHfOO-5-RZeN5GpPi6kQ/view",
+   "rubro": "HARINAS",
+   "desc": "Harina fina de maíz, ingrediente tradicional para preparar sopa paraguaya, chipá guazú, polenta, panes y otras recetas. Aporta sabor suave, color dorado y energía proveniente de sus carbohidratos.",
+   "origen": "sheet"
+  },
+  "1849": {
+   "nombre": "HIBISCUS FLOR",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1uK3AI57jCBvklH2c21huCO0TzIbpimI5/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Flores secas para una infusión de color rojo intenso y sabor ácido y frutado. No contienen cafeína de forma natural y aportan pigmentos vegetales antioxidantes.",
+   "origen": "sheet"
+  },
+  "1308": {
+   "nombre": "HIGOS EN ALMIBAR X3,8 KG - MUPAY",
+   "bulto": "2 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "",
+   "rubro": "DULCES, MIEL Y CHOCOLATES",
+   "desc": "Higos enteros en almíbar, de textura tierna y sabor naturalmente frutal. Ideales para postres, tablas de quesos, helados o para disfrutar solos.",
+   "origen": "sheet"
+  },
+  "1309": {
+   "nombre": "HIGOS EN ALMIBAR X450 GR - MUPAY",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1PQQftkdPVjy3Cjj_EcSJpyF1jUgeZOuf/view",
+   "rubro": "DULCES, MIEL Y CHOCOLATES",
+   "desc": "Higos enteros en almíbar, de textura tierna y sabor dulce, ideales para postres y tablas con queso. Aportan hidratos de carbono y fibra; el almíbar incrementa el contenido de azúcares.",
+   "origen": "sheet"
+  },
+  "1310": {
+   "nombre": "HIGOS EN ALMIBAR X850 GR - MUPAY",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1LmCWoruv2t6UFbVl7KvFShzSwa6z-bub/view",
+   "rubro": "DULCES, MIEL Y CHOCOLATES",
+   "origen": "sheet"
+  },
+  "1311": {
+   "nombre": "HIGOS TIERNIZADOS",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Q9lPGXaeVdr2bRx8us-T_J2OFgI9XW54/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Higos deshidratados de sabor dulce y textura tierna, ideales para colaciones, tablas y repostería. Aportan hidratos de carbono, fibra, potasio y calcio en cantidades variables.",
+   "origen": "sheet"
+  },
+  "1312": {
+   "nombre": "HOJAS DE PARRA X500 GR - ALCARAZ GOURMET",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1r2V2OVRhcQ44AM-wYcqfjB3GjOIXGCIQ/view",
+   "rubro": "LINEA GOURMET",
+   "origen": "sheet"
+  },
+  "1314": {
+   "nombre": "HONGOS SECOS DE PINO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/12GNbZT09bgyQDMhq775VmHtpqU8_9ued/view",
+   "rubro": "ESPECIAS",
+   "desc": "Hongos deshidratados de aroma intenso y sabor umami, ideales para risottos, salsas y guisos. Al hidratarlos recuperan una textura agradable y liberan todo su carácter en la cocción.",
+   "origen": "sheet"
+  },
+  "1316": {
+   "nombre": "HUMO NATURAL X250 ML - 1854",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1gtp5JtqUjuytfA2y0RkeRxLPoncp4skt/view",
+   "rubro": "LINEA GOURMET",
+   "desc": "Saborizante líquido de aroma ahumado concentrado, ideal para carnes, vegetales, salsas y marinadas. Unas gotas alcanzan para aportar profundidad y un auténtico perfil ahumado.",
+   "origen": "sheet"
+  },
+  "1319": {
+   "nombre": "JENGIBRE GLASEADO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1f8nx3YkZ3XqTBJOr7RbUnkiIuX8F9dFw/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Jengibre de sabor picante y dulce, con textura tierna y cobertura azucarada. Ideal para repostería, tablas dulces o disfrutar como una colación diferente y aromática.",
+   "origen": "sheet"
+  },
+  "1320": {
+   "nombre": "JENGIBRE MOLIDO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1v1r7FzJRkSlfaUHaVJBqvOWLnvUImi5F/view",
+   "rubro": "ESPECIAS",
+   "desc": "Especia de sabor cítrico y picante, ideal para infusiones, curries y repostería. Se utiliza en pequeñas cantidades y aporta compuestos aromáticos naturales como los gingeroles.",
+   "origen": "sheet"
+  },
+  "1322": {
+   "nombre": "JUGO DE ARANDANOS CON CHIA X 1.5 L - MAMMA CHIA",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1riG7NYpsb_yugJ59mXm6_RmR-nHsEfBB/view",
+   "rubro": "BEBIDAS",
+   "origen": "sheet"
+  },
+  "1323": {
+   "nombre": "JUGO DE ARANDANOS CON STEVIA X 1,5 L - FITOPLUS",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/11W4JlPlYf0KKOgQGVLV_1er3mRiYEkgu/view",
+   "rubro": "BEBIDAS",
+   "origen": "sheet"
+  },
+  "1324": {
+   "nombre": "JUGO DE ARANDANOS X1,5 L - FITOPLUS",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1EXfxe04nERNmj0f-T0n6JU8W6es32oUv/view",
+   "rubro": "BEBIDAS",
+   "desc": "Bebida frutal de sabor ácido y refrescante, ideal para tomar bien fría o sumar a tragos sin alcohol. Los arándanos aportan su color característico y compuestos antioxidantes naturales.",
+   "origen": "sheet"
+  },
+  "1325": {
+   "nombre": "JUGO DE LIMON, MENTA Y JENGIBRE X 1,5 L - FITOPLUS",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1WYxSbZi5JI5x8P56d8jSnfO7ZcPIG1PB/view",
+   "rubro": "BEBIDAS",
+   "origen": "sheet"
+  },
+  "1333": {
+   "nombre": "JULIANA SIN PAPA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/11NW2sPd4I0-ZMrrUlZ-2vl-VrrgavtUV/view",
+   "rubro": "ESPECIAS",
+   "desc": "Mezcla de vegetales deshidratados cortados en tiras, práctica para sopas, arroces y guisos. Aporta fibra y compuestos vegetales; el contenido de sodio depende de la formulación.",
+   "origen": "sheet"
+  },
+  "1350": {
+   "nombre": "LAUREL EN HOJAS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/19bwGgV6YoezMrNPaHJmyQgY2jXW8cmER/view",
+   "rubro": "ESPECIAS",
+   "desc": "Hoja aromática de sabor profundo, ideal para guisos, salsas, legumbres y marinadas. Se utiliza durante la cocción y se retira antes de servir.",
+   "origen": "sheet"
+  },
+  "2037": {
+   "nombre": "LAVANDA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1ufgqaHCVmKoYPYmGon4qw6XcUSBFtltl/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Flores aromáticas de perfil floral intenso, útiles en infusiones y preparaciones culinarias en pequeñas cantidades. No contienen cafeína de forma natural.",
+   "origen": "sheet"
+  },
+  "1727": {
+   "nombre": "LECHE DE COCO EN POLVO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1avRNwF5Bzk5yg3i5ZHPG-BwUMo3bhjUb/view",
+   "rubro": "BEBIDAS",
+   "desc": "Coco deshidratado en polvo para preparar bebidas, salsas y postres de textura cremosa. Aporta principalmente grasas, con predominio de grasas saturadas; la composición puede variar según la formulación.",
+   "origen": "sheet"
+  },
+  "1359": {
+   "nombre": "LENTEJAS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1slNFYnthbX_QkulAuG9pmsMKgmUGQ2bz/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Legumbre de sabor suave y textura firme, ideal para guisos, ensaladas y hamburguesas vegetales. Aporta proteína vegetal, fibra, hierro, folato e hidratos de carbono complejos.",
+   "origen": "sheet"
+  },
+  "1358": {
+   "nombre": "LENTEJAS TURCAS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1escUDrEOQkorLP0I549-_qqKqBoCIYTV/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Lentejas rojas de cocción rápida y textura cremosa, ideales para sopas, purés y curries. Aportan proteína vegetal, fibra, hierro y folato.",
+   "origen": "sheet"
+  },
+  "1360": {
+   "nombre": "LEVADURA DE CERVEZA NUTRICIONAL",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1F9LkUpAOH4Bv7o72qdHSlZcx08vO3f4O/view",
+   "rubro": "ESPECIAS",
+   "desc": "Levadura inactiva de sabor intenso y perfil umami, útil para espolvorear o enriquecer preparaciones. Aporta proteína, fibra y vitaminas del grupo B en cantidades que dependen del producto.",
+   "origen": "sheet"
+  },
+  "1363": {
+   "nombre": "MACA EN POLVO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1z6dH_ZbRJYvrqG5pUgHPU6wk-Jwz4J3B/view",
+   "rubro": "ESPECIAS",
+   "desc": "Raíz andina molida de sabor terroso y levemente dulce, práctica para licuados, yogures y repostería. Aporta hidratos de carbono, fibra y pequeñas cantidades de minerales.",
+   "origen": "sheet"
+  },
+  "1364": {
+   "nombre": "MAIZ BLANCO PISADO PARTIDO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1pE5WXu00PeFxhEhew2Is44kYfaqxQFNt/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Maíz blanco partido, ideal para guisos y preparaciones de cocción prolongada. Aporta principalmente hidratos de carbono, además de fibra y pequeñas cantidades de proteína vegetal.",
+   "origen": "sheet"
+  },
+  "1365": {
+   "nombre": "MAIZ FRITO SALADO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1w8K6DYN0lCj_gFSuXDq3dJ_uV1nPv9cf/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Maíz frito de textura muy crocante y sabor salado, pensado para picadas y colaciones. Un snack sabroso, rendidor y perfecto para compartir.",
+   "origen": "sheet"
+  },
+  "1366": {
+   "nombre": "MAIZ PSINGALLO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1SUtjp1fEDZ2JDJH51o3eL4O0vGdUsF4l/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Grano de maíz seleccionado para preparar pochoclos, de textura crocante una vez cocido. Aporta hidratos de carbono y fibra; el perfil final depende del aceite, la sal o el azúcar agregados.",
+   "origen": "sheet"
+  },
+  "2095": {
+   "nombre": "MALVA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/14hhKI92r9vxcgVBrJFKaACdBCTxUTiX6/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Hierba de sabor suave y textura delicada, utilizada tradicionalmente para preparar infusiones sin cafeína. Su perfil sutil combina muy bien con manzanilla, miel o limón.",
+   "origen": "sheet"
+  },
+  "1375": {
+   "nombre": "MANI CON CASCARA X 1 KG",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/11SXWudmCqa7TyAEUmhGj5wsAn-YIdBom/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Maní de sabor tostado y textura crocante, práctico para colaciones y picadas. Aporta proteína vegetal, grasas mayormente insaturadas, fibra y minerales; sodio y aceites agregados dependen de la preparación.",
+   "origen": "sheet"
+  },
+  "1378": {
+   "nombre": "MANI JAPONES",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1FDunmm6i6iGRFgxhkqK2B2qQIfSVnSZg/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Maní de sabor tostado y textura crocante, práctico para colaciones y picadas. Aporta proteína vegetal, grasas mayormente insaturadas, fibra y minerales; sodio y aceites agregados dependen de la preparación.",
+   "origen": "sheet"
+  },
+  "1379": {
+   "nombre": "MANI SABORIZADO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1QI0JfVC4Lyj9OaS3TMhuDQEx1ywEHv8M/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Maní de sabor tostado y textura crocante, práctico para colaciones y picadas. Aporta proteína vegetal, grasas mayormente insaturadas, fibra y minerales; sodio y aceites agregados dependen de la preparación.",
+   "origen": "sheet"
+  },
+  "1794": {
+   "nombre": "MANI TOSTADO A GRANEL",
+   "bulto": "10 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1NkC1XamzQYzutSc3-T_moMnCwwFfRGji/view",
+   "rubro": "SNACK",
+   "origen": "sheet"
+  },
+  "1380": {
+   "nombre": "MANI TOSTADO SALADO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1aEl6_09KtMcXJIFFqzh82v3nytZX3UfZ/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Maní de sabor tostado y textura crocante, práctico para colaciones y picadas. Aporta proteína vegetal, grasas mayormente insaturadas, fibra y minerales; sodio y aceites agregados dependen de la preparación.",
+   "origen": "sheet"
+  },
+  "1381": {
+   "nombre": "MANI TOSTADO SIN SAL",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1WjRKtTo5EirWVe7gwDKwjb6O93qfG_J6/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Maní de sabor tostado y textura crocante, práctico para colaciones y picadas. Aporta proteína vegetal, grasas mayormente insaturadas, fibra y minerales; sodio y aceites agregados dependen de la preparación.",
+   "origen": "sheet"
+  },
+  "1383": {
+   "nombre": "MANTEQUILLA DE MANI X 370 GR - ENTRENUTS",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1qZh_OzE6KEBPY-1IeONmJnUF5PksSrSg/view",
+   "rubro": "MANTECAS Y PASTAS",
+   "desc": "Pasta de maní de textura cremosa y sabor tostado, ideal para tostadas, frutas, licuados y repostería. Aporta proteína vegetal, grasas mayormente insaturadas, fibra, magnesio y vitamina E.",
+   "origen": "sheet"
+  },
+  "1384": {
+   "nombre": "MANZANILLA FLOR",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1QNLQBOe62lw2pV2iskuftZfquII0mtIf/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Flores secas de aroma suave y sabor delicado, ideales para preparar una infusión sin cafeína. Su perfil floral invita a disfrutar una taza cálida y reconfortante en cualquier momento.",
+   "origen": "sheet"
+  },
+  "1394": {
+   "nombre": "MEDALLONES DE DURAZNO",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1MwU_DIjxJKxV2ruB339EY2Ft0EsuzXvR/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Fruta deshidratada de sabor concentrado y textura agradable, práctica para colaciones, granolas y repostería. Aporta hidratos de carbono, fibra y minerales, además de un dulzor frutal muy versátil.",
+   "origen": "sheet"
+  },
+  "1901": {
+   "nombre": "MERMELADA DE CIRUELA X310 GR - MQA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1vtJT3rgI9ZUaxgtO8W0GNYrlOpWlgOj_/view",
+   "desc": "Mermelada de sabor frutado y textura untable, ideal para desayunos, postres y rellenos. Cada variedad conserva un perfil propio y aporta color, aroma y dulzor a tostadas, yogures y recetas.",
+   "origen": "sheet"
+  },
+  "1907": {
+   "nombre": "MERMELADA DE DURAZNO X310 GR - MQA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1wVhTtXfgDpUAMDsbcP0pu8UwBZdi-9rC/view",
+   "origen": "sheet"
+  },
+  "1902": {
+   "nombre": "MERMELADA FRUTILLA X310 GR - MQA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1fckmpdYNEhJ_1MMdHuCMvK9G-DyEICLj/view",
+   "desc": "Mermelada de sabor frutado y textura untable, ideal para desayunos, postres y rellenos. Cada variedad conserva un perfil propio y aporta color, aroma y dulzor a tostadas, yogures y recetas.",
+   "origen": "sheet"
+  },
+  "1905": {
+   "nombre": "MERMELADA MANZANA X310 GR - MQA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1yMk62sKy8HLI95Z1BhUaSdLizgZB_xLv/view",
+   "origen": "sheet"
+  },
+  "1903": {
+   "nombre": "MERMELADA MEMBRILLO X310 GR - MQA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1CAHLQezih3TvX0peI7MgUxPysQEckXfl/view",
+   "origen": "sheet"
+  },
+  "1904": {
+   "nombre": "MERMELADA NARANJA X310 GR - MQA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1bL0hc55atrQVSrZ2eKq4i0fNXNV26z9u/view",
+   "origen": "sheet"
+  },
+  "1906": {
+   "nombre": "MERMELADA ZANAHORIA Y NARANJA X310 GR",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1got4Ma1xpSNperiiDL_JS6wBBx2cdluy/view",
+   "desc": "Mermelada de sabor frutado y textura untable, ideal para desayunos, postres y rellenos. Cada variedad conserva un perfil propio y aporta color, aroma y dulzor a tostadas, yogures y recetas.",
+   "origen": "sheet"
+  },
+  "1406": {
+   "nombre": "MIEL DE ABEJA X1 KG  - MONTE NATURAL",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1JKsD3XI9xhwpUuvuZRI5zMUyEeqBqd7X/view",
+   "rubro": "DULCES, MIEL Y CHOCOLATES",
+   "desc": "Miel de sabor dulce y aroma natural, ideal para infusiones, tostadas y recetas. Su textura y perfil floral aportan un toque especial tanto a preparaciones simples como elaboradas.",
+   "origen": "sheet"
+  },
+  "1408": {
+   "nombre": "MIEL DE ABEJA X250 GR - MONTE NATURAL",
+   "bulto": "24 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1vcqMzMskV0cok-aTNgkYaP_za2vdYYga/view",
+   "rubro": "DULCES, MIEL Y CHOCOLATES",
+   "desc": "Miel de sabor dulce y aroma natural, ideal para infusiones, tostadas y recetas. Su textura y perfil floral aportan un toque especial tanto a preparaciones simples como elaboradas.",
+   "origen": "sheet"
+  },
+  "1410": {
+   "nombre": "MIEL DE ABEJA X500 GR - MONTE NATURAL",
+   "bulto": "24 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1InBwP0KdXp-jGKcN5fnd9K5wvxGwvqUJ/view",
+   "rubro": "DULCES, MIEL Y CHOCOLATES",
+   "desc": "Miel de sabor dulce y aroma natural, ideal para infusiones, tostadas y recetas. Su textura y perfil floral aportan un toque especial tanto a preparaciones simples como elaboradas.",
+   "origen": "sheet"
+  },
+  "1418": {
+   "nombre": "MIX  4 PIMIENTAS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1DVNqaSTba29hzHds0u5V_yPPvgetHbOP/view",
+   "rubro": "ESPECIAS",
+   "desc": "El mix 4 pimientas combina distintas variedades como pimienta negra, blanca, verde y rosa. Ofrece un perfil aromático equilibrado, con notas picantes y levemente dulces. Es ideal para condimentar carnes, verduras y preparaciones gourmet.",
+   "origen": "sheet"
+  },
+  "1414": {
+   "nombre": "MIX 10 SEMILLAS SALUDABLES",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1InT8e4hgCMES-HaEHVsX-HEMW3usJiK3/view",
+   "rubro": "SEMILLAS",
+   "origen": "sheet"
+  },
+  "1415": {
+   "nombre": "MIX 7 SEMILLAS SALUDABLES",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1EUOkZXnMkbQMN6QUxP4oRDONirUEzQAz/view",
+   "rubro": "SEMILLAS",
+   "desc": "El mix de 7 semillas combina distintas semillas seleccionadas, aportando fibra, grasas saludables y proteínas vegetales. Es una opción nutritiva para enriquecer ensaladas, yogures o panificados. Ideal para incorporar variedad y valor nutricional a la dieta. Ingredientes: Chía, girasol, lino, quínoa, sésamo integral, sésamo blanco, sésamo negro",
+   "origen": "sheet"
+  },
+  "1416": {
+   "nombre": "MIX CERVECERO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1OCCwZkBFZdM5oEWywgt5TXQ1goqX7DwU/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "El mix cervecero es una combinación de snacks salados pensada para acompañar bebidas. Incluye maní salado, maíz frito y maní rebozado, logrando un equilibrio entre crocante y sabor intenso. Es ideal para picadas y momentos sociales.",
+   "origen": "sheet"
+  },
+  "1420": {
+   "nombre": "MIX DE FRUTOS SECOS CON CEREALES",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1osg281jX0TBlCzrru3pA2TrUdkxZ91Ox/view",
+   "rubro": "FRUTOS SECOS",
+   "origen": "sheet"
+  },
+  "1421": {
+   "nombre": "MIX DE SEMILLAS ADELGAZANTE",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1nR6et-acgtUJNIb4HAqHRM2u5YafBwoH/view",
+   "rubro": "SEMILLAS",
+   "desc": "Combinación de semillas seleccionadas de textura crocante y sabor suave, pensada para sumar fibra, proteínas vegetales y grasas saludables a yogures, licuados, ensaladas o panificados. Una mezcla práctica para enriquecer las comidas de todos los días.",
+   "origen": "sheet"
+  },
+  "1426": {
+   "nombre": "MIX PATAGONICO",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/15FkU9Z-6lQxlQEVG2LpSA6SAIQ6JsNjA/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Intenso y equilibrado: Nuez, Almendras, Castañas, Pasas\nMorochas, Arándanos, Frutilla Glaseada y Coco En Escamas.",
+   "origen": "sheet"
+  },
+  "1660": {
+   "nombre": "MIX SALADO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1eZQKbgdKDK9dmVT4r8IdA7CZyNIe_QLq/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Ideal para picadas: Maní, Pasas De Uva Rubia, Castañas De\nCajú, Almendras.",
+   "origen": "sheet"
+  },
+  "1422": {
+   "nombre": "MIX SEMILLAS PARA ENSALADA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1lychDVWnIk3kyFMKIbfHgZiWaGbUcAXD/view",
+   "rubro": "SEMILLAS",
+   "desc": "Mezcla de semillas de zapallo, girasol, lino y sésamo, seleccionadas para aportar textura, sabor y valor nutricional a ensaladas, bowls y vegetales. También es ideal para panes, yogures y preparaciones saladas.",
+   "origen": "sheet"
+  },
+  "2228": {
+   "nombre": "MIX IMPERIAL",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1mxIbgm9P-xQtXref_PIV0oxiCeJH0WBC/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Puro sabor, sin pasas: Nuez Mariposa Extra Light,\nAlmendras Nonpareil, Castañas y Maní Tostado.",
+   "origen": "sheet"
+  },
+  "1429": {
+   "nombre": "MIX TRADICIONAL",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1-roSiofiHxkMmDM-Bd_K_DBgWcXC8Ge0/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Un clásico que nunca falla: Nueces, Almendras, Pasas\nRubias, Pasas Morochas y Maní.",
+   "origen": "sheet"
+  },
+  "1430": {
+   "nombre": "MIX TROPICAL",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1GoCWwa9uCvBeTnZeY6KA0pYRGoSCytkb/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Para los que buscan un toque exótico: Nuez, Almendras, Maní Tostado, \nCastañas, Pasas Morochas y Rubias, Fruta Glaseada y Chips De Banana.",
+   "origen": "sheet"
+  },
+  "1436": {
+   "nombre": "MOSTAZA EN GRANOS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/12NL4LoDCzWXURU_f8oZYlHl4KxK3nRIv/view",
+   "rubro": "ESPECIAS",
+   "desc": "Semillas de sabor picante y aroma característico, ideales para encurtidos, aderezos y marinadas. Aportan grasas, proteína vegetal y fibra, aunque se consumen en pequeñas cantidades.",
+   "origen": "sheet"
+  },
+  "1446": {
+   "nombre": "NUEZ CON CASCARA",
+   "bulto": "10 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1CyU_LATUzon6ngDDu-XQ0RTSmr-E_1nj/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Nueces de sabor suave y textura crocante, ideales para colaciones, ensaladas y repostería. Aportan grasas poliinsaturadas, incluido omega 3 vegetal, además de fibra, proteína y minerales.",
+   "origen": "sheet"
+  },
+  "1441": {
+   "nombre": "NUEZ CUARTILLO",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/14S3MSYxxh2QTPkE9oteOswe1cHG7X6Dl/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Nueces de sabor suave y textura crocante, ideales para colaciones, ensaladas y repostería. Aportan grasas poliinsaturadas, incluido omega 3 vegetal, además de fibra, proteína y minerales.",
+   "origen": "sheet"
+  },
+  "1444": {
+   "nombre": "NUEZ CUARTOS EXTRA LIGHT",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1MB1Am7Flj0zouPjSJu6ujxHxUNpim0Fe/view",
+   "rubro": "FRUTOS SECOS",
+   "origen": "sheet"
+  },
+  "1445": {
+   "nombre": "NUEZ CUARTOS LIGHT",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1RyQfFCD3Rz7nBnh11Udnd-ziuNEtWWL-/view",
+   "desc": "Nueces de sabor suave y textura crocante, ideales para colaciones, ensaladas y repostería. Aportan grasas poliinsaturadas, incluido omega 3 vegetal, además de fibra, proteína y minerales.",
+   "origen": "sheet"
+  },
+  "4453": {
+   "nombre": "NUEZ DE BRASIL",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/17a3w7qdy8D4B_Uqz2l__2mTjwdeG3his/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Nueces de Brasil de textura cremosa y sabor suave, ideales para colaciones y mezclas. Aportan grasas insaturadas, proteína vegetal, fibra y selenio.",
+   "origen": "sheet"
+  },
+  "1448": {
+   "nombre": "NUEZ MARIPOSA AMBAR",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Im4LruDscpRkviLjvTdXNQ8hEC_BMGLa/view",
+   "rubro": "FRUTOS SECOS",
+   "origen": "sheet"
+  },
+  "1716": {
+   "nombre": "NUEZ MARIPOSA EXTRA LIGHT",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/167aPKGseonfAupfKO_SlZyXf4KgRZuGN/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Nueces de sabor suave y textura crocante, ideales para colaciones, ensaladas y repostería. Aportan grasas poliinsaturadas, incluido omega 3 vegetal, además de fibra, proteína y minerales.",
+   "origen": "sheet"
+  },
+  "1450": {
+   "nombre": "NUEZ MARIPOSA LIGHT",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1rjXARkriZMbrdSDNvJ7iOKfGBHxI-Pki/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Nueces de sabor suave y textura crocante, ideales para colaciones, ensaladas y repostería. Aportan grasas poliinsaturadas, incluido omega 3 vegetal, además de fibra, proteína y minerales.",
+   "origen": "sheet"
+  },
+  "1451": {
+   "nombre": "NUEZ MOSCADA ENTERA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1cnsk6mLfHOJqVApd28MQT1AKNt0PRNOW/view",
+   "rubro": "ESPECIAS",
+   "desc": "Especia cálida y aromática, ideal para salsas blancas, purés, rellenos y repostería. Su sabor concentrado aporta profundidad con apenas un toque.",
+   "origen": "sheet"
+  },
+  "1452": {
+   "nombre": "NUEZ MOSCADA MOLIDA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1eUcDhT0z9fB8vtXkXh15nPzu2iBvpF4W/view",
+   "rubro": "ESPECIAS",
+   "desc": "Especia cálida y aromática, ideal para salsas blancas, purés, rellenos y repostería. Su sabor concentrado aporta profundidad con apenas un toque.",
+   "origen": "sheet"
+  },
+  "1455": {
+   "nombre": "OREGANO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1yMf1m6G2q8Frzabb5BW8NKtODUA8obGd/view",
+   "rubro": "ESPECIAS",
+   "desc": "Hierba aromática de sabor intenso, ideal para pizzas, salsas y vegetales. Se utiliza en pequeñas cantidades y aporta compuestos vegetales aromáticos.",
+   "origen": "sheet"
+  },
+  "1670": {
+   "nombre": "PANKO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1-WEuzI3iwOy7xxSoPW9YCPAbQGl56JKO/view",
+   "rubro": "HARINAS",
+   "desc": "Pan rallado de escamas grandes y textura aireada, ideal para rebozados muy crocantes. Aporta principalmente hidratos de carbono; grasas y sodio dependen de la preparación final.",
+   "origen": "sheet"
+  },
+  "2440": {
+   "nombre": "PASAS DE UVA CON SEMILLAS",
+   "bulto": "10 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Pu2D-RFY57UtSR3BJHr4uot2JKPFAj9Z/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Uvas deshidratadas de dulzor natural y textura tierna, ideales para granolas, panes, ensaladas y colaciones. Aportan hidratos de carbono, fibra, potasio y compuestos antioxidantes naturales.",
+   "origen": "sheet"
+  },
+  "1955": {
+   "nombre": "PASAS MOROCHA FLAME SIN SEMILLA",
+   "bulto": "10 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/16DnWqgTXff5E0l4ItsA2jI9UNtPPwJjQ/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Uvas deshidratadas de dulzor natural y textura tierna, ideales para granolas, panes, ensaladas y colaciones. Aportan hidratos de carbono, fibra, potasio y compuestos antioxidantes naturales.",
+   "origen": "sheet"
+  },
+  "4456": {
+   "nombre": "PASAS MOROCHAS JUMBO - ORIGEN CHILE",
+   "bulto": "10 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1cKCSvqBSLd30SBGisx625jOeuSr9mCei/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Uvas deshidratadas de dulzor natural y textura tierna, ideales para granolas, panes, ensaladas y colaciones. Aportan hidratos de carbono, fibra, potasio y compuestos antioxidantes naturales.",
+   "origen": "sheet"
+  },
+  "1461": {
+   "nombre": "PASAS RUBIA SIN SEMILLA",
+   "bulto": "10 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1NechloJwourKBTRFWmgNSqLXsMQsz0n6/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Uvas deshidratadas de dulzor natural y textura tierna, ideales para granolas, panes, ensaladas y colaciones. Aportan hidratos de carbono, fibra, potasio y compuestos antioxidantes naturales.",
+   "origen": "sheet"
+  },
+  "1462": {
+   "nombre": "PASTA ACEITUNAS CONDIMENTADAS X200 GR - AGROIANNI",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1jOiziHD_BwjYP1CimsEZsR0NRp1oN2sD/view",
+   "rubro": "LINEA GOURMET",
+   "desc": "Pasta untable de aceitunas de sabor intenso, ideal para tostadas, picadas, sándwiches y salsas. Aporta grasas monoinsaturadas; el sodio y los aceites agregados dependen de la formulación.",
+   "origen": "sheet"
+  },
+  "1463": {
+   "nombre": "PASTA ACEITUNAS NEGRAS X200 GR - AGROIANNI",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1buCE3EFB7RkTuMG-ASjK3Nxg3q75DiIM/view",
+   "rubro": "LINEA GOURMET",
+   "desc": "Pasta untable de aceitunas de sabor intenso, ideal para tostadas, picadas, sándwiches y salsas. Aporta grasas monoinsaturadas; el sodio y los aceites agregados dependen de la formulación.",
+   "origen": "sheet"
+  },
+  "1464": {
+   "nombre": "PASTA ACEITUNAS VERDES X200 GR - AGROIANNI",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1rBrhMaOTZQDoRZ-mg8FcN1UNx6rqOFb2/view",
+   "rubro": "LINEA GOURMET",
+   "desc": "Pasta untable de aceitunas de sabor intenso, ideal para tostadas, picadas, sándwiches y salsas. Aporta grasas monoinsaturadas; el sodio y los aceites agregados dependen de la formulación.",
+   "origen": "sheet"
+  },
+  "2330": {
+   "nombre": "PASTA ALCAUCILES X200 GR - ALCARAZ GOURMET",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/103xCCjjk6Kl0DKwRtjeLxxP-5U6ss4Nq/view",
+   "rubro": "LINEA GOURMET",
+   "origen": "sheet"
+  },
+  "1465": {
+   "nombre": "PASTA DE AJI PICANTE X90 GR - ALCARAZ GOURMET",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1ohqcAqI8AL-EC5LjkeUkqDhABoAQveGT/view",
+   "rubro": "LINEA GOURMET",
+   "desc": "Pasta concentrada de ají de sabor picante, ideal para salsas, marinadas y comidas. Se utiliza en pequeñas cantidades; el sodio y la intensidad dependen de la formulación.",
+   "origen": "sheet"
+  },
+  "1468": {
+   "nombre": "PASTA DE AJO X200 GR - AGROIANNI",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/17Pgy7j7d1imNitgjwygMj7NeBAEpfqty/view",
+   "rubro": "LINEA GOURMET",
+   "desc": "Pasta de ajo de sabor concentrado, práctica para adobos, salsas y salteados. Se utiliza en pequeñas cantidades; el contenido de sodio y aceite depende de la formulación.",
+   "origen": "sheet"
+  },
+  "1484": {
+   "nombre": "PEPINILLOS EN VINAGRE X2 KG - DURANG",
+   "bulto": "2 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1NkcD0kxKmz-4jevTmGonMUpMgRHGX0cG/view",
+   "rubro": "ENCURTIDOS",
+   "origen": "sheet"
+  },
+  "1483": {
+   "nombre": "PEPINILLOS EN VINAGRE X200 GR - DURANG",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1nEelTmFJZrjqSq7p0EwbED2HusfWFMnl/view",
+   "rubro": "ENCURTIDOS",
+   "desc": "Pepinos encurtidos de textura crocante y sabor ácido, ideales para sándwiches, ensaladas y picadas. Su aporte energético suele ser bajo, aunque pueden contener bastante sodio y, en versiones agridulces, azúcar.",
+   "origen": "sheet"
+  },
+  "1485": {
+   "nombre": "PEPINOS AGRIDULCES X2 KG - DURANG",
+   "bulto": "2 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/18oagYue8Sn9SILkvSuXkn6_RL50CEq1J/view",
+   "rubro": "ENCURTIDOS",
+   "origen": "sheet"
+  },
+  "1486": {
+   "nombre": "PEPINOS AGRIDULCES X200 GR - DURANG",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1rbWPIrlmT8AXr8b8D_p3U6D4vzMWtX9m/view",
+   "rubro": "ENCURTIDOS",
+   "desc": "Pepinos encurtidos de textura crocante y sabor ácido, ideales para sándwiches, ensaladas y picadas. Su aporte energético suele ser bajo, aunque pueden contener bastante sodio y, en versiones agridulces, azúcar.",
+   "origen": "sheet"
+  },
+  "1488": {
+   "nombre": "PERAS WILLIAMS",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1G2SEtD_Q1ayam3utq_qterHqoY4_g2kP/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Fruta deshidratada de sabor concentrado y textura agradable, práctica para colaciones, granolas y repostería. Aporta hidratos de carbono, fibra y minerales, además de un dulzor frutal muy versátil.",
+   "origen": "sheet"
+  },
+  "1489": {
+   "nombre": "PEREJIL EN HOJAS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1OeCEZFYqtxbq7SqE5DRfA2rSgTYv7CKG/view",
+   "rubro": "ESPECIAS",
+   "desc": "Hierba de sabor fresco y suave, práctica para salsas, sopas y terminaciones. Aporta aroma y compuestos vegetales, aunque la porción habitual es pequeña.",
+   "origen": "sheet"
+  },
+  "1495": {
+   "nombre": "PESTO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1LJ1PlblZ5K8uEGN6YVmTJeQ0_-Osu_Xi/view",
+   "rubro": "ESPECIAS",
+   "desc": "Mezcla seca de hierbas y condimentos pensada para pastas, salsas y aderezos. Aporta un perfil aromático, fresco y sabroso de manera rápida y práctica.",
+   "origen": "sheet"
+  },
+  "1498": {
+   "nombre": "PICKLES EN GARRAFA X1 KG - DURANG",
+   "bulto": "4 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1V6zbXFjQ22ujxMeYxbFqHHjvV3vvmllH/view",
+   "rubro": "ENCURTIDOS",
+   "origen": "sheet"
+  },
+  "1500": {
+   "nombre": "PICKLES MIXTOS X2 KG - DURANG",
+   "bulto": "2 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1_EPfAb0zdTKvPLAhOvXG9PzGH7IH3G1n/view",
+   "rubro": "ENCURTIDOS",
+   "origen": "sheet"
+  },
+  "1501": {
+   "nombre": "PICKLES MIXTOS X200 GR - DURANG",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/107SDn-Azkil7saO8rw2P0EiAUr0waCpP/view",
+   "rubro": "ENCURTIDOS",
+   "desc": "Vegetales encurtidos de sabor ácido y textura variada, ideales para picadas y guarniciones. Aportan fibra; su contenido de sodio puede ser elevado por el método de conservación.",
+   "origen": "sheet"
+  },
+  "1502": {
+   "nombre": "PIMENTON AHUMADO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1g4iUJlyTNJDMWuReSIz7Zj1rFsvzBQHT/view",
+   "rubro": "ESPECIAS",
+   "desc": "Pimentón de sabor dulce y ahumado, ideal para guisos, carnes y vegetales. Aporta color y compuestos naturales del pimiento con una porción pequeña.",
+   "origen": "sheet"
+  },
+  "1505": {
+   "nombre": "PIMENTON DULCE",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1lt0m49r-BrAum_Getg5jMBEsT0qczVoB/view",
+   "rubro": "ESPECIAS",
+   "desc": "Pimentón de sabor suave y color rojo intenso, ideal para guisos, arroces y salsas. Aporta compuestos naturales del pimiento y se utiliza en pequeñas cantidades.",
+   "origen": "sheet"
+  },
+  "1506": {
+   "nombre": "PIMENTON PICANTE",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1BN3SVwCyqDoexQPUthY_HdZHyE77FoKq/view",
+   "rubro": "ESPECIAS",
+   "desc": "Pimentón de sabor intenso y picante, ideal para guisos, salsas, carnes y vegetales. Aporta un color vibrante y un toque especiado que realza las preparaciones.",
+   "origen": "sheet"
+  },
+  "1508": {
+   "nombre": "PIMIENTA BLANCA EN GRANO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1T9Zn-xWhkudQKANj5snd4wP1DuH4YV6Z/view",
+   "rubro": "ESPECIAS",
+   "desc": "Pimienta de aroma intenso y picor característico, útil para condimentar todo tipo de preparaciones. Se usa en pequeñas cantidades y aporta compuestos aromáticos como la piperina.",
+   "origen": "sheet"
+  },
+  "1510": {
+   "nombre": "PIMIENTA BLANCA MOLIDA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1wkGfk3jIyIrwEE48vXAgvrg1Il2WZ1Fx/view",
+   "rubro": "ESPECIAS",
+   "desc": "Pimienta de aroma intenso y picor característico, útil para condimentar todo tipo de preparaciones. Se usa en pequeñas cantidades y aporta compuestos aromáticos como la piperina.",
+   "origen": "sheet"
+  },
+  "1511": {
+   "nombre": "PIMIENTA CAYENA MOLIDA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/13TPC5vKbG93xfKC4XxPSvxTCn8sPwvuu/view",
+   "rubro": "ESPECIAS",
+   "desc": "Especia de picor marcado, ideal para salsas, guisos y marinadas. Aporta capsaicinoides naturales y se utiliza en cantidades pequeñas.",
+   "origen": "sheet"
+  },
+  "1512": {
+   "nombre": "PIMIENTA NEGRA EN GRANO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1tPjQrMloQfj3JjOhMasP_dlixSDPQjEJ/view",
+   "rubro": "ESPECIAS",
+   "desc": "Pimienta de aroma intenso y picor característico, útil para condimentar todo tipo de preparaciones. Se usa en pequeñas cantidades y aporta compuestos aromáticos como la piperina.",
+   "origen": "sheet"
+  },
+  "1513": {
+   "nombre": "PIMIENTA NEGRA MOLIDA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1hi7X5XMAir413dFUdW75r2zVda2Gq8O8/view",
+   "rubro": "ESPECIAS",
+   "desc": "Pimienta de aroma intenso y picor característico, útil para condimentar todo tipo de preparaciones. Se usa en pequeñas cantidades y aporta compuestos aromáticos como la piperina.",
+   "origen": "sheet"
+  },
+  "1517": {
+   "nombre": "PIMIENTOS ENTEROS X200 GR - DURANG",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1BhHbSJOybTW6hq41WT8IyXBoPsd2Bo5f/view",
+   "rubro": "ENCURTIDOS",
+   "desc": "Vegetales encurtidos de sabor ácido y textura variada, ideales para picadas y guarniciones. Aportan fibra; su contenido de sodio puede ser elevado por el método de conservación.",
+   "origen": "sheet"
+  },
+  "1518": {
+   "nombre": "PIMIENTOS MORRONES X3 KG - DURANG",
+   "bulto": "2 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1f3fnLPdyCJgQxNvCt6a59KO5s4du8gic/view",
+   "rubro": "ENCURTIDOS",
+   "origen": "sheet"
+  },
+  "1522": {
+   "nombre": "PISTACHOS CON CASCARA",
+   "bulto": "10 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1NN9wZhH-cezQ5-KsuvBegMHA2zb-MY1p/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Pistachos de sabor delicado y textura crocante, prácticos para colaciones, picadas y repostería. Aportan grasas insaturadas, proteína vegetal, fibra, potasio y vitamina B6.",
+   "origen": "sheet"
+  },
+  "2369": {
+   "nombre": "PISTACHOS NATURALES SIN CASCARA",
+   "bulto": "10 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1ao2TPp5bV6oht4e9lYmJGp2QLY5VMn9q/view",
+   "rubro": "FRUTOS SECOS",
+   "desc": "Pistachos de sabor delicado y textura crocante, prácticos para colaciones, picadas y repostería. Aportan grasas insaturadas, proteína vegetal, fibra, potasio y vitamina B6.",
+   "origen": "sheet"
+  },
+  "2092": {
+   "nombre": "POLEN",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/15qo5QHuXyx3W1HpLWMH386b5KY2zWX80/view",
+   "rubro": "ESPECIAS",
+   "desc": "Polen granulado de sabor floral y textura levemente crocante. Aporta hidratos de carbono, proteína y micronutrientes en cantidades variables; puede causar reacciones en personas alérgicas al polen o a productos de la colmena.",
+   "origen": "sheet"
+  },
+  "2348": {
+   "nombre": "POLVO PARA HORNEAR",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1GHmgiodbITLTxkJV3qFZXUV9Aadydfhl/view",
+   "rubro": "AZUCAR, CACAO Y REPOSTERIA",
+   "desc": "Agente leudante que ayuda a dar volumen y una miga más aireada a tortas, muffins y panes rápidos. Se utiliza en pequeñas cantidades y su contenido de sodio depende de la formulación.",
+   "origen": "sheet"
+  },
+  "1523": {
+   "nombre": "POLVO PARA HORNEAR X50 GR - INDIAS",
+   "bulto": "25 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1w9damY3bRm1gvLHRwOXX9dDWA0HlenN0/view",
+   "rubro": "AZUCAR, CACAO Y REPOSTERIA",
+   "desc": "Agente leudante que ayuda a lograr tortas, budines, galletas y panificados más aireados y livianos. Se integra fácilmente a las mezclas secas.",
+   "origen": "sheet"
+  },
+  "1525": {
+   "nombre": "POROTOS ALUBIA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1I_F4e8zp0POt39Pd8VwSsuvbbykETqGh/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Legumbre de textura cremosa y sabor suave, ideal para guisos, ensaladas y pastas vegetales. Aporta proteína vegetal, fibra, hidratos de carbono complejos, hierro y folato.",
+   "origen": "sheet"
+  },
+  "1526": {
+   "nombre": "POROTOS COLORADOS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/15OvvAj21joCbNLGkftgCNhSPaUNr220O/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Legumbre de textura cremosa y sabor suave, ideal para guisos, ensaladas y pastas vegetales. Aporta proteína vegetal, fibra, hidratos de carbono complejos, hierro y folato.",
+   "origen": "sheet"
+  },
+  "1530": {
+   "nombre": "POROTOS CONDIM X200 GR - DURANG",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Rx-J6sU7eIk04R6Pbgus1eLIXr1qXILw/view",
+   "rubro": "ENCURTIDOS",
+   "desc": "Porotos condimentados de textura cremosa, prácticos para picadas, ensaladas y guarniciones. Aportan proteína vegetal y fibra; el sodio y las grasas dependen de la preparación.",
+   "origen": "sheet"
+  },
+  "1532": {
+   "nombre": "POROTOS DE SOJA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1WSc31MWHh-HRvIhrvNhmmhAfTnd15B7E/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Legumbre de sabor suave y gran versatilidad, fuente de proteínas vegetales, fibra y grasas insaturadas. Ideal para guisos, hamburguesas, bebidas vegetales y preparaciones caseras.",
+   "origen": "sheet"
+  },
+  "1527": {
+   "nombre": "POROTOS MANTECA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1DOaTcIHDAnzRceH8hNaiC__obEZ0FIpk/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Legumbre de textura cremosa y sabor suave, ideal para guisos, ensaladas y pastas vegetales. Aporta proteína vegetal, fibra, hidratos de carbono complejos, hierro y folato.",
+   "origen": "sheet"
+  },
+  "1528": {
+   "nombre": "POROTOS MUNG",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1qQ9AnZelzZYUf4oa9RO8rqrWZ0l0a-Zu/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Legumbre de textura cremosa y sabor suave, ideal para guisos, ensaladas y pastas vegetales. Aporta proteína vegetal, fibra, hidratos de carbono complejos, hierro y folato.",
+   "origen": "sheet"
+  },
+  "1529": {
+   "nombre": "POROTOS NEGROS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1icVRyx_qdajfilS1zIseAyhcHp8l1J2N/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Legumbre de textura cremosa y sabor suave, ideal para guisos, ensaladas y pastas vegetales. Aporta proteína vegetal, fibra, hidratos de carbono complejos, hierro y folato.",
+   "origen": "sheet"
+  },
+  "1533": {
+   "nombre": "POROTOS PALLARES",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1A6IvTffQGWkXbA_df1BjG6PU1xfYzbtP/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Legumbre de textura cremosa y sabor suave, ideal para guisos, ensaladas y pastas vegetales. Aporta proteína vegetal, fibra, hidratos de carbono complejos, hierro y folato.",
+   "origen": "sheet"
+  },
+  "2211": {
+   "nombre": "POTASIO + MAGNESIO X30 CAPSULAS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Iv5tdvKwOpKO6Rzz6TxKc_DMQcNaZe5y/view",
+   "desc": "Combinación de potasio y magnesio, dos minerales que participan en el funcionamiento muscular y nervioso. Su formato en cápsulas resulta cómodo para complementar una rutina activa.",
+   "origen": "sheet"
+  },
+  "1539": {
+   "nombre": "PREMEZCLA PARA PANIFICADOS SIN TACC X1 KG - GLUTAL",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1AArFpNAsJMiKaioobLq10nd2mYy-HhNU/view",
+   "rubro": "PRODUCTOS SIN TACC",
+   "desc": "Mezcla de harinas y almidones sin gluten según su denominación, formulada para facilitar preparaciones de panadería o repostería. Su aporte principal son hidratos de carbono; revisar ingredientes, alérgenos y sello vigente.",
+   "origen": "sheet"
+  },
+  "1540": {
+   "nombre": "PREMEZCLA PARA PANIFICADOS SIN TACC X5 KG - GLUTAL",
+   "bulto": "1 unidad",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1EUOyd7zoogcfYInwtJx7TuNXGgfZP3z9/view",
+   "rubro": "PRODUCTOS SIN TACC",
+   "origen": "sheet"
+  },
+  "2221": {
+   "nombre": "PROPOLEO LIQUIDO X100 ML - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1_Y9tRfuTxV0SH6V-mCLQc_H47GIzLcIf/view",
+   "desc": "Propóleo en formato líquido o spray, una resina natural de la colmena rica en compuestos vegetales. Su presentación práctica permite incorporarlo fácilmente a rutinas de bienestar estacional.",
+   "origen": "sheet"
+  },
+  "2085": {
+   "nombre": "PROPOLEO LIQUIDO X30 ML - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/18LafPl_NSGjvQHQuVAvmmSlVx10E03Gv/view",
+   "origen": "sheet"
+  },
+  "1866": {
+   "nombre": "PROTEINA AISALDA DE SUERO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1mkHwF-SGOcpl2meF3u4W6mGAGEiM3d7k/view",
+   "rubro": "SUPLEMENTOS",
+   "desc": "Proteína aislada de suero en polvo, ideal para complementar el aporte proteico diario. La proteína contribuye al mantenimiento y desarrollo de la masa muscular, especialmente junto con entrenamiento y una alimentación adecuada.",
+   "origen": "sheet"
+  },
+  "1545": {
+   "nombre": "PROVENZAL",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/17w5cGRIkWOcIpmnEdmKbSDOrHGxvfLGp/view",
+   "rubro": "ESPECIAS",
+   "desc": "Mezcla de ajo y perejil, ideal para carnes, papas, vegetales y salsas. Aporta sabor con una porción pequeña; el sodio depende de si incluye sal.",
+   "origen": "sheet"
+  },
+  "2420": {
+   "nombre": "PSYLLIUM MOLIDO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1AIhso6Z-IePh_Kmsd43ueWbMnAKpgKDG/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Fibra vegetal soluble finamente molida, de textura suave y gran capacidad de absorción. Ideal para sumar a yogures, licuados, panes y recetas, y para mejorar la textura de preparaciones sin gluten.",
+   "origen": "sheet"
+  },
+  "2413": {
+   "nombre": "PSYLLIUM SEMILLA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1u9qOS3GDbtdUIKydP8QlcVUcyd_8ah66/view",
+   "rubro": "SEMILLAS",
+   "desc": "Semillas naturalmente ricas en fibra soluble, con gran capacidad de absorción. Pueden incorporarse a yogures, licuados, panes y distintas preparaciones para sumar textura y fibra.",
+   "origen": "sheet"
+  },
+  "1549": {
+   "nombre": "QUINOA INFLADA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1qMBmu67kSyesq1C7FxsBaowJl7dUlj1m/view",
+   "rubro": "CEREALES",
+   "desc": "Quinoa inflada de textura liviana y crocante, ideal para desayunos, barras y coberturas. Aporta hidratos de carbono, fibra y proteína vegetal; puede incorporarse directamente sin cocción.",
+   "origen": "sheet"
+  },
+  "1551": {
+   "nombre": "QUINOA NACIONAL",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1xbAfHO6CojfLyNemnawXyxFYcfRzikWE/view",
+   "rubro": "SEMILLAS",
+   "desc": "Pseudocereal de sabor suave y textura ligera, ideal para ensaladas, guarniciones y hamburguesas vegetales. Aporta proteína vegetal, fibra, hidratos de carbono complejos y minerales como magnesio y hierro.",
+   "origen": "sheet"
+  },
+  "1553": {
+   "nombre": "REBOZADOR SIN GLUTEN X500 GR - GLUTAL",
+   "bulto": "30 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1yReT-Turkk1tY0nHBeuvtKI0k9MbldWe/view",
+   "rubro": "PRODUCTOS SIN TACC",
+   "desc": "Rebozador crocante sin gluten, ideal para carnes, vegetales y preparaciones al horno o fritas. Ayuda a lograr una cobertura dorada, sabrosa y de textura irresistible.",
+   "origen": "sheet"
+  },
+  "2168": {
+   "nombre": "REDUCTOR  X10 COMPRIMIDOS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/12YoRropKuis3u99GklU7H7xDfeiXtbfr/view",
+   "desc": "Blend en comprimidos pensado como complemento de una rutina que combine alimentación equilibrada y movimiento. Su formato práctico permite incorporarlo fácilmente al día.",
+   "origen": "sheet"
+  },
+  "2212": {
+   "nombre": "RESVERATROL X30 COMPRIMIDOS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1mj8CgaMA7ha8Jb3qESVj3K5loT7Uw2qJ/view",
+   "desc": "Resveratrol concentrado, un polifenol de origen vegetal reconocido por su actividad antioxidante. Su presentación en cápsulas o comprimidos permite incorporarlo de manera simple a la rutina.",
+   "origen": "sheet"
+  },
+  "1555": {
+   "nombre": "ROMERO EN HOJAS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1vWdRDWMaE8T2WSpKKShPlQdpYaPO0cWU/view",
+   "rubro": "ESPECIAS",
+   "desc": "Hierba aromática de notas resinosas, ideal para papas, panes, carnes y aceites saborizados. Se utiliza en pequeñas cantidades y aporta compuestos vegetales aromáticos.",
+   "origen": "sheet"
+  },
+  "2093": {
+   "nombre": "ROSA MOSQUETA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/18OKK-WOOndNz7Sp84C1DEdlvgKkXkL43/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Fruto seco de sabor ácido y frutado, utilizado para preparar infusiones y blends. Aporta compuestos vegetales y vitamina C en cantidades que varían con el procesamiento y la preparación.",
+   "origen": "sheet"
+  },
+  "1557": {
+   "nombre": "SAL DEL HIMALAYA FINA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1U5PFIgWHbY67ysXa_lu9whBjqAT9YNRE/view",
+   "rubro": "ESPECIAS",
+   "desc": "Sal mineral de sabor salado limpio, disponible en diferentes granulometrías para cocinar o terminar platos. Aporta principalmente sodio; los minerales traza se encuentran en cantidades pequeñas.",
+   "origen": "sheet"
+  },
+  "1558": {
+   "nombre": "SAL DEL HIMALAYA GRUESA",
+   "bulto": "10 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1vsKmt8U8fR6oF5KFcBFk_AxxLbc_ePAK/view",
+   "rubro": "ESPECIAS",
+   "desc": "Sal mineral de sabor salado limpio, disponible en diferentes granulometrías para cocinar o terminar platos. Aporta principalmente sodio; los minerales traza se encuentran en cantidades pequeñas.",
+   "origen": "sheet"
+  },
+  "1561": {
+   "nombre": "SAL MARINA FINA X500 GR - MACROZEN",
+   "bulto": "10 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1JW_l3VBVspy2lhVkPC9xuo1uDcrTRCEI/view",
+   "rubro": "ESPECIAS",
+   "desc": "Sal obtenida por evaporación de agua de mar, ideal para cocinar o terminar platos. Su sabor limpio y su textura realzan ingredientes dulces y salados.",
+   "origen": "sheet"
+  },
+  "1562": {
+   "nombre": "SAL MARINA GRUESA X500 GR - MACROZEN",
+   "bulto": "10 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/13lLlZwl1jv7l5nCO7mFIrtPptQB-uJGa/view",
+   "rubro": "ESPECIAS",
+   "desc": "Sal obtenida por evaporación de agua de mar, ideal para cocinar o terminar platos. Su sabor limpio y su textura realzan ingredientes dulces y salados.",
+   "origen": "sheet"
+  },
+  "1687": {
+   "nombre": "SALSA AJI PICANTE X180 CC - ALCARAZ GOURMET",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/16NM2mXxE9wmmviLwe2JRjvbOGM1Em8wZ/view",
+   "rubro": "LINEA GOURMET",
+   "desc": "Salsa picante de sabor vegetal y ácido, ideal para tacos, sándwiches, carnes y vegetales. Se utiliza en pequeñas cantidades; el sodio y la intensidad dependen de la formulación.",
+   "origen": "sheet"
+  },
+  "1564": {
+   "nombre": "SALSA BARBACOA X250 GR - ALCARAZ GOURMET",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1bY8J4X9RrzR-JertLG3b3yZMD7JUkWmK/view",
+   "rubro": "LINEA GOURMET",
+   "origen": "sheet"
+  },
+  "1803": {
+   "nombre": "SALSA CESAR 250 GR - CASA DE LA TORRE",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Pq0cJ-1LSi77WGA6LA0oqOj_yIBOcqdy/view",
+   "rubro": "LINEA GOURMET",
+   "desc": "Aderezo cremoso de sabor intenso, pensado para ensaladas, sándwiches y vegetales. Su perfil sabroso y su textura envolvente transforman preparaciones simples en platos con mucho carácter.",
+   "origen": "sheet"
+  },
+  "1566": {
+   "nombre": "SALSA CHIMICHURRI  X250 GR - CASA DE LA TORRE",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1g7l76fCsTcA25IDMABNWD2haWKt-v9cS/view",
+   "rubro": "LINEA GOURMET",
+   "desc": "Salsa condimentada de hierbas, ajo y especias, ideal para carnes, panes y vegetales. El aporte de grasas y sodio depende del aceite y la sal utilizados.",
+   "origen": "sheet"
+  },
+  "1571": {
+   "nombre": "SALSA DE SOJA X180 CC - ALCARAZ GOURMET",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1PAn7aEWgCX6yH7pqg9NMjr3VaqWWthZM/view",
+   "rubro": "LINEA GOURMET",
+   "desc": "Salsa fermentada de sabor salado y umami, ideal para marinadas, arroces y salteados. Aporta profundidad, color y un toque oriental a carnes, vegetales y fideos.",
+   "origen": "sheet"
+  },
+  "1572": {
+   "nombre": "SALSA INGLESA X180 CC - ALCARAZ GOURMET",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1HDJpD8B9sGWVFgF4ceE_SwUCfGpcsoi7/view",
+   "rubro": "LINEA GOURMET",
+   "origen": "sheet",
+   "desc": "Salsa líquida de sabor umami, ácido y especiado, ideal para marinadas, carnes y cócteles. Se utiliza en pequeñas cantidades y puede contener bastante sodio."
+  },
+  "1720": {
+   "nombre": "SALSA JALAPEÑO AHUMADA X180 CC - ALCARAZ GOURMET",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/12ILZ8XNqWXJkP3_9pMAB3fhMup_FFwdU/view",
+   "rubro": "LINEA GOURMET",
+   "origen": "sheet"
+  },
+  "1573": {
+   "nombre": "SALSA JALAPEÑO ROJA X180 CC - ALCARAZ GOURMET",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1asGGwtSe0cqp2XNIqImcedqdrNWeXWpa/view",
+   "rubro": "LINEA GOURMET",
+   "desc": "Salsa de sabor intenso pensada para acompañar, marinar o terminar distintas preparaciones. La composición, el sodio y los azúcares dependen de la receta indicada en la etiqueta.",
+   "origen": "sheet"
+  },
+  "1683": {
+   "nombre": "SALSA JALAPEÑO VERDE X180 CC - ALCARAZ GOURMET",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1q_Xb0TfIyGC8Fs3kssRQ3E8i4tnHKchE/view",
+   "rubro": "LINEA GOURMET",
+   "desc": "Salsa de sabor intenso pensada para acompañar, marinar o terminar distintas preparaciones. La composición, el sodio y los azúcares dependen de la receta indicada en la etiqueta.",
+   "origen": "sheet"
+  },
+  "1575": {
+   "nombre": "SALSA TERIYAKI X250 CC - HASHI",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1WWLAbPz_UE6xIEQB4dSwtnaR-wwH-cMX/view",
+   "rubro": "LINEA GOURMET",
+   "desc": "Salsa agridulce de perfil umami, ideal para glasear, marinar y saltear. Puede aportar azúcares y una cantidad importante de sodio, por lo que suele utilizarse en porciones pequeñas.",
+   "origen": "sheet"
+  },
+  "1576": {
+   "nombre": "SALVADO DE AVENA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1gxl-jXMDRe0kmkcuWjjEXXrheLhg9U6B/view",
+   "rubro": "HARINAS",
+   "desc": "Capa externa de la avena, de sabor suave y alto contenido de fibra soluble. Es práctica para yogures, panes y preparaciones, y aporta además hidratos de carbono y proteína vegetal.",
+   "origen": "sheet"
+  },
+  "1577": {
+   "nombre": "SALVADO DE TRIGO GRUESO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1AbCG045CpwUu-BfOTuehR_qQwmN132vx/view",
+   "rubro": "HARINAS",
+   "desc": "Capa externa del grano de trigo, de textura gruesa y alto contenido de fibra. Puede incorporarse a panes, yogures y cereales; contiene gluten.",
+   "origen": "sheet"
+  },
+  "1578": {
+   "nombre": "SALVIA OFICINAL",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1RBHeg34x3pVw-4zJ2hDS3NssPDfNWUR2/view",
+   "rubro": "ESPECIAS",
+   "desc": "Hoja aromática de sabor intenso, utilizada tanto en infusiones como en cocina. Aporta notas herbales profundas que combinan especialmente bien con vegetales, salsas y carnes.",
+   "origen": "sheet"
+  },
+  "1581": {
+   "nombre": "SEMILLA DE AMAPOLA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1VmZLiO-xIzIJJcpeVOJx_sRcZJYq5fDQ/view",
+   "rubro": "SEMILLAS",
+   "desc": "Semillas pequeñas de sabor suave y textura crocante, ideales para panes, tortas y aderezos. Aportan grasas insaturadas, fibra, calcio y otros minerales.",
+   "origen": "sheet"
+  },
+  "1582": {
+   "nombre": "SEMILLA DE AMARANTO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1JFohlL9RQLyNqujV-it2FAN3OD0FABCz/view",
+   "rubro": "SEMILLAS",
+   "desc": "Semillas pequeñas de sabor suave, aptas para cocinar, inflar o sumar a preparaciones. Aportan proteína vegetal, fibra, hidratos de carbono complejos, hierro y magnesio.",
+   "origen": "sheet"
+  },
+  "1583": {
+   "nombre": "SEMILLA DE CHIA NACIONAL",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1ME-FslO5MCT0b8zxrAYYO5qBSABwoups/view",
+   "rubro": "SEMILLAS",
+   "desc": "Semillas de gran capacidad de hidratación, ideales para puddings, bebidas y panificados. Aportan fibra, grasas omega 3 de origen vegetal, proteína y minerales.",
+   "origen": "sheet"
+  },
+  "1585": {
+   "nombre": "SEMILLA DE GIRASOL",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Y2JjGos7sMWgM_HE8pv4kckC4Gm2IqOf/view",
+   "rubro": "SEMILLAS",
+   "desc": "Semillas de textura crocante y sabor suave, ideales para ensaladas, panes y colaciones. Aportan grasas insaturadas, proteína vegetal, vitamina E y magnesio.",
+   "origen": "sheet"
+  },
+  "1586": {
+   "nombre": "SEMILLA DE LINO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/14TN7hReQdbtp9qOxRIZDajh3uQjWgeRa/view",
+   "rubro": "SEMILLAS",
+   "desc": "Semillas de sabor suave, útiles en panes, yogures y preparaciones; molidas se aprovechan mejor. Aportan fibra, grasas omega 3 de origen vegetal y proteína.",
+   "origen": "sheet"
+  },
+  "1587": {
+   "nombre": "SEMILLA DE ZAPALLO PELADO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1U5Jqu_LvImJMk1FQxUZXFHfBOJTdhqU3/view",
+   "rubro": "SEMILLAS",
+   "desc": "Semillas de zapallo peladas, de textura crocante y sabor suave, ideales para colaciones, ensaladas y panes. Aportan grasas insaturadas, proteína vegetal, magnesio, zinc y hierro.",
+   "origen": "sheet"
+  },
+  "2433": {
+   "nombre": "SEMILLAS DE HINOJO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Q-J9P0hyb1Q5NK7fmVh0yzhgr96_wTFZ/view",
+   "rubro": "SEMILLAS",
+   "desc": "Semillas aromáticas de sabor dulce y anisado, ideales para infusiones, panes y condimentos. Se utilizan en pequeñas cantidades y aportan aceites esenciales naturales.",
+   "origen": "sheet"
+  },
+  "1588": {
+   "nombre": "SEMOLIN DE TRIGO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1UtsX5YjWXAu07-Ed6gveeJzohaxkneVS/view",
+   "rubro": "HARINAS",
+   "desc": "Sémola fina de trigo duro, ideal para pastas, ñoquis, panes y espolvoreado de superficies. Aporta hidratos de carbono y proteína vegetal; contiene gluten.",
+   "origen": "sheet"
+  },
+  "2036": {
+   "nombre": "SEN FOLICULOS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/19T4_7nhaSN6JcAR447q1uvSRrtE5loBM/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Hierba de perfil intenso, utilizada tradicionalmente en infusiones puntuales. Su presentación en folículos permite dosificarla y prepararla de manera simple.",
+   "origen": "sheet"
+  },
+  "2322": {
+   "nombre": "SEN HOJAS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1zoARS7yr2QEKuw66reNksJfVez2hGLzK/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Hojas de sen seleccionadas para preparar una infusión herbal de sabor intenso. Tradicionalmente elegidas para acompañar rutinas de bienestar digestivo.",
+   "origen": "sheet"
+  },
+  "1589": {
+   "nombre": "SESAMO BLANCO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1TJo2uLiPOEgZOATf1wO0JB8z1RnxEHAE/view",
+   "rubro": "SEMILLAS",
+   "desc": "Semillas de sabor suave y textura crocante, ideales para panes, ensaladas y pastas. Aportan grasas insaturadas, proteína vegetal, fibra, calcio y otros minerales.",
+   "origen": "sheet"
+  },
+  "1591": {
+   "nombre": "SESAMO NEGRO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Swj7aBCK-fyxBsGtSTDo_lgi458DsdBK/view",
+   "rubro": "SEMILLAS",
+   "desc": "Semillas de sabor suave y textura crocante, ideales para panes, ensaladas y pastas. Aportan grasas insaturadas, proteína vegetal, fibra, calcio y otros minerales.",
+   "origen": "sheet"
+  },
+  "2256": {
+   "nombre": "SPIRULINA EN POLVO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1ktsbe9gmYR1zGy8DuAivVOPRlXLpesy6/view",
+   "rubro": "SUPLEMENTOS",
+   "desc": "Spirulina concentrada, microalga de intenso color natural que aporta proteína y diversos micronutrientes. Disponible en polvo, cápsulas o comprimidos para adaptarse fácilmente a cada rutina.",
+   "origen": "sheet"
+  },
+  "2178": {
+   "nombre": "STEVIA HOJAS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1yd4cyD-09--TFiv5cH6A5pKpTQjhS8tC/view",
+   "rubro": "AZUCAR, CACAO Y REPOSTERIA",
+   "desc": "Hojas de stevia de dulzor natural intenso, aptas para preparar infusiones o endulzar de forma gradual. Se usan en pequeñas cantidades y aportan muy poca energía en la porción habitual.",
+   "origen": "sheet"
+  },
+  "2035": {
+   "nombre": "TE DE BURRO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1RiJGOAj0VKXh4r0dJ_fIwDkjP96BM_Gu/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Hierba aromática de sabor intenso, utilizada en infusiones tradicionales. Ofrece una taza herbal sin cafeína y combina muy bien con otras hierbas o un toque de miel.",
+   "origen": "sheet"
+  },
+  "1618": {
+   "nombre": "TE NEGRO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1dGOBaewCvDdS7hQePJAAS1_3kdO8K0v-/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Té de sabor intenso y cuerpo marcado, ideal para tomar solo o con leche. Contiene cafeína y compuestos antioxidantes naturales; el aporte depende del tiempo de infusión.",
+   "origen": "sheet"
+  },
+  "1619": {
+   "nombre": "TE ROJO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/12_ZoGdYCPG1kIPt7Oo0POqHTiytwW_gF/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Té de perfil terroso y sabor profundo, ideal para beber solo o en blends. Contiene cafeína y compuestos naturales del té; la intensidad depende del tiempo de infusión.",
+   "origen": "sheet"
+  },
+  "2048": {
+   "nombre": "TE VERDE",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1l7WWaMGL6b7nDuwFaqv24_5PQrOKyDmY/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Té de sabor vegetal y fresco, ideal para infusiones suaves. Aporta cafeína y compuestos antioxidantes naturales; preparado con agua caliente sin llegar a hervor conserva mejor su perfil delicado.",
+   "origen": "sheet"
+  },
+  "1621": {
+   "nombre": "TEXTURIZADO DE SOJA",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1D_fGjQywNcrZ896fGjFIfLXKj1JpPWF4/view",
+   "rubro": "HARINAS",
+   "desc": "Soja texturizada deshidratada de sabor neutro, ideal como alternativa vegetal en salsas, rellenos y guisos. Aporta proteína vegetal y fibra; al hidratarla absorbe muy bien sabores y condimentos.",
+   "origen": "sheet"
+  },
+  "2347": {
+   "nombre": "TILO EN HOJAS",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1yOXQb7t0d69ngQzo9QPaOE4WK8HJlkIs/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Hojas y flores de tilo de aroma suave y delicado, ideales para una infusión reconfortante. Tradicionalmente elegidas para acompañar momentos de calma y descanso.",
+   "origen": "sheet"
+  },
+  "1630": {
+   "nombre": "TOMATE CONDIMENTADO X1 KG - VALLE DE LAS REINAS",
+   "bulto": "6 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/16ZKyNcd8si7dN1PdrgmKfPOvPb2wQSG8/view",
+   "rubro": "TOMATE TRITURADO",
+   "desc": "Tomate triturado y condimentado, práctico como base para salsas, pizzas y guisos. Aporta fibra, potasio y licopeno; el contenido de sodio depende de los condimentos agregados.",
+   "origen": "sheet"
+  },
+  "1632": {
+   "nombre": "TOMATE SECOS",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/10_jDExoNlrLxBgITNPWTHv_6tajstWsy/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Tomate deshidratado de sabor concentrado y textura firme, ideal para salsas, panes, ensaladas y rellenos. Aporta fibra, potasio y compuestos antioxidantes naturales como el licopeno.",
+   "origen": "sheet"
+  },
+  "1625": {
+   "nombre": "TOMATE TRITURADO 12 X 500 CC - DON FRANCISCO",
+   "bulto": "1 pack",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/19-R8DMiDXgHLFyC3iTJpTo9RsWhJvg5s/view",
+   "rubro": "TOMATE TRITURADO",
+   "origen": "sheet"
+  },
+  "1626": {
+   "nombre": "TOMATE TRITURADO 8 X 1 KG - DON FRANCISCO",
+   "bulto": "1 pack",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/18UkJBSHjjOhN6JCT4K9NstlgUQLwVxIl/view",
+   "rubro": "TOMATE TRITURADO",
+   "origen": "sheet"
+  },
+  "1633": {
+   "nombre": "TOMILLO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1a0m5cEXMmOz7pkmjj4Gyw95hUopWYwxt/view",
+   "rubro": "ESPECIAS",
+   "desc": "Hierba aromática de perfil terroso y levemente cítrico, ideal para vegetales, carnes y salsas. Se utiliza en pequeñas cantidades y aporta compuestos aromáticos naturales.",
+   "origen": "sheet"
+  },
+  "1634": {
+   "nombre": "TRIGO BURGOL",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1bcYWDQeqjGLrFWmRftGMapjTeuJ89R0m/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Trigo partido y precocido de sabor suave, ideal para tabule, rellenos y guarniciones. Aporta hidratos de carbono complejos, fibra y proteína vegetal; contiene gluten.",
+   "origen": "sheet"
+  },
+  "2379": {
+   "nombre": "TRIGO CANDEAL",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1k2lT_oL_YoF81ZC1gvn0mXfkcQurGcKF/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Grano de trigo duro, ideal para sopas, guisos y preparaciones de textura firme. Aporta hidratos de carbono complejos, fibra y proteína vegetal; contiene gluten.",
+   "origen": "sheet"
+  },
+  "2367": {
+   "nombre": "TRIGO SARRACENO PELADO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1mUfPE1S7xgGq18HrwJEpXdThK7MXlrnY/view",
+   "rubro": "GRANOS Y LEGUMBRES",
+   "desc": "Pseudocereal de sabor suave, ideal para guarniciones, ensaladas y preparaciones sin trigo. Aporta hidratos de carbono complejos, fibra, proteína vegetal y minerales como magnesio.",
+   "origen": "sheet"
+  },
+  "1635": {
+   "nombre": "TUTUCAS CON AZUCAR",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1hF12REdli5qnypdctorBmKVdPaKIP08A/view",
+   "rubro": "CEREALES",
+   "desc": "Maíz inflado de textura aireada y crocante, con un sabor dulce que lo vuelve irresistible. Ideal para una colación simple, compartir o sumar a una mesa dulce.",
+   "origen": "sheet"
+  },
+  "2175": {
+   "nombre": "VALERIANA X10 COMPRIMIDOS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/115lp6NWTavctF6OVKOnt9x3yK3IiiUFF/view",
+   "desc": "Valeriana concentrada, planta tradicionalmente asociada con la relajación y el descanso. Su presentación práctica permite sumarla a la rutina nocturna.",
+   "origen": "sheet"
+  },
+  "1637": {
+   "nombre": "VINAGRE DE ALCOHOL X 1 L - CAMINITO",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1ptZ3fLsM7tCWMSAydBBK--WkVZ2mdals/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Vinagre de acidez limpia y sabor neutro, útil para aderezos, conservas y distintas preparaciones culinarias. Se emplea en pequeñas cantidades y su aporte energético suele ser bajo.",
+   "origen": "sheet"
+  },
+  "1638": {
+   "nombre": "VINAGRE DE MANZANA X1 L - CAMINITO",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Fs4XLnu7JdWHpLsF-6X7zhnfFyVAQp1s/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Vinagre de sabor frutado y acidez marcada, ideal para aderezos, marinadas y conservas. También puede disfrutarse diluido en agua para crear una bebida fresca y de sabor intenso.",
+   "origen": "sheet"
+  },
+  "1639": {
+   "nombre": "VINAGRE DE VINO X1 L - CAMINITO",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1yHwikOO8DfT2iRsVUjIG1jg68yrIPabq/view",
+   "rubro": "ACEITES Y VINAGRES",
+   "desc": "Vinagre de aroma vínico y acidez definida, ideal para ensaladas, marinadas y conservas. Se usa en pequeñas cantidades y aporta muy pocas grasas y proteínas.",
+   "origen": "sheet"
+  },
+  "2213": {
+   "nombre": "VITAMINA B12 X30 COMPRIMIDOS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/11_XAlYVgZM3fumXDJXiSGTq2aGJ9SVYd/view",
+   "origen": "sheet"
+  },
+  "2311": {
+   "nombre": "VITAMINA C X60 COMPRIMIDOS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1NrBm8NMhPYTr-Hb6q8Ve-oEMxPBUb5dr/view",
+   "desc": "Vitamina C en cápsulas o comprimidos, fácil de incorporar a la rutina. Cumple una función antioxidante, participa en la formación de colágeno y contribuye al funcionamiento normal del sistema inmune.",
+   "origen": "sheet"
+  },
+  "2083": {
+   "nombre": "VITAMINA E X10 COMPRIMIDOS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1weRPLU43kGxL6auIAANb-XtdqE7F17Je/view",
+   "desc": "Vitamina E en comprimidos, nutriente con función antioxidante que ayuda a proteger las células frente al daño oxidativo. Su formato compacto es simple de incorporar.",
+   "origen": "sheet"
+  },
+  "2033": {
+   "nombre": "YERBA DEL PLATERO",
+   "bulto": "1 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1lmaTBTwKRx4zmpoMnZZGy7w2-O7bR5rB/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Hierba tradicional para infusión, de sabor vegetal y aroma característico. Puede disfrutarse sola o combinada con otras hierbas para crear una taza personal y aromática.",
+   "origen": "sheet"
+  },
+  "2043": {
+   "nombre": "YERBA MATE DESPALADA - KALENA",
+   "bulto": "10 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/15EJULhDDOgD32LXhlB-NEZNFxiob_PfO/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Yerba mate despalada de sabor intenso y cuerpo marcado, pensada para preparar mate o tereré. Aporta cafeína y polifenoles naturales, con un perfil ideal para quienes buscan una experiencia bien yerbatera.",
+   "origen": "sheet"
+  },
+  "1655": {
+   "nombre": "ZAPALLO EN ALMIBAR X3.8 KG - MUPAY",
+   "bulto": "2 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "",
+   "rubro": "DULCES, MIEL Y CHOCOLATES",
+   "desc": "Zapallo en almíbar de textura tierna y sabor dulce tradicional. Ideal para servir como postre, acompañar quesos o disfrutar en porciones.",
+   "origen": "sheet"
+  },
+  "1656": {
+   "nombre": "ZAPALLO EN ALMIBAR X360 GR - MUPAY",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1o94OU9WC3fRCpzE3YSs4BGzvAWi8Vd1H/view",
+   "rubro": "DULCES, MIEL Y CHOCOLATES",
+   "desc": "Zapallo en almíbar de textura firme y sabor dulce, ideal como postre o para acompañar quesos. Aporta hidratos de carbono y algo de fibra; el almíbar incrementa el contenido de azúcares.",
+   "origen": "sheet"
+  },
+  "1657": {
+   "nombre": "ZAPALLO EN ALMIBAR X850 GR - MUPAY",
+   "bulto": "12 unidades",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "",
+   "rubro": "DULCES, MIEL Y CHOCOLATES",
+   "origen": "sheet"
+  },
+  "2079": {
+   "nombre": "ZINC X 30 COMPRIMIDOS - EL NATURALISTA",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1aeTTL6PsbNFHvzZWpXgTZ6Y4mb8Hap9C/view",
+   "desc": "Zinc en comprimidos, mineral que participa en el funcionamiento normal del sistema inmune, la síntesis de proteínas y el mantenimiento de piel, cabello y uñas. Una opción práctica para complementar su aporte.",
+   "origen": "sheet"
+  },
+  "4463": {
+   "nombre": "AJO NEGRO",
+   "bulto": "1 KG",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1lHJ3wzAOnPBQRXp0BF1U4iiSRqkHmQro/view",
+   "rubro": "DESHIDRATADOS",
+   "desc": "Ajo fermentado de textura suave, sabor dulce y profundo con notas umami. Aporta compuestos antioxidantes y es ideal para salsas, untables, pastas, carnes y vegetales.",
+   "origen": "sheet"
+  },
+  "4464": {
+   "nombre": "TOMATES DESECADOS CONDIMENTADOS X330 GR- AGROIANNI",
+   "bulto": "PACK X 12 UND",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1i9lz84-8WMdnsX_9ddeyBvGMapvnfsxP/view",
+   "rubro": "ENCURTIDOS",
+   "desc": "Tomates desecados condimentados, de sabor concentrado y textura tierna. Ideales para pastas, pizzas, ensaladas, sándwiches, picadas y panes.",
+   "origen": "sheet"
+  },
+  "5044": {
+   "nombre": "MANZANILLA IMPORTADA",
+   "bulto": "X KG",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1L6DE-kS8DdyzVqNfsNGErBmOR4jwCai9/view",
+   "rubro": "INFUSIONES Y HIERBAS",
+   "desc": "Manzanilla importada de flores aromáticas y sabor suave, ideal para preparar una infusión delicada. Tradicionalmente elegida para acompañar la digestión y los momentos de calma.",
+   "origen": "sheet"
+  },
+  "1636": {
+   "nombre": "TUTUCAS SIN AZUCAR X KG",
+   "bulto": "5 kg",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1ssnRXWRHhOyxkgKCyeSYK4o-f34Shh0d/view",
+   "rubro": "CEREALES",
+   "desc": "Maíz inflado de textura aireada y crocante, sin azúcar agregada según su denominación. Aporta principalmente hidratos de carbono y resulta práctico como colación o base para mezclas.",
+   "origen": "sheet"
+  },
+  "4466": {
+   "nombre": "HARINA DE NUEZ X 1 KG",
+   "bulto": "KG",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1dMoqH_gPk-qT1h1vYmTRTPKNfrEKpDE9/view",
+   "rubro": "HARINAS",
+   "origen": "sheet"
+  },
+  "4467": {
+   "nombre": "HARINA DE NUEZ X 500 GR",
+   "bulto": "1",
+   "bultoUnidad": "unidad",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1D84ZalDc_-PZuGZNTQx2QBjUWwfqVIpF/view",
+   "origen": "sheet"
+  },
+  "4465": {
+   "nombre": "CORIANDRO ENTERO X KG",
+   "bulto": "KG",
+   "bultoUnidad": "kg",
+   "sabores": "",
+   "imagen": "https://drive.google.com/file/d/1Pg3wwOrxOD_xKjCQ_vZDSrEL-9NrBGoe/view",
+   "rubro": "SEMILLAS",
+   "desc": "Semilla aromática de notas cítricas y cálidas, ideal para curries, panes y marinadas. Se utiliza en pequeñas cantidades y aporta aceites esenciales naturales.",
+   "origen": "sheet"
+  }
+ },
  "fotos": {
   "1068": {
    "ext": "webp",
