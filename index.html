@@ -1474,6 +1474,36 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
 }
 </style>
 
+<style id="codex-final-polish">
+@media(min-width:1121px){
+  .may-redesign .header{
+    --may-logo-size:146px!important;
+    --may-nav-safe-start:calc(clamp(34px,5.2vw,86px) + var(--may-logo-size) + 76px)!important;
+  }
+  .may-redesign .header .logo-wrap{left:clamp(34px,5.2vw,86px)!important}
+  .may-redesign .header-inner{padding-left:calc(clamp(34px,5.2vw,86px) + var(--may-logo-size) + 86px)!important}
+}
+@media(min-width:768px){
+  .may-home-cats-carousel{overflow:visible!important}
+  .may-home-cats-grid{padding-inline:58px!important}
+  .may-home-cat-arrow{
+    display:grid!important;position:absolute!important;top:50%!important;width:46px!important;height:46px!important;
+    transform:translateY(-50%)!important;place-items:center!important;padding:0!important;border:1px solid rgba(255,255,255,.55)!important;
+    border-radius:50%!important;background:#f4efe6!important;color:#37658c!important;box-shadow:0 3px 10px rgba(16,42,66,.18)!important;
+    font:800 0/1 'Montserrat',sans-serif!important;z-index:5!important
+  }
+  .may-home-cat-arrow svg{width:20px!important;height:20px!important}
+  .may-home-cat-arrow-prev{left:6px!important}
+  .may-home-cat-arrow-next{right:6px!important}
+  .may-home-cat-arrow:hover{background:#fffdf8!important;box-shadow:0 5px 16px rgba(16,42,66,.26)!important;transform:translateY(-50%)!important}
+  .may-home-cat-arrow:active{background:#ece5d8!important;transform:translateY(-50%) scale(.94)!important}
+  .may-home-cat-arrow:disabled{display:none!important}
+}
+@media(max-width:767px){
+  .may-home-cat-arrow{display:none!important}
+  .may-redesign.may-mobile-search-open .compact-search-clear{right:52px!important}
+}
+</style>
 </head>
 <body class="may-redesign may-home-view">
 
@@ -1551,6 +1581,7 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
            oninput="compactOnSearch(this.value);_updateSuggestions(this.value)"
            onblur="_hideSuggestionsDelayed();compactSearchBlur()" aria-label="Buscar productos">
     <div class="search-suggestions" id="searchSuggestions"></div>
+    <button type="button" class="compact-search-clear" id="compactSearchClear" onclick="clearCompactSearch(event)" aria-label="Borrar búsqueda">×</button>
     <button type="button" class="may-mobile-search-close" onclick="mayToggleMobileSearch(false)" aria-label="Cerrar búsqueda">×</button>
   </div>
 
@@ -3086,6 +3117,7 @@ function cerrarBusqueda(){
   searchTerm='';
   clearTimeout(_searchTimer);
   _doSearch('');
+  _updateSearchClear('');
   const saved=_searchPreScrollY;
   _searchOverlayOpen=false;
   _searchPreScrollY=0;
@@ -3099,6 +3131,7 @@ function onSearch(val){
 
 // Sugerencias inmediatas, con prioridad para nombres que empiezan por lo escrito.
 function _updateSuggestions(value){
+  _updateSearchClear(value);
   const box=document.getElementById('searchSuggestions');
   if(!box)return;
   const term=(value||'').trim();
@@ -3130,9 +3163,26 @@ function _pickSuggestion(nombre){
   if(box){box.classList.remove('active');box.innerHTML='';}
   const inp=document.getElementById('compactSearchInput');
   if(inp)inp.value=nombre;
+  _updateSearchClear(nombre);
   if(typeof window.compactOnSearch==='function')window.compactOnSearch(nombre);
 }
 window._pickSuggestion=_pickSuggestion;
+function _updateSearchClear(value){
+  const btn=document.getElementById('compactSearchClear');
+  if(btn)btn.classList.toggle('visible',!!String(value||'').trim());
+}
+function clearCompactSearch(ev){
+  if(ev){ev.preventDefault();ev.stopPropagation();}
+  const inp=document.getElementById('compactSearchInput');
+  const box=document.getElementById('searchSuggestions');
+  clearTimeout(_searchTimer);
+  if(inp){inp.value='';inp.focus({preventScroll:true});}
+  if(box){box.classList.remove('active');box.innerHTML='';}
+  _updateSearchClear('');
+  if(typeof window.compactOnSearch==='function')window.compactOnSearch('');
+}
+window.clearCompactSearch=clearCompactSearch;
+window._updateSearchClear=_updateSearchClear;
 function _hideSuggestionsDelayed(){
   setTimeout(()=>{const box=document.getElementById('searchSuggestions');if(box)box.classList.remove('active');},150);
 }
@@ -5029,6 +5079,7 @@ window.addEventListener('resize',function(){
     if(isMobileNow===_mayCatalogWasMobile)return;
     _mayCatalogWasMobile=isMobileNow;
     renderMayHomeCategories();
+    renderMayHomeFeatured();
     if(currentTab==='mayorista')renderMayCarrusel();
   },120);
 },{passive:true});
@@ -5124,6 +5175,7 @@ function renderMayHomeCategories(){
   if(pagination){
     pagination.innerHTML=pages.map((page,index)=>`<button type="button" onclick="goMayHomeCatPage(${index})" aria-label="Ver categorías ${index*pageSize+1} a ${index*pageSize+page.length}"${index===0?' aria-current="true"':''}></button>`).join('');
   }
+  _ensureMayHomeCatArrows();
   track.onscroll=_updateMayHomeCatControls;
   requestAnimationFrame(_updateMayHomeCatControls);
   _adjustMayHomeCategoryArcs();
@@ -5155,6 +5207,26 @@ function goMayHomeCatPage(index){
   _mayCatScrollFrame=requestAnimationFrame(step);
 }
 window.goMayHomeCatPage=goMayHomeCatPage;
+
+function _ensureMayHomeCatArrows(){
+  const wrap=document.querySelector('.may-home-cats-carousel');
+  const track=document.getElementById('mayHomeCatsTrack');
+  if(!wrap||!track)return;
+  if(getComputedStyle(wrap).position==='static')wrap.style.position='relative';
+  [['prev','Categorías anteriores',-1],['next','Categorías siguientes',1]].forEach(([side,label,dir])=>{
+    const id='mayHomeCats'+(side==='prev'?'Prev':'Next');
+    if(document.getElementById(id))return;
+    const btn=document.createElement('button');
+    btn.id=id;
+    btn.type='button';
+    btn.className='may-home-cat-arrow may-home-cat-arrow-'+side;
+    btn.setAttribute('aria-label',label);
+    btn.innerHTML='<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="'+(side==='prev'?'M15 18l-6-6 6-6':'M9 18l6-6-6-6')+'"/></svg>';
+    btn.addEventListener('click',()=>scrollMayHomeCats(dir));
+    wrap.appendChild(btn);
+  });
+}
+window._ensureMayHomeCatArrows=_ensureMayHomeCatArrows;
 
 const _mayHomeCatsBreakpoint=window.matchMedia('(max-width:760px)');
 function _rerenderMayHomeCatsAtBreakpoint(){renderMayHomeCategories();}
@@ -5205,6 +5277,11 @@ function _updateMayHomeCatControls(){
   if(!track)return;
   const pages=Array.from(track.querySelectorAll('.may-home-cat-page'));
   const dots=Array.from(document.querySelectorAll('#mayHomeCatsPagination button'));
+  const max=Math.max(0,track.scrollWidth-track.clientWidth);
+  const prev=document.getElementById('mayHomeCatsPrev');
+  const next=document.getElementById('mayHomeCatsNext');
+  if(prev)prev.disabled=track.scrollLeft<=4;
+  if(next)next.disabled=track.scrollLeft>=max-4;
   if(!pages.length||!dots.length)return;
   let current=0;
   pages.forEach((page,index)=>{if(Math.abs(page.offsetLeft-track.scrollLeft)<Math.abs(pages[current].offsetLeft-track.scrollLeft))current=index;});
@@ -5215,26 +5292,26 @@ function _updateMayHomeCatControls(){
 }
 
 function _mayFeaturedProducts(){
-  const preferred=[
-    {art:'1716',rx:/NUEZ MARIPOSA EXTRA LIGHT/i},
-    {art:'1135',rx:/AVENA ARROLLADA GRUESA/i},
-    {art:'1583',rx:/SEMILLA DE CHIA/i},
-    {art:'1359',rx:/^LENTEJAS\b/i}
-  ];
-  const selected=[];
-  preferred.forEach(pref=>{
-    const p=PRODS_MAY.find(item=>String(item[12]&&item[12].artId||'')===pref.art)||PRODS_MAY.find(item=>pref.rx.test(item[2]||''));
-    if(p&&!selected.includes(p))selected.push(p);
+  const maxCount=window.innerWidth<768?6:8;
+  const today=new Date();
+  const seed=today.getFullYear()*372+today.getMonth()*31+today.getDate();
+  const catOrder=(CATS_MAY||[]).map(c=>c.id);
+  const grouped={};
+  PRODS_MAY.forEach(p=>{
+    const firstPrice=Object.values(p[7]||{})[0];
+    if(!firstPrice||!firstPrice[0])return;
+    (grouped[p[1]]||(grouped[p[1]]=[])).push(p);
+    if(!catOrder.includes(p[1]))catOrder.push(p[1]);
   });
-  if(selected.length<4){
-    const dietCats=['frutos','semillas','cereales','granos','deshidratados','harinas','infusiones'];
-    dietCats.forEach(catId=>{
-      if(selected.length>=4)return;
-      const p=PRODS_MAY.find(item=>item[1]===catId&&Object.values(item[7]||{})[0]&&Object.values(item[7]||{})[0][0]>0&&!selected.includes(item));
-      if(p)selected.push(p);
-    });
+  let availableCats=catOrder.filter(cid=>grouped[cid]&&grouped[cid].length);
+  if(availableCats.length){
+    const offset=seed%availableCats.length;
+    availableCats=availableCats.slice(offset).concat(availableCats.slice(0,offset));
   }
-  return selected.slice(0,4);
+  return availableCats.slice(0,maxCount).map((cid,index)=>{
+    const list=grouped[cid].slice().sort((a,b)=>String(a[2]||'').localeCompare(String(b[2]||''),'es'));
+    return list[(seed+index)%list.length];
+  }).filter(Boolean);
 }
 
 function renderMayHomeFeatured(){
@@ -7533,10 +7610,17 @@ window.addEventListener('online', function() {
   color:#61809c;pointer-events:none;transform:translateY(-50%)
 }
 .may-redesign .hd-buscador .compact-search{
-  width:100%;height:46px;padding:0 20px 0 49px;border:1px solid rgba(13,49,80,.08);
+  width:100%;height:46px;padding:0 50px 0 49px;border:1px solid rgba(13,49,80,.08);
   border-radius:999px;background:#fff;color:#173b5e;font-size:13.5px;font-weight:500;
   box-shadow:0 3px 12px rgba(20,49,72,.12)
 }
+.may-redesign .compact-search-clear{
+  display:none;position:absolute;right:14px;top:50%;z-index:4;width:28px;height:28px;padding:0;
+  transform:translateY(-50%);align-items:center;justify-content:center;border:0;border-radius:999px;
+  background:rgba(40,91,131,.10);color:#285b83;font:800 20px/1 Arial,sans-serif;cursor:pointer
+}
+.may-redesign .compact-search-clear.visible{display:flex}
+.may-redesign .compact-search-clear:hover{background:rgba(40,91,131,.18)}
 .may-redesign .hd-buscador .compact-search::placeholder{color:#7890a5;opacity:1}
 .may-redesign .hd-buscador .compact-search:focus{
   outline:3px solid rgba(255,255,255,.32);outline-offset:2px;box-shadow:0 4px 15px rgba(20,49,72,.18)
@@ -8104,6 +8188,28 @@ window.addEventListener('online', function() {
 .may-home-cat-arrow:disabled{opacity:0;pointer-events:none}
 .may-home-carousel-controls{display:none}
 
+@media(min-width:1121px){
+  .may-redesign .header{
+    --may-logo-size:146px;
+    --may-nav-safe-start:calc(clamp(34px,5.2vw,86px) + var(--may-logo-size) + 76px)
+  }
+  .may-redesign .header .logo-wrap{left:clamp(34px,5.2vw,86px)}
+  .may-redesign .header-inner{padding-left:calc(clamp(34px,5.2vw,86px) + var(--may-logo-size) + 86px)}
+}
+@media(min-width:768px){
+  .may-home-cats-carousel{overflow:visible}
+  .may-home-cats-grid{padding-inline:58px}
+  .may-home-cat-arrow{
+    top:50%;width:46px;height:46px;transform:translateY(-50%);
+    border:1px solid rgba(255,255,255,.55);background:#f4efe6;color:#37658c;
+    box-shadow:0 3px 10px rgba(16,42,66,.18);font:800 0/1 'Montserrat',sans-serif
+  }
+  .may-home-cat-arrow svg{width:20px;height:20px}
+  .may-home-cat-arrow:hover{background:#fffdf8;box-shadow:0 5px 16px rgba(16,42,66,.26);transform:translateY(-50%)}
+  .may-home-cat-arrow:active{background:#ece5d8;transform:translateY(-50%) scale(.94)}
+  .may-home-cat-arrow-prev{left:6px}.may-home-cat-arrow-next{right:6px}
+}
+
 .may-home-band-featured{overflow:hidden;background:#dcebf5}
 .may-home-band-featured>.may-home-shell,.may-home-band-banners>.may-home-shell{position:relative;z-index:1}
 .may-feature-card{background:#fff}
@@ -8233,6 +8339,7 @@ window.addEventListener('online', function() {
   .may-redesign.may-mobile-search-open .hd-buscador .compact-search{
     display:block;width:100%;height:44px;padding:0 14px 0 42px;border-radius:13px;background:#fff;font-size:16px
   }
+  .may-redesign.may-mobile-search-open .compact-search-clear{right:52px}
   .may-redesign.may-mobile-search-open .hd-buscador .hd-lupa{left:14px}
   .may-redesign.may-mobile-search-open .hd-buscador .search-suggestions{top:calc(100% + 9px);left:0;right:44px}
   .may-mobile-search-close{
@@ -8965,6 +9072,36 @@ body.may-redesign.checkout-open #cart-fab-may,body.may-redesign.checkout-open #b
 @media(max-width:350px){
   .may-home-cat img{width:94px;height:94px}
   .may-home-cat-arc text{font-size:14px}
+}
+</style>
+<style id="codex-final-polish-late">
+@media(min-width:1121px){
+  .may-redesign .header{
+    --may-logo-size:146px!important;
+    --may-nav-safe-start:calc(clamp(34px,5.2vw,86px) + var(--may-logo-size) + 76px)!important;
+  }
+  .may-redesign .header .logo-wrap{left:clamp(34px,5.2vw,86px)!important}
+  .may-redesign .header-inner{padding-left:calc(clamp(34px,5.2vw,86px) + var(--may-logo-size) + 86px)!important}
+}
+@media(min-width:761px){
+  .may-home-cats-carousel{overflow:visible!important}
+  .may-home-cats-grid{padding-inline:58px!important}
+  .may-home-cat-arrow{
+    display:grid!important;position:absolute!important;top:50%!important;width:46px!important;height:46px!important;
+    transform:translateY(-50%)!important;place-items:center!important;padding:0!important;border:1px solid rgba(255,255,255,.55)!important;
+    border-radius:50%!important;background:#f4efe6!important;color:#37658c!important;box-shadow:0 3px 10px rgba(16,42,66,.18)!important;
+    font:800 0/1 'Montserrat',sans-serif!important;z-index:5!important
+  }
+  .may-home-cat-arrow svg{width:20px!important;height:20px!important}
+  .may-home-cat-arrow-prev{left:6px!important}
+  .may-home-cat-arrow-next{right:6px!important}
+  .may-home-cat-arrow:hover{background:#fffdf8!important;box-shadow:0 5px 16px rgba(16,42,66,.26)!important;transform:translateY(-50%)!important}
+  .may-home-cat-arrow:active{background:#ece5d8!important;transform:translateY(-50%) scale(.94)!important}
+  .may-home-cat-arrow:disabled{display:none!important}
+}
+@media(max-width:760px){
+  .may-home-cat-arrow{display:none!important}
+  .may-redesign.may-mobile-search-open .compact-search-clear{right:52px!important}
 }
 </style>
 </body>
