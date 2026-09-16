@@ -7445,8 +7445,12 @@ window.addEventListener('online', function() {
   if (!('serviceWorker' in navigator)) return;
 
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/paladeardistribuidora-test/sw.js', {
-      scope: '/paladeardistribuidora-test/'
+    // La carpeta se saca de la dirección: así el mismo archivo anda en la tienda
+    // oficial y en la de pruebas. Escrita a mano, en la oficial apuntaba a la
+    // carpeta del tester y el service worker no se registraba nunca.
+    var _base = location.pathname.replace(/[^/]*$/, '');
+    navigator.serviceWorker.register(_base + 'sw.js', {
+      scope: _base
     })
     .then(function(reg) {
       console.log('[PWA] Service Worker registrado. Scope:', reg.scope);
