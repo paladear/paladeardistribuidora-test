@@ -1427,14 +1427,19 @@ body.compact-on .compact-header{transform:translateY(0);pointer-events:auto}
 .compact-wave path{fill:#547692}
 @media(min-width:768px){.compact-inner{padding:10px 24px;min-height:64px;gap:14px}.compact-logo{width:48px;height:48px}.compact-hamb{width:44px;height:44px}.compact-search{font-size:15px;padding:10px 18px}}
 .may-pcard .pcard-name-may{font-weight:700;font-size:15px;line-height:1.35;margin-bottom:4px}
-/* ── Nombre, contenido y marca ── */
-.info-modal-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:4px 0 10px}
-.info-modal-meta .nom-c{margin-left:0;font-size:15px}
-.info-modal-meta .nom-m,.search-suggestion-item .nom-m{display:inline;margin:0 0 0 7px;font-size:10.5px}
-.nom-p{font-weight:800}
-.nom-c{font-weight:500;color:var(--muted-fg,#5b6f80);margin-left:5px;white-space:nowrap}
-.nom-m{display:block;margin-top:2px;font-style:normal;font-weight:700;font-size:10.5px;
+/* ── Nombre, contenido y marca ──
+   El nombre solo en su renglón; debajo la cantidad y la marca. Pegada al nombre,
+   la cantidad lo empujaba a dos renglones. */
+.nom-p{font-weight:800;display:block}
+.nom-meta{display:block;margin-top:2px;line-height:1.3}
+.nom-c{font-weight:600;color:var(--muted-fg,#5b6f80);white-space:nowrap}
+.nom-m{font-style:normal;font-weight:700;font-size:10.5px;white-space:nowrap;
   letter-spacing:.09em;text-transform:uppercase;color:#6d90aa}
+.nom-c + .nom-m{margin-left:6px;padding-left:7px;border-left:1px solid var(--border,#d6e2eb)}
+.info-modal-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:4px 0 10px}
+.info-modal-meta .nom-meta{display:inline;margin-top:0}
+.info-modal-meta .nom-c{font-size:15px}
+.search-suggestion-item .nom-meta{display:inline;margin-left:7px}
 .may-qty-row{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
 
 /* ── UNIFICACIÓN BANNERS MIX & GRANOLA (al final para ganar la cascada) ── */
@@ -5620,9 +5625,11 @@ function _nomHTMLMay(p, nombreYaPintado){
   const base = nombreYaPintado || _tc(p[2]);
   const env = _envaseDeMay(p), mar = _marcaDeMay(p);
   if (!env && !mar) return `<b class="nom-p">${base}</b>`;
-  return `<b class="nom-p">${base}</b>`
+  // La cantidad y la marca van juntas en su propio renglón, debajo del nombre.
+  return `<b class="nom-p">${base}</b><span class="nom-meta">`
     + (env ? `<span class="nom-c">${env}</span>` : '')
-    + (mar ? `<em class="nom-m">${mar}</em>` : '');
+    + (mar ? `<em class="nom-m">${mar}</em>` : '')
+    + `</span>`;
 }
 
 function renderCardMay(p, suffix) {
