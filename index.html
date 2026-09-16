@@ -1436,6 +1436,13 @@ body.compact-on .compact-header{transform:translateY(0);pointer-events:auto}
 .nom-m{font-style:normal;font-weight:700;font-size:10.5px;
   letter-spacing:.09em;text-transform:uppercase;color:#6d90aa}
 .nom-c + .nom-m{margin-left:6px;padding-left:7px;border-left:1px solid var(--border,#d6e2eb)}
+/* En el celular casi nunca entran las dos en el mismo renglón: la marca bajaba y
+   la rayita quedaba colgando arriba. Ahí van una debajo de la otra, sin raya. */
+@media(max-width:767px){
+  .pcard-name .nom-meta{display:block}
+  .pcard-name .nom-c + .nom-m{margin-left:0;padding-left:0;border-left:0;
+    display:block;margin-top:1px}
+}
 .info-modal-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:4px 0 10px}
 .info-modal-meta .nom-meta{display:inline;margin-top:0}
 .info-modal-meta .nom-c{font-size:15px}
