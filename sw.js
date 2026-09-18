@@ -22,15 +22,20 @@
 //      en segundo plano. Casi nunca cambian.
 // ════════════════════════════════════════════════════════
 
-const CACHE_VERSION = 'paladear-distri-test-v17';
-const CACHE_PREFIX = 'paladear-distri-test-';
+// La carpeta sale de dónde está parado este mismo archivo. Escrita a mano decía
+// siempre "paladeardistribuidora-test", así que la distribuidora de verdad guardaba
+// los archivos de la de pruebas y su propia página nunca entraba por la regla de red
+// primero: por eso se publicaba y se seguía viendo lo de antes.
+const BASE = new URL('./', self.location).pathname;
+const CACHE_PREFIX = 'paladear-distri-';
+const CACHE_VERSION = CACHE_PREFIX + BASE.replace(/\//g, '') + '-v18';
 
 const SHELL_FILES = [
-  '/paladeardistribuidora-test/android-chrome-may-p-192.png',
-  '/paladeardistribuidora-test/android-chrome-may-p-512.png',
-  '/paladeardistribuidora-test/apple-touch-icon-may-p.png',
-  '/paladeardistribuidora-test/favicon-may-p-32.png',
-  '/paladeardistribuidora-test/og-image-may-blue.jpg',
+  BASE + 'android-chrome-may-p-192.png',
+  BASE + 'android-chrome-may-p-512.png',
+  BASE + 'apple-touch-icon-may-p.png',
+  BASE + 'favicon-may-p-32.png',
+  BASE + 'og-image-may-blue.jpg',
 ];
 
 // ── INSTALL ─────────────────────────────────────────────
@@ -38,12 +43,16 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_VERSION)
       .then(async cache => {
-        const page = await fetch('/paladeardistribuidora-test/index.html', { cache: 'reload' });
+        const page = await fetch(BASE + 'index.html', { cache: 'reload' });
         if (!page || !page.ok) throw new Error('No se pudo actualizar index.html');
         await Promise.all([
-          cache.put('/paladeardistribuidora-test/', page.clone()),
-          cache.put('/paladeardistribuidora-test/index.html', page.clone()),
-          cache.addAll(SHELL_FILES)
+          cache.put(BASE, page.clone()),
+          cache.put(BASE + 'index.html', page.clone()),
+          // Uno por uno: con addAll, un solo nombre viejo tiraba abajo la instalación
+          // entera y el service worker se quedaba con la versión anterior para siempre.
+          Promise.all(SHELL_FILES.map(function(f){
+            return cache.add(f).catch(function(){ console.warn('[SW] no pude guardar', f); });
+          }))
         ]);
       })
       .catch(err => {
@@ -84,11 +93,16 @@ self.addEventListener('fetch', event => {
   // primera visita (sin tener que borrar el historial). Si no hay red,
   // caemos al cache para que la página siga abriendo offline.
   const _path = url.pathname;
-  const _esPagina = _path === '/paladeardistribuidora-test/' ||
-                    _path === '/paladeardistribuidora-test/index.html' ||
-                    _path === '/paladeardistribuidora-test/catalogo.html';
+  const _esPagina = _path === BASE ||
+                    _path === BASE + 'index.html' ||
+                    _path === BASE + 'catalogo.html';
 
-  if (_esPagina) {
+  // PRECIOS Y FICHAS: también red primero. Sin esta regla caían en
+  // stale-while-revalidate y el que volvía a entrar veía los precios y los nombres
+  // de la visita anterior. En una lista mayorista eso es un precio mal cobrado.
+  const _esDato = /\/(precios-may|info-may|precios-min|stock)\.csv$|\/(catalogo-panel|pendientes|fotos-propias)\.json$/.test(_path);
+
+  if (_esPagina || _esDato) {
     event.respondWith(
       fetch(event.request, { cache: 'no-store' })
         .then(response => {
@@ -100,8 +114,12 @@ self.addEventListener('fetch', event => {
           return response;
         })
         .catch(() =>
-          caches.match(event.request)
-            .then(cached => cached || caches.match('/paladeardistribuidora-test/index.html'))
+          caches.match(event.request).then(cached => {
+            if (cached) return cached;
+            // Un CSV/JSON no puede caer al index.html: devolvería HTML donde se
+            // esperan datos. Mejor fallar y que la página reintente.
+            return _esDato ? Response.error() : caches.match(BASE + 'index.html');
+          })
         )
     );
     return;
@@ -120,7 +138,7 @@ self.addEventListener('fetch', event => {
             }
             return response;
           })
-          .catch(() => cached || caches.match('/paladeardistribuidora-test/index.html'));
+          .catch(() => cached || caches.match(BASE + 'index.html'));
         // Servimos el cache al instante si existe; si no, esperamos la red.
         return cached || network;
       })
@@ -135,5 +153,5 @@ self.addEventListener('push', event => {
 
 self.addEventListener('notificationclick', event => {
   event.notification.close();
-  event.waitUntil(clients.openWindow('/paladeardistribuidora-test/'));
+  event.waitUntil(clients.openWindow(BASE));
 });
