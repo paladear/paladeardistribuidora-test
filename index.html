@@ -4998,8 +4998,10 @@ function cargarMayorista() {
         if (!nombre || !precio || !rubro) return;
         const cat = RUBRO_MAP[rubro];
         if (!cat) return;
+        if (RUBROS_OCULTOS[rubro]) return;              // rubro apagado desde el panel
 
         const inf          = infoMay[artId] || infoMay[_norm(nombre)] || {};
+        if (inf.oculto) return;                         // producto apagado de a uno
         const bulto        = inf.bulto  || 1;
         const sabores      = inf.sabores || null;
         const imgUrl       = (inf.imagen || _tieneFotoPropia(artId)) ? _prodImg(artId,500) : '';
@@ -5066,6 +5068,11 @@ function cargarMayorista() {
   });
 }
 
+/* Lo que el panel manda esconder. Hasta ahora la tienda no miraba nada de esto: la
+   X roja de una ficha no tenía ningún efecto acá, y no había forma de sacar un rubro
+   entero. Se llenan al leer catalogo-panel.json. */
+let RUBROS_OCULTOS = {};
+
 function _cargarInfoMay() {
   return new Promise(resolve => {
     function _procesar(csv) {
@@ -5098,6 +5105,10 @@ function _cargarInfoMay() {
     fetch('catalogo-panel.json?t=' + Date.now(), { cache: 'no-store' })
       .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
       .then(j => {
+        RUBROS_OCULTOS = {};
+        (j.rubrosOcultos || []).forEach(function(r){
+          RUBROS_OCULTOS[String(r).trim().toUpperCase()] = true;
+        });
         const fichas = j.fichas || {}, mapa = {};
         Object.keys(fichas).forEach(artId => {
           const f = fichas[artId];
@@ -5106,7 +5117,7 @@ function _cargarInfoMay() {
           const bultoUnidad = f.bultoUnidad ||
             ((/kg|kgr|kilo/i.test(bultoRaw) || (bulto % 1 !== 0)) ? 'kg' : 'unidad');
           const entry = {
-            nombre: f.nombre || '', bulto, bultoUnidad,
+            nombre: f.nombre || '', bulto, bultoUnidad, oculto: f.oculto === true,
             marca: f.marca || '', envase: f.envase || '',
             sabores: f.sabores ? String(f.sabores).split('/').map(x => x.trim()).filter(Boolean) : null,
             imagen: f.imagen || ''
