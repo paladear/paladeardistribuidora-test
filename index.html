@@ -2153,13 +2153,22 @@ let CATS=[],PRODS=[],searchTerm='',activeCatId=null,miniCartTimer=null;
 // tiraba un error TDZ (silenciado por try/catch) y nunca se ejecutaba.
 let _MIN_BY_ID = null;
 
+/* La tienda de pruebas vive en el mismo dominio que la de verdad (paladear.github.io),
+   así que comparten el guardado del navegador: abrir la tester le pisaba a la tienda
+   real el catálogo guardado y hasta el carrito. Sólo la tester lleva sufijo; las claves
+   de la tienda de verdad quedan igual que siempre para no vaciarle el carrito a nadie. */
+const _LS = (function(){
+  var esPrueba = /-test(\/|$)/.test(location.pathname);
+  return function(k){ return esPrueba ? k + '__test' : k; };
+})();
+
 /* ── CARRITO: se guarda en localStorage para sobrevivir recargas ── */
-function _saveCart(){try{localStorage.setItem('paladear_cart_v2',JSON.stringify(cart));}catch(e){}}
+function _saveCart(){try{localStorage.setItem(_LS('paladear_cart_v2'),JSON.stringify(cart));}catch(e){}}
 function _loadCart(){
-  try{const s=localStorage.getItem('paladear_cart_v2');return s?JSON.parse(s):[];}catch(e){return [];}
+  try{const s=localStorage.getItem(_LS('paladear_cart_v2'));return s?JSON.parse(s):[];}catch(e){return [];}
 }
-function _guardarUltimoPedido(){try{if(cart && cart.length)localStorage.setItem('paladear_ultimo_pedido',JSON.stringify(cart));}catch(e){}}
-function _cargarUltimoPedido(){try{const s=localStorage.getItem('paladear_ultimo_pedido');return s?JSON.parse(s):null;}catch(e){return null;}}
+function _guardarUltimoPedido(){try{if(cart && cart.length)localStorage.setItem(_LS('paladear_ultimo_pedido'),JSON.stringify(cart));}catch(e){}}
+function _cargarUltimoPedido(){try{const s=localStorage.getItem(_LS('paladear_ultimo_pedido'));return s?JSON.parse(s):null;}catch(e){return null;}}
 window._repetirUltimoPedido=function(){
   const u=_cargarUltimoPedido();
   if(!u||!u.length){return;}
@@ -2882,8 +2891,8 @@ function _cuentaGuardarPedido(cartArr,total,direccion){
     var snap=(cartArr||[]).map(function(it){var o=JSON.parse(JSON.stringify(it));o._sub=(it.l1||0)*(it.c||1);return o;});
     if(!snap.length)return;
     var hist=_cuentaCargarPedidos();
-    var n=(parseInt(localStorage.getItem('paladear_pedido_may_n')||'0',10)||0)+1;
-    localStorage.setItem('paladear_pedido_may_n',String(n));
+    var n=(parseInt(localStorage.getItem(_LS('paladear_pedido_may_n'))||'0',10)||0)+1;
+    localStorage.setItem(_LS('paladear_pedido_may_n'),String(n));
     var d=new Date();
     var fecha=('0'+d.getDate()).slice(-2)+'/'+('0'+(d.getMonth()+1)).slice(-2)+'/'+d.getFullYear();
     hist.unshift({n:n,fecha:fecha,total:total,count:snap.length,direccion:direccion||'',cart:snap});
@@ -3661,7 +3670,7 @@ function _cargarInfo(){
 function sincronizarDesdeSheets(){
   // Stale-while-revalidate: hidratar UI desde cache local para render instantáneo
   try {
-    const raw = localStorage.getItem('paladear_min_v1');
+    const raw = localStorage.getItem(_LS('paladear_min_v1'));
     if (raw) {
       const data = JSON.parse(raw);
       if (data && data.prods && data.prods.length && data.cats && data.cats.length) {
@@ -3719,7 +3728,7 @@ function sincronizarDesdeSheets(){
       PRODS=prodsTemp;
       _MIN_BY_ID=null;
       // Guardar en localStorage para hidratación instantánea en próxima visita
-      try{localStorage.setItem('paladear_min_v1',JSON.stringify({cats:CATS,prods:PRODS,ts:Date.now()}));}catch(e){}
+      try{localStorage.setItem(_LS('paladear_min_v1'),JSON.stringify({cats:CATS,prods:PRODS,ts:Date.now()}));}catch(e){}
       console.log(`✅ Paladear: ${PRODS.length} productos, ${CATS.length} categorías`);
       renderCatsUI();
       renderCarruseles();
@@ -4819,8 +4828,8 @@ function _minimoMayVigente(){ return _esPrimerPedidoMay() ? MIN_COMPRA_MAYORISTA
 
 let PRODS_MAY = [];
 let CATS_MAY = [];
-function _saveCartMay(){try{localStorage.setItem('paladear_cart_may_v2',JSON.stringify(cartMay));}catch(e){}}
-function _loadCartMay(){try{const s=localStorage.getItem('paladear_cart_may_v2');return s?JSON.parse(s):[];}catch(e){return [];}}
+function _saveCartMay(){try{localStorage.setItem(_LS('paladear_cart_may_v2'),JSON.stringify(cartMay));}catch(e){}}
+function _loadCartMay(){try{const s=localStorage.getItem(_LS('paladear_cart_may_v2'));return s?JSON.parse(s):[];}catch(e){return [];}}
 let cartMay = _loadCartMay();
 if(cartMay.length)updateCartMayCount();
 let activeCatIdMay = null;
@@ -4971,7 +4980,7 @@ function cargarMayorista() {
   // ── PASO 1: mostrar caché local INMEDIATAMENTE si existe ──
   let _mayYaRenderizado = false;
   try {
-    const raw = localStorage.getItem('paladear_may_v1');
+    const raw = localStorage.getItem(_LS('paladear_may_v1'));
     if (raw) {
       const data = JSON.parse(raw);
       if (data.cats && data.prods && data.prods.length) {
@@ -5032,7 +5041,7 @@ function cargarMayorista() {
       CATS_MAY = Object.values(RUBRO_MAP).filter(c => catIds.includes(c.id));
       console.log('✅ Lista Mayorista: ' + PRODS_MAY.length + ' productos, ' + CATS_MAY.length + ' categorías');
       // Guardar en localStorage para uso offline
-      try{localStorage.setItem('paladear_may_v1',JSON.stringify({cats:CATS_MAY,prods:PRODS_MAY,bultoMap:MAY_BULTO_MAP,ts:Date.now()}));}catch(e){}
+      try{localStorage.setItem(_LS('paladear_may_v1'),JSON.stringify({cats:CATS_MAY,prods:PRODS_MAY,bultoMap:MAY_BULTO_MAP,ts:Date.now()}));}catch(e){}
       renderMayUI();
     }
 
@@ -6750,8 +6759,8 @@ function coEnviar() {
   if (!isMin) { try { _cuentaGuardarPedido(cartMay, (typeof tot2 !== 'undefined' ? tot2 : 0), (typeof direccion !== 'undefined' && direccion ? direccion : '')); } catch(e){} }
 
   // Limpiar el carrito (el pedido quedó guardado en "último pedido")
-  if (isMin) { cart=[]; updateCartCount(); try{localStorage.removeItem('paladear_cart_v2');}catch(e){} }
-  if (!isMin) { cartMay=[]; updateCartMayCount(); try{localStorage.removeItem('paladear_cart_may_v2');}catch(e){} }
+  if (isMin) { cart=[]; updateCartCount(); try{localStorage.removeItem(_LS('paladear_cart_v2'));}catch(e){} }
+  if (!isMin) { cartMay=[]; updateCartMayCount(); try{localStorage.removeItem(_LS('paladear_cart_may_v2'));}catch(e){} }
 
   cerrarCheckout();
   _track(isMin ? 'pedido_enviado' : 'pedido_enviado_may');
@@ -7346,7 +7355,7 @@ window._productoTieneReceta = _productoTieneReceta;
 
 function _guardarPedidoPendiente(url, tipo) {
   try {
-    localStorage.setItem('paladear_pedido_pendiente', JSON.stringify({url, tipo, ts: Date.now()}));
+    localStorage.setItem(_LS('paladear_pedido_pendiente'), JSON.stringify({url, tipo, ts: Date.now()}));
   } catch(e) {}
   // Mostrar aviso
   _quitarBannerPedido();
@@ -7373,7 +7382,7 @@ function _quitarBannerPedido() {
 
 function _enviarPedidoPendiente() {
   try {
-    const raw = localStorage.getItem('paladear_pedido_pendiente');
+    const raw = localStorage.getItem(_LS('paladear_pedido_pendiente'));
     if (!raw) return;
     const data = JSON.parse(raw);
     if (!navigator.onLine) {
@@ -7383,14 +7392,14 @@ function _enviarPedidoPendiente() {
       return;
     }
     window.open(data.url, '_blank');
-    localStorage.removeItem('paladear_pedido_pendiente');
+    localStorage.removeItem(_LS('paladear_pedido_pendiente'));
     _quitarBannerPedido();
   } catch(e) {}
 }
 window._enviarPedidoPendiente = _enviarPedidoPendiente;
 
 function _cancelarPedidoPendiente() {
-  localStorage.removeItem('paladear_pedido_pendiente');
+  localStorage.removeItem(_LS('paladear_pedido_pendiente'));
   _quitarBannerPedido();
 }
 window._cancelarPedidoPendiente = _cancelarPedidoPendiente;
@@ -7398,7 +7407,7 @@ window._cancelarPedidoPendiente = _cancelarPedidoPendiente;
 // Al recuperar internet: mostrar el banner si hay pedido pendiente
 window.addEventListener('online', function() {
   try {
-    const raw = localStorage.getItem('paladear_pedido_pendiente');
+    const raw = localStorage.getItem(_LS('paladear_pedido_pendiente'));
     if (!raw) return;
     _quitarBannerPedido();
     const data = JSON.parse(raw);
@@ -7422,11 +7431,11 @@ window.addEventListener('online', function() {
 // Al abrir la app: si hay pedido pendiente y hay internet, mostrar el banner
 (function() {
   try {
-    const raw = localStorage.getItem('paladear_pedido_pendiente');
+    const raw = localStorage.getItem(_LS('paladear_pedido_pendiente'));
     if (!raw) return;
     const data = JSON.parse(raw);
     // Solo mostrar si el pedido tiene menos de 24 horas
-    if (Date.now() - data.ts > 86400000) { localStorage.removeItem('paladear_pedido_pendiente'); return; }
+    if (Date.now() - data.ts > 86400000) { localStorage.removeItem(_LS('paladear_pedido_pendiente')); return; }
     if (navigator.onLine) {
       // Hay internet y pedido pendiente: mostrar banner verde de reenvío
       window.addEventListener('load', function() {
