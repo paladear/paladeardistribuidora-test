@@ -3177,6 +3177,13 @@ function _updateSuggestions(value){
     if(tn.startsWith(qn))score=3;
     else if(tn.split(' ').some(w=>w.startsWith(qn)))score=2;
     else if(tn.includes(qn))score=1;
+    // Si no pegó por el nombre, se prueba por la marca. Cuando la marca sale del
+    // nombre y pasa a su propio campo, buscar "durang" tiene que seguir andando.
+    if(!score){
+      const mn=_norm((p[12]&&p[12].marca)||'');
+      if(mn && (mn.startsWith(qn)||mn.split(' ').some(w=>w.startsWith(qn))))score=2;
+      else if(mn && mn.includes(qn))score=1;
+    }
     return{p,score};
   }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score);
   const seen=new Set(),top=[];
@@ -6178,7 +6185,12 @@ function _doSearchMay(val) {
     _searchMayOverlayOpen = true;
     history.pushState({view:'searchMay',scrollY:_searchMayPreScrollY}, '');
   }
-  const scored = PRODS_MAY.map(p => ({ p, score: _matchScore(searchTermMay, p[2]) * 2 + _matchScore(searchTermMay, p[3]) }))
+  // La marca cuenta casi tanto como el nombre: una vez que sale del nombre y vive en
+  // su propio campo, buscar "entrenuts" tiene que traer todo lo de Entrenuts igual.
+  const scored = PRODS_MAY.map(p => ({ p, score:
+      _matchScore(searchTermMay, p[2]) * 2
+    + _matchScore(searchTermMay, _marcaDeMay(p)) * 2
+    + _matchScore(searchTermMay, p[3]) }))
     .filter(x => x.score > 0).sort((a, b) => b.score - a.score);
   const results = scored.map(x => x.p);
   
