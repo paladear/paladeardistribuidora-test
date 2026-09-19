@@ -6356,8 +6356,20 @@ window.compartirTienda = compartirTienda;
       'visibility:visible!important;opacity:1!important;pointer-events:auto!important}' +
       '#cartelPruebas a{color:#fff!important;text-decoration:underline!important;' +
       'font-weight:800!important;white-space:nowrap}' +
-      'body{padding-top:36px!important}';
+      '';
     document.head.appendChild(st);
+    // El header y los paneles que arrancan pegados arriba se bajan lo que mide el
+    // cartel; si no, quedan debajo y no se ve ni el logo. Se mide en vivo porque en
+    // el celular el texto se parte en dos renglones y el alto cambia.
+    function _correr(){
+      var h = Math.ceil(d.getBoundingClientRect().height) || 36;
+      st.textContent = st.textContent.replace(/\/\*empuje\*\/[\s\S]*$/, '') +
+        '/*empuje*/body{padding-top:' + h + 'px!important}' +
+        '.header,.compact-header,.cart-panel,.cats-dropdown-panel,.may-header{top:' + h + 'px!important}';
+    }
+    _correr();
+    window.addEventListener('resize', _correr);
+    setTimeout(_correr, 600);
   }
   if (document.body) _poner();
   else document.addEventListener('DOMContentLoaded', _poner);
