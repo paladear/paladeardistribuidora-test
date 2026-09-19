@@ -6338,18 +6338,20 @@ window.compartirTienda = compartirTienda;
     d.id = 'cartelPruebas';
     d.innerHTML = '<b>TIENDA DE PRUEBAS</b> — no es la que ven los clientes. ' +
       '<a href="' + real + '">Ir a la tienda de verdad &rsaquo;</a>';
-    d.style.cssText = 'background:#b3261e;color:#fff;font:700 13px/1.45 Montserrat,system-ui,sans-serif;' +
-      'text-align:center;padding:8px 14px;letter-spacing:.02em;' +
-      'position:fixed;top:0;left:0;right:0;z-index:2147483647';
-    var a = d.querySelector('a');
-    a.style.cssText = 'color:#fff;text-decoration:underline;font-weight:800;white-space:nowrap';
     document.body.appendChild(d);
-    // Se empuja todo lo demás hacia abajo para no taparle el header. Este estilo sólo
-    // existe en la tienda de pruebas, así que a la de verdad no la toca ni de casualidad.
-    var alto = Math.ceil(d.getBoundingClientRect().height) || 34;
+    // Todo con !important y por id: la página tiene reglas que le ganaban al estilo
+    // puesto a mano y el cartel terminaba perdido en el medio del largo de la página.
     var st = document.createElement('style');
-    st.textContent = 'body{padding-top:' + alto + 'px!important}' +
-      '.header,.compact-header,.may-header,.cats-dropdown-panel{margin-top:' + alto + 'px}';
+    st.textContent =
+      '#cartelPruebas{position:fixed!important;top:0!important;left:0!important;right:0!important;' +
+      'width:auto!important;margin:0!important;transform:none!important;' +
+      'z-index:2147483647!important;background:#b3261e!important;color:#fff!important;' +
+      'font:700 13px/1.45 Montserrat,system-ui,sans-serif!important;text-align:center!important;' +
+      'padding:8px 14px!important;letter-spacing:.02em!important;display:block!important;' +
+      'visibility:visible!important;opacity:1!important;pointer-events:auto!important}' +
+      '#cartelPruebas a{color:#fff!important;text-decoration:underline!important;' +
+      'font-weight:800!important;white-space:nowrap}' +
+      'body{padding-top:36px!important}';
     document.head.appendChild(st);
   }
   if (document.body) _poner();
