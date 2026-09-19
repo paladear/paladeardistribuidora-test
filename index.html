@@ -6319,6 +6319,35 @@ function _avisoCompartir(txt){
 }
 window.compartirTienda = compartirTienda;
 
+
+/* ── CARTEL DE TIENDA DE PRUEBAS ──────────────────────────────────────────────
+   El mismo archivo se publica en la tienda de verdad y en la de pruebas, así que
+   el cartel se decide en el momento, mirando la carpeta. Sin esto, abrir la tester
+   sin querer y creer que es la real terminaba en sustos: precios y productos que
+   no son los que ve el cliente.
+   Va como bloque normal, no fijo: una barra flotante taparía el header y el
+   carrito. Se ve al entrar, que es cuando hace falta, y el título de la pestaña lo
+   dice siempre. */
+(function _carteldePruebas(){
+  if (!/-test(\/|$)/.test(location.pathname)) return;
+  try { document.title = '[PRUEBAS] ' + document.title; } catch(e) {}
+  var real = location.origin + location.pathname.replace('-test/', '/');
+  function _poner(){
+    if (document.getElementById('cartelPruebas')) return;
+    var d = document.createElement('div');
+    d.id = 'cartelPruebas';
+    d.innerHTML = '<b>TIENDA DE PRUEBAS</b> — no es la que ven los clientes. ' +
+      '<a href="' + real + '">Ir a la tienda de verdad &rsaquo;</a>';
+    d.style.cssText = 'background:#b3261e;color:#fff;font:700 13px/1.45 Montserrat,system-ui,sans-serif;' +
+      'text-align:center;padding:9px 14px;letter-spacing:.02em;position:relative;z-index:99999';
+    var a = d.querySelector('a');
+    a.style.cssText = 'color:#fff;text-decoration:underline;font-weight:800;white-space:nowrap';
+    document.body.insertBefore(d, document.body.firstChild);
+  }
+  if (document.body) _poner();
+  else document.addEventListener('DOMContentLoaded', _poner);
+})();
+
 function _doSearchMay(val) {
   searchTermMay = val.trim();
   const sr = document.getElementById('maySearchResults');
