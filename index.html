@@ -3655,6 +3655,10 @@ function _cargarInfo(){
             sabores: _parseCantidades(f.sabores),
             imagen: f.imagen || '',
             mix: f.mix === true,
+            // Hacen falta para el mensaje de WhatsApp: sin la marca y el contenido
+            // no se entiende qué producto es cuál.
+            marca: f.marca || '',
+            envase: f.envase || '',
             oferta: f.oferta || 0
           };
           mapa[id] = entrada;
@@ -3722,7 +3726,7 @@ function sincronizarDesdeSheets(){
         }
         const esMix=inf.mix===true;const esGranola=inf.granola===true;
         const ofertaPct=inf.oferta||0;
-        prodsTemp.push([pid++,cat.id,nombreFinal,esKg?'Granel':'Varios',esKg?'kg':'und',false,imgUrl,opts,infoText,sabores,esMix,esGranola,{productId,oferta:ofertaPct}]);
+        prodsTemp.push([pid++,cat.id,nombreFinal,esKg?'Granel':'Varios',esKg?'kg':'und',false,imgUrl,opts,infoText,sabores,esMix,esGranola,{productId,oferta:ofertaPct,marca:inf.marca||'',envase:inf.envase||''}]);
       });
       CATS=Object.keys(RUBRO_MAP).filter(k=>catMap[RUBRO_MAP[k].id]).map(k=>RUBRO_MAP[k]);
       PRODS=prodsTemp;
@@ -5646,6 +5650,27 @@ window.volverMayInicio = volverMayInicio;
    en gris al lado y la marca en mayúsculas finitas. Un producto que se vende por
    peso no trae envase, así que muestra el nombre solo, como siempre. */
 function _envaseDeMay(p){ return (p[12] && p[12].envase) || ''; }
+/* Marca y contenido para el mensaje de WhatsApp: en el pedido llegaban varios
+   renglones con el mismo nombre y no se sabía cuál era cuál. */
+function _waDetalleMay(it){
+  const p = (PRODS_MAY || []).find(x => x[0] === it.pid);
+  if (!p) return '';
+  const partes = [];
+  const env = _envaseDeMay(p); if (env) partes.push(env);
+  const mar = _marcaDeMay(p);  if (mar) partes.push(mar.toUpperCase());
+  return partes.join(' · ');
+}
+function _waDetalleMin(it){
+  if (it.unidad === 'mix') return '';
+  const p = (PRODS || []).find(x => x[0] === it.pid);
+  if (!p) return '';
+  const partes = [];
+  const env = (p[12] && p[12].envase) || '';
+  if (env && it.unidad === 'und') partes.push(env);   // a granel el peso ya va en la cantidad
+  const mar = (p[12] && p[12].marca) || '';
+  if (mar) partes.push(mar.toUpperCase());
+  return partes.join(' · ');
+}
 function _marcaDeMay(p){ return (p[12] && p[12].marca) || ''; }
 
 function _nomHTMLMay(p, nombreYaPintado){
@@ -6714,7 +6739,8 @@ function coEnviar() {
     cart.forEach(function(it){
       var s = esMay ? _itemMay(it) : _itemMinConOferta(it); tot += s;
       var q = it.unidad==='mix' ? _gLabel(it.totalG)+' — '+it.mixDetalle : it.unidad==='kg' ? _gLabel(it.totalG) : (it.c>1?it.o+' x'+it.c:it.o);
-      lines += '• ' + it.n + ' (' + q + ') — $' + fmt(s) + '\n';
+      var det = _waDetalleMin(it);
+      lines += '• ' + it.n + ' (' + q + ')' + (det ? ' — ' + det : '') + ' — $' + fmt(s) + '\n';
     });
     var huboOferta = !esMay && cart.some(function(it){ return _getOfertaPct(it.pid)>0; });
     lines += '\n*TOTAL: $' + fmt(tot) + '*' + (esMay?'\n_(Descuento por volumen aplicado)_':'') + (huboOferta?'\n_(Ofertas del mes aplicadas)_':'');
@@ -6727,7 +6753,9 @@ function coEnviar() {
     items2.forEach(function(it){
       var sub=it.l1*it.c; tot2+=sub;
       var etiqueta = it.bultoLabel ? ' ('+_tc(it.bultoLabel)+')' : '';
-      lines2 += '*'+it.c+'* - '+_tc(it.n)+etiqueta+'\n   $'+fmt(sub)+'\n';
+      var det2 = _waDetalleMay(it);
+      lines2 += '*'+it.c+'* - '+_tc(it.n)+etiqueta +
+                (det2 ? '\n   '+det2 : '') + '\n   $'+fmt(sub)+'\n';
     });
     lines2 += '\n*TOTAL: $' + fmt(tot2) + '*\n_(Lista Mayorista)_';
     msg = lines2 + deliveryMsg + '\n\n_Pedido realizado desde el catálogo online_';
