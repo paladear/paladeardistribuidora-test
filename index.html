@@ -6333,12 +6333,16 @@ window.compartirTienda = compartirTienda;
   try { document.title = '[PRUEBAS] ' + document.title; } catch(e) {}
   var real = location.origin + location.pathname.replace('-test/', '/');
   function _poner(){
-    if (document.getElementById('cartelPruebas')) return;
-    var d = document.createElement('div');
-    d.id = 'cartelPruebas';
+    // En la minorista el cartel ya existía, pero escrito al FINAL del documento y
+    // con position:sticky: pegado ahí abajo, sólo aparecía al llegar al pie de la
+    // página, o sea nunca. Se reusa el que haya y se lo manda arriba de todo.
+    var d = document.getElementById('cartelPruebas');
+    if (!d) { d = document.createElement('div'); d.id = 'cartelPruebas'; }
     d.innerHTML = '<b>TIENDA DE PRUEBAS</b> — no es la que ven los clientes. ' +
       '<a href="' + real + '">Ir a la tienda de verdad &rsaquo;</a>';
-    document.body.appendChild(d);
+    if (d.parentElement !== document.body || document.body.firstChild !== d) {
+      document.body.insertBefore(d, document.body.firstChild);
+    }
     // Todo con !important y por id: la página tiene reglas que le ganaban al estilo
     // puesto a mano y el cartel terminaba perdido en el medio del largo de la página.
     var st = document.createElement('style');
@@ -6348,6 +6352,7 @@ window.compartirTienda = compartirTienda;
       'z-index:2147483647!important;background:#b3261e!important;color:#fff!important;' +
       'font:700 13px/1.45 Montserrat,system-ui,sans-serif!important;text-align:center!important;' +
       'padding:8px 14px!important;letter-spacing:.02em!important;display:block!important;' +
+      'text-transform:none!important;' +
       'visibility:visible!important;opacity:1!important;pointer-events:auto!important}' +
       '#cartelPruebas a{color:#fff!important;text-decoration:underline!important;' +
       'font-weight:800!important;white-space:nowrap}' +
