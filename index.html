@@ -6339,10 +6339,18 @@ window.compartirTienda = compartirTienda;
     d.innerHTML = '<b>TIENDA DE PRUEBAS</b> — no es la que ven los clientes. ' +
       '<a href="' + real + '">Ir a la tienda de verdad &rsaquo;</a>';
     d.style.cssText = 'background:#b3261e;color:#fff;font:700 13px/1.45 Montserrat,system-ui,sans-serif;' +
-      'text-align:center;padding:9px 14px;letter-spacing:.02em;position:relative;z-index:99999';
+      'text-align:center;padding:8px 14px;letter-spacing:.02em;' +
+      'position:fixed;top:0;left:0;right:0;z-index:2147483647';
     var a = d.querySelector('a');
     a.style.cssText = 'color:#fff;text-decoration:underline;font-weight:800;white-space:nowrap';
-    document.body.insertBefore(d, document.body.firstChild);
+    document.body.appendChild(d);
+    // Se empuja todo lo demás hacia abajo para no taparle el header. Este estilo sólo
+    // existe en la tienda de pruebas, así que a la de verdad no la toca ni de casualidad.
+    var alto = Math.ceil(d.getBoundingClientRect().height) || 34;
+    var st = document.createElement('style');
+    st.textContent = 'body{padding-top:' + alto + 'px!important}' +
+      '.header,.compact-header,.may-header,.cats-dropdown-panel{margin-top:' + alto + 'px}';
+    document.head.appendChild(st);
   }
   if (document.body) _poner();
   else document.addEventListener('DOMContentLoaded', _poner);
