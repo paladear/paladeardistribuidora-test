@@ -5670,12 +5670,24 @@ const _MARCAS_MAY_TOPE = 12;
 function pintarMarcasDelMenuMay(){
   const c = document.getElementById('mayCatsDropdownMarcas');
   if(!c) return;
-  const cuenta = {};
-  (PRODS_MAY || []).forEach(p => {
-    const m = (_marcaDeMay(p) || '').trim();
-    if (m) cuenta[m] = (cuenta[m] || 0) + 1;
+  // Se agrupan sin mirar mayúsculas ni acentos: "Alcaraz Gourmet" y "ALCARAZ GOURMET"
+  // son la misma marca y salían como dos chips distintos. Se muestra la forma más
+  // usada, que suele ser la bien escrita.
+  const grupos={};
+  (PRODS_MAY||[]).forEach(p=>{
+    const m=(_marcaDeMay(p)||'').trim();
+    if(!m)return;
+    const k=_norm(m);
+    const g=grupos[k]||(grupos[k]={n:0,formas:{}});
+    g.n++; g.formas[m]=(g.formas[m]||0)+1;
   });
-  const lista = Object.keys(cuenta).sort((a,b) => cuenta[b]-cuenta[a] || a.localeCompare(b,'es'));
+  const cuenta={};
+  Object.keys(grupos).forEach(k=>{
+    const g=grupos[k];
+    const mejor=Object.keys(g.formas).sort((a,b)=>g.formas[b]-g.formas[a]||a.localeCompare(b,'es'))[0];
+    cuenta[mejor]=g.n;
+  });
+  const lista=Object.keys(cuenta).sort((a,b)=>cuenta[b]-cuenta[a]||a.localeCompare(b,'es'));
   if (!lista.length) { c.innerHTML = ''; return; }   // todavía sin marcas cargadas
   const sobran = Math.max(0, lista.length - _MARCAS_MAY_TOPE);
   // Desplegadas se ordenan alfabéticamente: con cuarenta chips, el orden por
