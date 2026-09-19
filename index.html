@@ -6363,9 +6363,21 @@ window.compartirTienda = compartirTienda;
     // el celular el texto se parte en dos renglones y el alto cambia.
     function _correr(){
       var h = Math.ceil(d.getBoundingClientRect().height) || 36;
+      // Sólo se bajan los que de verdad están clavados arriba. Bajar por las dudas a
+      // cualquier cosa que se llame "header" le abría un hueco a la mayorista, que lo
+      // tiene en el flujo normal y ya se corre solo con el padding del body.
+      var sel = ['.header','.compact-header','.cart-panel','.cats-dropdown-panel',
+                 '.may-header','.may-cats-panel'];
+      var mover = [];
+      sel.forEach(function(q){
+        document.querySelectorAll(q).forEach(function(e){
+          var s = getComputedStyle(e);
+          if ((s.position === 'fixed' || s.position === 'absolute') && s.top === '0px') mover.push(q);
+        });
+      });
       st.textContent = st.textContent.replace(/\/\*empuje\*\/[\s\S]*$/, '') +
         '/*empuje*/body{padding-top:' + h + 'px!important}' +
-        '.header,.compact-header,.cart-panel,.cats-dropdown-panel,.may-header{top:' + h + 'px!important}';
+        (mover.length ? [...new Set(mover)].join(',') + '{top:' + h + 'px!important}' : '');
     }
     _correr();
     window.addEventListener('resize', _correr);
