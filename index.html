@@ -388,6 +388,21 @@ button{cursor:pointer;border:none;font-family:inherit}
 .cats-dropdown-title{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:700;color:var(--azul-dark);margin-bottom:14px;display:flex;align-items:center;justify-content:space-between}
 .cats-dropdown-close{background:var(--muted);border:none;width:32px;height:32px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--fg);flex-shrink:0}
 .cats-dropdown-list{display:flex;flex-direction:column;gap:7px}
+/* Las marcas, al final del menú de categorías. Se muestran las que más productos
+   tienen y el resto queda detrás de un chip: son muchas más que los rubros. */
+.cats-dd-marcas{padding:4px 0 2px}
+.cats-dd-marcas:empty{display:none}
+.cdds-tit{margin:14px 0 10px;padding-top:14px;border-top:1px solid var(--border);
+  font:800 11.5px/1 'Montserrat',sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted-fg)}
+.cdds-fila{display:flex;flex-wrap:wrap;gap:8px}
+.cdds-chip{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;
+  border:1.5px solid var(--border);border-radius:999px;background:var(--card);
+  color:var(--fg);font:600 13.5px/1 'Montserrat',sans-serif;cursor:pointer;min-height:42px;
+  transition:background .15s,border-color .15s,color .15s}
+.cdds-chip b{font-weight:800;opacity:.45;font-size:12.5px}
+.cdds-chip:hover{border-color:var(--azul-mid)}
+.cdds-chip.cdds-mas{border-style:dashed;color:var(--muted-fg)}
 .cats-dd-btn{height:44px;border-radius:10px;padding:0 14px;border:2.5px solid transparent;box-shadow:0 2px 6px rgba(0,0,0,.13);display:flex;align-items:center;justify-content:flex-start;cursor:pointer;transition:all .2s;font-family:inherit;width:100%}
 .cats-dd-btn .nm{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:#fff;line-height:1;letter-spacing:.2px;text-align:left}
 .cats-dd-btn:hover{filter:brightness(1.12);transform:translateX(3px)}
@@ -1834,6 +1849,7 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
     <button class="cats-dropdown-close" onclick="closeMayCatsDropdown()" aria-label="Cerrar categorías">×</button>
   </div>
   <div class="cats-dropdown-list" id="mayCatsDropdownGrid"></div>
+  <div class="cats-dd-marcas" id="mayCatsDropdownMarcas"></div>
 </div>
 
 <!-- ── HEADER COMPACTO (aparece al scrollear en minorista/mayorista) ── -->
@@ -5643,6 +5659,78 @@ function selectMayCat(catId, productId) {
 }
 window.selectMayCat = selectMayCat;
 
+/* ── VER TODO DE UNA MARCA ───────────────────────────────────────────────────
+   Las marcas van al final del menú de categorías, igual que en la minorista: no
+   son rubros, pero se usan en el mismo momento, cuando querés acotar lo que ves.
+   Antes, para ver todo de una marca había que saber de antemano en qué rubro
+   estaba y recorrerlo a ojo. */
+let _MARCAS_MAY_TODAS = false;
+const _MARCAS_MAY_TOPE = 12;
+
+function pintarMarcasDelMenuMay(){
+  const c = document.getElementById('mayCatsDropdownMarcas');
+  if(!c) return;
+  const cuenta = {};
+  (PRODS_MAY || []).forEach(p => {
+    const m = (_marcaDeMay(p) || '').trim();
+    if (m) cuenta[m] = (cuenta[m] || 0) + 1;
+  });
+  const lista = Object.keys(cuenta).sort((a,b) => cuenta[b]-cuenta[a] || a.localeCompare(b,'es'));
+  if (!lista.length) { c.innerHTML = ''; return; }   // todavía sin marcas cargadas
+  const sobran = Math.max(0, lista.length - _MARCAS_MAY_TOPE);
+  // Desplegadas se ordenan alfabéticamente: con cuarenta chips, el orden por
+  // cantidad no ayuda a encontrar la que buscás.
+  const ver = _MARCAS_MAY_TODAS ? lista.slice().sort((a,b) => a.localeCompare(b,'es'))
+                                : lista.slice(0, _MARCAS_MAY_TOPE);
+  c.innerHTML = '<div class="cdds-tit">Marcas</div><div class="cdds-fila">' +
+    ver.map(m => '<button type="button" class="cdds-chip" onclick="verMarcaMay(\'' +
+      m.replace(/'/g, "\\'") + '\')"><span>' + m + '</span><b>' + cuenta[m] + '</b></button>').join('') +
+    (sobran && !_MARCAS_MAY_TODAS
+      ? '<button type="button" class="cdds-chip cdds-mas" onclick="_verTodasLasMarcasMay()">Ver las ' + sobran + ' que faltan</button>'
+      : '') +
+    (_MARCAS_MAY_TODAS && sobran
+      ? '<button type="button" class="cdds-chip cdds-mas" onclick="_verTodasLasMarcasMay(false)">Mostrar menos</button>'
+      : '') +
+    '</div>';
+}
+function _verTodasLasMarcasMay(si){ _MARCAS_MAY_TODAS = si !== false; pintarMarcasDelMenuMay(); }
+window.pintarMarcasDelMenuMay = pintarMarcasDelMenuMay;
+window._verTodasLasMarcasMay = _verTodasLasMarcasMay;
+
+function verMarcaMay(marca){
+  if (!marca) return;
+  closeMayCatsDropdown();
+  const clave = _norm(marca);
+  const prods = (PRODS_MAY || []).filter(p => _norm(_marcaDeMay(p) || '') === clave)
+    .sort((a,b) => a[2].localeCompare(b[2], 'es', {sensitivity:'base'}));
+  // Se sale del rubro que estuviera abierto, igual que al entrar a una categoría.
+  activeCatIdMay = null;
+  try { renderMayCatsUI(); } catch(e) {}
+  const isMobile = window.innerWidth < 768;
+  const desktop = document.getElementById('mayDesktopProdsArea');
+  const mobile  = document.getElementById('mayMobileProdsArea');
+
+  function _grid(sfx){
+    let h = '<button class="back-btn" onclick="volverMayInicio()">← Volver al inicio</button>' +
+      '<h2 style="font-size:22px;color:var(--azul-dark);margin:12px 0 4px;font-weight:700">' + marca + '</h2>' +
+      '<p style="margin:0 0 16px;color:var(--muted-fg);font-size:14px">' +
+        prods.length + (prods.length === 1 ? ' producto' : ' productos') + ' de esta marca</p>';
+    if (!prods.length) {
+      h += '<div style="text-align:center;padding:48px;color:var(--muted-fg)">No hay productos de esta marca</div>';
+    } else {
+      h += '<div class="prod-grid">';
+      prods.forEach(p => { h += renderCardMay(p, sfx); });
+      h += '</div>';
+    }
+    return h;
+  }
+  if (desktop) desktop.innerHTML = isMobile ? '' : _grid('');
+  if (mobile)  { mobile.innerHTML = isMobile ? _grid('m') : ''; mobile.classList.toggle('hidden', !isMobile); }
+  const area = isMobile ? mobile : desktop;
+  if (area) area.scrollIntoView({behavior:'smooth', block:'start'});
+}
+window.verMarcaMay = verMarcaMay;
+
 function volverMayInicio() {
   activeCatIdMay = null;
   renderMayCatsUI();
@@ -6302,6 +6390,7 @@ function toggleMayCatsDropdown(trigger){
   if(!overlay||!panel)return;
   if(_mayCatsDropOpen){
     if(typeof renderMayCatsUI==='function')renderMayCatsUI();
+    try{ pintarMarcasDelMenuMay(); }catch(e){}
     const anchor=trigger||(document.activeElement&&document.activeElement.closest?document.activeElement.closest('button'):null);
     if(anchor&&window.innerWidth>=768){
       const nav=anchor.closest('.hd-nav-inner');
