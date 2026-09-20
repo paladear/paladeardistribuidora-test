@@ -891,7 +891,7 @@ textarea.co-input{resize:vertical;min-height:60px;font-family:inherit}
 .card-del-btn:hover{border-color:#d4543c;color:#b04020;background:rgba(212,84,60,.18)}
 .card-edit-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;height:34px;border-radius:8px;background:var(--azul-light);border:1.5px solid var(--azul-mid);color:var(--azul-dark);font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s}
 .card-edit-btn:hover{background:var(--azul);color:#fff}
-.add-btn.added{background:#16a34a}
+.add-btn.added{background:#629176}
 .acum-badge{font-size:12px;color:#4a7a60;font-weight:700;background:#e6faee;padding:3px 9px;border-radius:8px;margin-left:6px;border:1px solid rgba(111,155,127,.4);white-space:nowrap}
 
 @media(max-width:767px){#mainContainer{padding:12px 12px}}
@@ -1101,7 +1101,7 @@ body.cart-open #cart-fab,body.cart-open #chat-fab{display:none!important}
 /* top con --pegado-top: en la tienda de pruebas el cartel rojo esta clavado
    arriba y se comia la barra del boton volver. En la tienda real la variable
    no existe y vale 0. */
-.product-detail{position:fixed;top:var(--pegado-top,0px);left:0;right:0;bottom:0;z-index:10050;background:#eef4fa;overflow-y:auto;animation:fadeIn .18s ease}
+.product-detail{position:fixed;top:var(--pegado-top,0px);left:0;right:0;bottom:0;z-index:10025;background:#eef4fa;overflow-y:auto;animation:fadeIn .18s ease}
 .product-detail-bar{position:sticky;top:0;z-index:3;min-height:68px;padding:10px 18px;display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:10px;background:rgba(207,222,236,.97);color:var(--azul-dark);
   box-shadow:0 5px 16px rgba(20,58,87,.08)}
 .product-detail-bar strong{text-align:center;font-size:15px;font-weight:800;letter-spacing:.02em}
@@ -1127,6 +1127,9 @@ body.cart-open #cart-fab,body.cart-open #chat-fab{display:none!important}
 .product-detail-buy .qty-row{justify-content:center;margin:4px 0 12px}
 .product-detail-buy .add-btn{min-height:50px;margin:0;font-size:15px}
 .product-detail-cart-state{min-height:20px;margin-top:10px;text-align:center;color:#426c88;font-size:12px;font-weight:700}
+.product-detail-cart-state .card-cart-actions{margin-top:9px}
+.product-detail-cart-state .card-del-btn,.product-detail-cart-state .card-edit-btn{height:36px}
+
 .may-redesign .pcard{cursor:pointer}
 .may-redesign .pcard:focus-visible{outline:3px solid #5d94bb;outline-offset:3px}
 /* ── Relacionados, al final de la ficha ── */
@@ -1630,7 +1633,6 @@ html.android-ui #mayoristaSection .wa-btn[style*="#25d366"]{background:#4b9a6b!i
 html.android-ui .card-del-btn{color:#8f5145;background:rgba(166,98,83,.09);border-color:rgba(166,98,83,.24)}
 html.android-ui .card-del-btn:hover{color:#8f5145;border-color:#b86f61;background:rgba(166,98,83,.15)}
 html.android-ui .acum-badge{color:#557064;background:#edf3ef;border-color:rgba(104,137,117,.30)}
-html.android-ui .add-btn.added{background:#629176}
 html.android-ui .distb-banner{background:radial-gradient(circle at 6% 16%,rgba(166,98,83,.07) 0 46px,transparent 47px),radial-gradient(circle at 95% 88%,rgba(166,98,83,.07) 0 72px,transparent 73px),linear-gradient(135deg,#f5ebe4,#efdfd5);border-color:#b86f61}
 html.android-ui .distb-name,html.android-ui .distb-go,html.android-ui .distb-note b,html.android-ui .distb-reward{color:#8f5145}
 html.android-ui .distb-go{border-color:rgba(166,98,83,.24)}
@@ -6122,10 +6124,22 @@ function _pintarRelacionadosMay(p){
     }).join('') + '</div>';
 }
 
+/* Lo que está en el pedido, dentro de la ficha abierta: el texto más el tacho y
+   el botón de ver el pedido, los mismos que tiene la tarjeta chica. */
 function _textoPedidoMay(pid){
   const it = cartMay.find(i => i.pid === pid);
   if (!it) return '';
-  return 'En tu pedido: ' + it.c + (it.c === 1 ? ' bulto' : ' bultos');
+  return 'En tu pedido: ' + it.c + (it.c === 1 ? ' bulto' : ' bultos') +
+    '<div class="card-cart-actions">' +
+      '<button class="card-del-btn" onclick="_fichaMayQuitar(' + pid + ')" title="Quitar del pedido">' + TRASH_SVG + '</button>' +
+      '<button class="card-edit-btn" onclick="openCartMay()">' + EDIT_SVG + ' Ver pedido</button>' +
+    '</div>';
+}
+
+function _fichaMayQuitar(pid){
+  delFromCartMay(pid);
+  const st = document.getElementById('mayDetailCartState');
+  if (st) st.innerHTML = _textoPedidoMay(pid);
 }
 
 function openProductDetailMay(pid){
@@ -6213,7 +6227,7 @@ function openProductDetailMay(pid){
 function _fichaMayAgregar(pid){
   addToCartMay(pid, 'may_detail_' + pid);
   const st = document.getElementById('mayDetailCartState');
-  if (st) st.textContent = _textoPedidoMay(pid);
+  if (st) st.innerHTML = _textoPedidoMay(pid);
 }
 
 // Cierra sin tocar el historial. Se usa desde el popstate y al reemplazar una
@@ -6241,6 +6255,7 @@ function _fichaMayVerMarca(marca){
 
 window.openProductDetailMay = openProductDetailMay;
 window._fichaMayAgregar = _fichaMayAgregar;
+window._fichaMayQuitar = _fichaMayQuitar;
 window._fichaMayVolver = _fichaMayVolver;
 window._fichaMayVerMarca = _fichaMayVerMarca;
 window._cerrarFichaMayDirecto = _cerrarFichaMayDirecto;
