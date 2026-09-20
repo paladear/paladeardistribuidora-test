@@ -1092,6 +1092,75 @@ body.cart-open #cart-fab,body.cart-open #chat-fab{display:none!important}
 #imgZoom{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;cursor:zoom-out;animation:fadeIn .2s}
 #imgZoom img{max-width:92vw;max-height:88vh;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.5);object-fit:contain}
 #imgZoom .zoom-close{position:absolute;top:18px;right:22px;color:#fff;font-size:38px;cursor:pointer;background:rgba(0,0,0,.4);border:none;border-radius:50%;width:48px;height:48px;display:flex;align-items:center;justify-content:center}
+/* ── FICHA GRANDE DEL PRODUCTO ──────────────────────────────────────────────
+   Antes la foto y la info se abrían como dos popups distintos y, peor, el
+   overlay del buscador (z-index 10000) los tapaba: tocabas un resultado y no
+   pasaba nada. Ahora es una sola pantalla, igual que en la minorista, y va
+   por encima de todo. */
+:root{--pd-aire:18px}
+.product-detail{position:fixed;inset:0;z-index:10050;background:#eef4fa;overflow-y:auto;animation:fadeIn .18s ease}
+.product-detail-bar{position:sticky;top:0;z-index:3;min-height:68px;padding:10px 18px;display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:10px;background:rgba(207,222,236,.97);color:var(--azul-dark);
+  box-shadow:0 5px 16px rgba(20,58,87,.08)}
+.product-detail-bar strong{text-align:center;font-size:15px;font-weight:800;letter-spacing:.02em}
+.product-detail-back,.product-detail-close{width:42px;height:42px;border:1px solid rgba(20,58,87,.16);border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--azul-dark);cursor:pointer;font-family:inherit;box-shadow:0 2px 7px rgba(20,58,87,.1)}
+.product-detail-close{font-size:24px;line-height:1}
+.product-detail-shell{width:min(1100px,calc(100% - 40px));margin:0 auto;padding:34px 0 52px}
+.product-detail-main{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(360px,.98fr);gap:42px;align-items:start}
+.product-detail-image{position:relative;aspect-ratio:1;border:1px solid #dce6ec;border-radius:24px;overflow:hidden;background:#fff;box-shadow:0 18px 44px rgba(31,74,107,.10)}
+.product-detail-image img{display:block;width:100%;height:100%;object-fit:contain;padding:22px}
+.product-detail-copy{padding-top:8px}
+.product-detail-category{display:flex;align-items:center;gap:10px;margin-bottom:10px;color:#4e7898;font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+.product-detail-category::after{content:"";width:42px;height:1px;background:currentColor;opacity:.5}
+.product-detail-title{margin:0 0 18px;color:#123f67;font-size:clamp(30px,3.2vw,46px);font-weight:800;line-height:1.04;letter-spacing:-.035em}
+.product-detail-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:6px 0 10px}
+.product-detail-meta .nom-c{margin-left:0;font-size:15px}
+.product-detail-meta .nom-m{font-size:11.5px}
+.product-detail-meta .nom-meta{display:inline;margin-top:0}
+.product-detail-info{margin:0 0 22px;color:#496579;font-size:14px;line-height:1.62}
+.product-detail-buy{padding:20px;border:1px solid #d8e4eb;border-radius:20px;background:#fff;box-shadow:0 12px 30px rgba(31,74,107,.08)}
+.product-detail-buy .bulto-badge{margin-bottom:12px}
+.product-detail-buy .sabor-row{margin:0 0 14px}
+.product-detail-buy .prices{margin:4px 0 14px;padding:14px;border-radius:14px;background:#edf5f9}
+.product-detail-buy .qty-row{justify-content:center;margin:4px 0 12px}
+.product-detail-buy .add-btn{min-height:50px;margin:0;font-size:15px}
+.product-detail-cart-state{min-height:20px;margin-top:10px;text-align:center;color:#426c88;font-size:12px;font-weight:700}
+.may-redesign .pcard{cursor:pointer}
+.may-redesign .pcard:focus-visible{outline:3px solid #5d94bb;outline-offset:3px}
+/* ── Relacionados, al final de la ficha ── */
+.product-detail-rel{grid-column:1/-1;margin:26px 0 4px;padding-top:20px;border-top:1px solid var(--border)}
+.pdrel-tit{margin:0 0 13px;font-size:16px;font-weight:800;color:var(--fg)}
+.pdrel-fila{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}
+.pdrel-card{display:flex;flex-direction:column;gap:6px;padding:9px;border:1px solid var(--border);
+  border-radius:12px;background:var(--card);cursor:pointer;text-align:left;
+  transition:border-color .16s ease,box-shadow .16s ease}
+.pdrel-card:hover{border-color:var(--azul-mid);box-shadow:0 3px 12px rgba(20,45,70,.1)}
+.pdrel-img{display:flex;align-items:center;justify-content:center;aspect-ratio:1;
+  border-radius:8px;background:#fff;overflow:hidden;padding:7px}
+.pdrel-img img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.pdrel-nom{font-size:12.5px;line-height:1.25;color:var(--fg)}
+.pdrel-nom .nom-m{font-size:9px}
+.pdrel-precio{font-weight:800;font-size:14.5px;color:var(--azul-dark);font-variant-numeric:tabular-nums}
+@media(max-width:767px){
+  .product-detail-rel{margin-left:0;margin-right:0;padding-left:0;padding-right:0}
+  .pdrel-tit{padding:0 var(--pd-aire)}
+  .pdrel-fila{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;
+    padding:2px var(--pd-aire) 6px;margin:0;scroll-padding-left:var(--pd-aire);
+    -webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .pdrel-fila::-webkit-scrollbar{display:none}
+  .pdrel-card{flex:0 0 43vw;max-width:170px;scroll-snap-align:start}
+}
+@media(max-width:760px){
+  .product-detail-bar{min-height:62px;padding:8px 12px}
+  .product-detail-shell{width:100%;padding:0 0 34px}
+  .product-detail-main{display:block}
+  .product-detail-image{height:min(48vh,390px);aspect-ratio:auto;border:0;border-radius:0;box-shadow:none}
+  .product-detail-image img{padding:14px}
+  .product-detail-copy{padding:24px 18px 0}
+  .product-detail-title{font-size:29px;margin-bottom:14px}
+  .product-detail-info{font-size:13px;line-height:1.55;margin-bottom:18px}
+  .product-detail-buy{padding:16px;border-radius:17px}
+}
+
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .hidden{display:none!important}
 .desktop-only{display:block}
@@ -2430,6 +2499,13 @@ function _imgZoomGoBack(){if(history.state&&history.state.modal==='imgZoom')hist
 window._imgZoomGoBack=_imgZoomGoBack;
 function zoomImg(el){let src=el.dataset.src||'';if(!src)return;src=src.replace(/=w\d+/,'=w1200').replace(/\/w_\d+\//,'/w_1200/');const old=document.getElementById('imgZoom');if(old)old.remove();const z=document.createElement('div');z.id='imgZoom';z.onclick=e=>{if(e.target===z||e.target.tagName==='IMG')_imgZoomGoBack();};z.innerHTML=`<button class="zoom-close" onclick="_imgZoomGoBack()">×</button><img src="${src}" alt="">`;document.body.appendChild(z);history.pushState({modal:'imgZoom'},'');}
 window.addEventListener('popstate',function(e){const z=document.getElementById('imgZoom');if(z){z.remove();e.stopImmediatePropagation();}});
+// La ficha grande se cierra con el boton atras. Tiene que escucharse antes que
+// el popstate general: si no, con el buscador abierto se cerraba el buscador y
+// la ficha quedaba colgada arriba.
+window.addEventListener('popstate',function(e){
+  const f=document.getElementById('productDetailMay');
+  if(f){_cerrarFichaMayDirecto();e.stopImmediatePropagation();}
+});
 
 /* ── CARRUSELES ── */
 let _carRotationInterval=null;
@@ -5942,10 +6018,10 @@ function renderCardMay(p, suffix) {
   const acumInfo  = acumQty > 0 ? `<div class="card-subtotal"><span>Subtotal</span><strong>$${fmt(precio * acumQty)}</strong></div>` : '';
   const cat       = CATS_MAY.find(c => c.id === p[1]);
 
-  let h = `<div class="pcard" id="${id}">`;
+  let h = `<div class="pcard" id="${id}" data-pid="${p[0]}" tabindex="0" onclick="if(!event.target.closest('button,select'))openProductDetailMay(${p[0]})" onkeydown="if(event.key==='Enter'&&event.target===this)openProductDetailMay(${p[0]})">`;
 
   // Imagen
-  h += `<div class="pcard-img" onclick="zoomImg(this)" data-src="${hasSrc ? p[6] : ''}">${hasSrc
+  h += `<div class="pcard-img" data-src="${hasSrc ? p[6] : ''}">${hasSrc
     ? `<img src="${p[6]}" alt="${p[2]}" onerror="this.parentNode.innerHTML=MAY_PRODUCT_PLACEHOLDER" loading="lazy">`
     : MAY_PRODUCT_PLACEHOLDER}</div>`;
 
@@ -5953,7 +6029,7 @@ function renderCardMay(p, suffix) {
 
   // Nombre
   h += `<div class="pcard-head"><div class="pcard-name">${_nomHTMLMay(p)}</div>`;
-  if(infoText) h += `<button class="info-btn" onclick="showInfo(${p[0]})" title="Ver información" aria-label="Ver información">${MAY_INFO_ICON}</button>`;
+  if(infoText) h += `<button class="info-btn" onclick="openProductDetailMay(${p[0]})" title="Ver detalle" aria-label="Ver detalle">${MAY_INFO_ICON}</button>`;
   h += `</div>`;
 
   // Rubro
@@ -5999,6 +6075,173 @@ function renderCardMay(p, suffix) {
   return h;
 }
 window.renderCardMay = renderCardMay;
+
+/* ── FICHA GRANDE DEL PRODUCTO (mayorista) ──────────────────────────────────
+   Reemplaza los dos popups viejos (zoom de la foto + modal de info). Muestra
+   la foto grande, el rubro, la marca, el envase, la descripcion y el bloque
+   para pedir, todo en una pantalla sola. */
+let _mayFichaOverflowPrevio = '';
+
+function _relacionadosMay(p, cuantos){
+  const marca = _norm(_marcaDeMay(p) || '');
+  const vistos = new Set([p[0]]);
+  const sale = [];
+  const meter = (lista) => {
+    for (const q of lista) {
+      if (sale.length >= cuantos) return;
+      if (vistos.has(q[0])) continue;
+      if (!Object.keys(q[7] || {}).length) continue;   // sin precio no se muestra
+      vistos.add(q[0]); sale.push(q);
+    }
+  };
+  if (marca) meter(PRODS_MAY.filter(q => _norm(_marcaDeMay(q) || '') === marca));
+  meter(PRODS_MAY.filter(q => q[1] === p[1]));
+  return sale;
+}
+
+function _pintarRelacionadosMay(p){
+  const caja = document.getElementById('mayDetailRel');
+  if (!caja) return;
+  const lista = _relacionadosMay(p, 6);
+  if (!lista.length) { caja.innerHTML = ''; return; }
+  caja.innerHTML = '<h3 class="pdrel-tit">Relacionados</h3>' +
+    '<div class="pdrel-fila">' + lista.map(function(q){
+      const opts = Object.keys(q[7]);
+      const precio = opts.length ? q[7][opts[0]][0] : 0;
+      const img = (q[6] && q[6].startsWith('http'))
+        ? '<img src="' + q[6] + '" alt="" loading="lazy" decoding="async">'
+        : MAY_PRODUCT_PLACEHOLDER;
+      const fondo = (q[12] && q[12].fondo) ? ' style="background:' + q[12].fondo + '"' : '';
+      return '<button type="button" class="pdrel-card" onclick="openProductDetailMay(' + q[0] + ')">' +
+        '<span class="pdrel-img"' + fondo + '>' + img + '</span>' +
+        '<span class="pdrel-nom">' + _nomHTMLMay(q) + '</span>' +
+        '<span class="pdrel-precio">$' + fmt(precio) + '</span></button>';
+    }).join('') + '</div>';
+}
+
+function _textoPedidoMay(pid){
+  const it = cartMay.find(i => i.pid === pid);
+  if (!it) return '';
+  return 'En tu pedido: ' + it.c + (it.c === 1 ? ' bulto' : ' bultos');
+}
+
+function openProductDetailMay(pid){
+  const p = PRODS_MAY.find(x => x[0] === pid);
+  if (!p) return;
+  _track('producto_abierto');
+  const yaAbierta = !!document.getElementById('productDetailMay');
+  _cerrarFichaMayDirecto(true);
+
+  const opts        = Object.keys(p[7] || {});
+  const precio      = opts.length ? p[7][opts[0]][0] : 0;
+  const bulto       = p[12] ? p[12].bulto : 1;
+  const bultoLabel  = opts[0] || ('Bulto x' + bulto);
+  const bultoUnidad = (p[12] && p[12].bultoUnidad) || 'unidad';
+  const pxUnidad    = bulto > 0 ? Math.round(precio / bulto) : precio;
+  const unidadLbl   = bultoUnidad === 'kg' ? 'por kg' : 'c/u';
+  const unitInfo    = bulto > 1 ? '<div class="price-unit">$' + fmt(pxUnidad) + ' ' + unidadLbl + '</div>' : '';
+  const cat         = CATS_MAY.find(c => c.id === p[1]);
+  const sabores     = p[9] || null;
+  const fondo       = (p[12] && p[12].fondo) ? p[12].fondo : '#fff';
+  const hasSrc      = p[6] && p[6].startsWith('http');
+  const src         = hasSrc ? p[6].replace(/=w\d+/, '=w1200').replace(/\/w_\d+\//, '/w_1200/') : '';
+  const eid         = 'may_detail_' + p[0];
+  const marca       = _marcaDeMay(p);
+  const envase      = _envaseDeMay(p);
+  const info        = (p[8] || 'Consultanos si querés conocer más detalles sobre este producto.').replace(/\n/g, '<br>');
+
+  const saboresHTML = (sabores && sabores.length)
+    ? '<div class="sabor-row"><label class="sabor-label" for="' + eid + '_sab">Sabor:</label>' +
+      '<select class="sabor-select" id="' + eid + '_sab"><option value="">Seleccionar...</option>' +
+      sabores.map(sa => '<option value="' + sa.replace(/"/g, '&quot;') + '">' + sa + '</option>').join('') +
+      '</select></div>'
+    : '';
+
+  const metaHTML = (envase || marca)
+    ? '<div class="product-detail-meta">' +
+      (envase ? '<span class="nom-c">' + envase + '</span>' : '') +
+      (marca ? '<button type="button" class="nom-m nom-m-link" onclick="_fichaMayVerMarca(\'' + marca.replace(/'/g, "\\'") + '\')" title="Ver todo de ' + marca + '">' + marca + '</button>' : '') +
+      '</div>'
+    : '';
+
+  const modal = document.createElement('section');
+  modal.id = 'productDetailMay';
+  modal.className = 'product-detail';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-label', 'Detalle de ' + _tc(p[2]));
+  modal.innerHTML = '<div class="product-detail-bar">' +
+      '<button class="product-detail-back" type="button" onclick="_fichaMayVolver()" aria-label="Volver"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>' +
+      '<strong>Detalle del producto</strong>' +
+      '<button class="product-detail-close" type="button" onclick="_fichaMayVolver()" aria-label="Cerrar">×</button>' +
+    '</div><div class="product-detail-shell"><div class="product-detail-main">' +
+      '<div class="product-detail-image" style="background:' + fondo + '">' +
+        (src ? '<img src="' + src + '" alt="' + p[2] + '" decoding="async">' : MAY_PRODUCT_PLACEHOLDER) +
+      '</div>' +
+      '<div class="product-detail-copy">' +
+        '<div class="product-detail-category">' + (cat ? cat.n : 'Paladear') + '</div>' +
+        '<h2 class="product-detail-title">' + _tc(p[2]) + '</h2>' +
+        metaHTML +
+        '<div class="product-detail-info">' + info + '</div>' +
+        '<div class="product-detail-buy" id="' + eid + '">' +
+          '<div><span class="bulto-badge">' + MAY_CUBE_ICON + bultoLabel + '</span></div>' +
+          saboresHTML +
+          '<div class="prices"><div><span class="price-label">Precio Mayorista</span>' +
+            '<div class="price-min" style="color:var(--azul-dark)">$' + fmt(precio) + '</div>' + unitInfo +
+          '</div></div>' +
+          '<div class="qty-row"><button class="qty-btn" onclick="chgQtyMay(\'' + eid + '\',-1)" aria-label="Restar cantidad">−</button>' +
+            '<span class="qty-val" id="' + eid + '_q">1</span>' +
+            '<button class="qty-btn" onclick="chgQtyMay(\'' + eid + '\',1)" aria-label="Sumar cantidad">+</button></div>' +
+          '<button class="add-btn" id="' + eid + '_ab" onclick="_fichaMayAgregar(' + p[0] + ')">' + ADD_CART_ICON + ' Agregar al pedido</button>' +
+          '<div class="product-detail-cart-state" id="mayDetailCartState">' + _textoPedidoMay(p[0]) + '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="product-detail-rel" id="mayDetailRel"></div>' +
+    '</div></div>';
+
+  document.body.appendChild(modal);
+  try { _pintarRelacionadosMay(p); } catch(e) { console.warn('[relacionados may]', e); }
+  if (!yaAbierta) _mayFichaOverflowPrevio = document.body.style.overflow;
+  document.body.style.overflow = 'hidden';
+  modal.scrollTop = 0;
+  if (!yaAbierta) history.pushState({modal:'productDetailMay'}, '');
+}
+
+function _fichaMayAgregar(pid){
+  addToCartMay(pid, 'may_detail_' + pid);
+  const st = document.getElementById('mayDetailCartState');
+  if (st) st.textContent = _textoPedidoMay(pid);
+}
+
+// Cierra sin tocar el historial. Se usa desde el popstate y al reemplazar una
+// ficha por otra (relacionados).
+function _cerrarFichaMayDirecto(quedaOtra){
+  const f = document.getElementById('productDetailMay');
+  if (f) f.remove();
+  // El overflow vuelve a como estaba: si la ficha se abrio desde el buscador
+  // mobile, ese overlay necesita que el body siga bloqueado.
+  if (f && !quedaOtra) document.body.style.overflow = _mayFichaOverflowPrevio || '';
+}
+
+function _fichaMayVolver(){
+  if (history.state && history.state.modal === 'productDetailMay') history.back();
+  else _cerrarFichaMayDirecto();
+}
+
+function _fichaMayVerMarca(marca){
+  _cerrarFichaMayDirecto();
+  if (typeof _searchMayOverlayOpen !== 'undefined' && _searchMayOverlayOpen) {
+    try { _closeMaySearchNow(); } catch(e) {}
+  }
+  verMarcaMay(marca);
+}
+
+window.openProductDetailMay = openProductDetailMay;
+window._fichaMayAgregar = _fichaMayAgregar;
+window._fichaMayVolver = _fichaMayVolver;
+window._fichaMayVerMarca = _fichaMayVerMarca;
+window._cerrarFichaMayDirecto = _cerrarFichaMayDirecto;
+
 
 function chgQtyMay(id, d) {
   const el = document.getElementById(id + '_q');
