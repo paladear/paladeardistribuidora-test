@@ -1468,13 +1468,7 @@ input[type=search]{-webkit-appearance:none;appearance:none}
   align-items:center;justify-content:center;padding:0;transition:background .15s}
 .filtro-activo .fa-cats svg{width:19px;height:19px}
 .filtro-activo .fa-cats:hover{background:var(--azul-light)}
-/* Después de las reglas de arriba, si no el color base les gana. */
-.filtro-activo .fa-volver,.filtro-activo .fa-cats{background:rgba(255,255,255,.16);
-  color:#fff;border:1px solid rgba(255,255,255,.34)}
-.filtro-activo .fa-volver:hover,.filtro-activo .fa-cats:hover{background:rgba(255,255,255,.28)}
-.filtro-activo .fa-txt i{color:rgba(255,255,255,.72)}
-.filtro-activo .fa-txt b{color:#fff}
-.filtro-activo .fa-n{background:rgba(255,255,255,.18);color:#fff}
+
 .filtro-activo .fa-volver{flex:0 0 auto;width:38px;height:38px;
   border-radius:10px;border:0;background:var(--muted);color:var(--azul-dark);cursor:pointer;
   display:flex;align-items:center;justify-content:center;padding:0;transition:background .15s}
@@ -1487,6 +1481,15 @@ input[type=search]{-webkit-appearance:none;appearance:none}
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .filtro-activo .fa-n{flex:0 0 auto;font-size:12.5px;font-weight:800;color:var(--muted-fg);
   background:var(--muted);border-radius:999px;padding:4px 9px}
+/* Va al final del bloque a propósito: las reglas de arriba definen forma y tamaño,
+   éstas el color sobre el azul del header. Si van antes, las pisan y los botones
+   quedan grises sobre azul. */
+.filtro-activo .fa-volver,.filtro-activo .fa-cats{background:rgba(255,255,255,.16)!important;
+  color:#fff!important;border:1px solid rgba(255,255,255,.34)!important}
+.filtro-activo .fa-volver:hover,.filtro-activo .fa-cats:hover{background:rgba(255,255,255,.3)!important}
+.filtro-activo .fa-txt i{color:rgba(255,255,255,.72)!important}
+.filtro-activo .fa-txt b{color:#fff!important}
+.filtro-activo .fa-n{background:rgba(255,255,255,.18)!important;color:#fff!important}
 .search-suggestion-item:hover{background:var(--muted);color:var(--fg)}
 .search-suggestion-item .sug-icon{flex-shrink:0;opacity:.55;font-size:13px}
 .compact-search::placeholder{color:#90a0b0}
