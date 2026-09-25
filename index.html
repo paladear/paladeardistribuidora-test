@@ -5047,6 +5047,9 @@ function _esPrimerPedidoMay(){
 function _minimoMayVigente(){ return _esPrimerPedidoMay() ? MIN_COMPRA_MAYORISTA : 0; }
 
 let PRODS_MAY = [];
+// Indice por productId. Se declara aca arriba, junto a PRODS_MAY, para que no
+// quede en zona muerta cuando se arma el catalogo (lo mismo que _MIN_BY_ID).
+let _MAY_POR_EPID = null;
 let CATS_MAY = [];
 function _saveCartMay(){try{localStorage.setItem(_LS('paladear_cart_may_v2'),JSON.stringify(cartMay));}catch(e){}}
 function _loadCartMay(){try{const s=localStorage.getItem(_LS('paladear_cart_may_v2'));return s?JSON.parse(s):[];}catch(e){return [];}}
@@ -5204,7 +5207,7 @@ function cargarMayorista() {
     if (raw) {
       const data = JSON.parse(raw);
       if (data.cats && data.prods && data.prods.length) {
-        CATS_MAY = data.cats; PRODS_MAY = data.prods;
+        CATS_MAY = data.cats; PRODS_MAY = data.prods; _MAY_POR_EPID = null;
         if (data.bultoMap) MAY_BULTO_MAP = data.bultoMap;
         _mayYaRenderizado = true;
         renderMayUI();
@@ -5257,6 +5260,7 @@ function cargarMayorista() {
       });
 
       PRODS_MAY = prodsTemp;
+      _MAY_POR_EPID = null;
       const catIds = [...new Set(PRODS_MAY.map(p => p[1]))];
       CATS_MAY = Object.values(RUBRO_MAP).filter(c => catIds.includes(c.id));
       console.log('✅ Lista Mayorista: ' + PRODS_MAY.length + ' productos, ' + CATS_MAY.length + ' categorías');
@@ -5971,12 +5975,34 @@ window.volverMayInicio = volverMayInicio;
 function _envaseDeMay(p){ return (p[12] && p[12].envase) || ''; }
 /* Marca y contenido para el mensaje de WhatsApp: en el pedido llegaban varios
    renglones con el mismo nombre y no se sabía cuál era cuál. */
+/* El pid es la POSICION en la lista de precios, no un numero propio del producto:
+   cuando se agrega o se saca un articulo, todos los de abajo se corren un lugar y
+   un pedido guardado de antes queda mostrando los datos del vecino. El productId
+   no se mueve; para los pedidos viejos que no lo tienen, se busca por nombre. */
+function _prodDeItemMay(it){
+  if(!it)return null;
+  if(it.epid){
+    if(!_MAY_POR_EPID){
+      _MAY_POR_EPID = {};
+      (PRODS_MAY || []).forEach(function(q){ const e=q[12]&&q[12].productId; if(e)_MAY_POR_EPID[String(e)]=q; });
+    }
+    const p=_MAY_POR_EPID[String(it.epid)];
+    if(p)return p;
+  }
+  if(it.n){
+    const clave=_norm(String(it.n).replace(/\s*\([^)]*\)\s*$/,''));
+    const q=(PRODS_MAY || []).find(x=>_norm(x[2])===clave);
+    if(q)return q;
+  }
+  return null;
+}
 function _waDetalleMay(it){
-  const p = (PRODS_MAY || []).find(x => x[0] === it.pid);
-  if (!p) return '';
+  const p = _prodDeItemMay(it);
+  const env = (it.env !== undefined ? it.env : (p ? _envaseDeMay(p) : '')) || '';
+  const mar = (it.mar !== undefined ? it.mar : (p ? _marcaDeMay(p) : '')) || '';
   const partes = [];
-  const env = _envaseDeMay(p); if (env) partes.push(env);
-  const mar = _marcaDeMay(p);  if (mar) partes.push(mar.toUpperCase());
+  if (env) partes.push(env);
+  if (mar) partes.push(mar.toUpperCase());
   return partes.join(' · ');
 }
 function _waDetalleMin(it){
@@ -6289,7 +6315,7 @@ function addToCartMay(pid, elId) {
   if (ex) {
     ex.c += qty;
   } else {
-    cartMay.push({ key, pid, n: nombreConSabor, c: qty, l1: precio, bulto, sabor, bultoLabel: opts[0] || 'Bulto x' + bulto });
+    cartMay.push({ key, pid, epid: (p[12] && p[12].productId) || '', n: nombreConSabor, c: qty, l1: precio, bulto, sabor, bultoLabel: opts[0] || 'Bulto x' + bulto, mar: _marcaDeMay(p), env: _envaseDeMay(p) });
   }
   _reRenderCardMay(pid);
   updateCartMayCount();
