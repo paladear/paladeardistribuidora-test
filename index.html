@@ -5991,8 +5991,11 @@ function _prodDeItemMay(it){
   }
   if(it.n){
     const clave=_norm(String(it.n).replace(/\s*\([^)]*\)\s*$/,''));
-    const q=(PRODS_MAY || []).find(x=>_norm(x[2])===clave);
-    if(q)return q;
+    const q=(PRODS_MAY || []).filter(x=>_norm(x[2])===clave);
+    // Sólo si no hay dudas: hay cinco "Aceite de Oliva" que se diferencian nada
+    // más que por la marca y el envase. Adivinar ahí es justo lo que queremos
+    // evitar, así que se prefiere no poner nada.
+    if(q.length===1)return q[0];
   }
   return null;
 }
