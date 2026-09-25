@@ -5979,12 +5979,18 @@ function _envaseDeMay(p){ return (p[12] && p[12].envase) || ''; }
    cuando se agrega o se saca un articulo, todos los de abajo se corren un lugar y
    un pedido guardado de antes queda mostrando los datos del vecino. El productId
    no se mueve; para los pedidos viejos que no lo tienen, se busca por nombre. */
+// El numero de articulo viene con puntos y con coma decimal segun la lista; se
+// limpia igual en los dos lados para que el indice y el carrito coincidan.
+function _artIdDe(p){
+  const v=p&&p[12]?(p[12].artId||p[12].productId||''):'';
+  return String(v).replace(/\./g,'').replace(/,.*$/,'').trim();
+}
 function _prodDeItemMay(it){
   if(!it)return null;
   if(it.epid){
     if(!_MAY_POR_EPID){
       _MAY_POR_EPID = {};
-      (PRODS_MAY || []).forEach(function(q){ const e=q[12]&&q[12].productId; if(e)_MAY_POR_EPID[String(e)]=q; });
+      (PRODS_MAY || []).forEach(function(q){ const e=_artIdDe(q); if(e)_MAY_POR_EPID[e]=q; });
     }
     const p=_MAY_POR_EPID[String(it.epid)];
     if(p)return p;
@@ -6318,7 +6324,7 @@ function addToCartMay(pid, elId) {
   if (ex) {
     ex.c += qty;
   } else {
-    cartMay.push({ key, pid, epid: (p[12] && p[12].productId) || '', n: nombreConSabor, c: qty, l1: precio, bulto, sabor, bultoLabel: opts[0] || 'Bulto x' + bulto, mar: _marcaDeMay(p), env: _envaseDeMay(p) });
+    cartMay.push({ key, pid, epid: _artIdDe(p), n: nombreConSabor, c: qty, l1: precio, bulto, sabor, bultoLabel: opts[0] || 'Bulto x' + bulto, mar: _marcaDeMay(p), env: _envaseDeMay(p) });
   }
   _reRenderCardMay(pid);
   updateCartMayCount();
