@@ -326,6 +326,12 @@ button{cursor:pointer;border:none;font-family:inherit}
 #cart-fab-may{position:fixed;bottom:94px;right:24px;z-index:10008;width:58px;height:58px;border-radius:50%;background:var(--azul);color:#fff;border:none;font-size:26px;cursor:pointer;box-shadow:0 4px 22px rgba(58,85,114,.55);transition:transform .2s,box-shadow .2s;display:flex;align-items:center;justify-content:center;padding:0;font-family:inherit;text-shadow:0 1px 4px rgba(0,0,0,.55);filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
 #cart-fab-may:hover{transform:scale(1.1)}
 @media(max-width:767px){body.builder-open #cart-fab,body.builder-open #chat-fab{display:none!important}}
+/* Con la ficha abierta el carrito flotante caia justo encima del "Agregar al
+   pedido" y de los botones de cantidad. */
+body:has(#productDetailMay) #cart-fab-may,body:has(#productDetailMay) #cart-fab{display:none!important}
+/* El icono de Productos (la tablita) tiene mucha mas tinta que los otros tres
+   (53% del lienzo contra 36-39%) y por eso se lee mas oscuro en el nav. */
+.may-mobile-bottom-nav img[src*="catalog"]{opacity:.78}
 #cart-fab .cart-count,#cart-fab-may .cart-count{position:absolute;top:-8px;right:-8px;background:var(--destructive);color:#fff;border-radius:50%;min-width:22px;height:22px;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0 5px;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);z-index:2}
 .fab-icon{width:42px;height:42px;object-fit:contain;display:block;filter:drop-shadow(0 1.5px 2px rgba(0,0,0,.3))}
 #cart-fab,#cart-fab-may{padding:4px}
