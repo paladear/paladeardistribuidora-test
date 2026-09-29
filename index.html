@@ -329,8 +329,8 @@ button{cursor:pointer;border:none;font-family:inherit}
 /* Con la ficha abierta el carrito flotante caia justo encima del "Agregar al
    pedido" y de los botones de cantidad. */
 body:has(#productDetailMay) #cart-fab-may,body:has(#productDetailMay) #cart-fab{display:none!important}
-/* El icono de Productos (la tablita) tiene mucha mas tinta que los otros tres
-   (53% del lienzo contra 36-39%) y por eso se lee mas oscuro en el nav. */
+/* El icono de Productos (la tablita) tiene mucha mas tinta que los otros y por
+   eso se lee mas oscuro en el nav. */
 .may-mobile-bottom-nav img[src*="catalog"]{opacity:.78}
 #cart-fab .cart-count,#cart-fab-may .cart-count{position:absolute;top:-8px;right:-8px;background:var(--destructive);color:#fff;border-radius:50%;min-width:22px;height:22px;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0 5px;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);z-index:2}
 .fab-icon{width:42px;height:42px;object-fit:contain;display:block;filter:drop-shadow(0 1.5px 2px rgba(0,0,0,.3))}
@@ -1816,7 +1816,7 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
         <div class="hdrop-row"><span class="ic"><svg viewBox="0 0 24 24" width="15" height="15" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.006 22l4.984-1.307A9.961 9.961 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.25a8.24 8.24 0 01-4.258-1.178l-.306-.181-3.157.828.844-3.07-.2-.319A8.25 8.25 0 1112 20.25z"/></svg></span><div><strong>Contacto</strong>+549 261 565 2251</div></div>
         <div class="hdrop-row"><span class="ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span><div><strong>Horario</strong>Lunes a Viernes · 08:00 a 16:00 hs<br>Sábados · 08:00 a 13:00 hs</div></div>
         <div class="hdrop-row"><span class="ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><strong>Depósito mayorista</strong>Ruta Provincial 50 Nº 13080, KM 8 — Guaymallén, Mendoza · <a href="https://maps.app.goo.gl/MXySPy9mbBFm8oVaA" target="_blank" rel="noopener noreferrer" style="color:var(--azul);font-weight:600;text-decoration:underline">Ver en mapa</a></div></div>
-        <div class="hdrop-row"><span class="ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="m4 7 8-4 8 4-8 4-8-4Z"/><path d="M4 7v10l8 4 8-4V7M12 11v10"/></svg></span><div><strong>Condición de venta</strong>Venta <b>únicamente por bulto cerrado</b>.<br>Mínimo de $250.000 <b>solo en tu primer pedido</b>: a partir del segundo, sin mínimo.</div></div>
+        <div class="hdrop-row"><span class="ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="m4 7 8-4 8 4-8 4-8-4Z"/><path d="M4 7v10l8 4 8-4V7M12 11v10"/></svg></span><div><strong>Condición de venta</strong>Venta <b>únicamente por bulto cerrado</b>.<br>Mínimo de referencia de $250.000 <b>solo en tu primer pedido</b>. Podés enviarlo igualmente para su confirmación.</div></div>
         <div class="hdrop-row"><span class="ic"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3zM14 9h4l3 3v4h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span><div><strong>Envíos</strong>Consultá por nuestros canales de venta al por mayor</div></div>
         <button class="hdrop-cta min-cta" onclick="closeAllHdrops();window.open('https://wa.me/5492615652251','_blank')"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.84 9.84 0 0 0-8.5 14.8L2 22l5.34-1.5A9.92 9.92 0 1 0 12.04 2Zm0 17.97a8 8 0 0 1-4.08-1.12l-.29-.17-3.17.89.9-3.09-.19-.31a7.88 7.88 0 1 1 6.83 3.8Z"/></svg> Contactar por WhatsApp</button>
       </div>
@@ -1843,6 +1843,9 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
     <button type="button" class="hd-nav-link active" data-may-view="home" onclick="mayShowHome()">Home</button>
     <button type="button" class="hd-nav-link" data-may-view="productos" onclick="mayShowProducts()">Productos</button>
     <button type="button" class="hd-nav-link" data-may-view="ofertas" onclick="mayShowSoon()">Ofertas</button>
+    <button type="button" class="hd-nav-link hd-nav-price-list" onclick="window.location.href='catalogo.html'" title="Abrir lista de precios">
+      <img src="may-icon-price-list-filled.svg" alt="" aria-hidden="true"><span>Lista de precios</span>
+    </button>
   </div>
 </nav>
 </header>
@@ -1859,6 +1862,10 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
   <button type="button" class="may-mobile-nav-link" data-may-view="ofertas" onclick="mayShowSoon()">
     <img src="may-icon-offers-filled.png" alt="" aria-hidden="true">
     <span>Ofertas</span>
+  </button>
+  <button type="button" class="may-mobile-nav-link" onclick="window.location.href='catalogo.html'" title="Abrir lista de precios">
+    <img src="may-icon-price-list-filled.svg" alt="" aria-hidden="true">
+    <span>Lista</span>
   </button>
   <button type="button" class="may-mobile-nav-link" onclick="openCuenta()">
     <img src="may-icon-account-filled.png" alt="" aria-hidden="true">
@@ -1907,9 +1914,7 @@ html.android-ui .tutb-rmay .tutb-pill{background:#b86f61}
         <span class="may-home-section-kicker" id="mayHomeCatsTitle">Explorá por categoría</span>
       </div>
       <div class="may-home-cats-carousel">
-        <button type="button" class="may-cats-flecha izq" id="mayCatsIzq" aria-label="Ver categorías anteriores">&#8249;</button>
         <div class="may-home-cats-grid" id="mayHomeCatsTrack" aria-label="Todas las categorías"></div>
-        <button type="button" class="may-cats-flecha der" id="mayCatsDer" aria-label="Ver más categorías">&#8250;</button>
         <div class="may-home-cat-pagination" id="mayHomeCatsPagination" role="group" aria-label="Páginas de categorías"></div>
       </div>
     </div>
@@ -5053,8 +5058,8 @@ function _esPrimerPedidoMay(){
 function _minimoMayVigente(){ return _esPrimerPedidoMay() ? MIN_COMPRA_MAYORISTA : 0; }
 
 let PRODS_MAY = [];
-// Indice por productId. Se declara aca arriba, junto a PRODS_MAY, para que no
-// quede en zona muerta cuando se arma el catalogo (lo mismo que _MIN_BY_ID).
+// Indice por numero de articulo. Se declara aca arriba, junto a PRODS_MAY, para
+// que no quede en zona muerta cuando se arma el catalogo.
 let _MAY_POR_EPID = null;
 let CATS_MAY = [];
 function _saveCartMay(){try{localStorage.setItem(_LS('paladear_cart_may_v2'),JSON.stringify(cartMay));}catch(e){}}
@@ -5552,31 +5557,13 @@ window.addEventListener('resize',function(){
 function scrollMayHomeCats(direction){
   const track=document.getElementById('mayHomeCatsTrack');
   if(!track)return;
-  if(window.innerWidth<=760){
-    const pages=Array.from(track.querySelectorAll('.may-home-cat-page'));
-    if(!pages.length)return;
-    let current=0;
-    pages.forEach((page,index)=>{if(Math.abs(page.offsetLeft-track.scrollLeft)<Math.abs(pages[current].offsetLeft-track.scrollLeft))current=index;});
-    goMayHomeCatPage(current+direction);
-    return;
-  }
-  const card=track.querySelector('.may-home-cat');
-  const gap=parseFloat(getComputedStyle(track).gap)||15;
-  const distance=(card?card.getBoundingClientRect().width:110)+gap;
-  const start=track.scrollLeft;
-  const max=Math.max(0,track.scrollWidth-track.clientWidth);
-  const target=Math.max(0,Math.min(max,start+direction*distance));
-  const duration=360;
-  const started=performance.now();
-  if(_mayCatScrollFrame)cancelAnimationFrame(_mayCatScrollFrame);
-  function step(now){
-    const t=Math.min(1,(now-started)/duration);
-    const eased=1-Math.pow(1-t,3);
-    track.scrollLeft=start+(target-start)*eased;
-    if(t<1)_mayCatScrollFrame=requestAnimationFrame(step);
-    else{_mayCatScrollFrame=0;_updateMayHomeCatControls();}
-  }
-  _mayCatScrollFrame=requestAnimationFrame(step);
+  const pages=Array.from(track.querySelectorAll('.may-home-cat-page'));
+  if(!pages.length)return;
+  let current=0;
+  pages.forEach((page,index)=>{
+    if(Math.abs(page.offsetLeft-track.scrollLeft)<Math.abs(pages[current].offsetLeft-track.scrollLeft))current=index;
+  });
+  goMayHomeCatPage(current+direction);
 }
 window.scrollMayHomeCats=scrollMayHomeCats;
 
@@ -5983,10 +5970,7 @@ function _envaseDeMay(p){ return (p[12] && p[12].envase) || ''; }
    renglones con el mismo nombre y no se sabía cuál era cuál. */
 /* El pid es la POSICION en la lista de precios, no un numero propio del producto:
    cuando se agrega o se saca un articulo, todos los de abajo se corren un lugar y
-   un pedido guardado de antes queda mostrando los datos del vecino. El productId
-   no se mueve; para los pedidos viejos que no lo tienen, se busca por nombre. */
-// El numero de articulo viene con puntos y con coma decimal segun la lista; se
-// limpia igual en los dos lados para que el indice y el carrito coincidan.
+   un pedido guardado de antes queda mostrando los datos del vecino. */
 function _artIdDe(p){
   const v=p&&p[12]?(p[12].artId||p[12].productId||''):'';
   return String(v).replace(/\./g,'').replace(/,.*$/,'').trim();
@@ -6004,9 +5988,8 @@ function _prodDeItemMay(it){
   if(it.n){
     const clave=_norm(String(it.n).replace(/\s*\([^)]*\)\s*$/,''));
     const q=(PRODS_MAY || []).filter(x=>_norm(x[2])===clave);
-    // Sólo si no hay dudas: hay cinco "Aceite de Oliva" que se diferencian nada
-    // más que por la marca y el envase. Adivinar ahí es justo lo que queremos
-    // evitar, así que se prefiere no poner nada.
+    // Solo si no hay dudas: hay cinco "Aceite de Oliva" que se diferencian nada
+    // mas que por la marca y el envase.
     if(q.length===1)return q[0];
   }
   return null;
@@ -6410,7 +6393,7 @@ function _triggerMayMinimoToast() {
     toast.innerHTML =
       '<div class="may-toast-icon">'+MAY_CUBE_ICON+'</div>' +
       '<div class="may-toast-title" style="font-size:18px;letter-spacing:1px">MÍNIMO<br>ALCANZADO</div>' +
-      '<div style="margin-top:10px;font-size:13px;color:var(--muted-fg);line-height:1.5">Superaste los <strong>$250.000</strong><br>Ya podés enviar tu primer pedido.<br><span style="font-size:12px">Los próximos, sin mínimo.</span></div>';
+      '<div style="margin-top:10px;font-size:13px;color:var(--muted-fg);line-height:1.5">Superaste los <strong>$250.000</strong><br>Cumpliste el mínimo de tu primer pedido.<br><span style="font-size:12px">Los próximos, sin mínimo.</span></div>';
     document.body.appendChild(toast);
   }
   toast.classList.remove('hide');
@@ -6526,14 +6509,14 @@ function _pintarDistBanner(){
   }
 
   title.textContent='Condición especial para tu primer pedido';
-  note.innerHTML='Realizá tu primer pedido alcanzando el mínimo de compra: <b>$'+fmt(MIN_COMPRA_MAYORISTA)+'</b>.<br>A partir de tu segundo pedido, comprás <b>SIN MÍNIMO</b>.';
+  note.innerHTML='El mínimo de referencia para tu primer pedido es de <b>$'+fmt(MIN_COMPRA_MAYORISTA)+'</b>.<br>Podés enviarlo igualmente para su confirmación.';
   lbl.style.display=''; track.style.display='';
   fill.style.width=Math.min(100,(total/MIN_COMPRA_MAYORISTA)*100)+'%';
   cnt.textContent='$'+fmt(total);
   if(total>=MIN_COMPRA_MAYORISTA){
     goal.textContent='✓ Mínimo alcanzado';
     goal.style.color='#1c9d63';
-    rw.innerHTML='<span class="distb-pill">✓</span> ¡Ya podés enviar tu primer pedido!';
+    rw.innerHTML='<span class="distb-pill">✓</span> ¡Alcanzaste el mínimo de tu primer pedido!';
     rw.classList.add('on');
   }else{
     goal.textContent='Mínimo 1er pedido: $'+fmt(MIN_COMPRA_MAYORISTA);
@@ -6583,10 +6566,11 @@ function renderCartMay() {
   }
   const total  = cartMay.reduce((a, i) => a + i.l1 * i.c, 0);
   const minVig = _minimoMayVigente();          // 0 = ya no hay mínimo (no es el primer pedido)
-  const cumple = total >= minVig;
+  const minimoAlcanzado = total >= minVig;
+  const puedeEnviar = true; // El mínimo orienta, pero puede haber excepciones comerciales.
   const pct    = minVig > 0 ? Math.min(100, Math.round(total / minVig * 100)) : 100;
-  const progColor = cumple ? '#16a34a' : 'var(--azul)';
-  const progMsg   = cumple
+  const progColor = minimoAlcanzado ? '#16a34a' : 'var(--azul)';
+  const progMsg   = minimoAlcanzado
     ? 'Mínimo alcanzado — podés hacer tu pedido'
     : `Faltan $${fmt(minVig - total)} para el mínimo`;
 
@@ -6623,7 +6607,7 @@ function renderCartMay() {
       <div style="height:6px;background:var(--muted);border-radius:6px;overflow:hidden">
         <div style="height:100%;width:${pct}%;background:${progColor};border-radius:6px;transition:width .4s"></div>
       </div>
-      <div style="font-size:11.5px;color:var(--muted-fg);margin-top:6px;text-align:center;line-height:1.4">Mínimo solo en tu primer pedido · Venta por bulto cerrado</div>
+      <div style="font-size:11.5px;color:var(--muted-fg);margin-top:6px;text-align:center;line-height:1.4">Mínimo solo en tu primer pedido · Podés enviarlo igualmente para su confirmación · Venta por bulto cerrado</div>
     </div>`
     : `<div style="background:#f0fdf4;border:1.5px solid #86efac;border-radius:10px;padding:9px 12px;margin-bottom:10px;text-align:center;font-size:12.5px;color:#15803d;font-weight:600;line-height:1.4">Sin mínimo de compra · Venta por bulto cerrado</div>`;
 
@@ -6633,7 +6617,7 @@ function renderCartMay() {
     <div class="total-rows">
       <div class="total-row main"><span>Total Mayorista</span><span>$${fmt(total)}</span></div>
     </div>
-    <button class="wa-btn" onclick="closeCartMay();pedirWAMayorista()" ${cumple ? '' : 'disabled style="opacity:.5;cursor:not-allowed"'}><svg viewBox="0 0 24 24" width="19" height="19" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.006 22l4.984-1.307A9.961 9.961 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.25a8.24 8.24 0 01-4.258-1.178l-.306-.181-3.157.828.844-3.07-.2-.319A8.25 8.25 0 1112 20.25z"/></svg> Pedir por WhatsApp</button>`;
+    <button class="wa-btn" onclick="closeCartMay();pedirWAMayorista()" ${puedeEnviar ? '' : 'disabled style="opacity:.5;cursor:not-allowed"'}><svg viewBox="0 0 24 24" width="19" height="19" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.006 22l4.984-1.307A9.961 9.961 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.25a8.24 8.24 0 01-4.258-1.178l-.306-.181-3.157.828.844-3.07-.2-.319A8.25 8.25 0 1112 20.25z"/></svg> Pedir por WhatsApp</button>`;
 }
 window.renderCartMay = renderCartMay;
 
@@ -6659,12 +6643,6 @@ window.cartDelMay = cartDelMay;
 function pedirWAMayorista() {
   if (!cartMay.length) {
     alert('Tu carrito mayorista está vacío. Agregá productos antes de pedir.');
-    return;
-  }
-  const total = cartMay.reduce((a, i) => a + i.l1 * i.c, 0);
-  const minVig = _minimoMayVigente();
-  if (minVig > 0 && total < minVig) {
-    alert(`Tu primer pedido tiene un mínimo de compra de $${fmt(minVig)}.\n\nTotal actual: $${fmt(total)}\nFaltan: $${fmt(minVig - total)}\n\nA partir de tu segundo pedido comprás sin mínimo.`);
     return;
   }
   closeCartMay();
@@ -8470,6 +8448,8 @@ window.addEventListener('online', function() {
 .may-redesign .hd-cats svg{width:20px;height:20px}
 .may-redesign .hd-cats .hd-cats-flecha{width:14px;height:14px;opacity:.7}
 .may-redesign .hd-nav-link{min-width:110px;border-radius:999px;transition:color .18s ease,background .18s ease,box-shadow .18s ease}
+.may-redesign .hd-nav-price-list{gap:8px;min-width:174px}
+.may-redesign .hd-nav-price-list img{display:block;width:23px;height:23px;object-fit:contain}
 .may-redesign .hd-cats:hover,.may-redesign .hd-nav-link:hover{color:#4f7897}
 .may-redesign .hd-nav-link.active{background:#e7f1f7;color:#123c61;box-shadow:inset 0 0 0 1px #d5e5ef}
 .may-redesign .header-dropdowns{position:static;width:0;min-width:0;margin:0;overflow:visible}
@@ -9542,7 +9522,7 @@ body.may-redesign.checkout-open #cart-fab-may,body.may-redesign.checkout-open #b
 .may-home-hero-hotspot:focus-visible{outline:3px solid #fff;outline-offset:3px}
 
 @media(max-width:760px){
-  .may-mobile-bottom-nav{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .may-mobile-bottom-nav{grid-template-columns:repeat(5,minmax(0,1fr))}
   .may-mobile-bottom-nav{padding-inline:8px}
   .may-mobile-nav-link{padding-inline:4px;font-size:9.5px}
   .may-mobile-nav-link>img{display:block;width:27px;height:27px;object-fit:contain;transition:transform .18s ease}
@@ -9904,8 +9884,9 @@ body.may-redesign.checkout-open #cart-fab-may,body.may-redesign.checkout-open #b
   .may-redesign .header-inner{padding-left:calc(clamp(34px,5.2vw,86px) + var(--may-logo-size) + 86px)!important}
 }
 @media(min-width:761px){
-  .may-home-cats-carousel{overflow:visible!important}
-  .may-home-cats-grid{padding-inline:58px!important}
+  .may-home-cats-carousel{overflow:hidden!important}
+  .may-home-cats-grid{padding:4px 0 7px!important}
+  .may-home-cat-page{box-sizing:border-box;padding-inline:58px}
   .may-home-cat-arrow{
     display:grid!important;position:absolute!important;top:50%!important;width:46px!important;height:46px!important;
     transform:translateY(-50%)!important;place-items:center!important;padding:0!important;border:1px solid rgba(255,255,255,.55)!important;
